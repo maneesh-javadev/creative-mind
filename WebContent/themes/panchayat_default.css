@@ -1,0 +1,986 @@
+/* .error
+{
+
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size:10px;
+		margin: 0px 0px 0px 0px;
+		color: red;
+		display:none;
+
+}
+.error_fld
+{
+	border:#F33 1px solid;
+	background-color:#FFECF0;
+} */
+
+
+/* CSS Document */
+/*<-------START GENERAL------ */
+*{margin:0px; padding:0px;}
+body{margin:0px; padding:0px; background:#FBFCEC; font: .75em Arial, Helvetica, sans-serif; color:#3A3A3A;}
+h1{font:bold 1.5em "Trebuchet MS"; color:#4E3700; margin:0px; padding:0px}
+h2{font:bold 1.3em "Trebuchet MS"; color:#4E3700;}
+h3{font:bold 1.2em Arial, Helvetica, sans-serif; color:#4E3700;}
+i{font-size:13px; font-weight:bold;}
+img{border:0px;}
+p{font: normal Arial, Helvetica, sans-serif; color:#3A3A3A; text-align:justify}
+/*<-------END GENERAL------ */
+
+/*Start table property*/
+table{margin:0px; padding:0px; border:0px;}
+table.tblbgclr{ background:inherit}
+th, td{margin:0px; padding:1px 3px 1px 3px; border:0px;}
+tr.tblRowTitle{background:#E4E4E4; height:17px; font-weight:bold}
+tr.tbl_nml_title{height:15px; font-weight:bold}
+tr.tblRowA{background:#f7f7f7;}
+tr.tblRowB{background:#fff;}
+td.tblclear{padding:0px;}
+td.tblrtbrdr{border-right:solid 1px #075B96; background:#BCE0F0}
+label{font:bold 1em Arial, Helvetica, sans-serif;}
+/*End table property*/
+
+/*<-------START DIV ID------ */
+#maincontainer{width:97%; height:100%; margin:0px auto;} /* main div - First div in any html */
+#headerwrap{width:100%; height:100%;}  /* div for  head section  */
+#topnav_home{height:25px;font:11px Arial, Helvetica, sans-serif; color:#3A3A3A;}
+/*#topnav{height:20px;font:11px Arial, Helvetica, sans-serif; color:#003D67; border-left:solid 1px #075B96; border-right:solid 1px #075B96; padding-top:2px; padding-bottom:2px}*/
+#topnav{height:20px;font:11px Arial, Helvetica, sans-serif; color:#003D67; border-left:solid 1px #075B96; border-right:solid 1px #075B96; padding-top:2px; padding-bottom:2px; background:#9FDDF4;}  /* top navigation */
+#header{background:url(../themes/default/header_bg.jpg) bottom left repeat-x; height:116px; position:relative}  /* to show header background img */
+#logoleft{background:url(../themes/default/gvt_logo.png) no-repeat top left; float:left; width:50%; height:60px; font:bold 2em "Trebuchet MS"; color:#085E75; padding-top:30px; padding-left:95px; position:absolute}  /* Left logo */
+#logoright{background:url(../themes/default/rt_logo.png) no-repeat top right; float:right; width:30%; height:90px; position:relative} /* right logo  */
+#mainnav{font:bold 1em Arial, Helvetica, sans-serif; color:#003D67; padding-top:2px; padding-left:2px;} /* horizondal menu on top - below logo */
+#mainnav a{color:#003D67; text-decoration:none; border:1px solid #075B96; padding:1px 7px 1px 7px; background:url(../themes/default/new_btnbg.jpg) repeat-x}
+/* #loginnav{background:#9FDDF4; height:21px; font:normal 12px Arial, Helvetica, sans-serif; color:#003D67; padding-top:1px; border-left:solid 1px #075B96; border-right:solid 1px #075B96; padding-top:.15em} */
+#loginnav{height:21px; font:normal 12px Arial, Helvetica, sans-serif; color:#003D67; padding-top:1px; border-left:solid 1px #075B96; border-right:solid 1px #075B96; padding-top:.15em} /* login pannel */
+#loginnav a{color:#003D67; text-decoration:none}
+#content{background:#FFFFFF; height:100%; border-left:solid 1px #075B96; border-right:solid 1px #075B96}/* For Body Part*/
+#breadcrumbnav{width:auto; height:19px;font:normal 1em Arial, Helvetica, sans-serif; color:#2E2101; padding-top:4px; padding-left:2px; background:url(../images/new_brdcrbnav_bg.jpg) repeat-x #FBFBF9; border:solid 1px #075B96}/* For Bread Crumb*/
+#breadcrumbnav a{color:#2E2101; text-decoration:none}
+#breadcrumbnav a:hover{color:#2E2101; text-decoration:underline}
+#breadcrumbnav span{ font:bold; color:#810800}
+
+#breadcrumbnav ul.listing li.hierarchy{
+	float:left;
+	margin-right:50px;
+	width:55%;
+}
+
+#breadcrumbnav ul.listing li.other_apps{
+	float:right;
+	width:25%;
+	margin-right:15px;
+}
+
+.uparrowdiv{
+	margin-top:25px
+}
+#leftpnl{height:100%;}
+#newsupdate{width:225px; float:left; background:url(../themes/default/news_pnl.jpg) top repeat-x #BCDFF0; margin:25px 3px 10px 3px; border:solid 1px #0C5383; font:1em Arial, Helvetica, sans-serif; color:#002037; position:relative}/*For Left News Panel Updates*/
+#rightpnl{height:auto; padding:5px; position:relative}
+#homepagebg{background:url(../themes/default/new_homeimage.jpg) top left no-repeat #308AC8; height:155px; border:solid 1px #075B96; border-top:none; position:relative}
+#contentin{background:#FFFFFF; border-left:solid 1px #075B96; border-right:solid 1px #075B96; overflow:hidden;} /* div for content in Home page */
+#footer{ background:#BCDFF0; font:normal 1em Arial, Helvetica, sans-serif; color:#0C5383; border:solid 1px #075B96; border-top:none; clear:both;}
+#frmcontent{background:#FFF; padding:5px 2px 2px 2px;}/* div for form*/
+/*<-------END DIV ID------ */
+
+/*<-------Start Common Class------ */
+.clear{clear:both}
+.txticon{width:20px; padding-top:2px}
+.scroltxt{margin-top:21px; padding:1px 3px 3px 3px; border-bottom:4px solid #47ADD2} /* for marquee*/
+.tbl_no_brdr{border-collapse:collapse; } /*Used for removing "border="0" cellspacing="0" cellpadding="0"" from table*/
+.tbl_with_brdr{border-collapse:separate; border-spacing:1px; background:#dfdfdf} /*Used for Giving Border in Table */
+.collapse_menu {background:url(../themes/default/collapse_menu.jpg) no-repeat; width:15px; height:62px; float:left}
+.pnlhd{font: bold 1em Arial, Helvetica, sans-serif; color:#002037; background:#BCDFF0; border-top:1px solid #0C5383; border-left:1px solid #0C5383; border-right:1px solid #0C5383; height:15px; position:absolute; z-index:2; text-align:center; top:4px; left:5px; padding:0px 3px}
+.more{font: bold 1em Arial, Helvetica, sans-serif; color:#4A3B12; text-align:right; padding-right:3px}
+.more a{color:#4A3B12; text-decoration:none}
+.help{font: normal 12px Arial, Helvetica, sans-serif; color:#002037}
+.help a{color:#002037; text-decoration:none}
+.helphome{font: normal 12px Arial, Helvetica, sans-serif; color:#000}
+.helphome a{color:#000; text-decoration:none}
+.frmhd{font:bold 1.1em "Trebuchet MS"; color:#1A2022; background:#E4E4E4; padding:3px;}
+.frmpnlbrdr{padding:5px 10px 0px 10px; border:1px solid #E4E4E4}
+.frmpnlbg{background:#F7F7F7; padding:10px; margin:10px 20px 10px 20px}
+.frmhelp{font:bold 12px "Trebuchet MS"; color:#085E75; background:url(../themes/default/helpfrm.png) no-repeat left; height:15px;text-decoration:none; padding-left:20px}
+.frmhelp a{color:#085E75; text-decoration:none;}
+.frmtxt{font:normal 1em Arial, Helvetica, sans-serif; color:#1A2022; border:1px solid #DCDCDC; position:relative; background:inherit; padding:20px 10px 15px 10px;}
+.frmhdtitle{font:bold 1.1em "Trebuchet MS"; color:#372600; background:#F7F7F7; position:absolute; z-index:1; text-align:center; top:-9px; left:12px; padding:0px 3px}
+.blktxt{font:normal 1em Arial, Helvetica, sans-serif; color:#000}
+.errormsg{font:normal 1em Arial, Helvetica, sans-serif; color:#FF0000; height:15px; padding-top:3px} /*Used for error message*/
+.mndt{font:normal 1em Arial, Helvetica, sans-serif; color:#FF0000; padding-left:1px} /*Used for mandetory field (Star)*/
+.error_fld{border:#F33 1px solid; background-color:#FFECF0;} /*Used for Highlighting the error field*/
+.success_msg{font:bold 1.1em "Trebuchet MS"; color: #006600; padding:5px;} /*Used for successfull message*/
+.result_msg{font:bold 1.1em "Trebuchet MS"; color: #0000CC; padding:5px;} /*Used for result data message*/
+.txtlink{font:normal 1em Arial, Helvetica, sans-serif; color:#5F3C00;}
+.txtlink a{color:#5F3C00; text-decoration:none}
+.npnlbg{background:#D8A820; height:5px}
+.txtbold{ font-weight:bold;}/*Used for Strong Text*/
+.btmlogospace{padding:2px}
+.greybrdr{border:1px solid #757575}
+.fotbrdr{ border-top:solid 4px #4CA8E1}
+.cbthelp{font:bold 12px "Trebuchet MS"; color:#085E75; background:url(../themes/default/cbt_help.png) no-repeat left; text-decoration:none; padding-left:30px;}
+.cbthelp a{color:#085E75; text-decoration:none;}
+
+.area_homehd{font:bold 1em Arial, Helvetica, sans-serif; color:#0C5383; padding:5px 0px 5px 0px; margin-bottom:10px} /*For Normal Panel Headings*/
+.area_commontxt{font:normal 1em Arial, Helvetica, sans-serif; color:#00101C; padding:0 5px 5px 5px; margin-bottom:10px; text-align:justify}
+.areaimgbrdr{border:1px solid #666666; margin-top:5px;}
+.area_subcmnhd{background:url(../themes/default/comarrow.png) no-repeat; font:bold 1em Arial, Helvetica, sans-serif; color:#0C5383; padding:3px 0px 3px 22px;}
+.area_subcomnbg{background:url(../themes/default/compnlbg.jpg)top left repeat-x; border-bottom:solid 1px #6BB3D6; margin-bottom:5px;}
+
+/*<-------End Common Class------ */
+
+/*Start Pagination*/
+.pageno{font: bold 12px "Trebuchet MS"; color:#1A2022;}
+.pre a{font: bold 12px "Trebuchet MS"; color:#1A2022; background:url(../themes/default/prvious.png) no-repeat; padding-left:17px; padding-top:0px; text-decoration:none}
+.nxt a{font: bold 12px "Trebuchet MS"; color:#1A2022; background:url(../themes/default/next.png) no-repeat right top; padding-right:18px; padding-top:0px; text-decoration:none}
+/*End Pagination*/
+
+/*----------Statrt Form Field Style----------*/
+.themefield{ border:1px solid #A8A8A8; height:18px; font:normal 1em Arial, Helvetica, sans-serif; color:#000; width:110px}
+.languagefield{ border:1px solid #A8A8A8; height:18px; font:normal 1em Arial, Helvetica, sans-serif; color:#000; width:110px}
+.combofield{ border:1px solid #A8A8A8; background:#FBF9F0; font:normal 1em Arial, Helvetica, sans-serif; color:#000; width: 200px;}/*Used for Combo Box*/
+.frmfield{  border:1px solid #A8A8A8; background:#fff; height:18px; font:normal 1em Arial, Helvetica, sans-serif; color:#000;} /*Used Normal Text field*/
+.frmtxtarea{ border:1px solid  #A8A8A8; background:#FBF9F0; font:normal 1em Arial, Helvetica, sans-serif; color:#000;}/*Used for Text Area and Multiselection Field*/
+.fldset{ border:1px solid  #A8A8A8; font:normal 1em Arial, Helvetica, sans-serif; color:#000; padding:15px; -moz-border-radius:5px;  border-radius: 5px;    -webkit-border-radius: 5px; }
+.btn{}
+.btnpnl{margin:10px 20px 20px 20px; text-align:center}
+/*----------End Form Field Style----------*/
+
+/*----------Start Collapse Pnl----------*/
+.pnlsize{width:230px; margin-left:2px; display: block}
+.coltab{width:15px; height:65px; padding-top:10px; display:none}
+.extab{width:10px; padding-top:10px; padding-left:5px}
+/*----------End Collapse Pnl----------*/
+
+/*----------Start Help Message Class----------*/
+.helptext{font:.95em Arial, Helvetica, sans-serif; color:#393939; margin:1px;font-weight: bold;} /*Used for help text*/
+.helpBox{border:1px dotted #3C3B3B; width:24%; height:auto;	position:absolute; vertical-align:top; display: none;} /*Creat Help Box*/
+.helpheader{width:100%; background-color:#2D2D2D; text-align:center; font-weight:bold; color:#FFF; margin: 1px;}/*For Help Box Header Heading*/
+
+/*All below Four (4) linse used for making place for display of Help Box Message*/
+.contentTable{vertical-align:top;}
+.contentTable tr{height: 50px;}
+.contentTable td:nth-child(even) {border-left:#CCC 1px dotted;}
+.contentTable td:nth-child(odd) { }
+/*----------End Help Message Class----------*/
+
+/* ---------------Accordian Menues----------------------- */
+.arrowlistmenu{
+width: 225px;
+margin-top:10px;
+margin-left:2px;
+border-left:1px solid #FFFFFF;
+border-right:1px solid #FFFFFF;
+border-top:1px solid #FFFFFF;
+background:#88C8E8 /*width of accordion menu*/
+}
+.arrowlistmenu .menuheader{ /*CSS class for menu headers in general (expanding or not!)*/
+background: url(../themes/default/titlebar.png) #589DBF no-repeat left;
+/*font: bold 14px Arial, Helvetica, sans-serif;
+color: white;
+margin-bottom: 10px; /*bottom spacing between header and rest of content
+text-transform: uppercase;
+padding: 4px 0 4px 10px; header text is indented 10px*/
+font-family:Arial, Helvetica, sans-serif;
+font-size:1em;
+font-weight:bold;
+cursor: hand;
+cursor: pointer;
+width:225px;
+color:#002037;
+padding:4px 0px 4px 10px;
+margin:0px 0px;
+border-bottom:1px solid #FFFFFF; width:215px;
+}
+.arrowlistmenu .openheader{ /*CSS class to apply to expandable header when it's expanded*/
+background-image: url(../themes/default/titlebar-active.png);
+border-bottom:1px solid #FFFFFF;
+}
+.arrowlistmenu ul{ /*CSS for UL of each sub menu*/
+list-style-type: none;
+margin: 0;
+padding: 0;
+margin-bottom: 0px; /*bottom spacing between each UL and rest of content*/
+}
+.arrowlistmenu ul li{
+padding-bottom: 0px; /*bottom spacing between menu items*/
+}
+.arrowlistmenu ul li .opensubheader{ /*Open state CSS for sub menu header*/
+background: lightblue !important;
+}
+.arrowlistmenu ul li .closedsubheader{ /*Closed state CSS for sub menu header*/
+background: lightgreen !important;
+}
+.arrowlistmenu ul li a{
+color:#002037;
+background: url(../themes/default/arrowbullet.gif) no-repeat 3% 50%; /*custom bullet list image*/
+display: block;
+padding: 3px 0;
+padding-left: 12px; /*link text is indented 19px*/
+text-decoration: none;
+border-bottom: 1px solid #fff;
+font-size: 1em;
+}
+.arrowlistmenu ul li a:visited{color: #002037;
+}
+.arrowlistmenu ul li a:hover{ /*hover state CSS*/
+/*background-color: #333333;*/
+color: #011929;
+background: url(../themes/default/arrowbulletH.gif) no-repeat 3% 50%;}
+.arrowlistmenu ul li a.subexpandable:hover{ /*hover state CSS for sub menu header*/
+background: lightblue;}
+.myclass{text-align: center; background-color:#72B2D2; padding: 2px; border-bottom: 1px solid white; color:#000;} /* Used for thired lebel of menu*/
+/* ---------------Accordian Menues ends here----------------------- */
+/*<-------Start Dashboard Tab----*/
+#tab_panel {padding:0; border-bottom:1px #fff solid;}
+#tab_panel ul { padding:0px; margin:0px;}
+#tab_panel li { padding:0; margin:0 1px -1px 0; list-style:none; float:left;}
+#tab_panel a {
+	display: block;
+	background: #F7F7F7;
+	-moz-border-radius: 5px 5px 0 0; /* Firefox */
+	-webkit-border-radius: 5px 5px 0 0; /* Safari, Chrome */
+	-khtml-border-radius: 5px 5px 0 0; /* KHTML */
+	border-radius: 5px 5px 0 0; /* CSS3 */
+	border:1px #757575 solid; border-bottom:0px; padding: 4px 10px;	text-decoration: none;
+	font:bold 12px Arial, Helvetica, sans-serif; color:#1F1702; text-transform:none; margin-top:3px;
+}
+#tab_panel a:hover, #tab_panel a.current {
+	color:#00003C; background:#E4E4E4; margin-top:0px; padding-top:7px;	border:1px #757575 solid; border-bottom:0px;}
+/*<-------End Dashboard Tab----*/
+/*<-------Font Resizer Start---*/
+.resize{color:#3A3A3A;}
+
+.smallview .resize{ /*CSS for "small font" setting*/
+font-family:Arial, Helvetica, sans-serif;
+font-size: 11px;
+}
+
+.normalview .resize{ /*CSS to return page to default setting (with no additional CSS rules added)*/
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px
+}
+
+.largeview .resize{ /*CSS for "large font" setting*/
+font-family:Arial, Helvetica, sans-serif;
+font-size: 14px;
+}
+
+a.texttoggler{ /*CSS for Text Size Toggler control*/
+margin-right: 10px;
+}
+
+a.texttoggler img{ /*CSS for Text Size Toggler control*/
+border: 1px solid gray;
+}
+
+a.texttoggler img:hover{ /*CSS for Text Size Toggler control*/
+border: 1px solid red;
+}
+
+a.selectedtoggler img{ /*CSS for Selected Text Size Toggler control*/
+border: 1px solid red;
+}
+/*<-------Font Resizer End---*/
+
+/*<-------New CSS For Homepage------->*/
+#new_header{background:url(../themes/default/home_style.png) top right no-repeat #FFFFFF; height:90px; border:solid 1px #075B96; position:relative}
+#new_homelogin{ float:right; margin-right:25px; padding:30px 0px 10px 0px; font: bold 1em Arial, Helvetica, sans-serif; color:#fff}
+.new_btn{background:url(../themes/default/newbtn_bg.jpg) repeat-x #E0E6EA; border:solid 1px #C7D6DD; font:bold 1em Arial, Helvetica, sans-serif; color:#07588F;} /*Used in loginpage*/
+.new_wtlink a{font: normal 1em Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none}
+.new_wtlink a:hover{font: normal 1em Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:underline}
+.new_pnlstyl{background:url(../themes/default/pnlbg.jpg) bottom left repeat-x #FBFDFE; border:solid 1px #88C8E7; font:normal 1em Arial, Helvetica, sans-serif; color:#0B1720; margin-bottom:15px}
+.new_pnlbghd{background:url(../themes/default/new_pnlbghd.jpg)top left repeat-x; padding:5px}
+.new_pnlctzn{background:url(../themes/default/citizen.png) no-repeat; font:bold 1em Arial, Helvetica, sans-serif; color:#0C5383; padding:5px 0px 5px 25px; margin-bottom:10px}
+.new_listmenu{ margin-bottom:5px;}
+.new_listmenu ul{list-style-type: none; margin: 0; padding: 0; }
+.new_listmenu ul li a{color:#000C14; background: url(../themes/default/arrowbullet.gif) no-repeat 3% 50%; display: block; padding: 3px 0; padding-left: 14px; text-decoration: none; font-size: 1em;}
+.new_listmenu ul li a:visited{color: #000C14;}
+.new_listmenu ul li a:hover{color: #000C14; background: url(../themes/default/arrowbulletH.gif) no-repeat 3% 50%; text-decoration:underline}
+.new_more{font: normal 1em Arial, Helvetica, sans-serif; color:#005692; text-align:right; padding:5px}
+.new_more a{color:#005692; text-decoration:none}
+.new_pnlsprtdoc{background:url(../themes/default/support_doc.png) no-repeat; font:bold 1em Arial, Helvetica, sans-serif; color:#0C5383; padding:5px 0px 5px 25px; margin-bottom:10px}
+.new_supdoc ul{list-style-type: none; margin: 0; padding: 0; margin-bottom:10px}
+.new_supdoc ul li {color:#4E5459; background: url(../themes/default/new_pnlbullet.gif) no-repeat 3% 50%; display: block; padding: 3px 0; padding-left: 20px; text-decoration: none; font-size: 1em;}
+.new_pnlabout{background:url(../themes/default/about.png) no-repeat; font:bold 1em Arial, Helvetica, sans-serif; color:#0C5383; padding:5px 0px 5px 35px; margin-bottom:10px}
+.new_tblcntent{padding:0px 10px}
+.new_pnlparatxt{font:normal 1em Arial, Helvetica, sans-serif; color:#00101C; padding:5px; margin-bottom:10px; text-align:justify}
+.new_pnlfaq{background:url(../themes/default/faq.png) no-repeat; font:bold 1em Arial, Helvetica, sans-serif; color:#0C5383; padding:5px 0px 5px 35px; margin-bottom:10px}
+.new_listfaq{ margin-bottom:10px;}
+.new_listfaq ul{list-style-type: none; margin: 0; padding: 0;}
+.new_listfaq ul li a{color:#000C14; background: url(../themes/default/new_fqarrowbullet.gif) no-repeat 1% top; display: block; padding: 0px 0px 3px 0; padding-left: 20px; text-decoration: none; font-size: 1em;}
+.new_listfaq ul li a:visited{color: #000C14;}
+.new_listfaq ul li a:hover{color: #000C14; background: url(../themes/default/fqarrowbulletH.gif) no-repeat 1% top; text-decoration:underline}
+.new_pnlannonce{background:url(../themes/default/announce.png) no-repeat; font:bold 1em Arial, Helvetica, sans-serif; color:#0C5383; padding:5px 0px 5px 25px;}
+.new_pnlcommbg{background:url(../themes/default/compnlbg.jpg)top left repeat-x; border-top:solid 1px #6BB3D6; border-bottom:solid 1px #88C8E7; margin-bottom:5px;}
+.new_pnlcmnhd{background:url(../themes/default/comarrow.png) no-repeat; font:bold 1em Arial, Helvetica, sans-serif; color:#0C5383; padding:5px 0px 3px 25px;}
+
+/*<-------New CSS For PES Applicationpage------->*/
+#apps{width:98%; margin:0px auto; padding:10px 0px; height:auto; text-align:center;}
+.active_box{width:155px;height:155px; background:#7CD7F6; font:bold 2em "Times New Roman", Times, serif; color:#000911;
+			-moz-border-radius: 5px; /* Firefox */
+			-webkit-border-radius: 5px; /* Safari, Chrome */
+			-khtml-border-radius: 5px; /* KHTML */
+			border-radius: 5px; /* CSS3 */
+}
+.inactive_box{width:155px;height:155px; background:#878787; font:bold 2em "Times New Roman", Times, serif; color:#FFFFFF;
+			-moz-border-radius: 5px; /* Firefox */
+			-webkit-border-radius: 5px; /* Safari, Chrome */
+			-khtml-border-radius: 5px; /* KHTML */
+			border-radius: 5px; /* CSS3 */
+}
+.curent_box{width:155px;height:155px; background:#1D86D0; font:bold 2em "Times New Roman", Times, serif; color:#FFBB02;
+			-moz-border-radius: 5px; /* Firefox */
+			-webkit-border-radius: 5px; /* Safari, Chrome */
+			-khtml-border-radius: 5px; /* KHTML */
+			border-radius: 5px; /* CSS3 */
+}
+
+
+
+
+
+
+
+
+
+
+/*
+ *  File:         demo_table_jui.css
+ *  CVS:          $Id$
+ *  Description:  CSS descriptions for DataTables demo pages
+ *  Author:       Allan Jardine
+ *  Created:      Tue May 12 06:47:22 BST 2009
+ *  Modified:     $Date$ by $Author$
+ *  Language:     CSS
+ *  Project:      DataTables
+ *
+ *  Copyright 2009 Allan Jardine. All Rights Reserved.
+ *
+ * ***************************************************************************
+ * DESCRIPTION
+ *
+ * The styles given here are suitable for the demos that are used with the standard DataTables
+ * distribution (see www.datatables.net). You will most likely wish to modify these styles to
+ * meet the layout requirements of your site.
+ *
+ * Common issues:
+ *   'full_numbers' pagination - I use an extra selector on the body tag to ensure that there is
+ *     no conflict between the two pagination types. If you want to use full_numbers pagination
+ *     ensure that you either have "example_alt_pagination" as a body class name, or better yet,
+ *     modify that selector.
+ *   Note that the path used for Images is relative. All images are by default located in
+ *     ../images/ - relative to this CSS file.
+ */
+
+
+/*
+ * jQuery UI specific styling
+ */
+
+.paging_two_button .ui-button {
+	float: left;
+	cursor: pointer;
+	* cursor: hand;
+}
+
+.paging_full_numbers .ui-button {
+	padding: 2px 6px;
+	margin: 0;
+	cursor: pointer;
+	* cursor: hand;
+}
+
+.ui-buttonset .ui-button {
+	margin-right: -0.1em !important;
+}
+
+.paging_full_numbers {
+	width: 350px !important;
+}
+
+.ui-toolbar {
+	padding: 5px;
+}
+
+.dataTables_paginate {
+	width: auto;
+}
+
+.dataTables_info {
+	padding-top: 3px;
+}
+
+table.display thead th {
+	padding: 3px 0px 3px 10px;
+	cursor: pointer;
+	* cursor: hand;
+}
+
+
+/*
+ * Sort arrow icon positioning
+ */
+table.display thead th div.DataTables_sort_wrapper {
+	position: relative;
+	padding-right: 20px;
+	padding-right: 20px;
+}
+
+table.display thead th div.DataTables_sort_wrapper span {
+	position: absolute;
+	top: 50%;
+	margin-top: -8px;
+	right: 0;
+}
+
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ * Everything below this line is the same as demo_table.css. This file is
+ * required for 'cleanliness' of the markup
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables features
+ */
+
+.dataTables_wrapper {
+	position: relative;
+	min-height: 302px;
+	_height: 302px;
+	clear: both;
+}
+
+.dataTables_processing {
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	width: 250px;
+	margin-left: -125px;
+	border: 1px solid #ddd;
+	text-align: center;
+	color: #999;
+	font-size: 11px;
+	padding: 2px 0;
+}
+
+.dataTables_length {
+	width: 40%;
+	float: left;
+}
+
+.dataTables_filter {
+	width: 50%;
+	float: right;
+	text-align: right;
+}
+
+.dataTables_info {
+	width: 50%;
+	float: left;
+}
+
+.dataTables_paginate {
+	float: right;
+	text-align: right;
+}
+
+/* Pagination nested */
+.paginate_disabled_previous, .paginate_enabled_previous, .paginate_disabled_next, .paginate_enabled_next {
+	height: 19px;
+	width: 19px;
+	margin-left: 3px;
+	float: left;
+}
+
+.paginate_disabled_previous {
+	background-image: url('../images/back_disabled.jpg');
+}
+
+.paginate_enabled_previous {
+	background-image: url('../images/back_enabled.jpg');
+}
+
+.paginate_disabled_next {
+	background-image: url('../images/forward_disabled.jpg');
+}
+
+.paginate_enabled_next {
+	background-image: url('../images/forward_enabled.jpg');
+}
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables display
+ */
+table.display {
+	margin: 0 auto;
+	width: 100%;
+	clear: both;
+	border-collapse: collapse;
+}
+
+table.display tfoot th {
+	padding: 3px 0px 3px 10px;
+	font-weight: bold;
+	font-weight: normal;
+}
+
+table.display tr.heading2 td {
+	border-bottom: 1px solid #aaa;
+}
+
+table.display td {
+	padding: 3px 10px;
+}
+
+table.display td.center {
+	text-align: center;
+}
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables sorting
+ */
+
+.sorting_asc {
+	background: url('../images/sort_asc.jpg') no-repeat center right;
+}
+
+.sorting_desc {
+	background: url('../images/sort_desc.jpg') no-repeat center right;
+}
+
+.sorting {
+	background: url('../images/sort_both.jpg') no-repeat center right;
+}
+
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables row classes
+ */
+table.display tr.odd.gradeA {
+	background-color: #ddffdd;
+}
+
+table.display tr.even.gradeA {
+	background-color: #eeffee;
+}
+
+
+
+
+table.display tr.odd.gradeA {
+	background-color: #ddffdd;
+}
+
+table.display tr.even.gradeA {
+	background-color: #eeffee;
+}
+
+table.display tr.odd.gradeC {
+	background-color: #ddddff;
+}
+
+table.display tr.even.gradeC {
+	background-color: #eeeeff;
+}
+
+table.display tr.odd.gradeX {
+	background-color: #ffdddd;
+}
+
+table.display tr.even.gradeX {
+	background-color: #ffeeee;
+}
+
+table.display tr.odd.gradeU {
+	background-color: #ddd;
+}
+
+table.display tr.even.gradeU {
+	background-color: #eee;
+}
+
+
+tr.odd {
+	background-color: #E2E4FF;
+}
+
+tr.even {
+	background-color: white;
+}
+
+
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Misc
+ */
+.dataTables_scroll {
+	clear: both;
+}
+
+.top, .bottom {
+	padding: 15px;
+	background-color: #F5F5F5;
+	border: 1px solid #CCCCCC;
+}
+
+.top .dataTables_info {
+	float: none;
+}
+
+.clear {
+	clear: both;
+}
+
+.dataTables_empty {
+	text-align: center;
+}
+
+tfoot input {
+	margin: 0.5em 0;
+	width: 100%;
+	color: #444;
+}
+
+tfoot input.search_init {
+	color: #999;
+}
+
+td.group {
+	background-color: #d1cfd0;
+	border-bottom: 2px solid #A19B9E;
+	border-top: 2px solid #A19B9E;
+}
+
+td.details {
+	background-color: #d1cfd0;
+	border: 2px solid #A19B9E;
+}
+
+
+.example_alt_pagination div.dataTables_info {
+	width: 40%;
+}
+
+.paging_full_numbers span.paginate_button,
+ 	.paging_full_numbers span.paginate_active {
+	border: 1px solid #aaa;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	padding: 2px 5px;
+	margin: 0 3px;
+	cursor: pointer;
+	*cursor: hand;
+}
+
+.paging_full_numbers span.paginate_button {
+	background-color: #ddd;
+}
+
+.paging_full_numbers span.paginate_button:hover {
+	background-color: #ccc;
+}
+
+.paging_full_numbers span.paginate_active {
+	background-color: #99B3FF;
+}
+
+table.display tr.even.row_selected td {
+	background-color: #B0BED9;
+}
+
+table.display tr.odd.row_selected td {
+	background-color: #9FAFD1;
+}
+
+
+/*
+ * Sorting classes for columns
+ */
+/* For the standard odd/even */
+tr.odd td.sorting_1 {
+	background-color: #D3D6FF;
+}
+
+tr.odd td.sorting_2 {
+	background-color: #DADCFF;
+}
+
+tr.odd td.sorting_3 {
+	background-color: #E0E2FF;
+}
+
+tr.even td.sorting_1 {
+	background-color: #EAEBFF;
+}
+
+tr.even td.sorting_2 {
+	background-color: #F2F3FF;
+}
+
+tr.even td.sorting_3 {
+	background-color: #F9F9FF;
+}
+
+
+/* For the Conditional-CSS grading rows */
+/*
+ 	Colour calculations (based off the main row colours)
+  Level 1:
+		dd > c4
+		ee > d5
+	Level 2:
+	  dd > d1
+	  ee > e2
+ */
+tr.odd.gradeA td.sorting_1 {
+	background-color: #c4ffc4;
+}
+
+tr.odd.gradeA td.sorting_2 {
+	background-color: #d1ffd1;
+}
+
+tr.odd.gradeA td.sorting_3 {
+	background-color: #d1ffd1;
+}
+
+tr.even.gradeA td.sorting_1 {
+	background-color: #d5ffd5;
+}
+
+tr.even.gradeA td.sorting_2 {
+	background-color: #e2ffe2;
+}
+
+tr.even.gradeA td.sorting_3 {
+	background-color: #e2ffe2;
+}
+
+tr.odd.gradeC td.sorting_1 {
+	background-color: #c4c4ff;
+}
+
+tr.odd.gradeC td.sorting_2 {
+	background-color: #d1d1ff;
+}
+
+tr.odd.gradeC td.sorting_3 {
+	background-color: #d1d1ff;
+}
+
+tr.even.gradeC td.sorting_1 {
+	background-color: #d5d5ff;
+}
+
+tr.even.gradeC td.sorting_2 {
+	background-color: #e2e2ff;
+}
+
+tr.even.gradeC td.sorting_3 {
+	background-color: #e2e2ff;
+}
+
+tr.odd.gradeX td.sorting_1 {
+	background-color: #ffc4c4;
+}
+
+tr.odd.gradeX td.sorting_2 {
+	background-color: #ffd1d1;
+}
+
+tr.odd.gradeX td.sorting_3 {
+	background-color: #ffd1d1;
+}
+
+tr.even.gradeX td.sorting_1 {
+	background-color: #ffd5d5;
+}
+
+tr.even.gradeX td.sorting_2 {
+	background-color: #ffe2e2;
+}
+
+tr.even.gradeX td.sorting_3 {
+	background-color: #ffe2e2;
+}
+
+tr.odd.gradeU td.sorting_1 {
+	background-color: #c4c4c4;
+}
+
+tr.odd.gradeU td.sorting_2 {
+	background-color: #d1d1d1;
+}
+
+tr.odd.gradeU td.sorting_3 {
+	background-color: #d1d1d1;
+}
+
+tr.even.gradeU td.sorting_1 {
+	background-color: #d5d5d5;
+}
+
+tr.even.gradeU td.sorting_2 {
+	background-color: #e2e2e2;
+}
+
+tr.even.gradeU td.sorting_3 {
+	background-color: #e2e2e2;
+}
+
+
+/*
+ * Row highlighting example
+ */
+.ex_highlight #example tbody tr.even:hover, #example tbody tr.even td.highlighted {
+	background-color: #ECFFB3;
+}
+
+.ex_highlight #example tbody tr.odd:hover, #example tbody tr.odd td.highlighted {
+	background-color: #E6FF99;
+}
+
+.inner_left_col {
+    background: none repeat scroll 0 0 #027db6;
+    border-right: 1px solid #075b96;
+    float: left;
+    padding: 10px 0 10px 5px;
+    width: 245px;
+}
+
+
+.inner_right_col {
+    margin-left: 250px;
+    padding: 10px;
+    overflow:auto;
+}
+
+
+/* new css - shiv*/
+
+.leftPanel {
+	float: left;
+    width:25%;
+    position: absolute;
+    top:10px;
+    left: 0;
+}
+
+.middlePanel {
+	width: 48%;
+    margin: 1%;
+    margin: 0 auto;
+}
+
+.rightPanel {
+	width: 25%;
+    float: right;
+    position: absolute;
+    top:10px;
+    right: 0;
+}
+
+#contentin {
+	position: relative;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.new_pnlparatxt p {
+	line-height:18px;
+}
+
+.new_pnlparatxt ul {
+	margin: 13px;
+}
+
+.new_pnlparatxt ul li {
+	line-height: 20px;
+}
+
+.new_listmenu ul li {
+	line-height:20px;
+}
+
+.new_supdoc ul li {
+	line-height:20px;
+}
+
+.new_listmenu ul li {margin:0; padding:0; color:#000C14; font: 1em Arial, Helvetica, sans-serif; line-height:20px;}
+.new_listmenu ul li li{margin-left:-5px; padding:0;}
+
+.new_listmenu ul li.root {background:url(../themes/default/comarrow.png) no-repeat; font:bold 1em Arial, Helvetica, sans-serif; color:#0C5383; padding:3px 0px 3px 25px; line-height:20px;}
+.new_listmenu ul li.root a.aroot{ background: none; display: block; padding: 1px; text-decoration: none; font:bold 1em Arial, Helvetica, sans-serif; color:#0C5383; line-height:20px; }
+.new_listmenu ul li.root a.aroot:visited{color:#0C5383;}
+.new_listmenu ul li.root a.aroot:hover{color:#0C5383; background: none; text-decoration:underline}
+/* Table Default Stylings by mandeep for config  systems*/
+.table{
+font-size:13px;
+line-height:16px;
+border:1px solid #dfdfdf;
+margin:0 0 20px;
+display:table;
+border-collapse: collapse;
+width: 100%!important;
+behavior: url(js/display-table.htc); 
+-dt-display:table;
+}
+.thead .th{
+font-weight:bold;
+background:#dfdfdf;
+}
+.table .td, .thead .th{
+padding:5px 8px;
+border:1px solid #dfdfdf;
+vertical-align:top;
+font-size:13px;
+display: table-cell;
+/**/
+-dt-display: table-cell; /*prefix has to be used*/
+}
+.trow{
+border-top:1px solid #1D2A5B;
+font-size:0;
+display: table-row;
+-dt-display:table-row;
+}
+.thead .trow:first-child{
+border-top:none;
+}
+
+/* Col_2 Table */
+.table.col_2 .col1, .table.col_2 .col2{
+width:48%; 
+}
+
+/* Col_3 Table */
+.table.col_3 .col1, .table.col_3 .col2, .table.col_3 .col3{
+width:30%; 
+}
+
+/* Col_4 Table */
+.table.col_4 .col1, .table.col_4 .col2, .table.col_4 .col3, .table.col_4 .col4{
+width:25%; 
+}
+/* Col_5 Table */
+.table.col_5 .col1, .table.col_5 .col2, .table.col_5 .col3, .table.col_5 .col4, .table.col_5 .col4{
+width:20%; 
+}
+.loginleftform{
+	margin-left: -150px;
+}

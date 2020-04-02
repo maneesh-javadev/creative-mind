@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+			<title>Insert title here</title>
+			<script src="dist/Chart.min.js"></script>
+			<script src="dist/angular-chart.min.js"></script>
+			<style type="text/css">
+.modal-content{
+width: 150%;
+margin-left: 10px;
+height: auto;
+}
+
+</style>
+		</head>
+		<body>
+			<div class="modal-header">
+			 	<button type="button" class="close" ng-click="cancel()">&times;</button>
+				<h3>Freeze Unfreeze of {{reportModel.stateName}} State </h3>
+			</div>
+			<div class="modal-body" >
+				<div  class="form-group ">
+					<div class="col-sm-6">
+						<div  class="form-group " ng-show="isRevenue">
+							<label class="col-sm-4 control-label">Status of Land Regions</label>
+							<div class="col-sm-6">
+								<canvas id="doughnut" class="chart chart-doughnut" 
+								 chart-colors="chartColors"  chart-data="rdata" chart-labels="labels"></canvas>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div  class="form-group "  ng-show="isULB">
+							<label class="col-sm-4 control-label">Status of Urban Local Bodies</label>
+							<div class="col-sm-6">
+								<canvas id="doughnut" class="chart chart-doughnut" 
+								chart-colors="chartColors"  chart-data="udata" chart-labels="labels"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br/>
+				<div class="form-group ">
+					<div class="col-sm-6">
+						<div  class="form-group "  ng-show="isPRI">
+							<label class="col-sm-4 control-label">Status of Panchayati Raj Institutions</label>
+							<div class="col-sm-6">
+								<canvas id="doughnut" class="chart chart-doughnut" 
+								chart-colors="chartColors"  chart-data="pdata" chart-labels="labels"></canvas>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div  class="form-group "  ng-show="isTRD">
+							<label class="col-sm-4 control-label">Status of Traditional Local Bodies</label>
+							<div class="col-sm-6">
+								<canvas id="doughnut" class="chart chart-doughnut" 
+								chart-colors="chartColors"  chart-data="tdata" chart-labels="labels"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			 <div class="box-footer" id="showbutton">
+                    <div class="col-sm-offset-2 col-sm-10">
+                       <div class="pull-right">
+							<button ng-click="cancel()" class="btn"  >close</button> 
+					   </div>
+					 </div>
+				  </div>
+				
+			
+		</body>
+	</html>
+
+
+
+
+

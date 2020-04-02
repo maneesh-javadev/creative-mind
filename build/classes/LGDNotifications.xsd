@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.ws.lgd.pes.nic.in" xmlns:lgd="http://www.ws.lgd.pes.nic.in">
+
+    <!-- 
+    @Author Sarvapriya Malhotra 
+    developed under the guidance of Dhanji Sahni
+-->
+
+
+    <xs:simpleType name="StateType">
+        <xs:annotation>
+            <xs:documentation>
+                List of State Types
+                A = ALL STATES AND UNION TERRITORIES
+                S = STATE
+                U = UNION TERRITORIES
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="A"/>
+            <xs:enumeration value="S"/>
+            <xs:enumeration value="U"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ParentTypeVillage">
+        <xs:annotation>
+            <xs:documentation>
+                List of Parent Types of Village
+                S = STATE
+                D = DISTRICT
+                T = SUBDISTRICT
+                B = BLOCK
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="S"/>
+            <xs:enumeration value="D"/>
+            <xs:enumeration value="T"/>
+            <xs:enumeration value="B"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ParentTypeSubdistrict">
+        <xs:annotation>
+            <xs:documentation>
+                List of Parent Types of Subdistrict/Block
+                S = STATE
+                D = DISTRICT
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="S"/>
+            <xs:enumeration value="D"/>
+            <xs:enumeration value="T"/>
+            <xs:enumeration value="B"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Category">
+        <xs:annotation>
+            <xs:documentation>
+                List of Categories for which there can be Local Bodies
+                U = URBAN
+                R = RURAL
+                T = TRADITIONAL
+                A = ALL
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="U"/>
+            <xs:enumeration value="R"/>
+            <xs:enumeration value="T"/>
+            <xs:enumeration value="A"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="LanguageType">
+        <xs:annotation>
+            <xs:documentation>
+                List of Language(s) in which data is to be fetched
+                E = ENGLISH
+                L = LOCAL
+                A = ALL
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="E"/>
+            <xs:enumeration value="L"/>
+            <xs:enumeration value="A"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="LandRegionTypes">
+        <xs:annotation>
+            <xs:documentation>
+                List of Land Regions
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="STATE"/>
+            <xs:enumeration value="UT"/>
+            <xs:enumeration value="DISTRICT"/>
+            <xs:enumeration value="SUBDISTRICT"/>
+            <xs:enumeration value="BLOCK"/>
+            <xs:enumeration value="VILLAGE"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="NotificationTypes">
+        <xs:annotation>
+            <xs:documentation>
+                List of Notification Types to be sent to other Applications
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SPLIT"/>
+            <xs:enumeration value="SHIFT"/>
+            <xs:enumeration value="MERGE"/>
+            <xs:enumeration value="CONTRIBUTE"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="LandRegion">
+        <xs:annotation>
+            <xs:documentation>
+                Each Land Region is composed of A LandRegionType (List of Land Regions)
+                as well as Unique ID for that particular type of Land
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="LandRegionType" type="lgd:LandRegionTypes"/>
+            <xs:element name="LandRegionDetails" type="lgd:LandRegionDetails" minOccurs="0"
+                maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Parent">
+        <xs:annotation>
+            <xs:documentation>
+                Details of "THIS" Land Region's Parent
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="ParentCode" type="xs:int"/>
+            <xs:element name="ParentVersion" type="xs:int" minOccurs="0"/>
+            <xs:element name="ParentNameEnglish" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="Parents">
+        <xs:annotation>
+            <xs:documentation>
+                Details of "THIS" Land Region's Parents
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Parent" type="lgd:Parent" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LandDetails">
+        <xs:annotation>
+            <xs:documentation>
+                Details of "THIS" Land Region
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Code" type="xs:int" minOccurs="0"/>
+            <xs:element name="Version" type="xs:int" minOccurs="0"/>
+            <xs:element name="NameEnglish" type="xs:string" minOccurs="0"/>
+            <xs:element name="NameLocal" type="xs:string" minOccurs="0"/>
+            <xs:element name="ShortName" type="xs:string" minOccurs="0"/>
+            <xs:element name="AliasEnglish" type="xs:string" minOccurs="0"/>
+            <xs:element name="AliasLocal" type="xs:string" minOccurs="0"/>
+            <xs:element name="Parents" type="lgd:Parents" minOccurs="0"/>
+            <xs:element name="SSCode" type="xs:string" minOccurs="0"/>
+            <xs:element name="Census2001Code" type="xs:string" minOccurs="0"/>
+            <xs:element name="Census2011Code" type="xs:int" minOccurs="0"/>
+            <xs:element name="GovernmentOrderDetails" type="lgd:GovernmentOrderDetails"
+                minOccurs="0"/>
+            <xs:element name="GISInformation" type="lgd:GISInformation" minOccurs="0"/>
+            <xs:element name="SurveyNumbers" type="lgd:SurveyNumbers" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="NomenclatureOfLBTypes">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide List of Nomenclature of Local Body Types for a particular State and Category Wise
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="StateCode" type="xs:int"/>
+            <xs:element name="Category" type="lgd:Category"/>
+            <xs:element name="Nomenclatures" type="lgd:Nomenclatures"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Nomenclatures">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide List of Nomenclature of Local Body Types for a particular State
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Nomenclature" type="lgd:Nomenclature" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Nomenclature">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide details of Nomenclature of a particular Local Body Type for a particular State
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="NomenclatureEnglish" type="xs:string" minOccurs="0"/>
+            <xs:element name="NomenclatureLocal" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LandRegionDetails">
+        <xs:annotation>
+            <xs:documentation>
+                Details of "THIS" particular Land Region
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Code" type="xs:int"/>
+            <xs:element name="NameEnglish" type="xs:string"/>
+            <xs:element name="NameLocal" type="xs:string" minOccurs="0"/>
+            <xs:element name="ShortName" type="xs:string" minOccurs="0"/>
+            <xs:element name="AliasEnglish" type="xs:string" minOccurs="0"/>
+            <xs:element name="AliasLocal" type="xs:string" minOccurs="0"/>
+            <xs:element name="Version" type="xs:int"/>
+            <xs:element name="Census2001Code" type="xs:string" minOccurs="0"/>
+            <xs:element name="Census2011Code" type="xs:string" minOccurs="0"/>
+            <xs:element name="GISInformation" type="lgd:GISInformation" minOccurs="0"/>
+            <xs:element name="GovernmentOrder" type="lgd:GovernmentOrderDetails" minOccurs="0"/>
+            <xs:element name="KeepsExistingName" type="xs:boolean" default="true" minOccurs="0"/>
+            <xs:element name="NewNameEnglish" type="xs:string" minOccurs="0"/>
+            <xs:element name="NewNameLocal" type="xs:string" minOccurs="0"/>
+            <xs:element name="IsInvalidated" type="xs:boolean" default="false" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GovernmentOrderDetails">
+        <xs:annotation>
+            <xs:documentation>
+                Details of Government Order for "THIS" particular Land Region
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="OrderNo" type="xs:string"/>
+            <xs:element name="OrderDate" type="xs:dateTime"/>
+            <xs:element name="EffectiveDate" type="xs:dateTime"/>
+            <xs:element name="GazettePublicationDate" type="xs:dateTime"/>
+            <xs:element name="OrderURL" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GISInformation">
+        <xs:annotation>
+            <xs:documentation>
+                GIS Information for "THIS" Land Region
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:choice>
+                <xs:element name="MapURL" type="xs:string"/>
+                <xs:element name="GISNodes" type="lgd:GISNodes"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GISNode">
+        <xs:annotation>
+            <xs:documentation>
+                Node (Latitude/Longitude) for "THIS" Land Region
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Latitude" type="xs:float"/>
+            <xs:element name="Longitude" type="xs:float"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GISNodes">
+        <xs:annotation>
+            <xs:documentation>
+                List of Nodes (Latitude/Longitude) for "THIS" Land Region
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="GISNode" type="lgd:GISNode" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LandRegions">
+        <xs:annotation>
+            <xs:documentation>
+                List of Parent Land Regions for "THIS" Land Region
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="LandRegion" type="lgd:LandRegion" maxOccurs="unbounded"
+            />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LGDNotification">
+        <xs:annotation>
+            <xs:documentation>
+                LGDNotification is the Root Element for all Notifications within LGD for interaction
+                with other modules within the sub-system
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="NotificationType" type="lgd:NotificationTypes" minOccurs="0"/>
+            <xs:element name="LandRegions" type="lgd:LandRegions" minOccurs="0"/>
+                <xs:sequence>
+                    <xs:annotation>
+                        <xs:documentation>
+                                NewLandRegions provide new structure of the Land Regions, 
+                                OldLandRegions are provided as reference and to be set as Inactive as a new version has been created in NewLandRegions
+                                ModifiedLandRegions provides information of left LandRegions in OldLandRegions i.e parts of Bihar left after Jharkhand was made
+                            </xs:documentation>
+                    </xs:annotation>
+                    <xs:element name="NewLandRegions" type="lgd:EntireLandRegion" minOccurs="0"/>
+                    <xs:element name="ModifiedLandRegions" type="lgd:EntireLandRegion" minOccurs="0"/>
+                    <xs:element name="OldLandRegions" type="lgd:EntireLandRegion" minOccurs="0"/>
+                </xs:sequence>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="LGDNotification" type="lgd:LGDNotification"/>
+
+    <xs:complexType name="EntireLandRegion">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide Entire Heirarchy of a particular Land Region e.g
+                STATES
+                DISTRICTS
+                SUBDISTRICTS
+                BLOCKS
+                VILLAGES
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:choice>
+                <xs:element name="States" type="lgd:States"/>
+                <xs:element name="Districts" type="lgd:Districts"/>
+                <xs:element name="Subdistricts" type="lgd:Subdistricts"/>
+                <xs:element name="Blocks" type="lgd:Blocks"/>
+                <xs:element name="Villages" type="lgd:Villages"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="EntireLandRegion" type="lgd:EntireLandRegion"/>
+
+    <xs:complexType name="State">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide Entire Heirarchy of a particular STATE
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="StateDetails" type="lgd:LandDetails"/>
+            <xs:element name="Districts" type="lgd:Districts" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="States">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide Entire Heirarchy of all States
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="State" type="lgd:State" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="District">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide Entire Heirarchy of a particular District
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="DistrictDetails" type="lgd:LandDetails"/>
+            <xs:element name="Subdistricts" type="lgd:Subdistricts" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xs:element name="Blocks" type="lgd:Blocks" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Districts">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide Entire Heirarchy of DISTRICTS in a STATE
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="District" type="lgd:District" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Subdistrict">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide Entire Heirarchy of a particular SUBDISTRICT
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="SubdistrictDetails" type="lgd:LandDetails"/>
+            <xs:element name="Villages" type="lgd:Villages" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Subdistricts">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide Entire Heirarchy of SUBDISTRICTS in a DISTRICT
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Subdistrict" type="lgd:Subdistrict" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Block">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide Entire Heirarchy of a particular BLOCK
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="BlockDetails" type="lgd:LandDetails"/>
+            <xs:element name="Villages" type="lgd:Villages" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Blocks">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide Entire Heirarchy of BLOCKS in a DISTRICT
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Block" type="lgd:Block" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Villages">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide Entire Heirarchy of a VILLAGES in a SUBDISTRICT/BLOCK
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Village" type="lgd:LandDetails" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="VillageForm">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide Entire Heirarchy of a VILLAGES in a SUBDISTRICT/BLOCK for Village UI Forms
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="LandDetails" type="lgd:LandDetails" />
+            <xs:element name="ContributingVillages" type="lgd:Villages" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="SurveyNumbers">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide SurveyNumbers in "THIS" Village
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="SurveyNumber" type="xs:string" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LgdFault">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide Fault Details whenever they occur
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="FaultCode" type="xs:string"/>
+            <xs:element name="FaultString" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LocalBodyNames">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide 1 or more local body names
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="LocalBodyName" type="lgd:LocalBodyName" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LocalBodyName">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide local body name in both English AND/OR Local language
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="LocalBodyName" type="lgd:EntityName"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="EntityName">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide Entity Name in both English AND/OR Local language
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="NameEnglish" type="xs:string" minOccurs="0"/>
+            <xs:element name="NameLocal" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LocalBodyCoveredArea">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide List of Land Regions covered by "THIS" Local Body
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="CoveredArea" type="lgd:CoveredArea" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CoveredArea">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide details of a Covered Area
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="LandRegionTypes" type="lgd:LandRegionTypes"/>
+            <xs:element name="LandRegionCode" type="xs:int"/>
+            <xs:element name="LandRegionName" type="lgd:EntityName"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LocalGovList">
+        <xs:annotation>
+            <xs:documentation>
+                This Type will provide List of Local Government Bodies
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="LocalGovByVersion" type="lgd:LocalGovByVersion" maxOccurs="unbounded"
+            />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LocalGovByVersion">
+        <xs:sequence>
+            <xs:element name="LocalGovId" type="xs:int"/>
+            <xs:element name="LocalGovName" type="lgd:EntityName"/>
+            <xs:element name="LocalGovTypeId" type="xs:int"/>
+            <xs:element name="Version" type="xs:int"/>
+            <xs:element name="LocalGovTypeId" type="xs:int"/>
+            <xs:element name="ParentId" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ParliamentryConstituencies">
+        <xs:sequence>
+            <xs:element name="ParliamentryConstituency" type="lgd:ParliamentryConstituency"
+                minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ParliamentryConstituency">
+        <xs:sequence>
+            <xs:element name="PCCode" type="xs:int" minOccurs="0"/>
+            <xs:element name="PCVersion" type="xs:int" minOccurs="0"/>
+            <xs:element name="NameEnglish" type="xs:string" minOccurs="0"/>
+            <xs:element name="NameLocal" type="xs:string" minOccurs="0"/>
+            <xs:element name="StateCode" type="xs:int" minOccurs="0"/>
+            <xs:element name="StateVersion" type="xs:int" minOccurs="0"/>
+            <xs:element name="EciCode" type="xs:int" minOccurs="0"/>
+            <xs:element name="GovernmentOrderDetails" type="lgd:GovernmentOrderDetails"
+                minOccurs="0"/>
+            <xs:element name="AssemblyConstituencies" type="lgd:AssemblyConstituencies"
+                minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AssemblyConstituencies">
+        <xs:sequence>
+            <xs:element name="AssemblyConstituency" type="lgd:AssemblyConstituency" minOccurs="0"
+                maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AssemblyConstituency">
+        <xs:sequence>
+            <xs:element name="ACCode" type="xs:int" minOccurs="0"/>
+            <xs:element name="ACVersion" type="xs:int" minOccurs="0"/>
+            <xs:element name="NameEnglish" type="xs:string" minOccurs="0"/>
+            <xs:element name="NameLocal" type="xs:string" minOccurs="0"/>
+            <xs:element name="PCCode" type="xs:int" minOccurs="0"/>
+            <xs:element name="PCVersion" type="xs:int" minOccurs="0"/>
+            <xs:element name="EciCode" type="xs:int" minOccurs="0"/>
+            <xs:element name="GovernmentOrderDetails" type="lgd:GovernmentOrderDetails"
+                minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Organizations">
+        <xs:sequence>
+            <xs:element name="Organization" type="lgd:Organization" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Organization">
+        <xs:sequence>
+            <xs:element name="OrganizationCode" type="xs:int" minOccurs="0"/>
+            <xs:element name="OrganizationVersion" type="xs:int" minOccurs="0"/>
+            <xs:element name="NameEnglish" type="xs:string" minOccurs="0"/>
+            <xs:element name="NameLocal" type="xs:string" minOccurs="0"/>
+            <xs:element name="OrganizationTypeCode" type="xs:int" minOccurs="0"/>
+            <xs:element name="LocalGovTypeCode" type="xs:int" minOccurs="0"/>
+            <xs:element name="OrganizationLocations" type="lgd:OrganizationLocations" minOccurs="0"/>
+            <xs:element name="GovernmentOrderDetails" type="lgd:GovernmentOrderDetails"
+                minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="OrganizationLocations">
+        <xs:sequence>
+            <xs:element name="OrganizationLocation" type="lgd:OrganizationLocation"
+                maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="OrganizationLocation">
+        <xs:sequence>
+            <xs:element name="LandRegionCode" type="xs:int" minOccurs="0"/>
+            <xs:element name="LandRegionVersion" type="xs:int" minOccurs="0"/>
+            <xs:element name="LandRegionType" type="lgd:LandRegionTypes"/>
+            <xs:element name="Address" type="xs:string" minOccurs="0"/>
+            <xs:element name="PhoneNo" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

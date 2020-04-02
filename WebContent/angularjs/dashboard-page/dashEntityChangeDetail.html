@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ 	<style type="text/css">
+
+	table{border-collapse:collapse}
+	table td{word-wrap:break-word;}
+	table th{word-wrap:break-word;}
+
+	.modal-dialog {
+    	   width: 55% !important;
+   	  margin: 5% 9% !important;
+	}
+
+        .modal-content {
+            width: 150%;
+            margin-left: 10px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal-header">
+    	<button type="button" class="close"  ng-click="cancel()">&times;</button>
+        <h3>{{titleName}}</h3>
+    </div>
+    <div class="modal-body">
+    
+    	<div id="preloader" ng-show="isloader" >
+  			<div id="loader"></div>
+	</div>
+        <div ng-show="showPaginationDiv" class="form-inline" ng-cloak>
+            <div class="col-sm-3 form-inline">
+                <div>
+                    <label>Show
+                        <select ng-model="selectedLength"  class="form-control input-sm" id="selectedPageSize">
+                            <option ng-repeat="size in pageSizeLength">{{size}}</option>
+                        </select> entries
+                    </label>
+                </div>
+            </div>
+            <!-- <div class="col-sm-4"></div> -->
+            <div class="col-sm-9" align="right">
+                <input style="width: 154px;" type="text" ng-model="searchElement" class="form-control" placeholder="Search"></input>
+            </div>
+        </div>
+
+        <div class="box-body table-responsive_dashboard_modal">
+        
+            <table  class="data_grid" id="invalidatedLocalBodyTable" ng-if="entityChangeList.length>0" ng-cloak width="100%">
+                <thead>
+					<tr >
+						 		   <th width="5%" >S.No.</th>
+						 		   <th width="5%" >State Code</th>
+								   <th  width="30%">State Name (In English)</th>
+								   <th width="10%" >{{hEntityCode}}</th>
+								   <th  width="30%">{{hEntityName}}</th>
+								  <th width="10%" >{{hEntityVersion}}</th>
+								  <th width="10%" >Minor Version</th>
+								 
+								  
+					</tr>
+				</thead>
+			
+				<tbody>
+					 <tr dir-paginate="obj in entityChangeList|filter:searchElement|itemsPerPage:selectedLength | orderBy : ['stateNameEnglish','entityName']" >
+					 
+						 <td>{{setSerialNumber+($index)}}</td>
+						 <td>{{obj.stateCode}}</td>
+						 <td>{{obj.stateNameEnglish}}</td>
+						 <td>{{obj.entityCode}}</td>
+						 <td>{{obj.entityName}}</td>
+						 <td>{{obj.entityVersion}}</td>
+						 <td>{{obj.minorVersion}}</td>
+						
+					
+						 </tr>
+				</tbody>
+
+            </table>
+           
+        </div>
+        <div style="color: red;" class="box-body" ng-if="entityChangeList.length<=0">
+            <label>No records found</label>
+        </div>
+
+        <div ng-if="entityChangeList.length>0" align="right" class="form-group">
+            <div class="col-sm-12">
+                <dir-pagination-controls max-size="10" direction-links="true" boundary-links="true" on-page-change="setPageNumber(newPageNumber, oldPageNumber)">
+                </dir-pagination-controls>
+            </div>
+        </div>
+
+    </div>
+    <!-- </div> -->
+    <div class="modal-footer">
+        <button ng-click="cancel()" class="btn">close</button>
+    </div>
+</body>
+
+</html>

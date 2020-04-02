@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+.app-modal-window .modal-dialog {
+  width: 900px;
+  height: 400px;
+}
+</style>
+</head>
+<body>
+<section class="content">
+    	<div class="row">
+        	<section class="col-lg-12">
+  <div class="modal-header">
+            <h3>Modify Entity</h3>
+        </div>
+        
+       
+          <div class="modal-body">
+          
+          
+          
+          				<div class="box-header with-border">
+                        	<h3 class="box-title">Change {{fieldLabel}}</h3>
+                        </div>
+                         <form class="form-horizontal" name="form">
+                         
+                         
+                         
+           					<div class="form-group">
+                        		<label for="entity" class="col-sm-4 control-label">{{fieldLabel}} Name (In English)<span class="mandatory" >*</span></label>
+								<div class="col-sm-6" >
+									<input class="form-control" ng-model="entity.adminEntityNameEnglish" name="adminEntityNameEnglish"    ng-maxlength="70" required  />
+									<!-- <span style="color: red" ng-show="form.adminEntityNameEnglish.$dirty && form.adminEntityNameEnglish.$error.required">{{fieldLabel}} Name (In English) is required!</span> -->
+							         <!-- <span style="color: red" ng-show="form.adminEntityNameEnglish.$error.minlength">Input is too short!</span> -->
+							         <span style="color: red" ng-show="form.adminEntityNameEnglish.$dirty">{{serverErrors['adminEntityNameEnglish']}}</span>
+							          <span style="color: red" ng-show="form.adminEntityNameEnglish.$error.maxlength">Input is too long!</span>
+							          <span style="color: red" ng-bind="updateName"></span>
+								</div>
+                            </div>
+          					 <div class="form-group">
+                        		<label for="entity" class="col-sm-4 control-label">{{fieldLabel}} Name (In Local language)</label>
+								<div class="col-sm-6" >
+									<input class="form-control" ng-model="entity.adminEntityNameLocal" name="adminEntityNameLocal" />
+								</div>
+                            </div>
+                            <div class="form-group">
+                        		<label for="entity" class="col-sm-4 control-label">Alias of the {{fieldLabel}} (In English)</label>
+								<div class="col-sm-6" >
+									<input type="text" class="form-control" ng-model="entity.entityaliasenglish" name="entityaliasenglish"  />
+								</div>
+                            </div>
+                            <div class="form-group">
+                        		<label for="entity" class="col-sm-4 control-label">Alias of the {{fieldLabel}} (In Local language)</label>
+								<div class="col-sm-6" >
+									<input type="text" class="form-control" ng-model="entity.aliaslocal" name="aliaslocal"  />
+								</div>
+                            </div>
+            
+            <div class="box-body">
+	             		<div class="box-header with-border">
+                        	<h3 class="box-title">Government Order Details </h3>
+                        </div>
+		             		<div class="form-group">
+                            <label for="entity" class="col-sm-4 control-label">Order No <span class="mandatory">*</span></label>
+                            <div class="col-sm-6" >
+                                <input  class="form-control" ng-model="GovOrder.orderNo" name ="orderNo" restrict-input="{type: 'digitsOnly'}" required  />
+                                <span style="color: red" ng-show="form.orderNo.$error.required">Order No is required!</span>
+                                 <span style="color: red" ng-show="form.orderNo.$dirty">{{serverErrors['orderNo']}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="entity" class="col-sm-4 control-label">Order Date* <span class="mandatory">*</span></label>
+                            <div class="col-sm-6" >
+                                <input type="date"  class="form-control min-date"   ng-click="disabledFuture()" ng-change='checkErr()'  ng-model="GovOrder.orderDate" name ="orderDate"  required/>
+                                <!-- <span style="color: red" ng-show="form.orderDate.$dirty && form.orderDate.$error.required">Order Date is required!</span> -->
+                                <span style="color: red" ng-show="form.orderDate.$error.required">Order Date Required!</span>
+                                 <span style="color: red" ng-show="form.orderDate.$dirty">{{serverErrors['orderDate']}}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="entity" class="col-sm-4 control-label">Effective Date <span class="mandatory">*</span></label>
+                            <div class="col-sm-6" >
+                                <input type="date" class="form-control min-date" ng-click="disabledFuture()" ng-change='checkErr()' ng-model="GovOrder.effectiveDate" name = "effectiveDate" required   />
+                                 <span style="color: red" ng-show="form.effectiveDate.$error.required">Effective Date Required!</span>
+                                  <span style="color: red" ng-show="form.effectiveDate.$dirty">{{serverErrors['effectiveDate']}}</span>
+                                  <span style="color: red" ng-bind="errMessage"></span>
+                            </div>
+                        </div>
+                        
+                        
+                       <div class="form-group">
+                            <label for="entity" class="col-sm-4 control-label">Gazette Publication Date </label>
+                            <div class="col-sm-6" >
+                                <input type="date" class="form-control" ng-model="GovOrder.gazPubDate" name="gazPubDate"  />
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <label for="entity" class="col-sm-4 control-label">Upload Govt. Order <span class="mandatory">*</span></label>
+                            <div class="col-sm-6" ng-if = "!draftFlag" >
+                             <input type="file"  id= 'uploadFile'   name="attachFile1" required />
+                             <span style="color: red" ng-bind="fileValid"></span>
+                            </div>
+                           
+                            <div ng-if = "draftFlag">
+                            <a  href="downloadUserFile.htm?fileName={{GovOrder.fileNameTimeStamp}}&<csrf:token uri='downloadUserFile.htm'/>">
+								{{GovOrder.fileName}}
+							</a>
+                            </div>
+                        </div>
+                         <span style="color: green" ng-bind="savedResult"></span>
+                         <span style="color: red" ng-bind="failedResult"></span>
+          </div>
+	          <div class="modal-footer">
+	          	<button type="submit" class="btn btn-success " ng-if = "!draftFlag" ng-disabled ="!form.$valid" name="Submit"  ng-click="renameEntity('D')"  value="<spring:message code="Button.SAVE" htmlEscape="true"></spring:message><i class="fa fa-floppy-o"></i> Draft</button>
+	          	<button type="submit" class="btn btn-success " ng-if = "!draftFlag" ng-disabled ="!form.$valid" name="Submit"  ng-click="renameEntity('A')"  value="<spring:message code="Button.SAVE" htmlEscape="true"></spring:message><i class="fa fa-floppy-o"></i> Publish</button>
+	          	<button type="submit" class="btn btn-success " ng-if = "draftFlag" ng-disabled ="!form.$valid" name="Submit"  ng-click="renameEntityP('P')"  value="<spring:message code="Button.SAVE" htmlEscape="true"></spring:message><i class="fa fa-floppy-o"></i> Publish</button>
+	          	<button type="button" class="btn btn-danger " name="Cancel"  id="btnCancel" ng-click="cancel()"><i class="fa fa-times-circle"></i> Close</button>
+	          </div>
+	          </form>
+	          </div>
+          </section>
+          </div>
+          </section>
+</body>
+</html>

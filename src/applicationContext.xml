@@ -1,0 +1,1071 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	   		http://www.springframework.org/schema/context
+	   		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	   		http://www.springframework.org/schema/tx 
+			http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+			http://www.springframework.org/schema/mvc 
+			http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+			http://www.springframework.org/schema/task
+			http://www.springframework.org/schema/task/spring-task-3.0.xsd
+			http://www.springframework.org/schema/util
+			http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<context:annotation-config />
+
+	
+   
+    <context:component-scan base-package="in.nic.pes.lgd.schedular"/>
+
+	<!-- define the properties file to use -->
+	<util:properties id="suProperties" location="classpath:/switchunit.properties"></util:properties>
+
+	<!-- context "/media" added for media content availability on web-server -->
+	<mvc:resources location="/usr/serverDocs/lgdFiles/**"
+		mapping="/usr/serverDocs/lgdFiles" />
+
+	<context:component-scan base-package="in.nic.pes.lgd.controllers" />
+	<context:component-scan base-package="in.nic.pes.common.controllers" />
+	<context:component-scan base-package="in.nic.pes.common.validator" />
+	<context:component-scan base-package="in.nic.pes.lgd.dao" />
+	<context:component-scan base-package="in.nic.pes.lgd.validator" />
+
+	<mvc:annotation-driven />
+	<context:property-placeholder location="classpath:hibernate.properties" />
+
+	<!-- Entry For Switch Unit version 3.1 (New Switch Unit) @AUTHOR vinay @since 
+		19/12/2014 -->
+	<!-- <bean id="switchunitService" class="in.nic.pes.common.services.UtilServiceImpl"></bean> -->
+	<bean id="pesUtility" class="in.nic.pes.common.utils.PESUtilityImpl"></bean>
+	<!-- <bean id="menuService" class="in.nic.pes.common.menu.utils.MenuService" 
+		/> -->
+	<!-- Entry For Switch Unit version 3.1 (New Switch Unit) ends -->
+
+	<bean id="filterMultipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- <property name="maxUploadSize"> <value>10000000</value> </property> -->
+	</bean>
+
+	<bean id="menuDAO" class="in.nic.pes.lgd.dao.impl.MenuDAOImpl" />
+
+	<!-- Government Order Template Service -->
+	<bean id="govtOrderTemplateService"
+		class="in.nic.pes.lgd.service.impl.GovtOrderTemplateServiceImpl" />
+	<bean id="govtOrderTemplateDAO" class="in.nic.pes.lgd.dao.impl.GovtOrderTemplateDAOImpl" />
+
+	<!-- Start of Report -->
+	<bean id="reportService" class="in.nic.pes.lgd.service.impl.ReportServiceImpl" />
+	<bean id="reportDAO" class="in.nic.pes.lgd.dao.impl.ReportDAOImpl" />
+
+	<bean id="villageReportService" class="in.nic.pes.lgd.service.impl.VillageReportServiceImpl" />
+	<bean id="villageReportDao" class="in.nic.pes.lgd.dao.impl.VillageReportDaoImpl" />
+
+	<bean id="StatePanchayatReportService"
+		class="in.nic.pes.lgd.service.impl.StatePanchayatReportServiceImpl" />
+	<bean id="StatePanchayatReportDao" class="in.nic.pes.lgd.dao.impl.StatePanchayatReportDaoImpl" />
+
+	<!-- End of Report -->
+
+	<!-- Start of Email -->
+	
+	<bean id="smsManager" class="in.nic.pes.lgd.common.SmsManager" /> 
+	<bean id="mailService" class="in.nic.pes.lgd.common.MailService" /> 
+	<bean id="emailService" class="in.nic.pes.lgd.service.impl.EmailServiceImpl" />
+	<bean id="EmailDAO" class="in.nic.pes.lgd.dao.impl.EmailDAOImpl" />
+	<bean id="emailDao" class="in.nic.pes.lgd.dao.impl.EmailDAOImpl" /> 
+	
+
+
+	<!-- End of Email -->
+	<!-- Start of Combo Population List -->
+	<bean id="comboFillingService" class="in.nic.pes.lgd.service.ComboFillingServiceImpl" />
+	<bean id="comboFillingDAO" class="in.nic.pes.lgd.dao.impl.ComboFillingDAOImpl" />
+
+
+	<!-- End of Combo Population List -->
+
+	<!-- Menu -->
+
+	<bean id="lgdMenuAdapterImpl" class="in.nic.pes.lgd.menu.LgdMenuAdapterImpl" />
+	<!-- Database utils -->
+
+	<bean id="dateTimeUtil" class="in.nic.pes.lgd.utils.CurrentDateTime" />
+
+	<!-- Village Service -->
+	<bean id="villageService" class="in.nic.pes.lgd.service.impl.VillageServiceImpl" />
+	<bean id="villageDAO" class="in.nic.pes.lgd.dao.impl.VillageDAOImpl" />
+	<bean id="fileUploadUtility" class="in.nic.pes.lgd.common.FileUploadUtility" />
+	<bean id="addAttachmentService" class="in.nic.pes.lgd.service.AddAttachmentService" />
+	<!--Chandan -->
+	<bean id="landRegionReplacedByDAO" class="in.nic.pes.lgd.dao.impl.LandRegionReplacedByDAOImpl" />
+	<bean id="landRegionReplacesDAO" class="in.nic.pes.lgd.dao.impl.LandRegionReplacesDAOImp" />
+	<bean id="villagePartsBySurveynoDAO" class="in.nic.pes.lgd.dao.impl.VillagePartsBySurveynoDAOImpl" />
+
+	<!-- Chandan -->
+	<!-- LocalGovtSetup Service -->
+	<bean id="localGovtSetupService" class="in.nic.pes.lgd.service.impl.LocalGovtSetupServiceImpl" />
+	<bean id="LgTypeDao" class="in.nic.pes.lgd.dao.impl.LocalGovTypeDAOImpl" />
+	<!-- ConfigMap Service -->
+	<bean id="configMapService" class="in.nic.pes.lgd.service.impl.ConfigMapServiceImpl" />
+	<bean id="configMapConstituencyDAO" class="in.nic.pes.lgd.dao.impl.ConfigMapConstituencyDAOImpl" />
+	<bean id="mapDAO" class="in.nic.pes.lgd.dao.impl.MapDaoImpl" />
+
+
+	<!-- New Sub District Service -->
+	<bean id="subdistrictService" class="in.nic.pes.lgd.service.impl.SubDistrictServiceImpl" />
+	<bean id="subdistrictDAO" class="in.nic.pes.lgd.dao.impl.SubDistrictDAOImpl" />
+	<!-- Configure Govt Order -->
+	<bean id="configGovtOrderService" class="in.nic.pes.lgd.service.impl.ConfigGovtOrderServiceImpl" />
+	<bean id="configGovtOrderDAO" class="in.nic.pes.lgd.dao.impl.ConfigGovtOrderDAOImpl" />
+
+	<!-- NomenclatureSubDist Service -->
+	<bean class="in.nic.pes.lgd.service.impl.NomenclatureSubDistServiceImpl"
+		id="nomenclatureSubDistService" />
+	<bean class="in.nic.pes.lgd.dao.impl.NomenclatureSubDistImpl" id="nomenclatureSubDistDAO" />
+	<!--End here NomenclatureSubDist Service -->
+
+	<!-- State Service and DAO -->
+	<bean id="stateService" class="in.nic.pes.lgd.service.impl.StateServiceImpl" />
+	<bean id="stateDao" class="in.nic.pes.lgd.dao.impl.StateDAOImpl" />
+
+	<!-- District Service and DAO -->
+	<bean id="districtDAO" class="in.nic.pes.lgd.dao.impl.DistrictDAOImpl" />
+	<bean id="districtService" class="in.nic.pes.lgd.service.impl.DistrictServiceImpl" />
+
+	<!-- Block Service and DAO -->
+	<bean id="blockDAO" class="in.nic.pes.lgd.dao.impl.BlockDAOImpl" />
+	<bean id="blockService" class="in.nic.pes.lgd.service.impl.BlockServiceImpl" />
+
+	<!-- Shift LandRegion Service and DAO -->
+	<bean class="in.nic.pes.lgd.dao.impl.ShiftDAOImpl" id="shiftDao" />
+	<bean class="in.nic.pes.lgd.service.impl.ShiftServiceImpl" id="shiftService" />
+
+	<!-- Convert LocalBody Service and DAO -->
+	<bean class="in.nic.pes.lgd.dao.impl.ConvertLocalbodyDAOImpl" id="convertLocalbodyDAO" />
+	<bean class="in.nic.pes.lgd.service.impl.ConvertLocalbodyServiceImpl"
+		id="convertLocalbodyService" />
+
+	<!-- Organization Service and DAO -->
+
+	<bean class="in.nic.pes.lgd.dao.impl.OrganizationDAOImpl" id="organizationDAO" />
+	<bean class="in.nic.pes.lgd.service.impl.OrganizationServiceImpl"
+		id="organisationService" />
+
+	<!-- Govt Order Service and DAO -->
+
+	<bean class="in.nic.pes.lgd.dao.impl.GovernmentOrderDAOImpl" id="govtOrderDAO" />
+	<bean class="in.nic.pes.lgd.service.impl.GovernmentOrderServiceImpl"
+		id="govtOrderService" />
+
+	<!-- Common Validator -->
+	<bean class="in.nic.pes.lgd.validator.CommonValidatorImpl" id="commonValidator" />
+
+	<!-- Map Land Region -->
+	<bean id="mapLandRegionDAO" class="in.nic.pes.lgd.dao.impl.MapLandRegionDAOImpl" />
+
+	<!-- Parliament Constituency -->
+
+	<bean id="parliamentService" class="in.nic.pes.lgd.service.impl.ParliamentServiceImpl" />
+	<bean id="parliamentDAO" class="in.nic.pes.lgd.dao.impl.ParliamentDaoImpl" />
+	<!-- <bean id="mapAttachmentService" class="in.nic.pes.gazettepublicationdate.mapServiceImpl" 
+		/> <bean id="mapDao" class="in.nic.pes.lgd.dao.impl.MapDaoImpl" /> -->
+	<bean id="mapAttachmentService" class="in.nic.pes.lgd.service.impl.MapServiceImpl" />
+	<bean id="mapDao" class="in.nic.pes.lgd.dao.impl.MapDaoImpl" />
+	<!-- Local Govt Body Setup -->
+
+	<bean id="localGovtBodyService" class="in.nic.pes.lgd.service.impl.LocalGovtBodyServiceImpl" />
+	<bean id="localGovtBodyDAO" class="in.nic.pes.lgd.dao.impl.LocalGovtBodyDAOImpl" />
+
+	<!-- End of Local Body Setup -->
+
+
+	<!-- Parliament Constituency -->
+
+	<bean id="AssemblyService" class="in.nic.pes.lgd.service.impl.AssemblyServiceImpl" />
+	<bean id="AssemblyDAO" class="in.nic.pes.lgd.dao.impl.AssemblyDaoImpl" />
+
+	<!-- Common Service and DAO -->
+	<bean id="commonService" class="in.nic.pes.lgd.common.CommonServiceImpl" />
+	<bean id="commonDao" class="in.nic.pes.lgd.common.CommonDAOImpl" />
+
+	<!-- Parliament Constituency -->
+
+	<bean id="MapService" class="in.nic.pes.lgd.service.impl.MapServiceImpl" />
+	<bean id="captchaService" class="in.nic.pes.lgd.common.CaptchaServiceImpl" />
+
+
+	<!-- Local Govt Body Type -->
+
+	<bean id="localGovtTypeService" class="in.nic.pes.lgd.service.impl.LocalGovtTypeServiceImpl" />
+	<bean id="localGovtTypeDAO" class="in.nic.pes.lgd.dao.impl.LocalGovtTypeDAOImpl" />
+
+	<!-- End -->
+
+	<!--Create new LbCoveredLandregionServiceImpl -->
+	<bean id="lbCoveredLandregionService"
+		class="in.nic.pes.lgd.service.impl.LbCoveredLandregionServiceImpl" />
+	<bean id="lbCoveredLandregionDAO" class="in.nic.pes.lgd.dao.impl.LbCoveredLandregionDAOImpl" />
+	<!-- End of LbCoveredLandregionServiceImpl -->
+
+	<!--Headquarters -->
+	<bean id="headquartersDAO" class="in.nic.pes.lgd.dao.impl.HeadquartersDAOImpl" />
+	<!-- End of Headquarters -->
+
+	<!--DisturbedEntitiesService -->
+	<bean id="disturbedEntitiesService"
+		class="in.nic.pes.lgd.service.impl.DisturbedEntitiesServiceImpl" />
+	<!-- End of DisturbedEntitiesService -->
+
+	<!-- PES Transactions Bean entry started @author vinay yadav -->
+	<bean id="PESTransactionService" class="in.nic.pes.lgd.service.impl.PESTransactionServiceImpl" />
+	<bean id="PESTransactionDAO" class="in.nic.pes.lgd.dao.impl.PESTransactionDAOImpl" />
+	<bean id="lgdTransactionSchedularImpl" class="in.nic.pes.lgd.schedular.LGDTransactionSchedularImpl" />
+
+	<task:annotation-driven executor="executorWithPoolSizeRange"
+		scheduler="taskScheduler" />
+	<task:executor id="executorWithPoolSizeRange" pool-size="5-25"
+		queue-capacity="100" />
+	<task:scheduler id="taskScheduler" pool-size="1" />
+
+	<!-- PES Transactions Bean entry ends -->
+
+
+
+
+	<!-- Switch Unit Property -->
+	<bean id="switchUnitProperty" class="in.nic.pes.common.beans.SwitchUnitProperty"></bean>
+	<!-- End of Switch Unit Property -->
+
+	<!-- CAPTCHA STARTED -->
+
+	<bean id="captchaFilter" class="com.org.ep.captcha.JCaptchaFilter">
+		<property name="captchaParamterName">
+			<value>jcaptcha_response</value>
+		</property>
+
+		<property name="authenticationEntryPoint">
+			<ref bean="authenticationEntryPoint" />
+		</property>
+	</bean>
+
+	<!-- FILTERS -->
+	<bean id="authenticationProcessingFilter"
+		class="net.sf.acegisecurity.ui.webapp.AuthenticationProcessingFilter">
+		<property name="authenticationManager">
+			<ref bean="authenticationManager" />
+		</property>
+		<property name="authenticationFailureUrl">
+			<value>/login.jsp?error=1</value>
+		</property>
+		<property name="defaultTargetUrl">
+			<value>/</value>
+		</property>
+		<property name="filterProcessesUrl">
+			<value>/j_acegi_security_check</value>
+		</property>
+	</bean>
+
+	<bean id="httpSessionIntegrationFilter"
+		class="net.sf.acegisecurity.context.HttpSessionContextIntegrationFilter">
+		<property name="context">
+			<value>net.sf.acegisecurity.context.security.SecureContextImpl
+			</value>
+		</property>
+	</bean>
+
+	<bean id="securityEnforcementFilter"
+		class="net.sf.acegisecurity.intercept.web.SecurityEnforcementFilter">
+		<property name="filterSecurityInterceptor">
+			<ref bean="filterInvocationInterceptor" />
+		</property>
+		<property name="authenticationEntryPoint">
+			<ref bean="authenticationEntryPoint" />
+		</property>
+	</bean>
+
+	<bean id="filterInvocationInterceptor"
+		class="net.sf.acegisecurity.intercept.web.FilterSecurityInterceptor">
+		<property name="authenticationManager">
+			<ref bean="authenticationManager" />
+		</property>
+		<property name="accessDecisionManager">
+			<ref bean="accessDecisionManager" />
+		</property>
+		<property name="objectDefinitionSource">
+			<value>
+				CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
+				PATTERN_TYPE_APACHE_ANT
+				/secure/**=A_USER
+			</value>
+		</property>
+	</bean>
+
+	<!-- AUTHENTICATION -->
+	<bean id="authenticationEntryPoint"
+		class="net.sf.acegisecurity.ui.webapp.AuthenticationProcessingFilterEntryPoint">
+		<property name="loginFormUrl">
+			<value>/login.jsp</value>
+		</property>
+	</bean>
+
+	<bean id="memoryAuthenticationDao"
+		class="net.sf.acegisecurity.providers.dao.memory.InMemoryDaoImpl">
+		<property name="userMap">
+			<value>
+				user=pass,A_USER
+			</value>
+		</property>
+	</bean>
+
+	<bean id="daoAuthenticationProvider"
+		class="net.sf.acegisecurity.providers.dao.DaoAuthenticationProvider">
+		<property name="authenticationDao">
+			<ref local="memoryAuthenticationDao" />
+		</property>
+	</bean>
+
+	<bean id="authenticationManager" class="net.sf.acegisecurity.providers.ProviderManager">
+		<property name="providers">
+			<list>
+				<ref bean="daoAuthenticationProvider" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- AUTHORIZATION -->
+	<bean id="accessDecisionManager" class="net.sf.acegisecurity.vote.UnanimousBased">
+		<property name="allowIfAllAbstainDecisions">
+			<value>false</value>
+		</property>
+
+		<property name="decisionVoters">
+			<list>
+				<ref local="roleVoter" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="roleVoter" class="net.sf.acegisecurity.vote.RoleVoter">
+		<property name="rolePrefix">
+			<value></value>
+		</property>
+	</bean>
+	<!-- CAPTCHA STARTED -->
+
+	<bean
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		id="multipartResolver" />
+	<!-- jasper view resolver -->
+	<bean class="org.springframework.web.servlet.view.XmlViewResolver">
+		<property name="location" value="/WEB-INF/jasper-views.xml" />
+		<property name="order" value="0" />
+	</bean>
+
+	<bean id="jasperReportsViewResolver"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.jasperreports.JasperReportsHtmlView">
+		</property>
+	</bean>
+
+
+	<!-- <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" 
+		p:basename="ResourceBundleMessage_en" /> -->
+
+
+
+
+
+
+
+
+
+
+
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager"
+		p:sessionFactory-ref="sessionFactory" />
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+				<value>in.nic.pes.lgd.bean.CreateBlockBean</value>
+				<value>in.nic.pes.lgd.bean.WardBean</value>
+				<value>in.nic.pes.lgd.bean.SubDistrictBean</value>
+				<value>in.nic.pes.lgd.bean.DistrictBean</value>
+				<value>in.nic.pes.lgd.bean.Village</value>
+				<value>in.nic.pes.lgd.bean.VillageSaveBean</value>
+				<value>in.nic.pes.lgd.bean.ChangeVillage</value>
+				<value>in.nic.pes.lgd.bean.LandregionReplaces</value>
+				<value>in.nic.pes.lgd.bean.LandregionReplacedby</value>
+				<value>in.nic.pes.lgd.bean.VillagePartsBySurveyno</value>
+				<value>in.nic.pes.lgd.bean.LocalBodyType</value>
+				<value>in.nic.pes.lgd.bean.ConfigurationMapLandregion</value>
+				<value>in.nic.pes.lgd.bean.ConfigurationMapLandregionLevel</value>
+				<value>in.nic.pes.lgd.bean.ConfigurationMapLocalbody</value>
+				<value>in.nic.pes.lgd.bean.ConfigurationMapConstituency</value>
+				<value>in.nic.pes.lgd.bean.ConfigurationGovernmentOrder</value>
+				<value>in.nic.pes.lgd.bean.NomenclatureSubdistrict</value>
+				<value>in.nic.pes.lgd.bean.LocalBodySetup</value>
+				<value>in.nic.pes.lgd.bean.LocalBodyType</value>
+				<value>in.nic.pes.lgd.bean.LocalBodyTiersSetup</value>
+				<value>in.nic.pes.lgd.bean.LocalBodySubtype</value>
+				<value>in.nic.pes.lgd.bean.Designation</value>
+				<value>in.nic.pes.lgd.bean.ReportingLbSetup</value>
+				<value>in.nic.pes.lgd.bean.State</value>
+				<value>in.nic.pes.lgd.bean.StatePK</value>
+				<value>in.nic.pes.lgd.bean.Block</value>
+				<value>in.nic.pes.lgd.bean.Subdistrict</value>
+				<value>in.nic.pes.lgd.bean.ChangeSubDistrict</value>
+				<value>in.nic.pes.lgd.bean.MapLandRegion</value>
+				<value>in.nic.pes.lgd.bean.District</value>
+				<value>in.nic.pes.lgd.bean.ParliamentConstituency</value>
+				<value>in.nic.pes.lgd.bean.Tier</value>
+				<value>in.nic.pes.lgd.bean.Subtype</value>
+				<value>in.nic.pes.lgd.bean.DesignationReporting</value>
+				<value>in.nic.pes.lgd.bean.DesignationElected</value>
+				<value>in.nic.pes.lgd.bean.ShiftDistrict</value>
+				<value>in.nic.pes.lgd.bean.ShiftSubDistrict</value>
+				<value>in.nic.pes.lgd.bean.ShiftBlock</value>
+				<value>in.nic.pes.lgd.bean.ConvertRLBtoULB</value>
+				<value>in.nic.pes.lgd.bean.ShiftVillageSD</value>
+				<value>in.nic.pes.lgd.bean.ShiftVillageB</value>
+				<value>in.nic.pes.lgd.bean.ChangeDistrict</value>
+				<value>in.nic.pes.lgd.bean.DesignationOfficial</value>
+				<value>in.nic.pes.lgd.bean.Localbody</value>
+				<value>in.nic.pes.lgd.bean.GovernmentOrder</value>
+				<value>in.nic.pes.lgd.bean.MapLocalbody</value>
+				<value>in.nic.pes.lgd.bean.LbCoveredLandregionPartDetails</value>
+				<value>in.nic.pes.lgd.bean.GetLocalBodyTypeCode</value>
+				<value>in.nic.pes.lgd.bean.LocalbodyListbyState</value>
+				<value>in.nic.pes.lgd.bean.LocalbodyByDistrict</value>
+				<value>in.nic.pes.lgd.bean.LbCoveredLandregion</value>
+				<value>in.nic.pes.lgd.bean.LandRegion</value>
+				<value>in.nic.pes.lgd.bean.LocalbodyByDistrict</value>
+				<value>in.nic.pes.lgd.bean.SubdistrictHistory</value>
+				<value>in.nic.pes.lgd.bean.DistrictHistory</value>
+				<value>in.nic.pes.lgd.bean.BlockHistory</value>
+				<value>in.nic.pes.lgd.bean.VillageHistory</value>
+				<value>in.nic.pes.lgd.bean.StateHistory</value>
+				<value>in.nic.pes.lgd.bean.Search</value>
+				<value>in.nic.pes.lgd.bean.AllSearch</value>
+				<value>in.nic.pes.lgd.bean.SearchElectionConstituency</value>
+				<value>in.nic.pes.lgd.bean.SearchLocalGovtBody</value>
+				<value>in.nic.pes.lgd.bean.LocalBodyTypeHistory</value>
+				<value>in.nic.pes.lgd.bean.StateLineDepartment</value>
+				<value>in.nic.pes.lgd.bean.DistrictLineDepartment</value>
+				<value>in.nic.pes.lgd.bean.LocalGovtBodyWard</value>
+				<value>in.nic.pes.lgd.bean.DepartmentByCentreLevel</value>
+				<value>in.nic.pes.lgd.bean.OrganizationByCentreLevel</value>
+				<value>in.nic.pes.lgd.bean.LocalBodyTypeWiseDepartment</value>
+				<value>in.nic.pes.lgd.bean.StateWiseEntityDetails</value>
+				<!-- new -->
+				<value>in.nic.pes.lgd.bean.GetGovernmentOrderDetail</value>
+				<!-- new -->
+				<value>in.nic.pes.lgd.bean.ViewConfigMapLandRegion</value>
+				<!-- Local Body Beans -->
+				<value>in.nic.pes.lgd.bean.LocalGovtBody</value>
+				<value>in.nic.pes.lgd.bean.LocalGovtBodyNameList</value>
+				<value>in.nic.pes.lgd.bean.ParentWiseLocalBodies</value>
+				<value>in.nic.pes.lgd.bean.LocalGovtBodyParentWise</value>
+				<value>in.nic.pes.lgd.bean.ParentWiseLocalVillageBodies</value>
+				<value>in.nic.pes.lgd.bean.LocalBodyCoveredArea</value>
+				<value>in.nic.pes.lgd.bean.LocalbodyforStateWise</value>
+				<value>in.nic.pes.lgd.bean.LocalbodyforStateWiseFinal</value>
+				<value>in.nic.pes.lgd.bean.GetLocalGovtBodyTypeList</value>
+				<value>in.nic.pes.lgd.bean.GovernmentOrderEntityWise</value>
+				<value>in.nic.pes.lgd.bean.LocalbodyReplaces</value>
+				<value>in.nic.pes.lgd.bean.LocalbodyReplacedby</value>
+				<value>in.nic.pes.lgd.bean.LocalbodyUnMappedBody</value>
+				<value>in.nic.pes.lgd.bean.LocalbodyUnMappedBodyLevelWise</value>
+				<value>in.nic.pes.lgd.bean.LocalBodyTypeForStateWiseView</value>
+				<value>in.nic.pes.lgd.bean.LocalGovtBodyForSelectedBody</value>
+				<value>in.nic.pes.lgd.bean.ChildLocalGovtBody</value>
+				<value>in.nic.pes.lgd.bean.LocalBodyUrbanType</value>
+				<value>in.nic.pes.lgd.bean.LocalBodyViewChild</value>
+				<value>in.nic.pes.lgd.bean.LocalBodyDetails</value>
+				<!-- End of Local Body Beans -->
+
+				<value>in.nic.pes.lgd.bean.Headquarters</value>
+				<value>in.nic.pes.lgd.bean.BlockDistricts</value>
+				<value>in.nic.pes.lgd.bean.BlockVillage</value>
+				<value>in.nic.pes.lgd.bean.ChangeBlock</value>
+				<value>in.nic.pes.lgd.bean.ChangeState</value>
+				<value>in.nic.pes.lgd.bean.ChangeOrganization</value>
+				<value>in.nic.pes.lgd.bean.Organization</value>
+				<value>in.nic.pes.lgd.bean.ReportingOrg</value>
+				<value>in.nic.pes.lgd.bean.OrganizationType</value>
+				<value>in.nic.pes.lgd.bean.OrgLocatedAtLevels</value>
+				<value>in.nic.pes.lgd.bean.DesignationMaster</value>
+				<value>in.nic.pes.lgd.bean.OrganizationDesignation</value>
+				<value>in.nic.pes.lgd.bean.LocalbodyTypeInState</value>
+				<value>in.nic.pes.lgd.bean.GetLocalGovtSetup</value>
+				<value>in.nic.pes.lgd.bean.GetEntitiesWithWanrning</value>
+				<value>in.nic.pes.lgd.bean.GetEntitiesWithDisturbed</value>
+				<value>in.nic.pes.lgd.bean.GetLocalbodyDisturbRegion</value>
+				<value>in.nic.pes.lgd.bean.SetGovermentOrderEntity</value>
+				<value>in.nic.pes.lgd.bean.InvalidateVillageBean</value>
+				<value>in.nic.pes.lgd.bean.ConfigurationSubdistrict</value>
+				<value>in.nic.pes.lgd.bean.UnpublishedItems</value>
+				<value>in.nic.pes.lgd.bean.InvalidateSubdistrictBean</value>
+				<value>in.nic.pes.lgd.bean.InvalidateDistrictBean</value>
+				<value>in.nic.pes.lgd.bean.OrganizationCoverage</value>
+				<value>in.nic.pes.lgd.bean.OrganizationCoverageDetail</value>
+				<value>in.nic.pes.lgd.bean.GovernmentOrderTemplate</value>
+				<value>in.nic.pes.lgd.bean.Operations</value>
+				<value>in.nic.pes.lgd.bean.InvalidateWardBean</value>
+				<value>in.nic.pes.lgd.bean.constituencyReplacedby</value>
+				<value>in.nic.pes.lgd.bean.constituencyReplaces</value>
+				<value>in.nic.pes.lgd.bean.ConstituencyCoverage</value>
+				<value>in.nic.pes.lgd.bean.AssemblyConstituency</value>
+				<value>in.nic.pes.lgd.bean.ConstituencyCoverageEntity</value>
+				<value>in.nic.pes.lgd.bean.InvalidateSubDistrictReq</value>
+				<value>in.nic.pes.lgd.bean.Attachment</value>
+				<value>in.nic.pes.lgd.bean.LocalbodyWard</value>
+				<value>in.nic.pes.lgd.bean.CoveredWardVillageparts</value>
+				<value>in.nic.pes.lgd.bean.CoveredWardLandregion</value>
+				<!-- <value>in.nic.pes.lgd.bean.MenuProfile</value> -->
+				<value>in.nic.pes.common.menu.pojo.MenuProfile</value>
+				<value>in.nic.pes.lgd.bean.GetLBListBYCategory</value>
+				<value>in.nic.pes.lgd.bean.GetEntityWiseChangeDuringTimeFrame
+				</value>
+				<value>in.nic.pes.lgd.bean.MimetypeMaster</value>
+				<value>in.nic.pes.lgd.bean.AttachmentMaster</value>
+				<value>in.nic.pes.lgd.bean.UnmappedLBList</value>
+				<value>in.nic.pes.lgd.bean.PartillyMappedLRList</value>
+				<value>in.nic.pes.lgd.bean.PartillyMappedLRListLevelWise</value>
+				<value>in.nic.pes.lgd.bean.ConstituencyCoverageEntitypartdetails
+				</value>
+				<value>in.nic.pes.lgd.bean.LBCoverageWard</value>
+				<value>in.nic.pes.lgd.bean.GetSubTypeList</value>
+				<value>in.nic.pes.lgd.bean.GetMapConfigLocalBody</value>
+				<value>in.nic.pes.lgd.bean.ConfigMapLgdm</value>
+				<value>in.nic.pes.lgd.bean.ViewConfigMapLocalBody</value>
+				<value>in.nic.pes.lgd.bean.Designationpojo</value>
+				<value>in.nic.pes.lgd.bean.OperationsVariables</value>
+				<value>in.nic.pes.lgd.bean.GazettePublication</value>
+				<value>in.nic.pes.lgd.bean.InvalidateBlockBean</value>
+				<value>in.nic.pes.lgd.bean.GazettePublicationDateSave</value>
+				<value>in.nic.pes.lgd.bean.ParliamentConstituencymodify</value>
+				<value>in.nic.pes.lgd.bean.ChangeParliamentConstituency</value>
+				<value>in.nic.pes.lgd.bean.MapAttachment</value>
+				<value>in.nic.pes.lgd.bean.UnLRSWiseList</value>
+				<value>in.nic.pes.lgd.bean.StandardCodes</value>
+				<value>in.nic.pes.lgd.bean.ChangeStandardCode</value>
+				<value>in.nic.pes.lgd.bean.CheckAuthorization</value>
+				<value>in.nic.pes.lgd.bean.SaveParliamentConstituency</value>
+				<value>in.nic.pes.lgd.bean.SaveAssemblyConstituency</value>
+				<value>in.nic.pes.lgd.bean.ParentWiseLocalBodiesWithoutChildCount
+				</value>
+				<value>in.nic.pes.lgd.bean.ConsolidateReportLB</value>
+				<value>in.nic.pes.lgd.bean.GetOrganizationListFn</value>
+				<value>in.nic.pes.lgd.bean.GetOrganizationAtLevels</value>
+				<value>in.nic.pes.lgd.bean.ConsolidateReportLB</value>
+				<value>in.nic.pes.lgd.bean.GetLocalBodyListbyLBtypebyState</value>
+				<value>in.nic.pes.lgd.bean.GetLBHierarchy</value>
+				<value>in.nic.pes.lgd.bean.CheckAuthorizationforlist</value>
+				<value>in.nic.pes.lgd.bean.ReportStatePanchayatPojo</value>
+				<value>in.nic.pes.lgd.bean.InsertLocalGovtBody</value>
+				<value>in.nic.pes.lgd.bean.ChangeLocalBodyName</value>
+				<value>in.nic.pes.lgd.bean.ChangeLocalBodyUrbanType</value>
+				<value>in.nic.pes.lgd.bean.EntityWiseMapDetailsPojo</value>
+				<value>in.nic.pes.lgd.bean.EmailNotification</value>
+				<value>in.nic.pes.lgd.bean.MapAttachment1</value>
+				<value>in.nic.pes.lgd.bean.ChangeLocalBodypriType</value>
+				<value>in.nic.pes.lgd.bean.DownloadDirectoryLandRegion</value>
+				<value>in.nic.pes.lgd.bean.ViewLocalBodyforview</value>
+				<value>in.nic.pes.lgd.bean.ConsolidateReportLandregions</value>
+				<value>in.nic.pes.lgd.bean.ConsolidateReportLBLandregion</value>
+				<value>in.nic.pes.lgd.bean.ConsolidateReportLandregionsforDistrict
+				</value>
+				<value>in.nic.pes.lgd.bean.ConsolidateReportLandregionsforSubDistrict
+				</value>
+				<value>in.nic.pes.lgd.bean.ConsolidateReportLandregionsforVillage
+				</value>
+				<value>in.nic.pes.lgd.bean.InvalidateVillage</value>
+				<value>in.nic.pes.lgd.bean.ChangeLocalBodyCoveredArea</value>
+				<value>in.nic.pes.lgd.bean.ChangeCoverageNameParentofDisturbLocalbody
+				</value>
+				<value>in.nic.pes.lgd.bean.GetLandRegionWise</value>
+				<value>in.nic.pes.lgd.bean.LandRegionDetail</value>
+				<value>in.nic.pes.lgd.bean.LbCoveredAreaForSubDistList</value>
+				<value>in.nic.pes.lgd.bean.ViewLocalBodyLandRegion</value>
+				<value>in.nic.pes.lgd.bean.PesApplicationMaster</value>
+				<value>in.nic.pes.lgd.bean.ConsolidateReportForRuralLB</value>
+				<value>in.nic.pes.lgd.bean.MappedVillageByLBCodeBean</value>
+				<value>in.nic.pes.lgd.bean.ReportingOrgSetup</value>
+				<value>in.nic.pes.lgd.bean.StateNamed</value>
+				<value>in.nic.pes.lgd.bean.DownloadDirectoryPCACMap</value>
+				<value>in.nic.pes.lgd.bean.InvalidateDistrictFn</value>
+				<value>in.nic.pes.lgd.bean.ViewLandRegionDisturbedlist</value>
+				<value>in.nic.pes.common.beans.SubscribeApplication</value>
+				<value>in.nic.pes.lgd.bean.ConvertRLBtoTLB</value>
+				<value>in.nic.pes.lgd.bean.invalidatePRIlb</value>
+				<value>in.nic.pes.lgd.bean.GeneratedFileDetails</value>
+				<value>in.nic.pes.lgd.bean.ParentWiseLBList</value>
+				<value>in.nic.pes.lgd.bean.EntityTransactionsNew</value>
+				<value>in.nic.pes.lgd.bean.CheckLocalBodyType</value>
+				<value>in.nic.pes.lgd.bean.GetLandRegionNameforWard</value>
+				<value>in.nic.pes.lgd.bean.GetFaq</value>
+				<value>in.nic.pes.lgd.bean.UnLRDistrictWiseList</value>
+				<value>in.nic.pes.lgd.bean.Pushcoveragetopes</value>
+				<value>in.nic.pes.lgd.bean.ManageEntity</value>
+				<value>in.nic.pes.lgd.bean.BlockWiseVillagesAndUlb</value>
+				<value>in.nic.pes.lgd.bean.UlbunmapBlockBean</value>
+				<value>in.nic.pes.lgd.bean.LocalBodyCoveredAreaLB</value>
+				<value>in.nic.pes.lgd.bean.LocalGovtBodyDTO</value>
+				<value>in.nic.pes.lgd.bean.StatewiseUnmappedVillages</value>
+				<value>in.nic.pes.lgd.bean.PushLBtoPES</value>
+				<value>in.nic.pes.lgd.bean.UlbBean</value>
+				<value>in.nic.pes.lgd.bean.StatewiseGPtoVillageMapped</value>
+				<value>in.nic.pes.lgd.bean.EntityVersion</value>
+				<value>in.nic.pes.lgd.bean.DesignationPesDelete</value>
+				<value>in.nic.pes.lgd.bean.StateWiseDistrictVillagePanchaytMapping
+				</value>
+				<value>in.nic.pes.lgd.forms.LGBodyCoveredAreaDTO</value>
+				<value>in.nic.pes.lgd.bean.LocalbodyMappingtoLandRegion</value>
+				<value>in.nic.pes.lgd.bean.LocalbodyDistrict</value>
+				<value>in.nic.pes.lgd.bean.LocalbodyDistrictPK</value>
+				<value>in.nic.pes.lgd.bean.MapConfiguration</value>
+				<value>in.nic.pes.lgd.bean.UnmappedLbPcAcWard</value>
+				<value>in.nic.pes.lgd.bean.PCACMappingforLBWard</value>
+				<value>in.nic.pes.lgd.bean.DesignationDelete</value>
+				<value>in.nic.pes.lgd.bean.InvalidateVillageUlbMerge</value>
+
+				<!-- New Designation Bean -->
+				<value>in.nic.pes.lgd.bean.LgdDesignation</value>
+				<value>in.nic.pes.lgd.bean.ReportingSetup</value>
+				<value>in.nic.pes.lgd.bean.ViewUnMappedLocalBodies</value>
+				<value>in.nic.pes.lgd.bean.DistrictWiseLBReportBean</value>
+				<value>in.nic.pes.lgd.bean.UlbMerge</value>
+				<value>in.nic.pes.lgd.bean.LbByTypeofModification</value>
+
+				<value>in.nic.pes.lgd.bean.DistrictWiseInvalidatedVillage</value>
+				<value>in.nic.pes.lgd.bean.PushOrgDepToPes</value>
+				<value>in.nic.pes.lgd.bean.LocalBodyWiseWards</value>
+				<value>in.nic.pes.lgd.bean.PrilWardsDetails</value>
+				<value>in.nic.pes.lgd.bean.MapZpWardContituency</value>
+				<value>in.nic.pes.lgd.bean.DPwardConstituencyWiseVP</value>
+				<value>in.nic.pes.lgd.bean.DeptAdminUnit</value>
+				<value>in.nic.pes.lgd.bean.DeptAdminUnitEntity</value>
+				<value>in.nic.pes.lgd.bean.DistrictWiseDetail</value>
+				<value>in.nic.pes.lgd.bean.AdministrativeEntityCoverage</value>
+				<value>in.nic.pes.lgd.bean.CitizenFeedback</value>
+				<value>in.nic.pes.lgd.bean.PesApplication</value>
+				<value>in.nic.pes.lgd.bean.LocalBodyParent</value>
+				<value>in.nic.pes.lgd.bean.localbodywardtemp</value>
+				<!-- LGD Mobile,XML and JSON Webservice -->
+				<value>ws.in.nic.pes.lgdws.entity.WSState</value>
+				<!-- <value>ws.in.nic.pes.lgdws.entity.StateListModel</value> -->
+				<value>ws.in.nic.pes.lgdws.entity.WSDistrict</value>
+				<value>ws.in.nic.pes.lgdws.entity.WSSubdistrict</value>
+				<value>ws.in.nic.pes.lgdws.entity.WSVillage</value>
+				<value>ws.in.nic.pes.lgdws.entity.WSLocalbody</value>
+				<value>ws.in.nic.pes.lgdws.entity.WSOrganization</value>
+				<value>ws.in.nic.pes.lgdws.entity.LevelwiseofRuralLbCount</value>
+				<value>ws.in.nic.pes.lgdws.entity.TotalNoofPriLbnVillageCount
+				</value>
+				<!-- <value>in.nic.pes.lgd.bean.WsUserRegistrationForm
+				</value> -->
+				<value>in.nic.pes.lgd.bean.WsAllowedIpEntity
+				</value> 
+				<value>in.nic.pes.lgd.bean.WsRegisteredIpEntity
+				</value>
+				<value>in.nic.pes.lgd.bean.WsSubscribedApplicationEntity
+				</value>
+				<value>in.nic.pes.lgd.bean.NotificationLog
+				</value>
+
+
+				<value>ws.in.nic.pes.lgdws.entity.StateEntity</value>
+				<value>ws.in.nic.pes.lgdws.entity.DistrictEntity</value>
+				<value>ws.in.nic.pes.lgdws.entity.SubdistrictEntity</value>
+				<value>ws.in.nic.pes.lgdws.entity.BlockLGDDetailRDDEPT</value>
+				<value>ws.in.nic.pes.lgdws.entity.GPLGDDetailRDDEPT</value>
+				<value>ws.in.nic.pes.lgdws.entity.WardDetailList</value>
+				<value>ws.in.nic.pes.lgdws.entity.CoveredVillagesOfBlock</value>
+				<!-- <value>ws.in.nic.pes.lgdws.entity.WSLocalbodyType</value> <value>ws.in.nic.pes.lgdws.entity.WSLocalbody</value> -->
+
+				<!--End of LGD Mobile Webservice -->
+				<!-- Lgd 0002373: Create Village with Draft facility -->
+				<value>in.nic.pes.lgd.bean.VillageDraft</value>
+				<value>in.nic.pes.lgd.bean.GovernmentOrderDetails</value>
+				<!-- Lgd 0002373: Create Village with Draft facility END -->
+				<value>in.nic.pes.lgd.bean.StatewisePesaPanchyat</value>
+				<!-- Lgd Ward Coverage -->
+				<value>in.nic.pes.lgd.bean.WardCoverageDetail</value>
+				<!-- Lgd Ward Coverage END -->
+				<value>in.nic.pes.lgd.bean.OrganizationUnit</value>
+				<!-- Add by CMC 03Jan2015 -->
+				<value>in.nic.pes.lgd.bean.Habitation</value>
+				<value>in.nic.pes.lgd.bean.GovernmentOrderDetails</value>
+				<value>in.nic.pes.lgd.bean.localbodywardtemp</value>
+				<!-- <value>com.cmc.lgd.localbody.entities.DraftLocalbodyTemp</value> 
+					<value>com.cmc.lgd.localbody.entities.DraftUsedLbLrTemp</value> <value>com.cmc.lgd.localbody.entities.GetDraftUsedLbLrTemp</value> -->
+				<!-- Add by CMC 03Jan2015 END -->
+
+				<!-- Entry For Freez/Unfreez state @AUTHOR CMC -->
+				<value>in.nic.pes.lgd.bean.StateFreeze</value>
+				<value>in.nic.pes.lgd.bean.StateFreezeDistrictListDTO</value>
+				<value>in.nic.pes.lgd.menu.MenuDisableTable</value>
+				<value>in.nic.pes.lgd.bean.FreezeDistrict</value>
+				<value>in.nic.pes.lgd.bean.FreezeDistrictBean</value>
+				<!-- Entry For Freez/Unfreez state ends here -->
+
+				<!-- added by Ashish Dhupia on 13/02/2014 -->
+				<value>in.nic.pes.lgd.bean.LBFreezeUnfreeze</value>
+				<!-- added by Ashish Dhupia on 13/02/2014 -->
+				<value>in.nic.pes.lgd.bean.ParentWiseLocalBodiesold</value>
+				<value>in.nic.pes.lgd.bean.LocalbodyListbyStateold</value>
+
+				<!-- added by kirandeep for freeze/unfreeze pri -->
+				<value>in.nic.pes.lgd.bean.CheckLocalBodyDraftState</value>
+				<value>in.nic.pes.lgd.bean.CheckLocalBodyFreezeStatus</value>
+				<!-- added by kirandeep for freeze/unfreeze pri end -->
+
+				<!-- added by Priyanka -->
+				<value>in.nic.pes.lgd.bean.LocalBodyHistory</value>
+				<!-- Denotified Village Panchayat(s) Entities Entry Start on (05-03-2015) 
+					by Anchal Todariya -->
+				<value>in.nic.pes.lgd.bean.VillagePanchyatDeNotified</value>
+				<!-- Denotified Village Panchayat(s) Entities Entry End -->
+				<value>in.nic.pes.lgd.bean.FreezeUnfreezeStatus</value>
+
+				<!-- Restructured Localbody Entities Entry -->
+				<value>com.cmc.lgd.localbody.entities.LBTypeHierarchy</value>
+				<value>com.cmc.lgd.localbody.entities.LBTypeDetails</value>
+				<value>com.cmc.lgd.localbody.entities.LocalBodyEntityDetails</value>
+				<value>com.cmc.lgd.localbody.entities.UnmappedLandregions</value>
+				<value>com.cmc.lgd.localbody.entities.CoverageDetailsLocalBody
+				</value>
+				<value>com.cmc.lgd.localbody.entities.GovernmentOrderDetails</value>
+				<value>com.cmc.lgd.localbody.entities.DraftLocalbodyTemp</value>
+				<value>com.cmc.lgd.localbody.entities.DraftUsedLbLrTemp</value>
+				<value>com.cmc.lgd.localbody.entities.InsertionLocalBodyFn</value>
+				<!-- <value>com.cmc.lgd.localbody.entities.CriteriaDraftedLocalBodies</value> -->
+				<value>com.cmc.lgd.localbody.entities.LocalBodyParentLevels</value>
+				<value>com.cmc.lgd.localbody.entities.DraftedLBCoverageDetails
+				</value>
+				<value>com.cmc.lgd.localbody.entities.ManageLBDetails</value>
+				<value>com.cmc.lgd.localbody.entities.LocalBodyTable</value>
+				<value>com.cmc.lgd.localbody.entities.DraftRenameLocalbodyTemp
+				</value>
+				<value>com.cmc.lgd.localbody.entities.DraftOperations</value>
+				<value>com.cmc.lgd.localbody.entities.CriteriaDraftedEntities
+				</value>
+				<value>com.cmc.lgd.localbody.entities.DraftChangeParentLocalbodyTemp
+				</value>
+				<value>com.cmc.lgd.localbody.entities.DraftChangeTypeLocalbodyTemp
+				</value>
+				<value>com.cmc.lgd.localbody.entities.DraftChangeGovtOrderLBTemp
+				</value>
+				<value>com.cmc.lgd.localbody.entities.CompletedCoverageDetails
+				</value>
+				<value>com.cmc.lgd.localbody.entities.DraftChangeCoverageTemp
+				</value>
+				<value>com.cmc.lgd.localbody.entities.DraftUsedChangeCoverageLbLrTemp
+				</value>
+				<value>com.cmc.lgd.localbody.entities.GISMappedEntities</value>
+				<!-- Restructured Localbody Entities Ends -->
+				<!-- Added by ripunj for village mapped percent webservice -->
+				<value>ws.in.nic.pes.lgdws.webservice.StateWiseGPVillageMappedEntity
+				</value>
+				<!-- Added by ripunj for village mapped percent webservice -->
+				<!-- added by kirandeep for locabody is pesa form -->
+				<value>in.nic.pes.lgd.bean.ParentHeirarchyBean</value>
+				<!-- added by pooja on 07-05-2015 -->
+				<value>in.nic.pes.lgd.bean.DesignationLevelSortorder</value>
+
+				<value>in.nic.pes.lgd.bean.GetFreezeDataForLocalbody</value>
+				<value>in.nic.pes.lgd.bean.DepartmentMapping</value>
+				<value>in.nic.pes.lgd.bean.DepartmentMappingFrom</value>
+				<value>in.nic.pes.lgd.bean.DepartmentLBWardMapping</value>
+				<!-- added by pooja on 02-09-2015 -->
+				<value>in.nic.pes.lgd.bean.GetLBDetailsBySubDistricts</value>
+
+				<!-- JSP entries for Redesigned Global View Villages files started -->
+				<!-- <value>in.nic.pes.lgd.bean.CriteriaVillages</value> -->
+				<!-- JSP entries for Redesigned Global View Villages files ends -->
+
+				<!-- added by pooja on 18-09-2015 -->
+				<value>in.nic.pes.lgd.bean.ChangeLvlSpecificNameOrg</value>
+
+				<!-- Redesigned Reporting @author Vinay #started -->
+				<value>in.nic.pes.lgd.restructure.reporting.entities.GenericReportingEntity
+				</value>
+				<!-- <value>in.nic.pes.lgd.restructure.reporting.entities.SubdistTempDraft</value> -->
+				<value>in.nic.pes.lgd.bean.BlockPanchayatSyncBlock</value>
+				<!-- LGD Impact Related Bean Unused as of now. @author vinay -->
+				<!-- <value>in.nic.pes.lgd.bean.EntityTransactionsMetadata</value> -->
+
+				<!-- Section entity details #started -->
+				<value> in.nic.pes.lgd.section.rule.InserSectionFn</value>
+				<value> in.nic.pes.lgd.section.rule.Section</value>
+				<value> in.nic.pes.lgd.section.rule.SectionPK</value>
+				<value> com.cmc.lgd.localbody.entities.LBTypeDetailsWithCategory
+				</value>
+
+				<!-- Section entity details #end -->
+				<!-- Added By Pranav Tiwari -->
+				<value>in.nic.pes.lgd.bean.ReportingStatewiseGISMappedLBEntity
+				</value>
+				<value>in.nic.pes.lgd.restructure.reporting.entities.LocalBodyMappedToDistrictsEntity
+				</value>
+				<value>in.nic.pes.lgd.bean.LgdUpperHierarchyLevel</value> <!-- Added On 26 Oct 2016 -->
+
+				<!-- Draft Landregion @author Maneesh #started -->
+				<value> in.nic.pes.lgd.draft.entities.SubdistrictDraft</value>
+				<value> in.nic.pes.lgd.draft.entities.GovermentDetailDraft</value>
+				<value> in.nic.pes.lgd.draft.entities.DraftMaster</value>
+				<value> in.nic.pes.lgd.draft.entities.DraftMasterPK</value>
+				<value> in.nic.pes.lgd.draft.entities.InsertSubdistrictFn</value>
+				<value> in.nic.pes.lgd.draft.entities.ChangeSubdistrictFn</value>
+				<!-- Draft Landregion #end -->
+				<value>in.nic.pes.lgd.restructure.reporting.entities.LocalBodyMappedToDistrictsEntity
+				</value>
+
+				<!-- Parliament Constituency Map Entry #started @author Maneesh Kumar -->
+				<value>in.nic.pes.lgd.bean.ConstituencyLocalbody</value>
+				<value>in.nic.pes.lgd.bean.ConstituencyVillage</value>
+				<value>in.nic.pes.lgd.bean.ConstituencyMapDetailsbyacCode</value>
+				<value>in.nic.pes.lgd.bean.ConstituencyWard</value>
+				<!-- Parliament Constituency Map #end @author Maneesh Kumar -->
+
+				<!-- added by sunita on 18-11-2016 -->
+				<value>in.nic.pes.lgd.bean.NodalOfficer</value>
+				<value>in.nic.pes.lgd.bean.NodalOfficerPK</value>
+				<!-- sanjai -->
+
+				<value>in.nic.pes.lgd.bean.FreezeAttachment</value>
+				<value>in.nic.pes.lgd.bean.MappedLbWardDisttrictWise</value>
+				<value>in.nic.pes.lgd.bean.FreezeStatusConstituency</value>
+
+				<value>in.nic.pes.lgd.bean.LgdDesignationPK</value>
+				<value>in.nic.pes.lgd.bean.ReportDistwiseVillagandMappedGP</value>
+				<value>in.nic.pes.lgd.bean.VillageGISMapStatus</value>
+				<value>in.nic.pes.lgd.bean.HabitationConfiguration</value>
+				<value>in.nic.pes.lgd.bean.LocalbodyHabitation</value>
+				<value>in.nic.pes.lgd.bean.FetchLOCALBODYHABIATION</value>
+				
+				<value>in.nic.pes.lgd.bean.ChildExtendDept</value>
+				<value>in.nic.pes.lgd.bean.ExistDeptHierarchy</value>
+				
+				<value>in.nic.pes.lgd.bean.StatewiseEntitiesCount</value>
+				
+				<value>in.nic.pes.lgd.bean.NodalOfficerState</value>
+				<value>in.nic.pes.lgd.bean.LgdDataConfirmation</value>
+				
+				
+				<value>in.nic.pes.lgd.bean.LgdSubordinateOrgUnits</value>
+				
+				<value>in.nic.pes.lgd.bean.SubDistrictBlockMapEntities</value>
+				<value>in.nic.pes.lgd.bean.AuditTrailLGD</value>
+				
+				<value>in.nic.pes.lgd.bean.ReportingIssue</value>
+				
+				<value>in.nic.pes.lgd.bean.UserRegistration</value>
+				<value>in.nic.pes.lgd.bean.LgdOrganisationListByLocation</value>
+				<value>in.nic.pes.lgd.bean.ParentwiseChildDetials</value>
+				<value>in.nic.pes.lgd.bean.EntityChangesInGivenTime</value>
+				<value>in.nic.pes.lgd.bean.BlockwiseVillageMappedUnmapped</value>
+				<value>in.nic.pes.lgd.bean.DistrictFreezeEntity</value>
+				<value>in.nic.pes.lgd.bean.EntityFreezeStatus</value>
+				<value>ws.in.nic.pes.lgdws.entity.VillageListWithHierarchy</value>
+				<!-- added by aashish barua  -->
+				<value>in.nic.pes.lgd.bean.LgdPfmsMapping</value>
+				<value>in.nic.pes.lgd.bean.FetchOrgLocatedLevel</value>
+				<value>in.nic.pes.lgd.bean.DRAFTWARDCOVERAGE</value>
+				<value>in.nic.pes.lgd.bean.GetEntityEffectiveDate</value>
+				<value>in.nic.pes.lgd.bean.FreezeLocalBodyEntity</value>
+				<value>in.nic.pes.lgd.bean.LGDUpdationEntity</value>
+				<value>in.nic.pes.lgd.bean.FreezeUnfreezeStateConfigEntity</value>
+				<!-- 
+					* This Method is Use for External User 
+					 * @param loginForm
+					 * @author Maneesh Kumar
+					 * @since 01-10-2019 -->
+		
+				<value>in.nic.pes.lgd.bean.ExternalUser</value>
+      			<!-- end External User  -->
+				<value>in.nic.pes.lgd.bean.Country</value>
+				<value>in.nic.pes.lgd.bean.GovernmentOrderEntityWiseNew</value>
+				<value>in.nic.pes.lgd.bean.ConfigurationBlockVillageMapping</value>
+				<value>in.nic.pes.lgd.bean.ExistingDeptMapping</value>
+				<value>in.nic.pes.lgd.bean.LocalBodyDto</value>
+				<!-- Dashboard Bean  -->
+					<value>in.nic.pes.lgd.bean.GETDashboardNodalOfficer</value>
+					<value>in.nic.pes.lgd.bean.GETDashboardEntityCount</value>
+					<value>in.nic.pes.lgd.bean.GetDashboardChangeEntityCount</value>
+					<value>in.nic.pes.lgd.bean.GETDashboardVillageDetails</value>
+					<value>in.nic.pes.lgd.bean.GETDashboardLBDetails</value>
+					<value>in.nic.pes.lgd.bean.GetDashboardChangeEntityDetail</value>
+					
+					<value>ws.in.nic.pes.lgdws.entity.GetHierarchyOfEntity</value>
+				<!-- End -->
+				
+				
+				
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<!-- <prop key="hibernate.connection.pool_size">10</prop> <prop key="hibernate.jdbc.batch_size">30</prop> 
+					<prop key="hibernate.c3p0.timeout">500000</prop> <prop key="hibernate.connection.release_mode">after_statement</prop> 
+					<prop key="hibernate.order_inserts">true</prop> <prop key="hibernate.order_updates">true</prop> 
+					<prop key="hibernate.cache.use_second_level_cache">true</prop> <prop key="hibernate.cache.use_query_cache">true</prop> 
+					<prop key="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider</prop> 
+					<prop key="hibernate.cache.provider_configuration_file_resource_path">/ehcache.xml</prop> -->
+			</props>
+		</property>
+
+	</bean>
+
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/jdbc/exHl" />
+	</bean>
+
+	<bean id="pesdataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/jdbc/switchunit" />
+	</bean>
+
+	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
+		p:driverClassName="${jdbc.driverClassName}" p:url="${jdbc.url}" p:username="${jdbc.username}" 
+		p:password="${jdbc.password}" /> -->
+
+	<bean id="docconverter" class="in.nic.pes.lgd.utils.DocumentConverter"
+		depends-on="govtOrderService"></bean>
+
+	<bean id="lgdDesignationService" class="in.nic.pes.lgd.service.impl.LgdDesignationServiceImpl" />
+	<!-- <bean id="lgdDesignationDao" class="in.nic.pes.lgd.dao.impl.LgdDesignationDAOImpl" 
+		/> -->
+	<bean id="adminDeprtmentService"
+		class="in.nic.pes.lgd.service.impl.AdministrativeDepratmentServiceImpl" />
+	<bean id="adminValidator" class="in.nic.pes.lgd.validator.AdminDepartmentValidator" />
+
+	<!-- Citizen Section Begin -->
+	<bean id="citizenSectionService" class="in.nic.pes.lgd.service.impl.CitizenSectionServiceImpl" />
+	<bean id="cititzenSectionDAO" class="in.nic.pes.lgd.dao.impl.CitizenSectionDAOImpl" />
+	<!-- End of Citizen Section -->
+	<!-- Single Sign On Begin -->
+	<bean id="utilDAO" class="in.nic.pes.lgd.dao.impl.UtilDAOImpl" />
+	<!-- End of Single Sign On -->
+	<!-- <bean id="wsServiceImpl" class="ws.in.nic.pes.lgdws.services.WSServiceImpl" 
+		/> <bean id="wsDaoImpl" class="ws.in.nic.pes.lgdws.dao.WSDaoImpl" /> -->
+
+	<bean id="wsServiceImpl" class="ws.in.nic.pes.lgdws.services.WSServiceImpl" />
+	<bean id="wsDaoImpl" class="ws.in.nic.pes.lgdws.dao.WSDaoImpl" />
+	<bean id="lgdWebServiceValidator" class=" ws.in.nic.pes.lgdws.webservice.LGDWebServiceValidator" />
+
+	<bean class="in.nic.pes.lgd.validator.AbstractValidator" id="abstractValidator" />
+
+	<!-- Re-structured Local Body Entries Started -->
+	<bean id="localBodyService"
+		class="com.cmc.lgd.localbody.services.impl.LocalBodyServiceImpl" />
+	<bean id="localBodyDao" class="com.cmc.lgd.localbody.dao.impl.LocalBodyDaoImpl" />
+	<bean id="localBodyUtil" class="com.cmc.lgd.localbody.rules.LocalBodyUtil" />
+	<bean id="lbFormValidator" class="com.cmc.lgd.localbody.rules.Errors" />
+	<!-- Re-structured Local Body Entries Ends Here -->
+
+
+	<!-- Entry For Freez/Unfreez state and district @AUTHOR CMC -->
+	<bean id="stateDistrictFService"
+		class="in.nic.pes.lgd.service.impl.StateDistrictFreezeServiceImpl" />
+	<bean id="stateDistrictFDAO" class="in.nic.pes.lgd.dao.impl.StateDistrictFreezeDAOImpl" />
+	<bean id="districtFreezeDAO" class="in.nic.pes.lgd.dao.impl.DistrictFreezeDAOImpl" />
+	<bean id="districtFreezeService" class="in.nic.pes.lgd.service.impl.DistrictFreezeServiceImpl" />
+	<!-- Entry For Freez/Unfreez state and district ends here -->
+
+	<!-- Added by ripunj for village mapped percent webservice -->
+	<bean id="statewiseGPVillageMappedServiceImpl"
+		class="ws.in.nic.pes.lgdws.webservice.StatewiseGPVillageMappedServiceImpl" />
+	<bean id="statewiseGPVillageMappedDAOImpl"
+		class="ws.in.nic.pes.lgdws.webservice.StatewiseGPVillageMappedDAOImpl" />
+	<!-- Added by ripunj for village mapped percent webservice -->
+
+
+	<!-- Ward service and Dao bean entry -->
+	<bean id="wardService" class="in.nic.pes.lgd.service.impl.WardServiceImpl" />
+	<bean id="wardDao" class="in.nic.pes.lgd.dao.impl.WardDAOImpl" />
+	<!-- Ward service and Dao bean entry -->
+
+	<!-- LGD Impact Related Bean Unused as of now. @author vinay -->
+	<!-- <bean id="lgdImpactService" class="ws.in.nic.pes.lgdws.webservice.impact.LGDImpactService" 
+		/> -->
+
+	<!-- Redesigned Reporting @author Vinay #started -->
+	<bean id="viewEntityDetailsDao"
+		class="in.nic.pes.lgd.restructure.reporting.dao.impl.ViewEntityDetailsDaoImpl" />
+	<bean id="viewEntityDetailsService"
+		class="in.nic.pes.lgd.restructure.reporting.service.impl.ViewEntityDetailsServiceImpl" />
+	<!-- Redesigned Reporting #end -->
+
+	<!-- Initialization basic variable on server start -->
+	<bean id="applicationInitializationService" class="in.nic.pes.lgd.common.ApplicationInitializationService" />
+	<!-- Initialization basic variable on server start #end -->
+
+	<bean id="initialService" class="in.nic.pes.lgd.service.impl.InitialServiceImpl" />
+	<bean id="initialDAO" class="in.nic.pes.lgd.dao.impl.InitialDaoImpl" />
+
+	<!-- Section Block @author Maneesh #started -->
+	<bean id="sectionService" class="in.nic.pes.lgd.section.service.impl.SectionServiceImpl" />
+	<bean id="sectionDao" class="in.nic.pes.lgd.section.dao.impl.SectionDaoImpl" />
+	<bean id="sectionValidator" class="in.nic.pes.lgd.section.rule.SectionValidator" />
+	<!-- Section Block #end -->
+
+	<!-- Draft Landregion @author Maneesh #started -->
+	<bean id="draftDistrictService"
+		class="in.nic.pes.lgd.draft.service.impl.DraftDistrictServiceImpl" />
+	<bean id="draftSubdistrictService"
+		class="in.nic.pes.lgd.draft.service.impl.DraftSubdistrictServiceImpl" />
+	<bean id="draftUtilService" class="in.nic.pes.lgd.draft.service.impl.DraftUtilServiceImpl" />
+	<bean id="draftVillageService"
+		class="in.nic.pes.lgd.draft.service.impl.DraftVillageServiceImpl" />
+
+	<bean id="draftDistrictDao" class="in.nic.pes.lgd.draft.dao.impl.DraftDistrictDaoImpl" />
+	<bean id="draftSubdistrictDao" class="in.nic.pes.lgd.draft.dao.impl.DraftSubdistrictDaoImpl" />
+	<bean id="draftUtilDao" class="in.nic.pes.lgd.draft.dao.impl.DraftUtilDaoImpl" />
+	<bean id="draftVillageDao" class="in.nic.pes.lgd.draft.dao.impl.DraftVillageDaoImpl" />
+
+	<bean id="draftUtils" class="in.nic.pes.lgd.draft.constant.DraftUtils"/>
+	<bean id="draftSubdistrictValidator"
+		class="in.nic.pes.lgd.draft.validator.DraftSubdistrictValidator" />
+
+	<!-- Draft Landregion #end -->
+
+	<bean class="in.nic.pes.lgd.validator.HabitationValidator" id="habitationValidator" />
+	<!-- LGD scheduler for update entities count in json file 03/11/2017  -->
+	<bean id="lgdJsonFileShedularImpl" class="in.nic.pes.lgd.schedular.LGDJsonFileShedularImpl" /> 
+	<!-- LGD scheduler end -->
+	<!-- Nodal officer validator 12/06/2017  -->
+	<bean class="in.nic.pes.lgd.validator.NodalOfficerValidator" id="nodalOfficerValidator" />
+	<!-- LGD scheduler for create file for big data in reports on 16Mar2018-->
+	 <bean id="lgdReportShedularImpl" class="in.nic.pes.lgd.schedular.LGDReportShedularImpl" /> 
+	<!-- LGD scheduler end -->
+	
+	
+	
+	<bean id="reactivateLoclBdyServiceImp" class="in.nic.pes.lgd.service.impl.ReactivateLoclBdyServiceImp" />
+	<bean id="reactivateLoclBodyDAOImp" class="in.nic.pes.lgd.dao.impl.ReactivateLocalBodyDAOImp" />
+	<!-- 
+		 * This Method is Use for External User 
+		 * @param loginForm
+		 * @author Maneesh Kumar
+		 * @since 01-10-2019 -->
+	<bean class="in.nic.pes.lgd.validator.ExternalUserValidator" id="externalUserValidator" />
+	<!-- end External User  -->
+	
+	<bean id="dashboardService" class="in.nic.pes.lgd.service.impl.DashboardServiceImpl" />
+	<bean id="dashboardDao" class="in.nic.pes.lgd.dao.impl.DashboardDaoImpl" />
+</beans>

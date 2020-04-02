@@ -1,0 +1,13 @@
+
+<Context docBase="LGD" path="/LGD" reloadable="true"
+	source="org.eclipse.jst.jee.server:LGD">
+	<Resource name="jdbc/exHl" auth="Container" type="javax.sql.DataSource"
+		maxActive="5" maxIdle="2" maxWait="-1" username="postgres" password="postgres"
+		driverClassName="org.postgresql.Driver" url="jdbc:postgresql://10.25.85.220:5432/lgd_db"
+		testOnBorrow="true" />
+	<Resource name="jdbc/switchunit" auth="Container" type="javax.sql.DataSource"
+		maxActive="5" maxIdle="2" maxWait="-1" username="postgres" password="password"
+		driverClassName="org.postgresql.Driver" url="jdbc:postgresql://10.25.85.243:5432/pes"
+		testOnBorrow="true" />
+</Context>
+      

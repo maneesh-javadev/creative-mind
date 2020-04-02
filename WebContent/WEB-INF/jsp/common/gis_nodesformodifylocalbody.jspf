@@ -1,0 +1,135 @@
+<div class="frmpnlbg">
+	<div class="frmtxt">
+		<div class="frmhdtitle">
+			<spring:message code="Label.GISNODES" htmlEscape="true"></spring:message>
+		</div>
+		<table width="100%" class="tbl_no_brdr">
+			<tr>
+			
+				<td>
+					<table id="maptabid" class="tbl_no_brdr">
+						<tr>
+							<td>
+								<div>
+									<table id="lat_long_tbody">
+										<tr>
+											<td class="tblclear">
+											<table id="maptabidF" width="100%" class="tbl_no_brdr">
+												
+													<tr>
+														<td width="125">
+															<label id="lbllatitude">
+																<spring:message code="Label.LATITUDE" htmlEscape="true"></spring:message>
+															</label>
+														</td>
+														<td width="125">
+															<label id="lbllongitude"><spring:message code="Label.LONGITUDE" htmlEscape="true"></spring:message></label>
+														</td>
+														<td width="150"></td>
+													</tr>
+											
+											
+ 										<%-- <c:choose>
+ 											 <c:when test="${Coordinates !=null}">
+ 												 <c:set var="count" value="1"></c:set>
+  											 </c:when>
+  											 <c:otherwise>
+    											 <c:set var="count" value="0"></c:set>
+ 											 </c:otherwise>
+										</c:choose> --%>
+											
+											<c:if test="${Coordinates !=null}"> 	
+												<c:set var="str1" value="${localBodyForm.coordinates}" />
+												<c:forEach var="str2" items="${fn:split(str1, ',')}">
+													<tr>
+														<c:set var="count" value="1"></c:set>
+														<c:forEach var="num" items="${fn:split(str2, ':')}">
+
+															<c:if test="${count==1}">
+																<td class="lblBold"><input type="text" id="lati${count}" class="frmfield" name="lati" value="<c:out value='${num}' escapeXml='true'></c:out>" /></td>
+
+															</c:if>
+															<c:if test="${count!=1}">
+																<td class="lblBold"><input type="text" id="longi${count}" class="frmfield"  name="longi" value="<c:out value='${num}' escapeXml='true'></c:out>"/></td>
+															</c:if>
+															
+															<c:set var="count" value="${count+1}"></c:set>
+
+														</c:forEach>
+														<td align="center" class="lblBold">&nbsp;</td>
+													</tr>
+												</c:forEach>
+											</c:if>	
+											
+											<tr>
+													
+													<td valign="top"><form:input path="latitude" htmlEscape="true"
+													id="latitude" type="text" class="frmfield"
+													onkeypress="validateforLATIandLONGI();"  
+													onfocus="validateOnFocus('latitude');helpMessage(this,'latitude_msg');"											
+													onblur="vlidateOnblur('latitude','1','15','o');hideHelp();" onkeyup="hideMessageOnKeyPress('latitude');"/></td>
+													
+													<td valign="top"><form:input path="longitude" htmlEscape="true"
+													id="longitude" type="text" class="frmfield"
+													onkeypress="validateforLATIandLONGI();" onfocus="validateOnFocus('longitude');helpMessage(this,'longitude_msg');"											
+													onblur="vlidateOnblur('latitude','1','15','o');hideHelp();" onkeyup="hideMessageOnKeyPress('longitude');"/><span><form:errors
+													path="longitude" class="errormsg" htmlEscape="true"></form:errors></td>
+													<td valign="top"><input type="button" name="Submit3" 
+														value="<spring:message code="Button.ADDNODES" htmlEscape="true"></spring:message>"
+														onclick="addGISnodes()" /></td>
+												</tr> 
+												<tr>
+													<td colspan="2"><div id="addgisnodes"></div></td>
+												</tr>
+												<tr>
+													<td valign="top"><span><form:errors
+													path="latitude" class="errormsg" htmlEscape="true"></form:errors> </span>
+													<span style="display: none;" id="latitude_msg"><spring:message htmlEscape="true" code="error.blank.latitude" ></spring:message></span></td>
+													<td valign="top"><span> <form:errors
+													path="longitude" class="errormsg" htmlEscape="true"></form:errors> </span>
+													<span style="display: none;" id="longitude_msg"><spring:message htmlEscape="true" code="error.blank.longitude" ></spring:message></span></td>
+												</tr>
+											 </table>
+											</td> 
+										</tr>
+									</table>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<!-- <td><div id="addgisnodes"></div></td> -->
+						</tr>
+					</table>
+				</td>
+			</tr>
+			
+		
+			<tr>
+			<%-- 	<td><div id="map-1">
+						<table>
+							<tr>
+								<c:if test="${hideMap == 'true'}"> 
+									<td width="50%">
+										<%@ include file="mapUploadforgisnodesmodifylocalbody.jspf"%>
+									</td>
+								</c:if>	
+							</tr>
+						</table>
+					</div>
+				</td>  --%>
+				<table>
+						<tr>
+							<%-- <c:if test="${hideMap == 'true'}"> --%> 
+								<td width="50%">
+									<%@ include file="mapUploadforgisnodesmodifylocalbody.jspf"%>
+								</td>
+							<%-- </c:if>	 --%>
+						</tr>
+				</table>
+				
+				
+			</tr>
+	
+		</table>
+	</div>
+</div>

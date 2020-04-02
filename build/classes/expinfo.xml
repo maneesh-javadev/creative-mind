@@ -1,0 +1,41 @@
+<?xml	version="1.0"?>
+<!DOCTYPE exceptioninfo [
+	<!ELEMENT exceptioninfo (exception+) >
+	<!ELEMENT exception (messagecode,submessagecode,redirectpath,loggingtype,module,applicationid,schemaname,logout)>
+	<!ATTLIST exception name CDATA #REQUIRED>
+	<!ELEMENT messagecode (#PCDATA)> 
+	<!ELEMENT submessagecode (#PCDATA)>  
+	<!ELEMENT loggingtype (#PCDATA)>
+	<!ELEMENT redirectpath (#PCDATA)>
+	<!ELEMENT module (#PCDATA)>
+	<!ELEMENT applicationid (#PCDATA)>
+	<!ELEMENT schemaname (#PCDATA)>
+	<!ELEMENT logout (#PCDATA)>	
+]>
+
+<exceptioninfo>   
+    <exception name="BaseAppException">
+		<messagecode>expError.trg.baseAppException</messagecode>
+		<submessagecode>expError.trg.sub.baseAppException</submessagecode>
+		<redirectpath>customException</redirectpath>
+		<loggingtype>error</loggingtype>
+		<module>label.lgd</module>
+		<applicationid>1</applicationid>
+		<schemaname>public</schemaname>
+		<logout>false</logout>
+	</exception>
+	
+	<exception name="UserAuthException">
+	<messagecode>expError.trg.baseAppException</messagecode>
+		<submessagecode>expError.trg.sub.baseAppException</submessagecode>
+		<redirectpath>customException</redirectpath>
+		<loggingtype>error</loggingtype>
+		<module>label.lgd</module>
+		<applicationid>1</applicationid>
+		<schemaname>public</schemaname>
+		<logout>true</logout>
+	</exception>
+	
+</exceptioninfo>
+	
+	

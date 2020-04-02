@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section class="content">
+    	<div class="row">
+        	<section class="col-lg-12">
+  				<div class="modal-header">
+            		<h3>Merge Entity into {{mergeNameTo}}</h3>
+        		</div>
+        		<form class="form-horizontal" name="form">
+          			<div class="modal-body">
+          				<div class="box-header subheading">
+                        	<h4 class="box-title" style="font-size: inherit;">Step 1 :  Select {{mergeNameFrom}} that need to merge</h4>
+                        </div>
+            			<div class="ms_container row" style="margin-left: 10px;">
+            				<div class="ms_selectable col-sm-5 form-group">
+            					<select class=form-control  ng-model="mergeEntity.entityList" multiple="true" ng-options="mergeEntity.adminEntityNameEnglish for mergeEntity in mergeEntityList"></select>
+            				</div>
+            				<div class="ms_buttons col-sm-2"><br><br>
+            					<button class="btn btn-primary btn-xs btn-block" ng-click="moveItem(mergeEntityList,mergeEntityList,mergeEntityData)" >  <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+            					<button class="btn btn-primary btn-xs btn-block" ng-click="moveAll(selectedList,availableList,mergeEntityData)" >  <i class="fa fa-angle-double-left" aria-hidden="true"></i></button>
+            				</div>
+            				<div class="ms_selection col-sm-5">
+	            				<div class="form-group">
+	            					<select  class=form-control  ng-model="cmergeEntity.entityListSelected"  multiple="true" ng-options="merging.adminEntityNameEnglish for merging in mergeEntityData"></select>
+	            				</div>
+            				</div>
+            			</div>
+	             		<div class="box-header subheading">
+                        	<h3 class="box-title" style="font-size: inherit;">Step 2 : Select {{mergeNameTo}} where you want to merge</h3>
+                        </div>
+		             	<div class="form-group">
+                        	<label for="entity" class="col-sm-3 control-label">Select Entity<span class="mandatory">*</span></label>
+							<div class="col-sm-6" >
+								<select class="form-control" ng-model="subData.adminLevelNameEng">
+									<option ng-repeat="subData in mergeSubDataList" value="{{subData}}">{{subData.adminEntityNameEnglish}}</option>
+								</select>
+							</div>
+                        </div>
+                        
+          			</div>
+          			<div class="modal-footer">
+          				<button type="submit" class="btn btn-success " name="Submit"  ng-click="saveEntity()"  value=<spring:message code="Button.SAVE" htmlEscape="true"></spring:message> <i class="fa fa-floppy-o"></i> Submit</button>
+          				<button type="button" class="btn btn-danger " name="Cancel"  id="btnCancel" ng-click="cancel()"><i class="fa fa-times-circle"></i> Close</button>
+          			</div>
+          		</form>
+          </section>
+          </div>
+          </section>
+</body>
+</html>

@@ -1,0 +1,125 @@
+@charset "utf-8";
+/* CSS Document */
+ a.open,  a.close {
+	height: 20px;
+	line-height: 20px !important;
+	padding-left: 30px !important;
+	cursor: pointer;
+	display: block;
+	width: 100px;
+	position: relative;
+	top: 5px;
+}
+
+a.open {background: url(../images/plus.png) no-repeat left 0;}
+a.close {background: url(../images/minus.png) no-repeat left 0;}
+
+
+#tabing_main
+{
+	height:auto;
+	width:100%;
+	border:solid 1px #D8A820;
+	background:#FBFCEC;
+	
+}
+.selectedTab
+{
+
+		background:#FBFCEC;
+		border-bottom:0px;
+}
+
+.tab_span
+{
+	
+	font: bold 12px Arial, Helvetica, sans-serif; color:#4A3B12;
+	width:33%;
+	float:left;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+}
+
+
+#tabs
+{
+	height:30px;
+	width:100%;
+	background:#F2DA84;
+	margin-bottom: 15px;
+}
+
+#tab1
+{
+	margin:0px 0px 0px 0px;
+	height:auto;
+
+}
+
+
+#tab2
+{
+	margin:0px 0px 0px 0px;
+	height:auto;
+
+	
+}
+
+
+#tab3
+{
+	margin:0px 0px 0px 0px;
+	height:auto;
+
+	
+}
+
+.mainTable
+{
+	height:auto;
+	width:830px;
+	margin-left:auto;
+	margin-right:auto;
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 11px;
+}
+.Lebel
+{
+	height:32px; 
+	line-height:30px;
+	width:30%;
+	text-align:right; 
+	margin-right:10px;
+	padding-right:10px;
+	border-right:solid 1px #D8A820;
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+}
+#input_styl
+{
+	
+	width:68%;
+	height:30px;
+	padding-left: 10px;
+	
+}
+
+
+#required
+{
+		margin-right: 2px;
+		color: red;
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size:11px;
+		
+}
+.header_details
+{
+	
+		height:20px; 
+		width:100%;
+		text-align:center;
+		line-height:30px;
+		background:#F2DA84;
+		font: bold 12px Arial, Helvetica, sans-serif; color:black;
+}

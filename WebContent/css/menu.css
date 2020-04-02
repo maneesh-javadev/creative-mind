@@ -1,0 +1,88 @@
+
+@charset "utf-8";
+/* CSS Document */
+#mainStructure
+{
+	width:100%;
+	border:solid 1px ;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	margin:0px;
+	padding:0px;
+}
+#mainStructure ul
+{
+	font-weight:bolder;
+	font-size:10px;
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	text-align:center;
+	background:#F2DA84;
+	color:black;
+	border:solid 1px #D8A820;	
+}
+
+#mainStructure ul li
+{
+	font-size:10px;
+	background:#FBFCEC;
+	text-align:left;
+	list-style:none;
+}
+
+#mainStructure ul li a
+{
+	font-weight:normal;
+	padding:2px 0px 3px 10px;
+	color:#006;
+	text-decoration:none;
+	display:block;
+	
+}
+#mainStructure ul li a:hover
+{
+	color:#000;
+	background-color:#F2DA90;
+	font-weight:bold;
+}
+
+
+#subStructure
+{
+	width:100%;
+	border:solid 1px ;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	margin:0px;
+	padding:0px;
+}
+
+
+.slideBtn
+	{
+	font-weight:bolder;
+	font-size:10px;
+	padding:10px 0px 10px 0px;
+	text-align:center;
+	background:#F2DA84;
+	color:black;
+	display:block; 
+	cursor:pointer;
+	margin-top:2px;
+	
+}
+
+
+.slidesubBtn
+	{
+	font-weight:bolder;
+	font-size:10px;
+	padding:3px 0px 5px 0px;
+	text-align:center;
+	background:#F2DA84;
+	color:black;
+	display:block; 
+	cursor:pointer;
+	margin-top:1px;
+	
+}

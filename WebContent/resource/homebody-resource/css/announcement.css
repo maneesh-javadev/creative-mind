@@ -1,0 +1,118 @@
+.datehome {
+	float:left;
+	text-align:center;
+	width:75px;
+	border:1px solid #337ab7;
+	margin:0 10px 0 0;
+	padding:0;
+}
+.date_mm {
+	background: #337ab7;
+	color:#fff;
+	font-size:16px;
+}
+.date_dd {
+	font-size:16px;
+	line-height:22px;
+	color:#337ab7;
+}
+.date_day {
+	font-size:12px;
+	color:#EE5030;
+}
+
+.noborder a, .noborder h4 {
+    color: #108896 !important;
+    padding: 0;
+    margin: 0;
+}
+
+table {
+    border-collapse: separate;
+    white-space: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-size: medium;
+    font-style: normal;
+    color: -internal-quirk-inherit;
+    text-align: start;
+    border-spacing: 2px;
+    font-variant: normal;
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 100%;
+}
+
+.announcement-modal-dialog {
+    width: 80%;
+    margin: 30px auto;
+    
+}
+
+.announcement-modal-content {
+ 
+    /* 80% of window height */
+ 
+   
+	 
+   /* background-color:#BBD6EC;*/
+ 
+}       
+ 
+.announcement-modal-header {
+ 
+    background-color: #337AB7;
+ 
+    padding:16px 16px;
+ 
+    color:#FFF;
+ 
+    border-bottom:2px dashed #337AB7;
+ 
+ }
+ 
+ 
+ @media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) { 
+
+.announcement {    
+    height: 391px !important;
+}
+ 
+
+ 
+ .announcement-modal-body{
+  height: 250px;
+ }
+ 
+ .announcement-modal-title{
+ color: white !important;
+ }
+
+
+a {
+    color: #337ab7;
+    cursor: pointer;
+    text-decoration: none;
+}
+user agent stylesheet
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+td, th {border-bottom-style: dotted;padding-bottom:5px;padding-top:5px;}
+.firstCol{padding-left:5px;padding-right:10px;width:5%}
+.secondCol{padding-left:5px;width:10%;}
+.thirdCol{padding-left:0px;width:75%;vertical-align: top; text-align: left}
+.fourthCol{padding-left:5px;width:10%;vertical-align: bottom; text-align: left}
+.modal-color{color: #337ab7;}
+
+.firstColSA{padding-left:5px;padding-right:10px;width:5%;color: #337ab7}
+.secondColSA{padding-left:5px;width:10%;color: #337ab7}
+.thirdColSA{padding-left:0px;width:85%;vertical-align: top; text-align: left;color: #337ab7}
+
+/* li{
+  margin: 3px 0;
+} */

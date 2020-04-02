@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.4.1.v201408290142 Build &lt;4.4.1.v20140916-1320></property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">43</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">43</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">43</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="entity_code" id="151">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="42">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaJndiName">java:comp/env/jdbc/birtReportDS</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="43">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">dlc</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">dlc</text-property>
+                    <text-property name="heading">dlc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">districtnameenglish</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">districtnameenglish</text-property>
+                    <text-property name="heading">districtnameenglish</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">slc</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">slc</text-property>
+                    <text-property name="heading">slc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">statenameenglish</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">statenameenglish</text-property>
+                    <text-property name="heading">statenameenglish</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">census2001code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">census2001code</text-property>
+                    <text-property name="heading">census2001code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">census2011code</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">census2011code</text-property>
+                    <text-property name="heading">census2011code</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">dlc</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">districtnameenglish</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">slc</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">statenameenglish</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">census2001code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">census2011code</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">dlc</property>
+                    <property name="nativeName">dlc</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">districtnameenglish</property>
+                    <property name="nativeName">districtnameenglish</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">slc</property>
+                    <property name="nativeName">slc</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">statenameenglish</property>
+                    <property name="nativeName">statenameenglish</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">census2001code</property>
+                    <property name="nativeName">census2001code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">census2011code</property>
+                    <property name="nativeName">census2011code</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT  d.district_code as dlc,d.district_name_english as
+ districtNameEnglish,s.state_code as slc ,s.state_name_english as
+  stateNameEnglish,
+ CAST(d.census_2001_code AS varchar(2)) as census2001Code, 
+d.census_2011_code as census2011Code 
+from state s, district d where d.slc= s.slc and 
+d.isactive and s.isactive order by 4,2]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>dlc</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>dlc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>dlc</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>districtnameenglish</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>districtnameenglish</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>districtnameenglish</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>slc</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>slc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>slc</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>statenameenglish</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>statenameenglish</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>statenameenglish</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>census2001code</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>census2001code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>census2001code</design:label>
+            <design:formattingHints>
+              <design:displaySize>2</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>census2011code</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>census2011code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>census2011code</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="table-cell" id="105"/>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <text id="7">
+            <property name="fontFamily">serif</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<H1>
+<CENTER>
+Local Government Directory
+</CENTER>
+</H1>]]></text-property>
+        </text>
+        <text id="51">
+            <property name="fontFamily">serif</property>
+            <property name="color">gray</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<H2>
+<CENTER>
+ All Districts Of India
+</CENTER>
+</H2>]]></text-property>
+        </text>
+        <table id="111">
+            <property name="borderBottomStyle">none</property>
+            <property name="borderLeftStyle">none</property>
+            <property name="borderRightStyle">none</property>
+            <property name="borderTopStyle">none</property>
+            <property name="verticalAlign">top</property>
+            <property name="whiteSpace">normal</property>
+            <property name="display">block</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">census2001code</property>
+                    <text-property name="displayName">census2001code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["census2001code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">statenameenglish</property>
+                    <text-property name="displayName">statenameenglish</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["statenameenglish"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">districtnameenglish</property>
+                    <text-property name="displayName">districtnameenglish</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["districtnameenglish"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">dlc</property>
+                    <text-property name="displayName">dlc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["dlc"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">slc</property>
+                    <text-property name="displayName">slc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["slc"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">census2011code</property>
+                    <text-property name="displayName">census2011code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["census2011code"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+            <column id="145"/>
+            <column id="146"/>
+            <column id="147"/>
+            <column id="148"/>
+            <column id="149"/>
+            <column id="150"/>
+            <header>
+                <row id="112">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">none</property>
+                    <property name="borderRightStyle">none</property>
+                    <property name="borderTopStyle">none</property>
+                    <cell id="113">
+                        <label id="114">
+                            <text-property name="text">District Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="115">
+                        <label id="116">
+                            <text-property name="text">District Name(In English)</text-property>
+                        </label>
+                    </cell>
+                    <cell id="117">
+                        <label id="118">
+                            <text-property name="text">State Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="119">
+                        <label id="120">
+                            <text-property name="text">State Name (In English)</text-property>
+                        </label>
+                    </cell>
+                    <cell id="121">
+                        <label id="122">
+                            <text-property name="text">Census 2001 Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="123">
+                        <label id="124">
+                            <text-property name="text">Census 2011 Code</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="125">
+                    <property name="borderBottomStyle">none</property>
+                    <property name="borderLeftStyle">none</property>
+                    <property name="borderRightStyle">none</property>
+                    <property name="borderTopStyle">none</property>
+                    <cell id="126">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="textAlign">center</property>
+                        <data id="127">
+                            <property name="resultSetColumn">dlc</property>
+                        </data>
+                    </cell>
+                    <cell id="128">
+                        <data id="129">
+                            <property name="resultSetColumn">districtnameenglish</property>
+                        </data>
+                    </cell>
+                    <cell id="130">
+                        <property name="textAlign">center</property>
+                        <data id="131">
+                            <property name="resultSetColumn">slc</property>
+                        </data>
+                    </cell>
+                    <cell id="132">
+                        <data id="133">
+                            <property name="resultSetColumn">statenameenglish</property>
+                        </data>
+                    </cell>
+                    <cell id="134">
+                        <property name="textAlign">center</property>
+                        <data id="135">
+                            <property name="resultSetColumn">census2001code</property>
+                        </data>
+                    </cell>
+                    <cell id="136">
+                        <property name="textAlign">center</property>
+                        <data id="137">
+                            <property name="resultSetColumn">census2011code</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="138">
+                    <property name="height">0.7083333333333334in</property>
+                    <cell id="139"/>
+                    <cell id="140"/>
+                    <cell id="141"/>
+                    <cell id="142"/>
+                    <cell id="143"/>
+                    <cell id="144"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

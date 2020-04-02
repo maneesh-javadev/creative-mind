@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title> 
+</head>
+<body>
+<section class="content">
+    	<div class="row">
+        	<section class="col-lg-12">
+          		<div class="modal-body">
+          				<div class="box-header with-border">
+                        	<h3 class="box-title">Report New Issue</h3>
+                        </div>
+                         <form class="form-horizontal" name="form">
+                         
+                         	<div class="form-group" style="margin-left: 32%;">
+                         		<label class="radio-inline col-sm-4"><input type="radio" ng-click="showCenterList()" ng-model="center" name="optradio">System Admin</label>
+		        				<label class="radio-inline col-sm-3"><input type="radio"  ng-click="showStateList()" ng-model="state" name="optradio">State</label>
+                         	</div>
+                         
+                         
+          					 <div class="form-group" ng-if="centerFlag">
+          					 	<label for="entity" class="col-sm-4 control-label">Select Department</label>
+	          					 <div class="col-sm-6" >
+	          					 <select ng-model="reportingIssue.submittedToCenter" class="form-control" required>
+				  					<option value="">Please Department</option>
+				   						<option ng-repeat="canter in centerList" value="{{canter.orgUnitCode}}">{{canter.orgUnitName}}</option>
+				  				 </select>
+				  				 </div>
+                            </div>
+                            <div class="form-group" ng-if="stateFlag">
+          					 	<label for="entity" class="col-sm-4 control-label">Select State</label>
+	          					 <div class="col-sm-6" >
+	          					 <select ng-model="reportingIssue.stateCode" class="form-control" required>
+				  					<option value="">Please select</option>
+				   						<option ng-repeat="state in statelist" value="{{state.stateCode}}">{{state.stateNameEnglish}}</option>
+				  				 </select>
+				  				 </div>
+                            </div>
+                            
+                            
+                            <div class="form-group">
+                        		<label for="entity" class="col-sm-4 control-label">Issue is related to</label>
+								<div class="col-sm-6" >
+									<select ng-model="reportingIssue.stateType" class="form-control" required>
+			  							<option value="">Please select</option>
+			   							<option ng-repeat="(key, value) in issueTypes" value="{{key}}">{{key == 0?'Revenue/Land region(District,Sub district,Village)':key == 1?'Urban Local Body':value}}</option>
+			  				 		</select>
+								</div>
+                            </div>
+                            <div class="form-group">
+                        		<label for="entity" class="col-sm-4 control-label">Reporting Issue</label>
+								<div class="col-sm-6" >
+									<textarea rows="4" cols="34" ng-model="reportingIssue.reportedIssueText" required>
+									</textarea>
+								</div>
+                            </div>
+            
+	          <div class="modal-footer">
+	          	<button type="submit" class="btn btn-success"  name="Submit" ng-disabled ="!form.$valid" ng-click="saveData()"  value="<spring:message code="Button.SAVE" htmlEscape="true"></spring:message><i class="fa fa-floppy-o"></i> Submit</button>
+	          	<button type="button" class="btn btn-danger " name="Cancel"  id="btnCancel" ng-click="cancel()"><i class="fa fa-times-circle"></i> Close</button>
+	          </div>
+	          </form>
+	          </div>
+          </section>
+          </div>
+          </section>
+</body>
+</html>

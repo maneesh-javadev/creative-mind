@@ -1,0 +1,13 @@
+dojo.require("esri.map");
+dojo.require("esri.symbol");
+dojo.require("esri.tasks.query");
+dojo.require("esri.tasks.find");
+dojo.require("esri.toolbars.navigation");
+dojo.require("dijit.form.Button");
+dojo.require("dijit.Toolbar");
+dojo.require("dijit.layout.ContentPane");
+dojo.require("dijit.layout.BorderContainer");
+dojo.require("esri.dijit.Geocoder");
+dojo.require("esri.tasks.geometry");
+dojo.require("esri.toolbars.draw");
+dojo.require("esri.dijit.Scalebar");

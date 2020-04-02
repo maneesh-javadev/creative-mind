@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ 	<style type="text/css">
+
+	
+	table{border-collapse:collapse;}
+	table td{word-wrap:break-word;}
+	table th{word-wrap:break-word;}
+
+	.modal-dialog {
+    	   width: 55% !important;
+   	  margin: 5% 9% !important;
+	}
+
+        .modal-content {
+            width: 150%;
+            margin-left: 10px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal-header">
+    	<button type="button" class="close"  ng-click="cancel()">&times;</button>
+        <h3>{{titleName}}</h3>
+    </div>
+    <div class="modal-body">
+    
+    	<div id="preloader" ng-show="isloader" >
+  			<div id="loader"></div>
+		</div>
+        <div ng-show="showPaginationDiv" class="form-inline" ng-cloak>
+            <div class="col-sm-3 form-inline">
+                <div>
+                    <label>Show
+                        <select data-ng-model="selectedLength" 	class="form-control input-sm" id="selectedPageSize">
+							<option ng-repeat="size in pageSizeLength">{{size}}</option>
+					</select> entries
+                    </label>
+                </div>
+            </div>
+            <!-- <div class="col-sm-4"></div> -->
+            <div class="col-sm-9" align="right">
+                <input style="width: 154px;" type="text" ng-model="searchElement" class="form-control" placeholder="Search"></input>
+            </div>
+        </div>
+
+        <div class="box-body table-responsive_dashboard_modal">
+            <table  class="data_grid" id="invalidatedLocalBodyTable" ng-if="revenueDetailList.length>0" ng-cloak width="100%">
+                <thead>
+                    <tr>
+                        <th width="3%">S.No.</th>
+                        <th width="3%">State Code</th>
+                        <th width="20%">State Name (In English)</spring:message>
+                        </th>
+                        <th width="4%">District Code</th>
+                        <th width="20%">District Name (In English)</spring:message>
+                        </th>
+                        <th width="5%">Sub-District Code</th>
+                        <th width="20%">Sub-District Name (In English)</spring:message>
+                        </th>
+                        <th width="5%">Village Code</th>
+                        <th width="20%">Village Name (In English)</spring:message>
+                        </th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr dir-paginate="obj in revenueDetailList|filter:searchElement|itemsPerPage:selectedLength | orderBy : ['stateNameEnglish','districtNameEnglish','subdistrictNameEnglish','villagNameEnglish']">
+                        <td>{{setSerialNumber+($index)}}</td>
+                        <td>{{obj.stateCode}}</td>
+                        <td>{{obj.stateNameEnglish}}</td>
+                        <td>{{obj.districtCode}}</td>
+                        <td>{{obj.districtNameEnglish}}</td>
+                        <td>{{obj.subdistrictCode}}</td>
+                        <td>{{obj.subdistrictNameEnglish}}</td>
+                        <td>{{obj.villagCode}}</td>
+                        <td>{{obj.villagNameEnglish}}</td>
+
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <div style="color: red;" class="box-body" ng-if="revenueDetailList.length<=0">
+            <label>No records found</label>
+        </div>
+
+        <div ng-if="revenueDetailList.length>0" align="right" class="form-group">
+            <div class="col-sm-12">
+                <dir-pagination-controls max-size="10" direction-links="true" boundary-links="true" on-page-change="setPageNumber(newPageNumber, oldPageNumber)">
+                </dir-pagination-controls>
+            </div>
+        </div>
+
+    </div>
+    <!-- </div> -->
+    <div class="modal-footer">
+        <button ng-click="cancel()" class="btn">close</button>
+    </div>
+</body>
+
+</html>

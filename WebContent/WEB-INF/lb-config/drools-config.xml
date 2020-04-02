@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:drools="http://drools.org/schema/drools-spring"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+						   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://drools.org/schema/drools-spring 
+                           classpath:xsd/drools-spring-1.7.0.xsd">
+	
+	
+	<drools:kbase id="kbase">
+		<drools:resources>
+			<drools:resource type="DRL" source="classpath:drl-files/LocalBodyRules.drl"></drools:resource>
+		</drools:resources>
+	</drools:kbase>
+
+	<drools:ksession id="statelessKSession" type="stateless" name="statelessKSession" kbase="kbase"></drools:ksession>
+
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"></bean>
+	
+	<bean id="collaborators" class="com.cmc.lgd.localbody.rules.Collaborators">
+		<constructor-arg>
+			<map>
+				<!-- <entry key="applicantDao" value-ref="applicantDao"></entry> -->
+				<entry key="localBodyDao" value-ref="localBodyDao"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<!-- <bean id="applicantDao" class="com.cmc.lgd.localbody.dao.impl.ApplicantDAOImpl"></bean> -->
+	<!-- <bean id="localBodyDao" class="com.cmc.lgd.localbody.dao.LocalBodyDaoImpl"></bean> -->
+	
+</beans>

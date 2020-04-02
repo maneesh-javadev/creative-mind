@@ -1,0 +1,192 @@
+<%@page import="in.nic.pes.lgd.bean.MapAttachment"%>
+<%@ page import="in.nic.pes.lgd.bean.Attachment"%>
+<%@page import="org.owasp.esapi.ESAPI"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Iterator"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<script src="js/attachFiles.js" type="text/javascript"
+	language="javascript"></script>
+</head>
+<body>
+
+
+	<%
+		String requiredTitle1 = "requiredTitle1";
+	%>
+	<%
+		String requiredTitleValue1 = "no";
+	%>
+	<%
+		String fileTable1 = "elementTable1";
+	%>
+	<%
+		String fileTitle1 = "fileTitle1";
+	%>
+	<%
+		String fileName1 = "attachFile2";
+	%>
+	<%
+		String maxFileLimit1 = "maxFileLimit1";
+	%>
+	<%
+		Integer maxFileLimitValue1 = 1;
+	%>
+	<%
+		List<MapAttachment> listOFMetaData1 = (List<MapAttachment>) request.getAttribute("mapAttachmentList");
+	%>
+	<%
+		String validationError1 = (String) request
+				.getAttribute("validationErrorOne");
+	%>
+	<%
+		String deleteID1 = "deleteID2";
+	%>
+	<%
+		String deletePath1 = "deletePath2";
+	%>
+	<%
+		String deleteFileSize1 = "deleteFileSize2";
+	%>
+	<%
+		String deletedFileID1 = "deletedFileID2";
+	%>
+	<%
+		String deletedFileName1 = "deletedFileName2";
+	%>
+	<%
+		String deletedFileSizeList1 = "deletedFileSizeList2";
+	%>
+
+
+
+	<input type="hidden" id="<%=maxFileLimit1%>" name="<%=maxFileLimit1%>"
+		value="<%=maxFileLimitValue1%>" />
+	<input type="hidden" id="<%=requiredTitle1%>" name="<%=requiredTitle1%>"
+		value="<%=requiredTitleValue1%>" />
+	<table width="100%" class="tbl_no_brdr" id="validationErrorTable">
+		<tr>
+
+			<td>
+				<div class="errormsg">
+					<%
+						if (validationError1 != null) {
+					%>				
+					<spring:message code="<%=validationError1%>" htmlEscape="true" />
+					<%
+						}
+					%>
+				</div></td>
+		</tr>
+		<tr>
+			
+			<td width="100%">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label><spring:message code="Label.UPLOADMAP" htmlEscape="true"/></label>
+				<table width="880" class="tbl_no_brdr" id="<%=fileTable1%>">
+					<tr>
+						<%
+							if ("yes".equalsIgnoreCase(requiredTitleValue1)) {
+						%>
+						<td valign="top" width="0px">Title:
+							</div>
+						</td>
+						<td valign="top" width="0px"><input type="text"
+							name="<%=fileTitle1%>" id="<%=fileTitle1%>" class="frmfield" />
+						</td>
+						<%
+							} else {
+						%>
+						<td valign="top" width="0"><input type="hidden"
+							name="<%=fileTitle1%>" id="<%=fileTitle1%>" class="frmfield" />
+						</td>
+						<%
+							}
+						%>
+
+						<td valign="top" width="50">
+						
+						<input type="file" 
+							name="<%=fileName1%>" id="<%=fileName1%>" class="frmfield"
+							onclick="{return validateEmptyTitle('<%=fileTitle1%>','<%=fileName1%>','<%=fileTable1%>','<%=requiredTitle1%>')}" />
+						</td>
+						<%-- <td valign="top"><input type="button" id="addMore"
+							name="addMore" value="Add More"
+							onclick="{return validateAddMore('<%=fileTitle1%>', '<%=fileName1%>', '<%=fileTable1%>', '<%=maxFileLimit1%>', '<%=requiredTitle1%>')}" />
+						</td>
+						<td valign="top"><input type="button" id="removeAll"
+							name="removeAll" value="<spring:message code="Button.REMOVE"/>"
+							onclick="{deleteAllRows('<%=fileTitle1%>', '<%=fileName1%>', '<%=fileTable1%>')}" />
+						</td>
+ --%>						
+				<td width="550"><span id="attachFile2_error" class="errormsg"></span>
+					
+				</td>
+					</tr>
+				</table>
+				<br /> <%
+ 	if (listOFMetaData1 != null && listOFMetaData1.size() != 0) {
+ %> 
+				<table width="100%" class="tbl_with_brdr" align="left" id="maptid">
+					<tr class="frmhd"><spring:message code="Label.ALREADYATTACHINFO" htmlEscape="true"/>
+					</tr>
+					<tr class="tblRowTitle tblclear">
+						<%
+							if ("yes".equalsIgnoreCase(requiredTitleValue1)) {
+						%>
+						<td><spring:message code="Label.FILETITLE" htmlEscape="true"/></td>
+						<%
+							}
+						%>
+						<td><spring:message code="Label.FILENAME" htmlEscape="true"/></td>
+						<td><spring:message code="Label.FILESIZE" htmlEscape="true"/></td>
+						<td><spring:message code="Label.CONTENTTYPE" htmlEscape="true"/></td>
+						<td><spring:message code="Label.MARKDELETEFILE" htmlEscape="true"/></td>
+					</tr>
+
+					<%
+						try {
+								Iterator<MapAttachment> it = listOFMetaData1.iterator();
+								while (it.hasNext()) {
+									MapAttachment abc = (MapAttachment) it.next();
+					%>
+
+					<tr id="row<%=abc.getAttachmentId()%>" class="tblRowB">
+						<%
+							if ("yes".equalsIgnoreCase(requiredTitleValue1)) {
+						%>
+						<td><%=ESAPI.encoder().encodeForHTML(abc.getFileName()) %></td>
+						<%
+							}
+						%>
+						<td><a href="#" onclick="openFileByPath('<%=ESAPI.encoder().encodeForHTML(abc.getFileLocation())%>');"><%=ESAPI.encoder().encodeForHTML(abc.getFileName()) %></a></td>
+						<td><%=abc.getFileSize()%></td>
+						<td><%=abc.getFileContentType()%></td>
+						<td width="10%"><a href="#"><img src="images/delete.png"
+								name="deleteAttachment" width="18" height="19" border="0"
+								onclick="{setFlag('attachFile2'),setmapcounter(),hideThisRow('<%=abc.getAttachmentId()%>'),holdAttachmentID('<%=abc.getAttachmentId()%>','<%=deleteID1%>','<%=deletedFileID1%>'),holdFilePath('<%=abc.getFileTimestamp()%>','<%=deletePath1%>','<%=deletedFileName1%>'),holdFileSize('<%=abc.getFileSize()%>','<%=deleteFileSize1%>','<%=deletedFileSizeList1%>')}" />
+						</a>
+							<div id="<%=deleteID1%>"></div>
+							<div id="<%=deletePath1%>"></div>
+							<div id="<%=deleteFileSize1%>"></div></td>
+					</tr>
+					<%
+						}
+					%>
+				</table>
+				<br /> 
+				<%
+					} catch (Exception e) {
+					}
+				%> <%
+ 	}
+ %>
+			</td>
+		</tr>
+	</table>
+
+
+</body>
+</html>
+
+

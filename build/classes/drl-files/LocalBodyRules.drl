@@ -1,0 +1,69 @@
+/**
+ *@author Vinay Yadav
+ *@created on: Jun 24, 2014
+ */
+package com.cmc.localbody.process.define.rules
+
+
+//import com.cmc.lgd.localbody.entities.ApplicationForm
+//import com.cmc.lgd.localbody.entities.Applicant
+import com.cmc.lgd.localbody.entities.LocalBodyForm
+import com.cmc.lgd.localbody.rules.Errors
+//import com.cmc.lgd.localbody.dao.ApplicantDao
+//import com.cmc.lgd.localbody.dao.LocalBodyDao
+ 
+//global ApplicantDao applicantDao
+//global LocalBodyDao localBodyDao
+
+rule "Check One Full"
+   when
+       $errors : Errors()
+       $lbForm : LocalBodyForm (contributingLBCodes.contains("PART") && contributingLBCodes.split("PART").size().equals(1)  && !(contributingLBCodes.contains("FULL")))
+   then
+       $errors.addError( $lbForm, "contributingLBCodes", "Must Select atleast Coverage from all Contributing Local Bodies." );
+end
+
+rule "Check Contribute From All LB"
+   when
+       $errorsAll : Errors()
+       $lbFormAll : LocalBodyForm (contributingLBCodes.contains("PART")  && !(contributingLBCodes.contains("FULL")))
+   then
+       $errorsAll.addError( $lbFormAll, "contributingLBCodes", "Must Select atleast Coverage from all Contributing Local Bodies." );
+end
+
+rule "Check Contribute All Full"
+   when
+       $errorsFull : Errors()
+       $lbFormFull : LocalBodyForm ((contributingLBCodes.contains("FULL")))
+   then
+       $errorsFull.addError( $lbFormFull, "contributingLBCodes", "Can't take Full Coverage of Partly Selected Local Body." );
+end
+ 
+/*rule "Check LB Form"
+   when
+       $a : ApplicationForm()
+       $errors : Errors()
+       $applicant:Applicant( age < 18 ) from applicantDao.findApplicant($a.getApplicantId())
+   then
+       $errors.addError( $a, "applicantId", "Applicant age < 18" );
+end*/
+
+/*rule "Check One Full"
+   when
+       $lbForm : LocalBodyForm()
+       $c : $lbForm.contributingLBCodes.split(",")
+       $errors : Errors()
+       $lbForm:LocalBodyForm( $c.size() == 1 ) from $lbForm
+   then
+       $errors.addError( $lbForm, "contributingLBCodes", "Testing" );
+end*/
+
+/* rule "Check One Full"
+   when
+       $lbForm : LocalBodyForm()
+       $c : $lbForm.contributingLBCodes.split(",")
+       $errors : Errors()
+       $lbForm:LocalBodyForm( $c.size() == 1 ) from $lbForm
+   then
+       $errors.addError( $lbForm, "contributingLBCodes", "Testing" );
+end*/

@@ -1,0 +1,171 @@
+<%@ page import="in.nic.pes.lgd.bean.Attachment"%>
+<%@page import="org.owasp.esapi.ESAPI"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Iterator"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<script src="js/attachFiles.js" type="text/javascript" language="javascript"></script>
+</head>
+<body>
+
+
+	<%
+		String requiredTitle = "requiredTitle1";
+	%>
+	<%
+		String requiredTitleValue = "no";
+	%>
+	<%
+		String fileTable = "elementTable1";
+	%>
+	<%
+		String fileTitle = "fileTitle1";
+	%>
+	<%
+		String fileName = "attachFile1";
+	%>
+	<%
+		String maxFileLimit = "maxFileLimit1";
+	%>
+	<%
+		Integer maxFileLimitValue = 1;
+	%>
+	<%
+		List<Attachment> listOFMetaData = (List<Attachment>) request
+				.getAttribute("attachmentList");
+	%>
+	<%
+		String validationError = (String) request
+				.getAttribute("validationErrorOne");
+	%>
+	<%
+		String deleteID = "deleteID1";
+	%>
+	<%
+		String deletePath = "deletePath1";
+	%>
+	<%
+		String deleteFileSize = "deleteFileSize1";
+	%>
+	<%
+		String deletedFileID = "deletedFileID1";
+	%>
+	<%
+		String deletedFileName = "deletedFileName1";
+	%>
+	<%
+		String deletedFileSizeList = "deletedFileSizeList1";
+	%>
+
+<input type="hidden" id="<%=maxFileLimit%>" name="<%=maxFileLimit%>" value="<%=maxFileLimitValue%>" />
+<input type="hidden" id="<%=requiredTitle%>" name="<%=requiredTitle%>" value="<%=requiredTitleValue%>" />
+
+
+  <div class="form-group">
+   <label class=" col-sm-3 control-label">
+					<%
+						if (validationError != null) {
+					%>				
+					<spring:message code="<%=validationError%>" htmlEscape="true" />
+					<%
+						}
+					%>
+					<spring:message code="Label.UGO" htmlEscape="true"/><c:if test="${mandatoryFlag==true}"> <span class="mandatory">*</span></c:if></label>
+	
+	                   <%
+							if ("yes".equalsIgnoreCase(requiredTitleValue)) {
+						%>
+	     Title:<input type="text" name="<%=fileTitle%>" id="<%=fileTitle%>" class="form-control" />
+	  <%	} else { %>
+	     <input type="hidden" name="<%=fileTitle%>" id="<%=fileTitle%>" class="form-control" />
+	  <%	}	%>
+	 
+	 </label>
+	 
+	  <div class="col-sm-6">
+	   <input type="file" name="<%=fileName%>" id="<%=fileName%>" class="form-control" onclick="{return validateEmptyFile('<%=fileTitle%>','<%=fileName%>','<%=fileTable%>','<%=requiredTitle%>')}" />
+		<div id="error_govorder" class="mandatory"><spring:message htmlEscape="true" code="error.UPLOADGOVTORDER"></spring:message> </div>
+	    <form:errors htmlEscape="true" path="attachFile1"></form:errors>
+	    <span id="attachFile1_error" style="display: none" class="mandatory">Please Upload at least File with .png,.jpg extension</span>
+	    <span id="error_govorder" class="mandatory">Allowed File Extensions[gif,jpg,pdf,png,jpeg] Max File Size[5 MB]</span>
+	   </div>
+    
+    </div>
+
+  
+  
+  <%  if (listOFMetaData != null && listOFMetaData.size() != 0) {
+    %>
+    <div class="box-header subheading">
+           <h4>Already Attached  Government Order</h4>
+           </div>
+       <!-- /.box-header -->
+           <label class="col-sm-1"></label>
+           <div class="col-sm-10"> 
+            <table class="table table-bordered table-hover">
+         <thead>
+           <tr>
+                 <%	if ("yes".equalsIgnoreCase(requiredTitleValue)) {
+						%>
+						<th><spring:message code="Label.FILETITLE" htmlEscape="true"/></th>
+						<%
+							}
+						%>
+          
+           <th><spring:message code="Label.FILENAME" htmlEscape="true"/></th>
+           <th><spring:message code="Label.FILESIZE" htmlEscape="true"/></th>
+           <th><spring:message code="Label.CONTENTTYPE" htmlEscape="true"/></th>
+           <th><spring:message code="Label.MARKDELETEFILE" htmlEscape="true"/></th>
+          </tr>
+         </thead>
+       <tbody>
+       <%	try {
+    	        Iterator<Attachment> it = listOFMetaData.iterator();
+				 while (it.hasNext()) {
+				Attachment abc = (Attachment) it.next();
+					%>
+        	<tr id="row<%=abc.getAttachmentId()%>" class="tblRowB">
+						<%
+							if ("yes".equalsIgnoreCase(requiredTitleValue)) {
+						%>
+						<td><%=ESAPI.encoder().encodeForHTML(abc.getFileTitle()) %></td>
+						<%
+							}
+						%>
+						<td>
+						<%-- <a href="#" onclick="openFileByPath('<%=ESAPI.encoder().encodeForHTML(abc.getFileLocation())%>');"> --%>
+						<%=ESAPI.encoder().encodeForHTML(abc.getFileName())%>
+						<!-- </a> -->
+						</td>
+						<td><%=abc.getFileSize()%></td>
+						<td><%=abc.getFileContentType()%></td>
+						<td width="10%"><a href="#"><img src="images/delete.png"
+								name="deleteAttachment" width="18" height="19" border="0"
+								onclick="{setFlag('attachFile1'),setcounter(),hideThisRow('<%=abc.getAttachmentId()%>'),holdAttachmentID('<%=abc.getAttachmentId()%>','<%=deleteID%>','<%=deletedFileID%>'),holdFilePath('<%=abc.getFileTimestamp()%>','<%=deletePath%>','<%=deletedFileName%>'),holdFileSize('<%=abc.getFileSize()%>','<%=deleteFileSize%>','<%=deletedFileSizeList%>')}" />
+						</a>
+							<div id="<%=deleteID%>"></div>
+							<div id="<%=deletePath%>"></div>
+							<div id="<%=deleteFileSize%>"></div>
+							
+							</td>
+			</tr>
+			<%
+						}
+					%>
+				</tbody>
+                </table>
+				<%
+					} catch (Exception e) {
+						e.printStackTrace();	
+					}
+				%> <%
+ 	          }
+           %>
+       
+      	  </div>
+
+</body>
+</html>
+
+

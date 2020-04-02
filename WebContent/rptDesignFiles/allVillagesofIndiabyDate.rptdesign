@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.4.1.v201408290142 Build &lt;4.4.1.v20140916-1320></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="from_date" id="320">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="to_date" id="321">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="entity_code" id="151">
+            <property name="valueType">static</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaJndiName">java:comp/env/jdbc/birtReportDS</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="village Data set" id="265">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">village_code</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">village_code</text-property>
+                    <text-property name="heading">village_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">village_version</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">village_version</text-property>
+                    <text-property name="heading">village_version</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">village_name_english</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">village_name_english</text-property>
+                    <text-property name="heading">village_name_english</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">village_name_local</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">village_name_local</text-property>
+                    <text-property name="heading">village_name_local</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">tlc</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">tlc</text-property>
+                    <text-property name="heading">tlc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">dlc</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">dlc</text-property>
+                    <text-property name="heading">dlc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">state_code</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">state_code</text-property>
+                    <text-property name="heading">state_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">state_name_english</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">state_name_english</text-property>
+                    <text-property name="heading">state_name_english</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">fromDate</property>
+                    <property name="paramName">from_date</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">toDate</property>
+                    <property name="paramName">to_date</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">village_code</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">village_version</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">village_name_english</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">village_name_local</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">tlc</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">dlc</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">state_code</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">state_name_english</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">village_code</property>
+                    <property name="nativeName">village_code</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">village_version</property>
+                    <property name="nativeName">village_version</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">village_name_english</property>
+                    <property name="nativeName">village_name_english</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">village_name_local</property>
+                    <property name="nativeName">village_name_local</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">tlc</property>
+                    <property name="nativeName">tlc</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">dlc</property>
+                    <property name="nativeName">dlc</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">state_code</property>
+                    <property name="nativeName">state_code</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">state_name_english</property>
+                    <property name="nativeName">state_name_english</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select v.village_code,v.village_version,v.village_name_english,v.village_name_local,v.tlc,v.dlc,s.state_code,s.state_name_english from
+village v inner join state s on s.state_code=v.slc and s.isactive is true
+where v.isactive is true and
+(v.lastupdated :: date between ?  and ? )
+order by s.state_name_english,v.village_name_english]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>village_code</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>village_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>village_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>village_version</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>village_version</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>village_version</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>village_name_english</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>150</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>village_name_english</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>village_name_english</design:label>
+            <design:formattingHints>
+              <design:displaySize>150</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>village_name_local</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>150</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>village_name_local</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>village_name_local</design:label>
+            <design:formattingHints>
+              <design:displaySize>150</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>tlc</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>tlc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>tlc</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>dlc</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>dlc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>dlc</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>state_code</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>state_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>state_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>state_name_english</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>state_name_english</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>state_name_english</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <text id="9">
+            <property name="fontFamily">serif</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<H1>
+<CENTER>
+Local Government Directory
+</CENTER>
+</H1>]]></text-property>
+        </text>
+        <text-data id="122">
+            <property name="color">gray</property>
+            <property name="textAlign">center</property>
+            <expression name="valueExpr">"All Villages of India"</expression>
+            <property name="contentType">html</property>
+        </text-data>
+        <text-data id="319">
+            <property name="color">gray</property>
+            <property name="textAlign">right</property>
+            <expression name="valueExpr">"Modification done between (From "+Formatter.format(params["from_date"].value,'dd/MM/YYYY')&#13;
++" - TO "+Formatter.format(params["to_date"].value,'dd/MM/YYYY')+")"</expression>
+            <property name="contentType">html</property>
+        </text-data>
+        <label id="123"/>
+        <table id="266">
+            <property name="dataSet">village Data set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">village_code</property>
+                    <text-property name="displayName">village_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["village_code"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">village_version</property>
+                    <text-property name="displayName">village_version</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["village_version"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">village_name_english</property>
+                    <text-property name="displayName">village_name_english</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["village_name_english"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">village_name_local</property>
+                    <text-property name="displayName">village_name_local</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["village_name_local"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">tlc</property>
+                    <text-property name="displayName">tlc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["tlc"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">dlc</property>
+                    <text-property name="displayName">dlc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["dlc"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">state_code</property>
+                    <text-property name="displayName">state_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["state_code"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">state_name_english</property>
+                    <text-property name="displayName">state_name_english</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["state_name_english"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="310"/>
+            <column id="311"/>
+            <column id="312"/>
+            <column id="313"/>
+            <column id="314"/>
+            <column id="315"/>
+            <column id="316"/>
+            <column id="317"/>
+            <header>
+                <row id="267">
+                    <cell id="268">
+                        <label id="269">
+                            <text-property name="text">Village Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="270">
+                        <label id="271">
+                            <text-property name="text">Village Version</text-property>
+                        </label>
+                    </cell>
+                    <cell id="272">
+                        <label id="273">
+                            <text-property name="text">Village Name(In English)</text-property>
+                        </label>
+                    </cell>
+                    <cell id="274">
+                        <label id="275">
+                            <text-property name="text">Village Name(In Local)</text-property>
+                        </label>
+                    </cell>
+                    <cell id="276">
+                        <label id="277">
+                            <text-property name="text">Sub District Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="278">
+                        <label id="279">
+                            <text-property name="text">District Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="280">
+                        <label id="281">
+                            <text-property name="text">State Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="282">
+                        <label id="283">
+                            <text-property name="text">State Name(In English)</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="284">
+                    <cell id="285">
+                        <data id="286">
+                            <property name="resultSetColumn">village_code</property>
+                        </data>
+                    </cell>
+                    <cell id="287">
+                        <data id="288">
+                            <property name="resultSetColumn">village_version</property>
+                        </data>
+                    </cell>
+                    <cell id="289">
+                        <data id="290">
+                            <property name="resultSetColumn">village_name_english</property>
+                        </data>
+                    </cell>
+                    <cell id="291">
+                        <data id="292">
+                            <property name="resultSetColumn">village_name_local</property>
+                        </data>
+                    </cell>
+                    <cell id="293">
+                        <data id="294">
+                            <property name="resultSetColumn">tlc</property>
+                        </data>
+                    </cell>
+                    <cell id="295">
+                        <data id="296">
+                            <property name="resultSetColumn">dlc</property>
+                        </data>
+                    </cell>
+                    <cell id="297">
+                        <data id="298">
+                            <property name="resultSetColumn">state_code</property>
+                        </data>
+                    </cell>
+                    <cell id="299">
+                        <data id="300">
+                            <property name="resultSetColumn">state_name_english</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="301">
+                    <cell id="302"/>
+                    <cell id="303"/>
+                    <cell id="304"/>
+                    <cell id="305"/>
+                    <cell id="306"/>
+                    <cell id="307"/>
+                    <cell id="308"/>
+                    <cell id="309"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

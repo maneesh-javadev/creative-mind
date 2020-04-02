@@ -1,0 +1,24 @@
+.helpMessage
+{   
+	background:#ffffff;
+	width:200px;
+	height:40px;
+	padding:4px;
+	position:absolute; 
+	top:-300px;right:100px; 
+    border:2px solid #a1a1a1; 
+    -moz-border-radius: 15px;
+	border-radius: 15px;
+	behavior:url(../../images/PIE.htc); 
+    z-index:110;  
+} 
+ .helpMsgHeader
+{
+	width: 100%;
+	background-color: #999999;
+	text-align: center;
+	font-weight: bolder;
+	margin: 1px;
+	
+}
+.helpMsgText{font:.95em Arial, Helvetica, sans-serif; color:#0000FF; margin:1px;} /*Used for help text*/ 

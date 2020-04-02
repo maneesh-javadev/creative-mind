@@ -1,0 +1,244 @@
+/* popModal */
+body{
+font-family:arial;
+}
+.popModal {position:absolute;background:#E6E6E6;padding:15px;border:1px solid #999999;box-shadow:0 2px 6px rgba(0, 0, 0, 0.3);text-align:left; width:320px; z-index:9997;box-sizing:border-box; border-radius:3px; }
+.popModal .close {line-height:12px;font-size:25px;font-weight:bold;font-family:serif;position:absolute;right:8px;top:8px;color:#000;opacity:0.2;padding:0;cursor:pointer;background:transparent;border:0;outline:0; display:none;}
+.popModal .close:hover {opacity:1}
+.popModal .popModal_content {word-wrap:break-word;font-family:sans-serif;font-size:14px;font-weight:initial;font-style:initial;color:initial;text-decoration:initial;text-transform:initial;padding:initial; color:#0000000;}
+.popModal .popModal_content.popModal_contentOverflow {padding:10px; }
+.popModal .popModal_content:before {content:'';position:absolute;left:0;right:0;height:20px;bottom:-20px}
+.popModal .popModal_footer {background:#fafafa;padding:15px;border-top:1px solid #ddd;text-align:right;position:absolute;bottom:0;left:0;right:0}
+.popModal .popModal_footer button {margin:0 0 0 5px}
+.popModal:before,
+.popModal:after {content:'';position:absolute;border:10px solid transparent}
+.popModal:after {z-index:1}
+.popModal.bottomRight {right:0}
+.popModal.bottomLeft:before,
+.popModal.bottomRight:before,
+.popModal.bottomCenter:before {border-top-width:0;border-bottom-color:#aaa;top:-10px;left:6px}
+.popModal.bottomLeft:after,
+.popModal.bottomRight:after,
+.popModal.bottomCenter:after {border-top-width:0;border-bottom-color:#999999;top:-9px;left:6px}
+.popModal.bottomRight:before,
+.popModal.bottomRight:after {left:auto;right:6px}
+.popModal.bottomCenter:before,
+.popModal.bottomCenter:after {left:50%;margin-left:-10px}
+.popModal.leftTop:before,
+.popModal.leftCenter:before {border-right-width:0;border-left-color:#aaa;top:6px;right:-10px}
+.popModal.leftTop:after,
+.popModal.leftCenter:after {border-right-width:0;border-left-color:#999999;top:6px;right:-9px}
+.popModal.rightTop:before,
+.popModal.rightCenter:before {border-left-width:0;border-right-color:#aaa;top:6px;left:-10px}
+.popModal.rightTop:after,
+.popModal.rightCenter:after {border-left-width:0;border-right-color:#999999;top:6px;left:-9px}
+.popModal.leftCenter:before,
+.popModal.rightCenter:before {top:50%;margin-top:-10px}
+.popModal.leftCenter:after, 
+.popModal.rightCenter:after {top:50%;margin-top:-10px}
+ul.test_links{
+padding:0;
+margin:0 0 10px;
+}
+ul.test_links li{
+display:inline-block;
+*display:inline;
+vertical-align:top;
+width:20.3%;
+padding:8px 0;
+margin-right:10px;
+
+box-sizing:border-box;
+}
+ul.test_links li.mrn{
+margin-right:0;
+}
+ul.test_links li a{
+font-size:12px;
+text-decoration:none;
+Color:#000000;
+}
+ul.test_links li a:hover{
+color:#000000;
+text-decoration:underline;
+}
+
+
+/* animation */
+.animated {-webkit-animation-duration:0.2s;animation-duration:0.2s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
+.fadeInLeft {-webkit-animation-name:fadeInLeft;animation-name:fadeInLeft}
+.fadeOutLeft {-webkit-animation-name:fadeOutLeft;animation-name:fadeOutLeft}
+.fadeInRight {-webkit-animation-name:fadeInRight;animation-name:fadeInRight}
+.fadeOutRight {-webkit-animation-name:fadeOutRight;animation-name:fadeOutRight}
+.fadeInTop {-webkit-animation-name:fadeInTop;animation-name:fadeInTop}
+.fadeOutTop {-webkit-animation-name:fadeOutTop;animation-name:fadeOutTop}
+.fadeInBottom {-webkit-animation-name:fadeInBottom;animation-name:fadeInBottom}
+.fadeOutBottom {-webkit-animation-name:fadeOutBottom;animation-name:fadeOutBottom}
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes fadeOutLeft {
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-10px);
+  }
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+@keyframes fadeOutLeft {
+  100% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes fadeOutRight {
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(10px);
+  }
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+@keyframes fadeOutRight {
+  100% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fadeOutTop {
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-10px);
+  }
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+@keyframes fadeOutTop {
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+@keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fadeOutBottom {
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+  }
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+@keyframes fadeOutBottom {
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

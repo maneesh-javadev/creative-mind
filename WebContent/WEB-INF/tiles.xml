@@ -1,0 +1,2734 @@
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+
+	<!-- Entry For Switch Unit version 3.1 (New Switch Unit) @AUTHOR vinay @since 19/12/2014 -->
+	<definition name="base.switchunit" template="/WEB-INF/jsp/others/switchunitLayout.jsp">
+	    <put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+ 	<definition name="switchunitdetails" extends="dashboardSwitchUnit">
+		<put-attribute name="title" value="Switch Unit" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/others/switchunitdetails.jsp"/>
+	</definition>
+	<!-- Entry For Switch Unit version 3.1 (New Switch Unit) ends here -->
+	
+	
+	
+	<definition name="dashboard" template="/WEB-INF/jsp/dashboard/dashboardLayout.jsp">
+		<put-attribute name="dbtopHeader" value="/WEB-INF/jsp/dashboard/topHeader.jsp" />
+		<put-attribute name="dbmainHeader" value="/WEB-INF/jsp/dashboard/mainHeader.jsp" />
+		<put-attribute name="dbmainSlider" value="/WEB-INF/jsp/dashboard/mainSlider.jsp" />
+		<put-attribute name="dbcontentHeader" value="/WEB-INF/jsp/dashboard/contentHeader.jsp" />
+		<put-attribute name="dbcontentBody" value="" />
+		<put-attribute name="dbfooter" value="/WEB-INF/jsp/dashboard/footer.jsp" />
+	</definition>
+	
+	<definition name="dashboardSwitchUnit" template="/WEB-INF/jsp/dashboard/switchUnitDashboardLayout.jsp">
+		<put-attribute name="dbtopHeader" value="/WEB-INF/jsp/dashboard/topHeader.jsp" />
+		<put-attribute name="dbmainHeader" value="/WEB-INF/jsp/dashboard/switchUnitMainHeader.jsp" />
+		
+		<put-attribute name="dbcontentBody" value="" />
+		<put-attribute name="dbfooter" value="/WEB-INF/jsp/dashboard/footer.jsp" />
+	</definition>
+	
+	<definition name="dashboardHome" extends="dashboard">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/dashboard/mainContent.jsp" />
+	</definition>
+	
+	<definition name="createnew_village" extends="dashboard">
+		<put-attribute name="title" value="Add Village" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/village/addVillagecpy.jsp" />
+	</definition> 
+
+	<definition name="adddistrict" extends="dashboard">
+		<put-attribute name="title" value="Create District" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/district/createDistrict.jsp" />
+	</definition>
+	
+	<definition name="view_district" extends="dashboard">
+		<put-attribute name="title" value="View District" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/district/viewDistrictCopy.jsp" />
+	</definition>
+	
+	<definition name="view_districthistory" extends="dashboard">
+		<put-attribute name="title" value="View District History" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/district/viewDistrictHistoryCopy.jsp" />
+	</definition>
+	
+	 <definition name="modifyDistrictCorrection" extends="dashboard">
+		<put-attribute name="title" value="Modify District" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/district/modifyDistrictCorrectionCopy.jsp" /> 
+	</definition>  
+
+	
+	<definition name="modifyDistrictchange" extends="dashboard">
+		<put-attribute name="title" value="Modify District" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/district/modifyDistrictChangeCopy.jsp" />
+	</definition>
+	
+	<definition name="view_districtdetail" extends="dashboardDialogLayout">
+	  <put-attribute name="dashboardDialogBody"
+			value="/WEB-INF/jsp/district/viewDistrictDetailCopy.jsp" />
+	</definition>
+	
+	
+	<definition name="newblock" extends="dashboard">
+		<put-attribute name="title" value="Create New Block" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/block/createBlockCopy.jsp" />
+	</definition>
+	
+	 <definition name="create_draft_subdistrict" extends="dashboard">
+		<put-attribute name="title" value="Create Subdistrict" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/draft-module/subdistrict/createSubdistrict.jsp" />
+	</definition>
+	
+	<definition name="comman_draft_goverment_order" extends="dashboard">
+		<put-attribute name="title" value="Create Subdistrict" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/draft-module/govermentOrder/governmentOrder.jsp" />
+	</definition>
+	
+	<definition name="manage_subdistrict" extends="dashboard">
+		<put-attribute name="title" value="Manage Subdistrict" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/draft-module/subdistrict/manageSubdistrictNew.jsp" />
+	</definition>
+	
+	<definition name="modifySubdistrictCorrection" extends="dashboard">
+		<put-attribute name="title" value="Modify Subdistrict" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/subdistrict/modifySubDistrictCorrectionNew.jsp" />
+	</definition>
+	
+	<definition name="restructued_create_localbody" extends="dashboard">
+		<put-attribute name="title" value="Create Local Body" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/CreateLocalBodyNew.jsp" />
+	</definition>
+	
+	
+	<definition name="modifyStateCorrection" extends="dashboard">
+	<put-attribute name="title" value="Correction State" />
+	<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/state/modifyStateCorrectionChange.jsp" />
+   </definition>
+
+	<definition name="view_state" extends="dashboard">
+		<put-attribute name="title" value="View State" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/state/manageState.jsp" />
+	</definition> 
+	
+	<definition name="modifyStateChange" extends="dashboard">
+		<put-attribute name="title" value="Modify State" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/state/modifyStateChangecp.jsp" />
+	</definition>
+	
+	<definition name="createPRIWard" extends="dashboard">
+		<put-attribute name="title" value="Create Ward" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/ward/createPRIWardcp.jsp" />
+	</definition>
+	
+	<definition name="selectWardCoverage" extends="dashboard">
+		<put-attribute name="title" value="Manage Ward Coverage" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/ward/selectWardCoveragecp.jsp" />
+	</definition>
+	
+	
+	<definition name="manageWard" extends="dashboard">
+		<put-attribute name="title" value="Manage Ward" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/ward/ManageWardcp.jsp" />
+	</definition>
+	
+	<definition name="createGovtTemplate" extends="dashboard">
+		<put-attribute name="title" value="Create Government Order Template" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/ordertemplate/creategovtordertemplatecp.jsp" />
+	</definition>
+	
+	
+	<definition name="shiftSubDistrict" extends="dashboard">
+		<put-attribute name="title" value="Shift SubDistrict" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/subdistrict/shiftSubDistrictcp.jsp" />
+	</definition>
+	
+	
+	<definition name="shiftblock" extends="dashboard">
+		<put-attribute name="title" value="Shift Block" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/block/shiftBlockcp.jsp" />
+	</definition>                          
+	
+	
+	<definition name="convertRLBtoULB" extends="dashboard">
+		<put-attribute name="title" value="Convert RLB to ULB" />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/convertlocalbody/convertRLBtoULBBS.jsp" />
+	</definition>
+	
+	<definition name="view_village" extends="dashboard">
+		<put-attribute name="title" value="View Village" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/village/viewVillagecpy.jsp" />
+	</definition>
+	
+	<definition name="view_villagedetail" extends="dashboardDialogLayout">
+		<put-attribute name="title" value="View Village Detail" />
+		<put-attribute name="dashboardDialogBody"
+			value="/WEB-INF/jsp/village/viewVillageDetailcpy.jsp" />
+	</definition>
+	
+	<definition name="view_villagehistory" extends="dashboard">
+		<put-attribute name="title" value="View Village History" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/village/viewVillageHistorycpy.jsp" />
+	</definition>
+	
+		<definition name="modifyVillageCorrection" extends="dashboard">
+		<put-attribute name="title" value="Modify Village" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/village/modifyVillageCorrectioncpy.jsp" />
+	</definition>
+	
+	<definition name="modifyVillagechange" extends="dashboard">
+		<put-attribute name="title" value="Modify Village" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/village/modifyVillageChangecpy.jsp" />
+	</definition> 
+	
+	<definition name="mergeUnmapVil" extends="dashboard">
+		<put-attribute name="title" value="Merge Unmap Village to ULB" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/village/mergeUnmapVilcpy.jsp" />
+	</definition>
+	
+	
+	<definition name="shiftvillageblock" extends="dashboard">
+		<put-attribute name="title" value="Shift Village from one Block to another" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/village/shiftVillageBlockcp.jsp" />
+	</definition>
+	
+	<definition name="shiftvillageSubDistrict" extends="dashboard">
+		<put-attribute name="title" value="Shift Village from one Subdistrict to another" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/village/shiftVillageSubdistrictcp.jsp" />
+	</definition>
+	
+	<definition name="view_statedetail" extends="dashboard">
+		<put-attribute name="title" value="View State Detail" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/state/viewStateDetailcp.jsp" />
+	</definition>
+	
+	<definition name="viewtemplate" extends="dashboard">
+		<put-attribute name="title" value="View Template" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/ordertemplate/viewgovtordertemplatecp.jsp" />
+	</definition>
+	
+	<definition name="addnModifyWardCoverage" extends="dashboard">
+		<put-attribute name="title" value="Manage Ward Coverage" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/ward/addnModifyWardCoveragecp.jsp" />
+	</definition>
+	
+	<definition name="govtOrderCommon" extends="dashboard">
+		<put-attribute name="title" value="Upload Government Order" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/common/commonGovtOrdercp.jsp" />
+	</definition>
+	
+
+	 <definition name="markPesaLandRegions" extends="dashboard">
+		<put-attribute name="title" value="Mark Pesa Land Region" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/district/MarkPesaLandRegionscpy.jsp" />
+	</definition>
+
+	<definition name="invalidateVillageMAV" extends="dashboard">
+		<put-attribute name="title" value="Invalidate Village" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/village/invalidateVillagecp.jsp" />
+	</definition>
+	
+	<definition name="invalidateSubDistrictDefault" extends="dashboard">
+		<put-attribute name="title" value="Invalidate Sub District" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/subdistrict/invalidateSubdistrictcopy.jsp" />
+	</definition>
+	
+	
+	<definition name="invalidateDistrictDefault" extends="dashboard">
+		<put-attribute name="title" value="Invalidate District" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/district/invalidateDistrictcp.jsp" />
+	</definition>
+	
+	
+	<definition name="invalidateblockDefault" extends="dashboard">
+		<put-attribute name="title" value="Invalidate Block" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/block/invalidateBlockcp.jsp" />
+	</definition>
+	
+	
+	<definition name="invalidate_urblocalbody" extends="dashboard">
+		<put-attribute name="title" value="Invalidate Urban Local Govt Body" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/govtbody/InvalidateURBLBcp.jsp" />
+	</definition>
+	
+	<definition name="invalidate_localgovtbody" extends="dashboard">
+		<put-attribute name="title" value="Invalidate PRI Local Govt Body" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/govtbody/InvalidatePRILBcp.jsp" />
+	</definition>
+	
+	<definition name="invalidateDistSuccess" extends="dashboard">
+		<put-attribute name="title" value="Invalidate District" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/district/invalidateDistSuccesscp.jsp" />
+	</definition>
+	
+	
+	<definition name="convertRLBtoTLB" extends="dashboard">
+		<put-attribute name="title" value="Convert RLB to TLB" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/convertlocalbody/convertRLBtoTLBcp.jsp" />
+	</definition>
+	
+	
+	
+
+	<definition name="restructued_create_urban_localbody" extends="dashboard">
+		<put-attribute name="title" value="Create Local Body" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/CreateUrbanLocalBodyCopy.jsp" />
+	</definition>
+	
+
+	
+	<definition name="homePage" template="/WEB-INF/jsp/homebody/homePageLayout.jsp">
+		<put-attribute name="hpHeader" value="/WEB-INF/jsp/homebody/homePageHeader.jsp" />
+		<put-attribute name="hpcontentBody" value="" />
+		<put-attribute name="hpfooter" value="/WEB-INF/jsp/homebody/homePagefooter.jsp" />
+	</definition>
+	
+	
+	<definition name="nodalData" template="/WEB-INF/jsp/homebody/homePageLayout.jsp">
+		<put-attribute name="hpcontentBody" value="" />
+	</definition>
+	
+	
+	<definition name="baseHome" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/homebody/mainContentHome.jsp" />
+	</definition>
+	
+	<definition name="hpDialogLayout" template="/WEB-INF/jsp/homebody/homeDialogLayout.jsp">
+		<put-attribute name="body" value="" />
+	</definition>
+	
+	
+	<definition name="dashboardDialogLayout" template="/WEB-INF/jsp/dashboard/dashboardDialogLayout.jsp">
+		<put-attribute name="body" value="" />
+	</definition>
+	
+	<definition name="supportingDocument" extends="hpDialogLayout">
+		<put-attribute name="title" value="Supporting Document" />
+		<put-attribute name="hpDialogBody"	value="/WEB-INF/jsp/common/SupportingDoc.jsp" />
+	</definition>
+	
+	<definition name="globalview_state_report" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewState.jsp" />
+	</definition>
+	
+	 <definition name="globalview_district_report" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewDistrict.jsp" />
+	</definition>
+	
+	<definition name="global_blockwise_vill_ulb_report" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewVillAndULB.jsp" />
+	</definition>
+	
+	 <definition name="viewWards" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody"
+			value="/WEB-INF/jsp/reports/viewWard.jsp" />
+	</definition> 
+	
+	<definition name="deNotifyGP" extends="dashboard">
+		<put-attribute name="title" value="De-notify Gram Panchayat(s)" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/govtbody/deNotifyGramPanchyatscp.jsp" />
+	</definition>
+	
+	
+	<definition name="convertTLBtoULB" extends="dashboard">
+		<put-attribute name="title" value="Convert TLB to ULB" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/convertlocalbody/convertTLBtoULBcp.jsp" />
+	</definition>
+	
+	
+	<definition name="configLandRegionView" extends="dashboard">
+		<put-attribute name="title" value="Configure Map" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/configLandRegionViewcp.jsp" />
+	</definition>
+	
+	
+	<definition name="modifyLandRegion" extends="dashboard">
+		<put-attribute name="title" value="Configure Map" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/modifyConfigMapLandcp.jsp" />
+	</definition>
+	
+	<definition name="viewConfigMapBlock" extends="dashboard">
+		<put-attribute name="title" value="Configure Map" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/viewConfigMapblockcp.jsp" />
+	</definition>
+	
+
+	<definition name="modifyConfigMapBlock" extends="dashboard">
+		<put-attribute name="title" value="Configure Map" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/config/modifyConfigMapBlockcp.jsp" />
+	</definition>
+	
+		<definition name="administrativeMgr" extends="dashboard">
+		<put-attribute name="title" value="Configure Govt Order" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/administrativeUnitMgrcp.jsp" />
+	</definition>
+	
+	<definition name="administrativeUnitMgrModify" extends="dashboard">
+		<put-attribute name="title" value="Modify Govt Order" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/config/administrativeUnitMgrModifycp.jsp" />
+	</definition>
+	
+	<definition name="administrativeMgrView" extends="dashboard">
+		<put-attribute name="title" value="View Govt Order" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/administrativeUnitMgrViewcp.jsp" />
+	</definition>
+	
+	<definition name="localGovtDirectoryMgrModifyTrade" extends="dashboard">
+		<put-attribute name="title" value="Modify Govt Order" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/localGovtDirectoryMgrModifyTradecp.jsp" />
+	</definition>
+	
+	<definition name="localGovtDirectoryMgrforTrade" extends="dashboard">
+		<put-attribute name="title" value="Configure Govt Order" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/localGovtDirectoryMgrTradecp.jsp" />
+	</definition>
+	
+	<definition name="localGovtDirectoryMgrViewTrade" extends="dashboard">
+		<put-attribute name="title" value="View Govt Order" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/localGovtDirectoryMgrViewTradecp.jsp" />
+	</definition>
+	
+	<definition name="localGovtDirectoryMgrforPRI" extends="dashboard">
+		<put-attribute name="title" value="Configure Govt Order" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/localGovtDirectoryMgrPRIcp.jsp" />
+	</definition>
+	
+	<definition name="localGovtDirectoryMgrViewPRI" extends="dashboard">
+		<put-attribute name="title" value="View Govt Order" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/localGovtDirectoryMgrViewPRIcp.jsp" />
+	</definition>
+	
+	
+	<definition name="localGovtDirectoryMgrModifyPRI" extends="dashboard">
+		<put-attribute name="title" value="Modify Govt Order" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/localGovtDirectoryMgrModifyPRIcp.jsp" />
+	</definition>
+	
+		<definition name="landRegionMgrView" extends="dashboard">
+		<put-attribute name="title" value="View Govt Order" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/landRegionManagerViewcp.jsp" />
+	</definition>
+	
+	
+	<definition name="modifyLandRegionMgr" extends="dashboard">
+		<put-attribute name="title" value="Modify Govt Order" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/modifyLandRegionManagercp.jsp" />
+	</definition>
+	
+	<definition name="localGovtDirectoryMgrView" extends="dashboard">
+		<put-attribute name="title" value="View Govt Order" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/localGovtDirectoryMgrViewcp.jsp" />
+	</definition>
+	
+	
+	<definition name="localGovtDirectoryMgrModify" extends="dashboard">
+		<put-attribute name="title" value="Modify Govt Order" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/localGovtDirectoryMgrModifycp.jsp" />
+	</definition>
+	
+	<definition name="configmapLGDMview" extends="dashboard">
+		<put-attribute name="title" value="Configure Map" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/configMapLGDMviewcp.jsp" />
+	</definition>
+	
+	<definition name="modifyConfigMapConstituncy" extends="dashboard">
+		<put-attribute name="title" value="Configure Map" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/modifyConfigConstituencycp.jsp" />
+	</definition>
+	
+	<definition name="configConstituency" extends="dashboard">
+		<put-attribute name="title" value="Configure Map" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/config_constituencycp.jsp" />
+	</definition>
+	
+	<definition name="viewConfigMapConstituncy" extends="dashboard">
+		<put-attribute name="title" value="Configure Map" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/viewConstituencycp.jsp" />
+	</definition>
+	
+	<definition name="viewTierSetup" extends="dashboard">
+		<put-attribute name="title" value="View Local Govt Setup" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/viewLocalbodySetUpcp.jsp" />
+	</definition>
+
+	<definition name="rptConsolidateforPanchayat" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewConsolidatePanchayat.jsp" />
+	</definition> 
+	
+	 <definition name="pes_transactions" extends="dashboard">
+		<put-attribute name="title" value="LGD Transactions " />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/pesTransactions/LgdTransactionscpy.jsp" />
+	</definition> 
+
+	<definition name="globalview_subdistrict_report" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewSubDistrict.jsp" />
+	</definition>
+
+	<definition name="globalview_village_report" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewVillage.jsp" />
+	</definition>
+	
+	<definition name="globalview_block_report" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewBlock.jsp" />
+	</definition>
+
+	<definition name="globalview_localbody_report" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewLocalbody.jsp" />
+	</definition>
+	
+
+	<definition name="modifyLgSetup" extends="dashboard">
+		<put-attribute name="title" value="Local Government Setup" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/localbodySetupModifycp.jsp" />
+	</definition>
+	
+	<definition name="localgovtsetup" extends="dashboard">
+		<put-attribute name="title" value="Local Government Setup" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/local_gov_setupcp.jsp" />
+	</definition>
+
+<definition name="local_gov_setup_step2" extends="dashboard">
+		<put-attribute name="title" value="Local Government Setup" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/local_gov_setup_step2cp.jsp" />
+	</definition>
+	
+<definition name="viewLbSubtype" extends="dashboard">
+		<put-attribute name="title" value="View SubType " />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/config/viewLocalbodySubtypecp.jsp" />
+</definition>
+
+
+	<!-- Consolidated Report Of Local Bodies On District Level @Ashish-->
+	
+	<definition name="rptConsolidateforPanbyDLevel" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/LocalBodies/viewConsolidatePanchayat_District.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report Of Local Bodies On Intermediate Level @Ashish-->
+	
+	<definition name="rptConsolidateforPanbyILevel" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/LocalBodies/viewConsolidatePanchayat_InterM.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report Of Local Bodies On Village Level @Ashish-->
+	
+		<definition name="rptConsolidateforPanbyVLevel" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/LocalBodies/viewConsolidatePanchayat_Village.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report Of Local Bodies On Urban Level @Ashish-->
+	
+	<definition name="rptConsolidatefoUrban" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/LocalBodies/viewConsolidateUrban.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report Of Local Bodies On Mapped Villages Level @Ashish-->
+	
+	<definition name="rptConsolidateLBVillageDetails" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/LocalBodies/viewConsolidateVillageDetails.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report Of Panchayats on District Panchayat @Ashish-->
+	
+	<definition name="rptConsolidateforPanbyDLevelRural" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/Panchayat/viewConsolidatePanchayat_DistrictRural.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report Of Panchayats on Intermediate Panchayat @Ashish-->
+	
+	<definition name="rptConsolidateforPanbyILevelRural" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/Panchayat/viewConsolidatePanchayat_InterMRural.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report Of Panchayats on No Of Village Panchayat @Ashish-->
+	
+	<definition name="rptConsolidateforPanbyVLevelRural" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/Panchayat/viewConsolidatePanchayat_VillageRural.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report Of Panchayats on No Of Village Mapped Panchayat @Ashish-->
+	
+	<definition name="rptConsolidateforPanbyMLevel" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/Panchayat/viewConsolidatePanchayat_MapVillage.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report Of Panchayats on Entry Page @Ashish 18Aug-->
+	
+	 <definition name="rptConsolidateforRuralLB" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports//Panchayat/viewConsolidateRuralLB.jsp" />
+	</definition>
+	
+	
+	 <definition name="village_converted_rurla_to_urban" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports//Panchayat/viewConsolidateRuralLBPES.jsp" />
+	</definition>
+
+
+		<!-- Feedback @Ashish 18 Aug -->
+
+	 <definition name="citizenFeedback" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/citizen/viewfeedback.jsp" />
+	</definition>
+	
+		<!-- Contact Us @ Ashish 18 Aug-->
+	
+	<definition name="contactus" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/citizen/viewcontactus.jsp" />
+	</definition>
+
+		<!-- Site Map @Ashish 18 Aug-->
+
+	<definition name="siteMap" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/citizen/viewsitemap.jsp" />
+	</definition>
+
+		<!-- Privacy Policy @Ashish 18 Aug-->
+
+	<definition name="privacyPolicy" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/govtbody/viewprivacyPolicy.jsp" />
+	</definition>
+
+		<!-- Copyright Policy @Ashish 18 Aug-->
+	
+	 <definition name="copyrightpolicy" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/govtbody/viewcopyRight.jsp" />
+	</definition>
+	
+		<!-- Terms and Conditions @Ashish 18 Aug-->
+	
+	<definition name="termsconditions" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/govtbody/viewtermscond.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report On Land Region Entities @Ashish 19 Aug-->
+	
+	<definition name="rptConsolidateforLandregions" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/LB_LandRegion/viewConsolidateLocalBodyLandregions.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report On Land Region for District @Ashish 19 Aug-->
+	
+	<definition name="rptConsolidateforDistrict" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/LB_LandRegion/viewConsolidateLandregionDistrict.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report On Land Region for Sub-District @Ashish 19 Aug-->
+	
+	<definition name="rptConsolidateforSubDistrict" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/LB_LandRegion/viewConsolidateLandregionSubDistrict.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report On Land Region for Village @Ashish 19 Aug-->
+	
+	<definition name="rptConsolidateforVillage" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/LB_LandRegion/viewConsolidateLandregionVillages.jsp" />
+	</definition>
+	
+	<!-- Report on District wise villages and Mapped Gram Panchayats @Ashish 19 Aug -->
+	
+	<definition name="rptConsolidateVillageGramPanchayat" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewConsolidateVillageGramPanchayat.jsp" />
+	</definition>
+	
+	<!-- Report on District wise Blocks and Mapped Gram Panchayats @Ashish 19 Aug-->
+	
+	<definition name="rptConsolidateBlockGramPanchayat" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewConsolidateBlockGramPanchayat.jsp" />
+	</definition>
+	
+	<!-- Report on State Panchayat Set-up @Ashish 19 Aug-->
+	
+	<definition name="rptStatePanchayat" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewStatePanchayat.jsp" />
+	</definition>
+	
+	<!-- Report on Statewise Unmapped Villages @Ashish 21 Aug-->
+	
+	 <definition name="stateWiseUnmappedVillagesReport" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewstateWiseUnmappedVillagesReport.jsp" />
+	</definition> 
+	
+	<!-- Report on State wise GP to Village Mapping Status @Ashish 21 Aug-->
+	
+	<definition name="stateWiseGPtoVillageMappingReport" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewstateWiseGPtoVillageMappingReport.jsp" />
+	</definition>
+	
+
+
+
+	<!-- Consolidated Report Of Local Bodies On District Level @Ashish-->
+	
+	<definition name="rptConsolidateforPanbyDLevel" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/LocalBodies/viewConsolidatePanchayat_District.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report Of Local Bodies On Intermediate Level @Ashish-->
+	
+	<definition name="rptConsolidateforPanbyILevel" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/LocalBodies/viewConsolidatePanchayat_InterM.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report Of Local Bodies On Village Level @Ashish-->
+	
+		<definition name="rptConsolidateforPanbyVLevel" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/LocalBodies/viewConsolidatePanchayat_Village.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report Of Local Bodies On Urban Level @Ashish-->
+	
+	<definition name="rptConsolidatefoUrban" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/LocalBodies/viewConsolidateUrban.jsp" />
+	</definition>
+	
+	
+	
+	
+	<!-- Consolidated Report Of Local Bodies On Mapped Villages Level @Ashish-->
+	
+	<definition name="rptConsolidateLBVillageDetails" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/LocalBodies/viewConsolidateVillageDetails.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report Of Panchayats on District Panchayat @Ashish-->
+	
+	<definition name="rptConsolidateforPanbyDLevelRural" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/Panchayat/viewConsolidatePanchayat_DistrictRural.jsp" />
+	</definition>
+	
+	<definition name="rptConsolidateforPanbyDLevelRuralPES" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/Panchayat/viewConsolidatePanchayat_DistrictRuralPES.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report Of Panchayats on Intermediate Panchayat @Ashish-->
+	
+	<definition name="rptConsolidateforPanbyILevelRural" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/Panchayat/viewConsolidatePanchayat_InterMRural.jsp" />
+	</definition>
+	
+	
+	<definition name="rptConsolidateforPanbyILevelRuralPES" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/Panchayat/viewConsolidatePanchayat_InterMRuralPES.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report Of Panchayats on No Of Village Panchayat @Ashish-->
+	
+	<definition name="rptConsolidateforPanbyVLevelRural" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/Panchayat/viewConsolidatePanchayat_VillageRural.jsp" />
+	</definition>
+	
+	
+	<definition name="rptConsolidateforPanbyVLevelRuralPES" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/Panchayat/viewConsolidatePanchayat_VillageRuralPES.jsp" />
+	</definition>
+	
+	<!-- Consolidated Report Of Panchayats on No Of Village Mapped Panchayat @Ashish-->
+	
+	<definition name="rptConsolidateforPanbyMLevel" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/Panchayat/viewConsolidatePanchayat_MapVillage.jsp" />
+	</definition>
+	
+	<definition name="rptConsolidateforPanbyMLevelPES" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/Panchayat/viewConsolidatePanchayat_MapVillagePES.jsp" />
+	</definition>
+
+
+   <definition name="configMapLGDM" extends="dashboard">
+		<put-attribute name="title" value="Configure Map" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/configMapLGDMcp.jsp" />
+	</definition>
+	
+	<definition name="configmapLGDMmodify" extends="dashboard">
+		<put-attribute name="title" value="Configure Map" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/configMapLGDMmodifycp.jsp" />
+	</definition>
+
+
+
+    <!-- department form  -->
+   <definition name="lgdDesignationDepartment" extends="dashboard">
+		<put-attribute name="title" value="Designation" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/config/DesignationDepartmentcp.jsp" />
+	</definition>
+
+<definition name="lgdDesignationDepartmentCenter" extends="dashboard">
+		<put-attribute name="title" value="Designation" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/DesignationDepartmentCentercp.jsp" />
+</definition>
+
+
+<definition name="manageDesignationDepartment" extends="dashboard">
+		<put-attribute name="title" value="Designation" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/manageDesignationDepartmentcp.jsp" />
+</definition>
+
+
+   <definition name="designationDepartmentReorder" extends="dashboard">
+		<put-attribute name="title" value="Designation" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/config/reorderDesignationDepartmentcp.jsp" />
+	</definition>
+
+
+
+ 
+
+	<definition name="reorderOrganizationDesignation" extends="dashboard">
+		<put-attribute name="title" value="Designation" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/config/reorderOrganizationDesignationcp.jsp" />
+	</definition>
+	
+
+	<definition name="manage_StateDepartment" extends="dashboard">
+		<put-attribute name="title" value="View Department" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/manageDepartmentcp.jsp" />
+	</definition>
+	
+	
+	<definition name="view_departmentList1" extends="dashboard">
+		<put-attribute name="title" value="View Department" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/viewDepartmentMinistryforstatecp.jsp" />
+	</definition>
+	
+	  <definition name="view_deptAdminUnits" extends="dashboard">
+		<put-attribute name="title" value="Department Admin Units" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/deptAdminUnitscp.jsp" />
+	</definition>
+	
+	<definition name="view_departmentList" extends="dashboard">
+		<put-attribute name="title" value="View Department" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/viewDepartmentMinistrycp.jsp" />
+	</definition>
+	
+	<definition name="manage_AdminLevel" extends="dashboard">
+		<put-attribute name="title" value="Manage Admin Units" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/manageAdminUnitLevelcp.jsp" />
+	</definition>
+	
+	<definition name="modify_AdminLevel" extends="dashboard">
+		<put-attribute name="title" value="Modify Admin Units" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/modifydeptAdminUnitscp.jsp" />
+	</definition>
+	
+	<definition name="view_AdminLevelDetail" extends="dashboard">
+		<put-attribute name="title" value="View Admin Units" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/view_AdminLevelDetailcp.jsp" />
+	</definition>
+	
+	
+	<definition name="view_deptAdminEntity" extends="dashboard">
+		<put-attribute name="title" value="Department Admin Units" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/deptAdminEntitycp.jsp" />
+	</definition>
+	
+	
+	<definition name="view_departmentdetail" extends="dashboard">
+		<put-attribute name="title" value="View Department Detail" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/viewDepartmentDetailcp.jsp" />
+	</definition>
+	
+	
+		<definition name="manage_AdminEntity" extends="dashboard">
+		<put-attribute name="title" value="Manage Admin Entity" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/ManageAdminEntitycp.jsp" />
+	</definition>
+	
+	
+	<definition name="view_department" extends="dashboard">
+		<put-attribute name="title" value="View Department Detail" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/viewDepartmentcp.jsp" />
+	</definition>
+	
+	
+	<definition name="modify_AdminEntity" extends="dashboard">
+		<put-attribute name="title" value="Modify Admin Entity" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/ModifyDepartmentAdminEntitycp.jsp" />
+	</definition>
+	
+	<definition name="modify_coverage_AdminEntity" extends="dashboard">
+		<put-attribute name="title" value="Modify Admin Entity" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/ModifyCoverageAdminEntitycp.jsp" />
+	</definition>
+	
+
+	<definition name="create_admin_deprtment" extends="dashboard">
+		<put-attribute name="title" value="Create Administrative Department" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/administrative-department/administrativeDepartmentcp.jsp" />
+	</definition>
+	
+	<definition name="setup_admin_deprtment" extends="dashboard">
+		<put-attribute name="title" value="Create Administrative Department" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/administrative-department/hierarchyAdminDepartmentcp.jsp" />
+	</definition>
+	
+
+	 <definition name="department_script" extends="dashboard">
+		<put-attribute name="title" value="Generate Script" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/accessDeptScriptControlcp.jsp" />
+	</definition>
+
+
+
+	
+	<definition name="BUILD_TREE" extends="dashboard">
+		<put-attribute name="title" value="Extend Department Setup" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/tree/buildtreecp.jsp" />		
+	</definition>
+	
+
+<definition name="manageOrgLevels" extends="dashboard">
+		<put-attribute name="title" value="Manage Organization Levels" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/administrative-department/manageOrgLevelscp.jsp" />
+	</definition>
+	
+<!-- center user form -->
+
+
+    <definition name="addstate" extends="dashboard"> 
+	   <put-attribute  name="title" value="Create State" /> 
+	    <put-attribute name="dbcontentBody" value="/WEB-INF/jsp/state/addStatecp.jsp"  />
+	 </definition> 
+	 
+	 
+	 <definition name="addorganizationtype" extends="dashboard">
+		<put-attribute name="title" value="Create Organization Type" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/organization/createOrganizationTypecp.jsp" />
+	</definition>
+	
+	
+	<definition name="modifyorganizationtype" extends="dashboard">
+		<put-attribute name="title" value="Modify Organization Type" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/organization/modifyOrganizationTypecp.jsp" />
+	</definition>
+	
+		<definition name="editorganizationtype" extends="dashboard">
+		<put-attribute name="title" value="Edit Organization Type" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/organization/editOrgTypecp.jsp" />
+	</definition>
+	
+	<definition name="localGovtDirectoryMgrforCenter" extends="dashboard">
+		<put-attribute name="title" value="Configure Govt Order" />
+		<put-attribute name="dbcontentBody"
+	value="/WEB-INF/jsp/config/localGovtDirectoryMgrCentercp.jsp" />
+	</definition>
+	
+	
+	<definition name="localGovtDirectoryMgrViewCenter" extends="dashboard">
+		<put-attribute name="title" value="View Govt Order" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/localGovtDirectoryMgrViewCentercp.jsp" />
+	</definition>
+	
+	<definition name="localGovtDirectoryMgrModifyCenter" extends="dashboard">
+		<put-attribute name="title" value="Modify Govt Order" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/localGovtDirectoryMgrModifyCentercp.jsp" />
+	</definition>
+	
+	<definition name="localgovtType" extends="dashboard">
+		<put-attribute name="title" value="Create Local Government Type" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/localbodytype/createLocalGovtTypecp.jsp" />
+	</definition>
+	
+	
+	<definition name="view_localgovttype" extends="dashboard">
+		<put-attribute name="title" value="View Local Govt Type" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/localbodytype/viewLocalGovtTypescp.jsp" />
+	</definition>
+	
+	<definition name="view_bodytypedetail" extends="dashboard">
+		<put-attribute name="title" value="View Local Body Type Detail" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/localbodytype/viewLocalBodyTypeDetailcp.jsp" />
+	</definition>
+	
+	<definition name="modify_localGovtType" extends="dashboard">
+		<put-attribute name="title" value="Modify Local Govt Type" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/localbodytype/modifyLocalGovtTypecp.jsp" />
+	</definition>
+	
+	
+	<definition name="view_localgovttypehistory" extends="dashboard">
+		<put-attribute name="title" value="View Local Body Type History" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/localbodytype/viewLocalGovtTypeHistorycp.jsp" />
+	</definition>
+	
+	
+	<definition name="createministry" extends="dashboard">
+		<put-attribute name="title" value="Create Ministry" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/ministry/createMinistrycp.jsp" />
+	</definition>
+	
+	<definition name="view_ministryList" extends="dashboard">
+		<put-attribute name="title" value="View Ministry" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/ministry/viewMinistrycp.jsp" />
+	</definition>
+	
+	<definition name="view_ministrydetail" extends="dashboard">
+		<put-attribute name="title" value="View Ministry Detail" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/ministry/viewMinistryDetailcp.jsp" />
+	</definition>
+	
+   <definition name="modifyMinistry" extends="dashboard">
+		<put-attribute name="title" value="Modify Ministry" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/ministry/modifyMinistrycp.jsp" />
+	</definition>
+	
+	<definition name="addReportingStructure" extends="dashboard">
+		<put-attribute name="title" value="Add Reporting Structure Center" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/organization/add_reporting_structurecp.jsp" />
+	</definition>
+	
+		<definition name="designationDepartmentReorderCenter" extends="dashboard">
+		<put-attribute name="title" value="Designation" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/config/reorderDesignationDepartmentCentercp.jsp" />
+	</definition>
+	
+	
+	<definition name="view_organizationList" extends="dashboard">
+		<put-attribute name="title" value="View Organization" />
+		<put-attribute name="dbcontentBody" 	value="/WEB-INF/jsp/organization/viewCentralOrganizationListcp.jsp" />	
+	</definition>
+	
+	
+	<definition name="view_orgCenterdetail" extends="dashboard">
+		<put-attribute name="title" value="View Organization Center Details" />
+		<put-attribute name="dbcontentBody"  value="/WEB-INF/jsp/organization/viewOrganizationDetail.jsp" />
+	</definition>
+	
+	<definition name="modifyOrganizationCentral" extends="dashboard">
+		<put-attribute name="title" value="modify Organization for center" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/organization/modifyOrganizationforcentercp.jsp" />
+	</definition>
+
+<!-- Add by monty -->
+<definition name="restructued_create_urban_localbody" extends="dashboard">
+		<put-attribute name="title" value="Create Local Body" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/CreateUrbanLocalBodyCopy.jsp" />
+	</definition>
+	
+	<definition name="restructued_grid_manage_localbody" extends="dashboard">
+		<put-attribute name="title" value="Manage Local Body" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/manage/GridManageLocalBodiesCopy.jsp" />
+	</definition>
+	
+	
+	<definition name="restructued_view_manage_localbody" extends="dashboard">
+		<put-attribute name="title" value="View Local Body Details" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/manage/ViewLocalBodyDetailsCopy.jsp" />
+	</definition>
+	
+	
+	<definition name="restructued_rename_localbody" extends="dashboard">
+		<put-attribute name="title" value="Rename Local Body" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/manage/ModifyNameLocalBodyCopy.jsp" />
+	</definition>
+
+
+<definition name="view_block" extends="dashboard">
+		<put-attribute name="title" value="View Block" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/block/viewBlockCopy.jsp" />
+	</definition>
+	
+	<definition name="view_blockdetail" extends="dashboard">
+		<put-attribute name="title" value="View Block Detail" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/block/viewBlockDetailCopy.jsp" />
+	</definition>
+	
+	<definition name="view_blockhistory" extends="dashboard">
+		<put-attribute name="title" value="View Block History" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/block/viewBlockHistoryCopy.jsp" />
+	</definition>
+	
+	<definition name="modifyBlockCorrection" extends="dashboard">
+		<put-attribute name="title" value="Modify Block" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/block/modifyBlockforcorrectionCopy.jsp" />
+	</definition>
+	
+	<definition name="modify_block" extends="dashboard">
+		<put-attribute name="title" value="Modify Block" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/block/modifyBlockCopy.jsp" />
+	</definition>
+	
+	
+	<definition name="show_bp_block_mapping" extends="dashboard">
+		<put-attribute name="title" value="Block Panchayat Synchronization with Block" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/block/BlockPanchayatSyncWithBlockCopy.jsp" />
+	</definition>
+
+	<definition name="manage_AdminEntityForDraft" extends="dashboard">
+			<put-attribute name="title" value="Manage Admin Entity" />
+			<put-attribute name="dbcontentBody"
+				value="/WEB-INF/jsp/department/ManageAdminEntityForDraftCopy.jsp" />
+		</definition>
+		
+	<definition name="modify_coverage_AdminEntityForDraft" extends="dashboard">
+		<put-attribute name="title" value="Modify Admin Entity" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/ModifyCoverageAdminEntityForDraftCopy.jsp" />
+	</definition>
+	
+	<definition name="modify_AdminEntityForDraft" extends="dashboard">
+		<put-attribute name="title" value="Manage Admin Entity" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/ModifyDepartmentAdminEntityForDraftCopy.jsp" />
+	</definition>
+	
+	<definition name="manage_AdminLevelDraft" extends="dashboard">
+		<put-attribute name="title" value="Manage Draft Admin Units" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/manageDraftAdminUnitLevelCopy.jsp" />
+	</definition>
+
+
+	<definition name="modify_AdminLevelDraft" extends="dashboard">
+		<put-attribute name="title" value="Modify Admin Units" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/modifydeptAdminUnitsDraftCopy.jsp" />
+	</definition>
+	
+	<definition name="setparentOrgUnit" extends="dashboard">
+		<put-attribute name="title" value="Set Parent Org Units" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/organization/parentOrgUnitCopy.jsp" />
+	</definition>
+	
+	<definition name="view_departmentadminList" extends="dashboard">
+		<put-attribute name="title" value="View Department admin " />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/viewDepartmentAdminUnitCopy.jsp" />
+	</definition>
+	
+	
+	
+	<!-- Report  view statewiseGP Village Mapping @Ashish on 22/08-->
+	
+	<definition name="stateWiseGramPanchayats" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewstateWiseGPVillagemapping.jsp" />
+	</definition>
+	
+		<!-- Report GET method Of view Unmapped LBWard for PCAC @Ashish on 22/08-->
+	
+	<definition name="UnmappedLB_PCACWardmapping" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewunmapLbWardforPCAC.jsp" />
+	</definition>
+
+	<!-- Report POST method Of view Unmapped LBPCACWardMappingResult @Ashish on 22/08-->
+
+	<definition name="UnmappedLB_PCACWardmappingResult" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewUnmappedLB_PCACWardmappingResult.jsp" />
+	</definition>
+	
+	<!--Report on Get Method District Wise Local Bodies @Ashish on 23/08-->
+	
+	<definition name="rptDistrictWiseLBReport" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewDistrictWiseLBReport.jsp" />
+	</definition>
+	
+	<!--Report on Post Method District Wise Local Bodies @Ashish on 23/08-->
+	
+	<definition name="rptDistrictWiseLBReportDetail" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewDistrictWiseLBReportDetail.jsp" />
+	</definition>
+	
+
+	
+	<!-- added by deepti -->
+	
+	<definition name="reportOnDeptDesigOrgLevel" extends="homePage">
+	<put-attribute name="title" value="Department Designation Organization Levels" />
+	<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/common/reportOnDeptDesigOrgLevelcp.jsp" />
+	</definition>
+	
+	
+	<definition name="viewReportOnDeptDesigOrgLevel" extends="homePage">
+		<put-attribute name="title" value="Department Designation Organization Levels" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/birtReport/deptDesigOrgLevelReportcp.jsp" />
+	</definition>
+	
+	<definition name="wardToHalkaMappingReport" extends="homePage">
+		<put-attribute name="title" value="Ward to Halka Mapping Report" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/birtReport/wardToHalkaMappingReportcp.jsp" />
+	</definition>
+	
+	
+	<definition name="reportPageForWardHalkaMapping" extends="homePage">
+		<put-attribute name="title" value="Ward to Halka Mapping Report" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/birtReport/reportPageForWardHalkaMappingcp.jsp" />
+	</definition>
+
+	
+	<!--Report on Get Method Summary on Wards @Ashish on 24/08-->
+	
+	<definition name="lb_wise_ward_details" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewglobalViewWards.jsp" />
+	</definition>
+	
+	<!--Report on Post Method Summary on Wards @Ashish on 24/08-->
+	
+	<definition name="per_lb_wise_ward_details" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewglobalWardsPerLocalbody.jsp" />
+	</definition>
+	
+	<!--Report on Post Method Show Wards Details @Ashish on 24/08-->
+	
+	<definition name="show_ward_details" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewgloablWardShowDetails.jsp" />
+	</definition>
+	
+	<!--Report 22 @Ashish on 25/08-->
+	
+	<definition name="rptViewUnmappedLocalBodies" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/ViewUnMappedLocalBodiescpy.jsp" />
+	</definition>
+	
+	<!--Report 23 Get Method @Ashish on 25/08-->
+	
+		<definition name="rptDistrictWiseInvalidatedVillage" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewDistrictWiseInvalidatedVillage.jsp" />
+	</definition>
+	
+	<!--Report 23 Post Method @Ashish on 25/08-->
+	
+	<definition name="rptDistrictWiseInvalidatedVillageDetail" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewDistrictWiseInvalidatedVillageDetail.jsp" />
+	</definition>
+	
+	
+	<!--Report 24 @Ashish on 25/08-->
+	
+	<definition name="dpwardConstituencyWiseVP" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewdpwardConstituencyWiseVP.jsp" />
+	</definition>
+	
+	<!--Report 25 @Ashish on 25/08-->
+	
+	<definition name="districtWiseDetailReprot" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewdistrictWiseDetailReprot.jsp" />
+	</definition>
+	
+	<!--Report 26 @Ashish on 25/08-->
+	
+	<definition name="globalview_pesalocalbody" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody"	value="/WEB-INF/jsp/reports/viewglobalViewPesaLocalBodyForCitizen.jsp" />
+	</definition>
+	
+	<!--Report 27 @Ashish on 25/08-->
+	
+	<definition name="habitation_report"  extends="homePage" >
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewhabitation_report.jsp" />
+	</definition>
+	
+	<!--Report 28 Get Method @Ashish on 25/08-->
+	
+	<definition name="ReportondeptOrgUnit" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewReportonDeptOrgUnit.jsp" />
+	</definition>
+	
+	<!--Report 28 Post Method @Ashish on 28/08-->
+	
+	<definition name="view_reportonOrgUnit" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/birtReportnew/vieworgUnitReport.jsp" />
+	</definition>
+	
+	<!--Report 29 @Ashish on 28/08-->
+	
+	<definition name="nomenClatureSubdistrictReport" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/birtReportnew/viewNomenClatureSubdistrictReport.jsp" />
+	</definition>
+	
+	<!--Report 16 @Ashish on 28/08-->
+	
+	<definition name="rptMappedGPNWardforPCAC" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewMappedGPNWardforPCAC.jsp" />
+	</definition>
+	
+	
+
+
+   <definition name="halkaToVillageMappingReport" extends="homePage">
+		<put-attribute name="title" value="Halka to Village Mapping Report" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/birtReport/halkaToVillageMappingReportcp.jsp" />
+	</definition>
+	
+	
+	<definition name="reportPageForHalkaToVillageMapping" extends="homePage">
+		<put-attribute name="title" value="Halka to Village Mapping Report" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/birtReport/reportPageForHalkaToVillageMappingcp.jsp" />
+	</definition>
+	
+	
+	<definition name="globalView_Statewise_LocalBodyReport" extends="homePage">
+		<put-attribute name="title" value="Global View State wise GIS Mapped Local Body" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/rptStatewiseGISMappedLocalBodycp.jsp" />
+	</definition>
+	
+	 <definition name="globalview_localbody_districts_mapped_report" extends="homePage">
+		<put-attribute name="title" value="Global View Localbody Mapped to Districts" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/restructured-reporting/RedesignedGlobalLocalBodyMappedToDistrictsReportcp.jsp" />
+	</definition>
+	
+		<definition name="stateWisefreezedDistrict" extends="homePage">
+		<put-attribute name="title" value="State Wise Parliament/Assembly Constituency to local body mapping status" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/restructured-reporting/stateWisefreezedDistrictcp.jsp" />
+	</definition>
+	
+	<definition name="stateWisePopulation" extends="homePage">
+	<put-attribute name="title" value="State Wise Population" />
+	<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/common/stateWisePopulationcp.jsp" />
+	</definition>
+	
+	
+  <definition name="nofnStateList" extends="homePage">
+	 <put-attribute name="title" value="National Optical Fibre Network State" />
+	  <put-attribute name="hpcontentBody" value="/WEB-INF/jsp/common/nofnStateListcp.jsp" />
+	</definition>
+	
+  <definition name="nofnStateDetails" extends="homePage">
+		<put-attribute name="title" value="National Optical Fibre Network State" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/common/nofnStateDetailscp.jsp" />
+	</definition>
+	
+	<definition name="view_organizationList1" extends="dashboard">
+		<put-attribute name="title" value="View Organization for state" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/organization/viewOrganizationforstatecp.jsp" />
+	</definition>
+	
+	<definition name="view_orgStatedetail" extends="dashboard">
+		<put-attribute name="title" value="View Organization State Details" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/organization/viewOrganizationforstateDetailcp.jsp" />
+	</definition>
+	
+	<definition name="modifyOrganizationState" extends="dashboard">
+		<put-attribute name="title" value="modify Organization for state" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/organization/modifyOrganizationforstatecp.jsp" />
+	</definition>
+	
+	
+	 <definition name="departmentMappingAdd" extends="dashboard">
+		<put-attribute name="title" value="Department localBody Mapping" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/DepartmentMappingAddcp.jsp" />
+	</definition>
+	
+
+	<definition name="setParentOrgUnitCenter" extends="dashboard">
+		<put-attribute name="title" value="Set Parent OrgUnit Center" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/organization/parentOrgUnitCentercp.jsp" />
+	</definition>
+	
+
+		<definition name="downloadDirectory" extends="homePage">
+		<put-attribute name="title" value="Download Directory" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/downloadDirectory/downloadDirectorycp.jsp" />
+	</definition>
+	
+	<definition name="stateFreezeReport" extends="homePage">
+		<put-attribute name="title" value="State Freeze Status Report" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/birtReport/stateFreezeReportcp.jsp" />
+			
+	</definition>
+	
+	<definition name="globalsearch_view" extends="homePage">
+		<put-attribute name="title" value="Global Search Entity" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/searchentity/globalsearchcp.jsp" />
+	</definition>
+	
+	
+	<definition name="changedEntity" extends="homePage">
+	<put-attribute name="title" value="Chnage Occure In Given Time" />
+	<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/common/entityChnagedInGvnTime.jsp" />
+	</definition>
+	
+	<definition name="entityChangesDetails" extends="homePage">
+	<put-attribute name="title" value="Report on changes occurred in a given time period" />
+	<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/common/entityChangesDetails.jsp" />
+	</definition>
+	
+	<!--SiteMap - About_PES @Ashish on 29/08-->
+	
+	<definition name="aboutpes" extends="homePage">
+		<put-attribute name="title" value="About PES" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/citizen/viewaboutpes.jsp" />
+	</definition>
+	
+	<!--SiteMap - About_LGD @Ashish on 29/08-->
+	
+	<definition name="aboutlgd" extends="homePage">
+		<put-attribute name="title" value="About PES" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/citizen/viewaboutlgd.jsp" />
+	</definition>
+	
+
+	<!--Report 27 Post @Ashish on 29/08-->
+	
+	 <definition name="reportPage" extends="homePage">
+		<put-attribute name="title" value="View Habitation" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/birtReportnew/viewreportPage.jsp" />
+	</definition>
+ 
+ <definition name="success" extends="dashboard">
+		<put-attribute name="title" value="Result" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/common/successcp.jsp" />
+	</definition>	
+
+   <definition name="extendOrganizationUnits" extends="dashboard">
+		<put-attribute name="title" value="Extend Organisation Units" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/department/extendOrganizationUnitscp.jsp" />		
+	</definition>
+	
+	
+	<definition name="extendOrganizationUnitSetup" extends="dashboard">
+		<put-attribute name="title" value="Extend Organisation Units" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/department/extendOrganizationUnitSetupcp.jsp" />		
+	</definition>
+	
+	 <!--Stateusermp create section @Ashish on 31/08-->
+	 
+	 <definition name="create_section" extends="dashboard">
+		<put-attribute name="title" value="Create Section" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/section-module/createSectioncpy.jsp" />
+	</definition>
+	
+	 <!--Stateusermp Manage section @Ashish on 1/09-->
+	
+	<definition name="manage_section" extends="dashboard">
+		<put-attribute name="title" value="Manage Section" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/section-module/manageSectioncpy.jsp" />
+	</definition>
+ 
+ <definition name="success" extends="dashboard">
+		<put-attribute name="title" value="Result" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/common/successcp.jsp" />
+	</definition>	
+
+   <definition name="extendOrganizationUnits" extends="dashboard">
+		<put-attribute name="title" value="Extend Organisation Units" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/department/extendOrganizationUnitscp.jsp" />		
+	</definition>
+	
+	
+	<definition name="extendOrganizationUnitSetup" extends="dashboard">
+		<put-attribute name="title" value="Extend Organisation Units" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/department/extendOrganizationUnitSetupcp.jsp" />		
+	</definition>
+	
+	<definition name="update_LBPesa_Status" extends="dashboard">
+		<put-attribute name="title" value="Update Local Body Pesa Status" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/govtbody/UpdateLBPesaStatuscpy.jsp" />
+	</definition>
+	<definition name="organisationUnit" extends="dashboard">
+		<put-attribute name="title" value="Add Sub Offices" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/administrative-department/organizationUnitCopy.jsp" />
+	</definition>
+
+
+	<definition name="PROCESS_LEVEL_WISE_FORM" extends="dashboard">
+		<put-attribute name="title" value="Extend Department Setup" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/tree/processFormcp.jsp" />		
+	</definition>
+	
+	<definition name="configview" extends="dashboard">
+		<put-attribute name="title" value="Result" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/common/successcp.jsp" />
+	</definition>
+	
+	<definition name="lgdDesignation" extends="dashboard">
+		<put-attribute name="title" value="Designation" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/DesignationEROfficialcp.jsp" />
+	</definition>
+	
+	<definition name="create_designation_reporting" extends="dashboard"> 
+		<put-attribute name="title" value="New Designation Reporting" /> <put-attribute 
+		name="dbcontentBody" value="/WEB-INF/jsp/config/create_designation_reportingcp.jsp" />
+	</definition> 
+	
+	<definition name="reorderLgdDesignation" extends="dashboard">
+		<put-attribute name="title" value="Designation" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/ReOrderDesignationEROfficialcp.jsp" />
+			
+	</definition>
+	
+	<!-- Local Body @Ashish 4/9 -->
+	
+	<definition name="restructued_modify_parent_localbody" extends="dashboard">
+		<put-attribute name="title" value="Change Parent of Local Body" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/manage/ModifyParentLocalBodycpy.jsp" />
+	</definition>
+	
+	<definition name="invalidateView" extends="dashboard">
+		<put-attribute name="title" value="Invalidated Village" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/village/viewInvalidatedVillagecp.jsp" />
+	</definition>
+	
+	<definition name="manage_draft_subdistrict" extends="dashboard">
+		<put-attribute name="title" value="Manage Draft Subdistrict" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/draft-module/subdistrict/manageDraftSubdistrictcp.jsp" />
+	</definition>
+	
+
+	<definition name="view_blockcorrectiondetail" extends="dashboard">
+		<put-attribute name="title" value="View Block Detail" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/block/viewBlockDetailCopy.jsp" />
+	</definition>
+	
+
+	
+	<definition name="invalidatePRILBSuccess" extends="dashboard">
+		<put-attribute name="title" value="Invalidate PRI Local Govt Body" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/govtbody/invalidatePRILBSuccesscp.jsp" />
+	</definition>
+	
+	<definition name="customException" extends="homePage">
+		<put-attribute name="title" value="Custom Error" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/customExceptioncp.jsp" />
+	</definition>
+	
+	<definition name="invalidate_trilocalbody" extends="dashboard">
+		<put-attribute name="title" value="Invalidate TRI Local Govt Body" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/govtbody/InvalidateTRILBcp.jsp" />
+	</definition>
+	<definition name="restructued_view_success_localbody" extends="dashboard">
+		<put-attribute name="title" value="View Local Body Details" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/ViewLBSuccessCpy.jsp" />
+	</definition>
+	<definition name="restructued_grid_drafted_entities" extends="dashboard">
+		<put-attribute name="title" value="Drafted Entities" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/SearchDraftedEntitiesCpy.jsp" />
+	</definition>
+	<definition name="errorConfigView" extends="dashboard">
+		<put-attribute name="title" value="Configure Map" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/common/errorcp.jsp" />
+	</definition>
+	
+	<definition name="errorConfigshow" extends="dashboard">
+		<put-attribute name="title" value="Configure setup" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/config/errorcp.jsp" />
+	</definition>
+	
+		<definition name="localGovtDirectoryMgr" extends="dashboard">
+		<put-attribute name="title" value="Configure Govt Order" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/config/viewlocalGovtDirectoryMgr.jsp" />
+	</definition>
+	
+	<definition name="viewResolveEntitiesinDisturbedState" extends="dashboard">
+		<put-attribute name="title" value="View Entities in Disturbed State" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/Disturbedstate/viewResolveEntitiesinDisturbedStatecp.jsp" />
+	</definition>
+
+	<definition name="parliament" extends="dashboard">
+		<put-attribute name="title" value="Create Parliament Constituency" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/constituency/create_parliamentcp.jsp" />
+	</definition>
+	
+	<definition name="assembly" extends="dashboard">
+		<put-attribute name="title" value="Create Assembly Constituency" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/constituency/create_Assemblycp.jsp" />
+	</definition>
+	
+	<definition name="MapOfParliament" extends="dashboard">
+		<put-attribute name="title" value="Map of Parliament/Assembly to Local Government" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/constituency/mapParliamentcp.jsp" />
+	</definition>
+	
+	<definition name="Modifyparliament" extends="dashboard">
+		<put-attribute name="title" value="Modify Parliament Constituency" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/constituency/modifyParliamentcp.jsp" />
+	</definition>
+	
+	<definition name="viewParliamentDetailmodify" extends="dashboard">
+		<put-attribute name="title" value="View Parliament Detail" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/constituency/viewParliamentDetailcp.jsp" />
+	</definition>
+	
+	<definition name="modify_Parliement_Constituency" extends="dashboard">
+		<put-attribute name="title" value="Modify Parliament Constituency" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/constituency/editParliamentcp.jsp" />
+	</definition>
+	
+	<definition name="viewParliamentDetailformodify" extends="dashboard">
+		<put-attribute name="title" value="View Parliament Detail" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/constituency/viewParliamentConstituencyDetailcp.jsp" />
+	</definition>
+	
+		<definition name="Modifyassembly" extends="dashboard">
+		<put-attribute name="title" value="Modify Assembly Constituency" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/constituency/modifyAssemblycp.jsp" />
+	</definition>
+	
+	<definition name="ModifyassemblyConstituency" extends="dashboard">
+		<put-attribute name="title" value="Modify Assembly Constituency" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/constituency/editAssemblycp.jsp" />
+	</definition>
+	
+	<definition name="viewAssemblyDetailmodify" extends="dashboard">
+		<put-attribute name="title" value="View Assembly Detail" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/constituency/viewAssemblyDetailcp.jsp" />
+	</definition>
+	
+	<definition name="modify_Assembly_Constituency" extends="dashboard">
+		<put-attribute name="title" value="Modify Assembly Constituency" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/constituency/assemblyModifycp.jsp" />
+	</definition>
+	
+
+
+	
+	<definition name="restructued_change_covered_localbody" extends="dashboard">
+		<put-attribute name="title" value="Correct Government Local Body for Covered Area" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/manage/ChangeCoveredAreacp.jsp" />
+	</definition>
+	
+	<definition name="restructued_map_covered_localbody" extends="dashboard">
+		<put-attribute name="title" value="Correct Government Local Body for Covered Area" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/manage/MapCoveredAreacp.jsp" />
+	</definition>
+	
+	<definition name="restructued_map_covered_localbody_lb_urban" extends="dashboard">
+		<put-attribute name="title" value="Correct Government Local Body for Map Area" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/manage/MapCoveredAreaUrbancp.jsp" />
+	</definition>
+	
+
+
+	
+	<definition name="freezUnfreezPRI" extends="dashboard">
+		<put-attribute name="title" value="Freeze Unfreez PRI" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/govtbody/freezeUnfreezePRIcp.jsp" />
+	</definition>
+	
+	
+	<definition name="lbFreeze" extends="dashboard">
+		<put-attribute name="title" value="local body Freeze" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/govtbody/lBFreezecp.jsp" />
+	</definition>
+	
+	
+	<definition name="localBodyFreezePost" extends="dashboard">
+		<put-attribute name="title" value="local body Freeze" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/govtbody/lBFreeze_Unfreezecp.jsp" />
+	</definition>
+	
+
+	<definition name="view_drafted_change_coverage_area_lb" extends="dashboard">
+		<put-attribute name="title" value="View Change Covered Area" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/manage/ViewDraftedChangeCoverageAreacp.jsp" />
+	</definition>
+	
+	
+	<definition name="standardCode" extends="dashboard">
+		<put-attribute name="title" value="Update standard Codes" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/Miscelenous/updateStandardCodecp.jsp" />
+	</definition>
+	
+	
+	<definition name="standardCodeAdmin" extends="dashboard">
+		<put-attribute name="title" value="Update standard Codes" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/Miscelenous/updateStandardCodeAdmincp.jsp" />
+	</definition>
+	
+	
+	<definition name="standardCodeBlock" extends="dashboard">
+		<put-attribute name="title" value="Update standard Codes" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/Miscelenous/updateStandardCodeBlockcp.jsp" />
+	</definition>
+	
+	<definition name="standardCodeTerritorial" extends="dashboard">
+		<put-attribute name="title" value="Update standard Codes" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/Miscelenous/updateStandardCodeTerritorialcp.jsp" />
+	</definition>
+	
+	<definition name="standardCodeUrban" extends="dashboard">
+		<put-attribute name="title" value="Update standard Codes" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/Miscelenous/updateStandardCodeUrbancp.jsp" />
+	</definition>
+	
+	<definition name="standardCodePanchayat" extends="dashboard">
+		<put-attribute name="title" value="Update standard Codes" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/Miscelenous/updateStandardCodePanchayatcp.jsp" />
+	</definition>
+	
+	
+	<definition name="ModifyStandardCodes" extends="dashboard">
+		<put-attribute name="title" value="Modify Standard Codes" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/Miscelenous/editStandardCodecp.jsp" />
+	</definition>
+
+	<definition name="freezUnfreezTri" extends="dashboard">
+		<put-attribute name="title" value="Freeze Unfreez Traditional" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/govtbody/freezeUnfreezeTriCpy.jsp" />
+	</definition>
+	
+	<definition name="modify_temp_change_coverage" extends="dashboard">
+		<put-attribute name="title" value="Correct Government Local Body for Covered Area" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/manage/UpdateChangeCoveredAreacp.jsp" />
+	</definition>
+
+
+
+	<definition name="restructued_modify_temp_urban_localbody" extends="dashboard">
+		<put-attribute name="title" value="Modify Drafted Urban Local Body" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/UpdateDraftedUrbanLBcp.jsp" />
+	</definition>
+	
+	<definition name="restructued_view_drafted_localbody" extends="dashboard">
+		<put-attribute name="title" value="View Drafted Local Body" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/ViewDraftedLocalBodycp.jsp" />
+	</definition>
+	
+	<definition name="restructued_modify_temp_localbody" extends="dashboard">
+		<put-attribute name="title" value="Modify Drafted Local Body" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/UpdateDraftedLBcp.jsp" />
+	</definition>
+	
+	
+	<definition name="view_chnage_draft_subdistrict" extends="dashboard">
+		<put-attribute name="title" value="Manage Draft Subdistrict" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/draft-module/subdistrict/viewChangeDraftSubdistrictcp.jsp" />
+	</definition>
+	
+	 <definition name="change_subdistrict" extends="dashboard">
+	 	<put-attribute name="title" value="Manage Subdistrict" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/draft-module/subdistrict/changeSubdistrictcp.jsp" />
+	</definition>
+
+	<definition name="lbFreezeRural" extends="dashboard">
+		<put-attribute name="title" value="local body Freeze Rural" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/govtbody/lbFreezeRural.jsp" />
+	</definition>
+	
+	<definition name="lbFreezeUrban" extends="dashboard">
+		<put-attribute name="title" value="local body Freeze Urban" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/govtbody/lbFreezeUrban.jsp" />
+	</definition>
+	
+	<definition name="lbFreezeTribe" extends="dashboard">
+		<put-attribute name="title" value="local body Freeze Tribe" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/govtbody/lbFreezeTribe.jsp" />
+	</definition>
+	
+	<definition name="viewDesignationReporting" extends="dashboard">
+		<put-attribute name="title" value="View Local Govt Setup" />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/config/view_desg_reportingcp.jsp" />
+	</definition>
+	
+	<!-- <definition name="gis_map_verification_status" extends="base.definitionglobal">
+		<put-attribute name="title" value="GIS Map Verification Status" />
+		<put-attribute name="body" value="/WEB-INF/jsp/common/gisMapVerificationStatus.jsp" />
+	</definition> -->
+	
+	<definition name="view_subdistrictdetail_change" extends="dashboard">
+		<put-attribute name="title" value="View SubDistrict Detail" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/subdistrict/viewSubDistrictDetailcp.jsp" />
+	</definition>
+	
+	<!-- <definition name="region_hierarchy" extends="base.definition">
+		<put-attribute name="title" value="Generate Script" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/department/regionHierarchyControlAccess.jsp" />
+	</definition> -->
+	
+	
+	 <definition name="view_subdistrictdetail" extends="dashboardDialogLayout">
+		<put-attribute name="dashboardDialogBody"
+			value="/WEB-INF/jsp/subdistrict/viewSubDistrictDetailcp.jsp" />
+	</definition>
+	
+	<definition name="stateUserFreeze" extends="dashboard"> 
+ 		<put-attribute	name="title" value="Create State" /> 
+ 		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/state/stateFreezecp.jsp"/> 
+ 	</definition>
+	
+	<definition name="mapZpConstituency" extends="dashboard">
+		<put-attribute name="title" value="Map of Parliament/Assembly to Local Government" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/constituency/mapZpConstituencycp.jsp" />
+	</definition>
+	
+	<definition name="BLOCK_TO_VILLAGES_MAPPING" extends="dashboard">
+		<put-attribute name="title" value="Assign Villages to Block" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/block/blockVillagesMappingcp.jsp" />
+	</definition>
+
+     <definition name="view_subdistricthistory" extends="dashboard">
+		<put-attribute name="title" value="View SubDistrict History" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/subdistrict/viewSubDistrictHistorycp.jsp" />
+	</definition> 
+	
+	<definition name="result_section" extends="dashboard">
+		<put-attribute name="title" value="Create Section" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/section-module/resultSectioncp.jsp" />
+	</definition>
+	
+	<definition name="local_gov_setup_rural" extends="dashboard">
+		<put-attribute name="title" value="Define Rural Setup" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/config/localbodySetupRuralcp.jsp" />
+	</definition>
+	
+	<definition name="modify_local_gov_setup_rural" extends="dashboard">
+		<put-attribute name="title" value="Modify Rural Setup Hierarchy" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/config/localbodySetupRuralModifyHierarchycp.jsp" />
+	</definition>
+	
+	<definition name="HABITATION_CONFIGURATION" extends="dashboard">
+		<put-attribute name="title" value="Habitation Configuration" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/habitation/habitationConfigurationcp.jsp" />
+	</definition>
+	
+	<definition name="defined_local_gov_setup_rural" extends="dashboard">
+		<put-attribute name="title" value="Defined Rural Setup Hierarchy" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/config/localbodySetupRuralHierarchycp.jsp" />
+	</definition>
+	
+	
+		<definition name="invalidate_disturblocalgovtbody" extends="dashboard">
+		<put-attribute name="title" value="Invalidate PRI Local Govt Body" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/govtbody/InvalidateDisturbedPRILBcp.jsp" />
+	</definition>
+	
+	
+	<definition name="modify_govt_local_bodyforcoveragearea_disturbed" extends="dashboard">
+		<put-attribute name="title" value="Modify Govt Local Body for covered area" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/govtbody/modifyGovtLocalBodyforcoveredaDisturbedcp.jsp" />
+	</definition>
+	
+	
+	<definition name="SuccessStandardCodes" extends="dashboard">
+		<put-attribute name="title" value="Success Standard Codes" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/Miscelenous/SuccessStandardCodecp.jsp" />
+	</definition>
+	
+		<definition name="restructued_change_covered_lb_urban" extends="dashboard">
+		<put-attribute name="title" value="Correct Government Local Body for Covered Area" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/manage/ChangeCoveredAreaUrban.jsp" />
+	</definition>
+	
+	<definition name="restructued_modify_type_localbody" extends="dashboard">
+		<put-attribute name="title" value="Change Type of Local Body" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/manage/ModifyTypeLocalBody.jsp" />
+	</definition>
+	
+	<definition name="messageBoard" extends="dashboard">
+		<put-attribute name="title" value="Modify Village" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/village/successMessageVillagecp.jsp" />
+	</definition>
+	
+	<definition name="gis_map_verification_status" extends="homePage">
+		<put-attribute name="title" value="GIS Map Verification Status" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/gisMapVerificationStatuscp.jsp" />
+	</definition>
+	
+	<definition name="landRegionMgr" extends="dashboard">
+		<put-attribute name="title" value="Configure Govt Order" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/config/landRegionManagercp.jsp" />
+	</definition>
+	
+	
+	<definition name="updateGISBoundaries" extends="dashboard">
+		<put-attribute name="title" value="Update GIS Boundaries" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/gis/localbody_gis/updateGISBoundariescp.jsp" />
+	</definition>
+	
+	<definition name="view_save_draft_subdistrict" extends="dashboard">
+		<put-attribute name="title" value="Manage Draft Subdistrict" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/draft-module/subdistrict/viewSaveDraftSubdistrict.jsp" />
+	</definition>
+	
+	<definition name="deNotifyGPULBRLB" extends="dashboard">
+		<put-attribute name="title" value="De-notify Gram Panchayat(s)" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/govtbody/deNotifyGPULBRLBcp.jsp" />
+	</definition>
+	
+	<definition name="CREATE_HABITATION" extends="dashboard">
+		<put-attribute name="title" value="Create Habitation" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/habitation/createHabitaioncp.jsp" />
+	</definition>
+	
+	<definition name="modifyHabitation"  extends="dashboard" >
+		<put-attribute name="title" value="Habitation" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/village/modifyHabitationcp.jsp" />
+	</definition>
+	
+	<definition name="changedEntityTransaction" extends="dashboard">
+	<put-attribute name="title" value="Chnage Occure In Given Time" />
+	<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/common/entityTransactionChnagedInGvnTime.jsp" />
+	</definition>
+	
+	<definition name="modify_govt_local_body" extends="dashboard">
+		<put-attribute name="title" value="Modify Govt Local Body" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/govtbody/modifyGovtLocalBodycp.jsp" />
+	</definition>
+	
+	<definition name="invalidate_DisturbedTRI" extends="dashboard">
+		<put-attribute name="title" value="Invalidate Urban Local Govt Body" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/govtbody/InvalidateDisturbedTRILBcp.jsp" />
+	</definition>
+	
+	<definition name="invalidate_DisturbedULB" extends="dashboard">
+		<put-attribute name="title" value="Invalidate Urban Local Govt Body" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/govtbody/InvalidateDisturbedURBLBcp.jsp" />
+	</definition>
+	
+	<definition name="modify_govt_local_bodyforDisturbed" extends="dashboard">
+		<put-attribute name="title" value="View Local Government Body" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/govtbody/modifygovtlocalbodyforDisturbedcp.jsp" />
+	</definition>
+	
+	<definition name="update_section" extends="dashboard">
+		<put-attribute name="title" value="Update Section" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/section-module/updateSection.jsp" />
+	</definition>
+	
+	
+	<definition name="freezUnfreezUrb" extends="dashboard">
+		<put-attribute name="title" value="Freeze Unfreez Urban" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/govtbody/freezeUnfreezeUrbcp.jsp" />
+	</definition>
+	
+	<definition name="error" template="homePage">
+		<put-attribute name="title" value="Error page" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/common/errorRedirect.jsp" />
+	</definition>
+	
+	<definition name="errorRedirect" extends="homePage">
+		<put-attribute name="title" value="Error Page" />
+		<put-attribute name="hpcontentBody"	value="/WEB-INF/jsp/common/errorRedirect.jsp" />
+	</definition>
+	
+	
+	<!-- <definition name="globalViewStateHistory" extends="base.definition1">
+	  <put-attribute name="title" value="View State History" />
+	  <put-attribute name="body"
+	  value="/WEB-INF/jsp/state/globalViewStateHistory.jsp" />
+	</definition>
+	
+	<definition name="base.definition1" template="/WEB-INF/jsp/layout1.jsp">
+		<put-attribute name="body" value="" />
+	</definition> -->
+	
+	<definition name="globalViewStateHistory" extends="hpDialogLayout">
+	  <put-attribute name="title" value="View State History" />
+	  <put-attribute name="hpDialogBody"  value="/WEB-INF/jsp/reports/globalviewStateHistory.jsp" />
+	</definition>
+	
+	<definition name="globalview_statedetail" extends="hpDialogLayout">
+		<put-attribute name="title" value="View State Detail" />
+		<put-attribute name="hpDialogBody"	value="/WEB-INF/jsp/reports/globalviewStateDetail.jsp" />
+	</definition>
+	
+	<definition name="viewGlobalDistrictHistory" extends="hpDialogLayout">
+	  <put-attribute name="title" value="View District History" />
+	  <put-attribute name="hpDialogBody"  value="/WEB-INF/jsp/reports/globalviewDistrictHistory.jsp" />
+	</definition>
+	
+	<definition name="globalview_districtdetail" extends="hpDialogLayout">
+		<put-attribute name="title" value="View District Detail" />
+		<put-attribute name="hpDialogBody"	value="/WEB-INF/jsp/reports/globalviewDistrictDetail.jsp" />
+	</definition>
+	
+	<definition name="globalViewSubDistrictHistory" extends="hpDialogLayout">
+	  <put-attribute name="title" value="View SubDistrict History" />
+	  <put-attribute name="hpDialogBody"  value="/WEB-INF/jsp/reports/globalviewSubDistrictHistory.jsp" />
+	</definition>
+	
+	<definition name="globalview_subdistrictdetail" extends="hpDialogLayout">
+		<put-attribute name="title" value="View SubDistrict Detail" />
+		<put-attribute name="hpDialogBody"	value="/WEB-INF/jsp/reports/globalviewSubDistrictDetail.jsp" />
+	</definition>
+	
+	<definition name="globalViewVillageHistory" extends="hpDialogLayout">
+	  <put-attribute name="title" value="View Village History" />
+	  <put-attribute name="hpDialogBody" value="/WEB-INF/jsp/reports/globalviewVillageHistory.jsp" />
+	</definition>
+	
+	<definition name="globalview_villagedetail" extends="hpDialogLayout">
+		<put-attribute name="title" value="View Village Detail" />
+		<put-attribute name="hpDialogBody"	value="/WEB-INF/jsp/reports/globalviewVillageDetail.jsp" />
+	</definition>
+	
+	<definition name="view_Gblockdetail" extends="hpDialogLayout">
+		<put-attribute name="title" value="View Block Detail" />
+		<put-attribute name="hpDialogBody"	value="/WEB-INF/jsp/reports/globalviewBlockDetail.jsp" />
+	</definition>
+	
+	<definition name="globalViewLocalBodyHistory" extends="hpDialogLayout">
+	  <put-attribute name="title" value="View LocalBody History" />
+	  <put-attribute name="hpDialogBody"  value="/WEB-INF/jsp/reports/globalviewLocalBodyHistory.jsp" />
+	</definition>
+	
+	<definition name="entity_detail" extends="hpDialogLayout">
+		<put-attribute name="title" value="View Local Body" />
+		<put-attribute name="hpDialogBody"	value="/WEB-INF/jsp/reports/globalviewLocalbodyDetail.jsp" />
+	</definition>
+	
+	<definition name="wsUser_RegistraionForm" extends="homePage">
+		<put-attribute name="title" value="Web Services User Registration Form" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/WebserviceDoc/wsUserRegistrationForm.jsp" />
+	</definition>
+	
+	<definition name="wsUserRegistrationList" extends="dashboard">
+		<put-attribute name="title" value="Generate Script" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/WebserviceDoc/wsUserRegistrationList.jsp" />
+	</definition>
+	
+	<definition name="registredUserIpAddress" extends="homePage">
+		<put-attribute name="title" value="Registered User to Consume Web Services" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/common/registredUserIpAddress.jsp" />
+	</definition>
+	
+	<definition name="successON" extends="baseHome">
+		<put-attribute name="title" value="Result" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/common/successOn.jsp" />
+	</definition>
+	
+	<definition name="base.definition" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="language" value="/WEB-INF/jsp/language.jsp" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+
+		<put-attribute name="menu" value="/WEB-INF/jsp/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="createdepartmentAlternate" extends="base.definition">
+		<put-attribute name="title" value="Create Department" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/department/createDepartmentAlternateFlow.jsp" />
+	</definition>
+	
+	
+	<definition name="createdepartment" extends="base.definition">
+		<put-attribute name="title" value="Create Department" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/department/createDepartment.jsp" />
+	</definition>
+	
+	<definition name="createorganizationAlternate" extends="base.definition">
+		<put-attribute name="title" value="Create Organization" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/organization/createOrganizationAlternateFlow.jsp" />
+	</definition>
+	
+	
+	<definition name="createorganization" extends="base.definition">
+		<put-attribute name="title" value="Create Organization" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/organization/createOrganization.jsp" />
+	</definition>
+	
+	<definition name="statewiseEntitiesCount" extends="homePage">
+		<put-attribute name="title" value="State wise entities count" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/statewiseEntitiesCount.jsp" />
+	</definition>
+	
+	<definition name="gisStatewiseEntitiesCount" extends="hpDialogLayout">
+		<put-attribute name="title" value="GIS State wise entities count" />
+		<put-attribute name="hpDialogBody" value="/WEB-INF/jsp/reports/gisStatewiseEntitiesCount.jsp" />
+	</definition>
+	
+	<definition name="stateWiseLocalBodyUrbanCount" extends="homePage">
+        <put-attribute name="title" value="State Wise LocalBody Urban Count" />
+        <put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/stateWiseLocalBodyUrbanCount.jsp" />
+    </definition>
+    
+   	<definition name="view_village_draft" extends="dashboard">
+		<put-attribute name="title" value="View Village Draft Mode" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/village/viewVillageDraft.jsp" />
+	</definition>
+	
+	 <definition name="statewiseEntityLastUpdated" extends="homePage">
+		<put-attribute name="title" value="Report on State wise Last Updation Date" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/statewiseEntityLastupdated.jsp" />
+	</definition>
+	
+	<definition name="configBlock" extends="dashboard">
+		<put-attribute name="title" value="Configure Map" />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/config/config_blockcp.jsp" />
+	</definition>
+	
+	<definition name="BUILD_TREE_CENTER" extends="dashboard">
+		<put-attribute name="title" value="Extend Department Setup(Center)" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/tree/buildtreecenter.jsp" />		
+	</definition>
+	
+	<definition name="NODAL_OFFICER" extends="dashboard">
+		<put-attribute name="title" value="Create Nodal Officer" />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/nodalOfficer/createNodalOfficer.jsp" />
+	</definition>
+	
+	<definition name="EDIT_NODAL_OFFICER" extends="dashboard">
+		<put-attribute name="title" value="Create Nodal Officer" />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/nodalOfficer/editNodalOfficer.jsp" />
+	</definition>
+	
+	<definition name="LGD_DATA_CONFIRMATION_DISTRICT_USER" extends="dashboard">
+		<put-attribute name="title" value="LGD Data Confirmation" />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/nodalOfficer/lgdDataConfirmation.jsp" />
+	</definition>
+	
+	 <definition name="statewiseLGDDataConfirmation" extends="homePage">
+		<put-attribute name="title" value="Report on State wise LGD Data Confirmation" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/statewiseLGDDataConfirmation.jsp" />
+	</definition>
+	
+	<definition name="view_freezeDistrict" extends="dashboard">
+		<put-attribute name="title" value="View District Form " />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/district/freezeDistrictcp.jsp" />
+	</definition>
+	
+	<definition name="localBodyFreezePost" extends="dashboard">
+		<put-attribute name="title" value="local body Freeze" />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/govtbody/lBFreeze_Unfreezecp.jsp" />
+	</definition>
+	
+	<definition name="view_freezeDistrictPRI" extends="dashboard">
+		<put-attribute name="title" value="View Freeze District PRI"/>
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/govtbody/districtPRIFreezecp.jsp" />
+	</definition>
+	
+	<definition name="view_freezeDistrictTRD" extends="dashboard">
+		<put-attribute name="title" value="View Freeze District TRD"/>
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/govtbody/districtTRDFreezecp.jsp" />
+	</definition>
+	
+	<definition name="view_freezeDistrictURB" extends="dashboard">
+		<put-attribute name="title" value="View Freeze District URB"/>
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/govtbody/districtURBFreezecp.jsp" />
+	</definition>
+	
+	 <definition name="statewiseTotalGPsNPartMappedVillageGPs" extends="homePage">
+		<put-attribute name="title" value="Number of village Panchayats/Equivalent local bodies which are mapped with part of villages" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/statewiseTotalGPsNPartMappedVillageGPs.jsp" />
+	</definition>
+	
+	
+	<definition name="EMP_RECORD" extends="dashboard">
+		<put-attribute name="title" value="Draft Entity" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/state/createEmp.jsp" />
+	</definition>
+	
+	<!-- <definition name="update_drafted_rename_lb" extends="base.definition">
+		<put-attribute name="title" value="Update Drafted Rename Local Bodies" />
+		<put-attribute name="body" value="/WEB-INF/jsp/re-structured-localbody/manage/UpdateDraftedRenameLB.jsp" />
+	</definition> -->
+	
+	<definition name="update_drafted_rename_lb" extends="dashboard">
+		<put-attribute name="title" value="Rename Local Body" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/manage/UpdateDraftedRenameLBCP.jsp" />
+	</definition>
+	
+	<definition name="userRegistrationService" extends="homePage">
+		<put-attribute name="title" value="Other Services User Registration Form" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/WebserviceDoc/userRegistrationForm.jsp" />
+	</definition>
+	
+	<definition name="otherServicesLogin" extends="homePage">
+		<put-attribute name="title" value="Other Services User Login Form" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/WebserviceDoc/userLoginForm.jsp" />
+	</definition>
+	
+	
+	
+	<definition name="lgdOtherServices" extends="homePage">
+		<put-attribute name="title" value="Other Services User Login Form" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/WebserviceDoc/userOtherServices.jsp" />
+	</definition>
+	
+	<definition name="reportingIssuesForm" extends="homePage">
+		<put-attribute name="title" value="Report Issue" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/WebserviceDoc/reportingIssueCreate.jsp" />
+	</definition>
+	
+	<definition name="reportingIssuesList" extends="dashboard">
+		<put-attribute name="title" value="Report Issue" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/WebserviceDoc/reportIssuesView.jsp" />
+	</definition>
+	
+	<definition name="statewiseVillageMappedCount" extends="homePage">
+		<put-attribute name="title" value="State Wise Village Mapping Status" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/statewiseVillageMappedCount.jsp" />
+	</definition>
+	
+	<definition name="stateWiseUnmappedVillages" extends="homePage">
+		<put-attribute name="title" value="State Wise Unmapped Villages" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/stateWiseUnmappedVillages.jsp" />
+	</definition>
+	<definition name="stateWiseUnmappedVillageList" extends="homePage">
+		<put-attribute name="title" value="State Wise Unmapped Villages List" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/stateWiseUnmappedVillageList.jsp" />
+	</definition>
+	
+	<definition name="mergeexistingulb" extends="dashboard">
+		<put-attribute name="title" value="Merge Urban Local Bodies" />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/govtbody/mergeExistingULBCP.jsp" />
+	</definition>
+	
+
+	<definition name="nodalOfficersList" extends="nodalData">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/citizen/viewNodalOfficersList.jsp" />
+	</definition>
+	
+	<definition name="localBodyPopulation" extends="dashboard">
+		<put-attribute name="title" value="Local Body Population" />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/govtbody/localBodyPopulation.jsp" />
+	</definition>
+	
+	<definition name="localBodyPopulationForTraditional" extends="dashboard">
+		<put-attribute name="title" value="Local Body Population For Traditional" />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/govtbody/localBodyPopulationForTraditional.jsp" />
+	</definition>
+
+	<definition name="localBodyPopulationForUrban" extends="dashboard">
+		<put-attribute name="title" value="Local Body Population For Urban" />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/govtbody/localBodyPopulationForUrban.jsp" />
+	</definition>
+
+	<definition name="reactivateInvalidatedLcalBody" extends="dashboard">
+		<put-attribute name="title" value="Reactive Invalidate Local Body" />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/govtbody/reactivateInvalidatedLcalBody.jsp" />
+	</definition>
+	
+	<definition name="invalidateUrbanLBSuccess" extends="dashboard">
+		<put-attribute name="title" value="Invalidate PRI Local Govt Body" />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/govtbody/invalidateUrbanLBSuccesscp.jsp" />
+	</definition>
+	
+	
+	<definition name="stateWiseGPtoVillageMappingReportB" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/viewstateWiseGPtoVillageMappingReportB.jsp" />
+	</definition>
+	
+	<definition name="reactivateInvalidatedVillages" extends="dashboard">
+		<put-attribute name="title" value="Reactivate Invalidated Village" />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/govtbody/reactivateInvalidatedVillages.jsp" />
+	</definition>
+	
+	
+	<definition name="userManualFiles" extends="nodalData">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/citizen/userManualFiles.jsp" />
+	</definition>
+	
+	<definition name="LGD_DATA_CONFIRMATION_DISTRICT_STATE_USER" extends="dashboard">
+		<put-attribute name="title" value="LGD Data Confirmation" />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/nodalOfficer/lgdDataConfirmationState.jsp" />
+	</definition>
+	
+	<definition name="GIS_FREEZE_UNFREEZE_STATUS" extends="hpDialogLayout">
+		<put-attribute name="title" value="Freeze/Unfrreze Status" />
+		<put-attribute name="hpDialogBody"	value="/WEB-INF/jsp/reports/gisFreezeUnfreezeStatus.jsp" />
+	</definition>
+	
+	<definition name="AUDIT_TRAIL_LGD_REPORT" extends="dashboard">
+		<put-attribute name="title" value="Audit Trail" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/audit/auditTrail.jsp" />
+	</definition>
+	<definition name="lgdError" extends="homePage">
+		<put-attribute name="title" value="Error Page" />
+		<put-attribute name="hpcontentBody"	value="/WEB-INF/jsp/common/lgdError.jsp" />
+	</definition>	
+	
+	<definition name="exceptionalReportsCapcha" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/exceptionalReports/exceptionalReportsCapcha.jsp" />
+	</definition>
+	
+	<definition name="exceptionalBirtReports" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/exceptionalReports/exceptionalBirtReports.jsp" />
+	</definition>
+	
+	<definition name="manageDeptorOrg" extends="dashboard">
+		<put-attribute name="title" value="View Department" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/manage/manageDeptorOrg.jsp" />
+	</definition>
+	
+	<definition name="lgdPfmsMapping" extends="dashboard">
+		<put-attribute name="title" value="lgd Pfms Mapping" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/LgdPfmsMapping/LgdPfmsMapping.jsp" />
+	</definition>
+	
+	<definition name="GISMap" extends="hpDialogLayout">
+	  <put-attribute name="title" value="View District History" />
+	  <put-attribute name="hpDialogBody"  value="/WEB-INF/jsp/config/GISMap.jsp" />
+	</definition>
+	
+	<definition name="local_Body_Invalidation" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/LocalBodies/localBodyInvalidation.jsp" />
+	</definition>
+	
+	<definition name="local_Body_Invalidation_Post" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/BirtReport/localBodyInvalidationBirt.jsp" />
+	</definition>
+	
+		<definition name="rptConsolidateforExternalZP" extends="homePage">
+		<put-attribute name="title"
+			value="Consolidated Report of Panchayats" />
+		<put-attribute name="hpcontentBody"
+			value="/WEB-INF/jsp/reports/rptConsolidateforExternalZp.jsp" />
+	</definition>
+	
+	<definition name="rptConsolidateforExternalBP" extends="homePage">
+		<put-attribute name="title"
+			value="Consolidated Report of Panchayats" />
+		<put-attribute name="hpcontentBody"
+			value="/WEB-INF/jsp/reports/rptConsolidateforExternalBp.jsp" />
+	</definition>
+	
+	<definition name="rptConsolidateforExternalGP" extends="homePage">
+		<put-attribute name="title"
+			value="Consolidated Report of Panchayats" />
+		<put-attribute name="hpcontentBody"
+			value="/WEB-INF/jsp/reports/rptConsolidateforExternalGp.jsp" />
+	</definition>
+	<definition name="rptConsolidateforExternalMV" extends="homePage">
+		<put-attribute name="title"
+			value="Consolidated Report of Panchayats" />
+		<put-attribute name="hpcontentBody"
+			value="/WEB-INF/jsp/reports/rptConsolidateforExternalMv.jsp" />
+	</definition>
+	
+	<definition name="rptConsolidateforExternalError" extends="homePage">
+		<put-attribute name="title"
+			value="Consolidated Report of Panchayats" />
+		<put-attribute name="hpcontentBody"
+			value="/WEB-INF/jsp/reports/rptConsolidateforExternalError.jsp" />
+	</definition>
+	
+	<definition name="manageWardCoverage" extends="dashboard">
+		<put-attribute name="title" value="Manage Ward Coverage" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/ward/manageWardCoverage.jsp" />
+	</definition>
+	
+	<definition name="wsTestSMSNWebService" extends="dashboard">
+		<put-attribute name="title" value="Generate Script" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/WebserviceDoc/wsTestSMSNWebService.jsp" />
+	</definition>
+	
+	<definition name="exception_Report_For_Fully_Mapped" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/exceptionalReports/exceptionReportForFullyMappedCover.jsp" />
+	</definition>
+	
+	<definition name="exceptionReportBasedonYearCapcha" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/exceptionalReports/exceptionReportBasedonYearCapcha.jsp" />
+	</definition>
+	
+		<definition name="exceptionReportBasedonYear" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/exceptionalReports/exceptionReportBasedonYear.jsp" />
+		
+	</definition>
+	
+	<definition name="exceptionReportForFullyMappedCoverCaptcha" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/exceptionalReports/exceptionReportForFullyMappedCoverCaptcha.jsp" />
+	</definition>
+	
+	<definition name="exceptionalReportOnStateSelectionCaptcha" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/exceptionalReports/exceptionalReportOnStateSelectionCaptcha.jsp" />
+	</definition>
+	
+	<definition name="exceptionalReportOnStateSelection" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/exceptionalReports/exceptionalReportOnStateSelection.jsp" />
+	</definition>
+	
+	<definition name="call_Local_Body_Correction" extends="dashboard">
+		<put-attribute name="title" value="Rename Local Body" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/manage/callLocalBodyCorrection.jsp" />
+	</definition>
+	
+	<definition name="exceptionalReportOnStateSelectionCaptcha" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/exceptionalReports/exceptionalReportOnStateSelectionCaptcha.jsp" />
+	</definition>
+	
+	<definition name="exceptionalReportOnUrbanLbNoWard" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/exceptionalReports/exceptionalReportOnUrbanLbNoWard.jsp" />
+	</definition>
+	
+		
+	<definition name="exceptionalReportOnUrbanLbNoWardCapcha" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/exceptionalReports/exceptionalReportOnUrbanLbNoWardCapcha.jsp" />
+	</definition>
+	
+	<definition name="restructued_change_coverage_type" extends="dashboard">
+		<put-attribute name="title" value="Change Coverage Type of Local Body" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/manage/ChangeCoverageType.jsp" />
+	</definition>
+	
+	<definition name="DRAFT_WARD_COVERAGE" extends="hpDialogLayout">
+		<put-attribute name="hpDialogBody"	value="/WEB-INF/jsp/ward/viewDraftWard.jsp" />
+	</definition>
+	
+	<definition name="SHOW_DIHSA_OCVERAGE" extends="hpDialogLayout">
+		<put-attribute name="hpDialogBody"	value="/WEB-INF/jsp/homebody/showDishaHelp.jsp" />
+	</definition>
+	
+	<definition name="modify_parent_Administrative_Entity" extends="dashboard">
+		<put-attribute name="title" value="Manage Admin Entity" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/department/modify_parent_Administrative_Entity.jsp" />
+	</definition>
+	
+	<definition name="updateWardLocalNamePri" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/Miscelenous/updateWardLocalNamePri.jsp" />
+	</definition>
+	
+		<definition name="CHANGE_EFFECTIVE_DATE_OF_VILLAGE" extends="dashboard">
+		<put-attribute name="title" value="Change Effective Date of Village" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/village/changeEffectiveDate/ChangeEffectiveDate.jsp" />
+	</definition>
+	
+	<definition name="view_modify_villagedetail" extends="dashboard">
+		<put-attribute name="title" value="View Village Detail" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/village/viewModifyVillageDetail.jsp" />
+	</definition>
+	
+	<definition name="freezeUnfreezeDistrictwiseUlbList" extends="dashboardDialogLayout">
+		<put-attribute name="title" value="Freeze Unfreeze " />
+		<put-attribute name="dashboardDialogBody"	value="/WEB-INF/jsp/nodalOfficer/districtwiseUlbList.jsp" />
+	</definition>
+	
+	<definition name="getLocalBodyInDisturbedState" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/getLocalBodyInDisturbedState.jsp" />
+	</definition>
+	
+	<definition name="errorHomePage" extends="homePage">
+		<put-attribute name="title" value="LGD Error Page" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/homebody/errorHomePage.jsp" />
+	</definition>
+	
+	<definition name="Get_State_Configuration" extends="dashboard">
+		<put-attribute name="title" value=" confirmation configuration " />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/nodalOfficer/lgdDataConfirmationConfiguration.jsp" />
+	</definition>
+	
+	
+	<definition name="Freeze_Unfreeze_By_State" extends="dashboard">
+		<put-attribute name="title" value=" Freeze By State " />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/nodalOfficer/freezeUnfreezeByState.jsp" />
+	</definition>
+	
+	<definition name="Freeze_Unfreeze_By_State" extends="dashboard">
+		<put-attribute name="title" value=" Freeze By State " />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/nodalOfficer/freezeUnfreezeByState.jsp" />
+	</definition>
+	
+	<!-- 
+		 * This Method is Use for External User 
+		 * @param loginForm
+		 * @author Maneesh Kumar
+		 * @since 01-10-2019 -->
+	<definition name="EXTERNAL_USER" extends="hpDialogLayout">
+		<put-attribute name="hpDialogBody"	value="/WEB-INF/jsp/homebody/externalLogin.jsp" />
+	</definition>
+	<!-- end External User -->
+	
+	
+	<!-- <definition name="manage_villagedraftdetail" extends="dashboard">
+		<put-attribute name="title" value="View Village Draft in Edit  Mode" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/village/manageVillageDraftDetail.jsp" />
+	</definition>
+	
+	<definition name="modifyDraftVillagechange" extends="dashboard">
+		<put-attribute name="title" value="View Village Draft in Rename  Mode" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/village/modifyVillageChangecpy.jsp" />
+	</definition>
+	
+	<definition name="modifyInvalidateDraftVillagechange" extends="dashboard">
+		<put-attribute name="title" value="View Village Draft in Rename  Mode" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/village/modifyInvalidateDraftVillagechange.jsp" />
+	</definition> -->
+	
+	
+	<!-- New Jsp for view correction and change in district and Subdistrict -->
+	
+	
+	
+	<definition name="view_modify_districtdetail" extends="dashboard">
+		<put-attribute name="title" value="View District Correction Detail" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/district/viewModifyDistrictDetailCopy.jsp" />
+	</definition>
+	
+	
+	
+	
+	<definition name="modify_village_status" extends="dashboard">
+		<put-attribute name="title" value="Modify Village Status" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/village/ModifyVillageStatusNew.jsp" />
+	</definition>
+	
+	<definition name="CONFIGURE_BLOCKVILLAGE_PARTIALLYMAP" extends="dashboard">
+		<put-attribute name="title" value="Modify Village Status" />
+		<put-attribute name="dbcontentBody"
+			value="/WEB-INF/jsp/config/configureBlockVillagePartiallyMap.jsp" />
+	</definition>
+	
+	<!-- Village converted From Urban to Rural by Sushma Singh 7 December 2019 -->
+	 <definition name="village_converted_rural_to_urban" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/villageConvertedRuralToUrban.jsp" />
+	</definition>
+	
+	<definition name="village_converted_rural_to_urban_view" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports/villageConvertedRuralToUrbanView.jsp" />
+	</definition>
+	
+	<definition name="local_Body_Invalidation_New" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/birtReport/localBodyInvalidationNew.jsp" />
+	</definition>
+	
+	<definition name="rptConsolidateforRuralLBPES" extends="homePage">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="hpcontentBody" value="/WEB-INF/jsp/reports//Panchayat/viewConsolidateRuralLBPES.jsp" />
+	</definition>
+	
+	
+	<definition name="CHANGE_EFFECTIVE_DATE_OF_LOCALBODY" extends="dashboard">
+		<put-attribute name="title" value="Change Effective Date of Localbody" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/re-structured-localbody/manage/ChangeEffectiveDateLocalbody.jsp" />
+	</definition>
+	
+	<definition name="CHANGE_EFFECTIVE_DATE_OF_SUBDISTRICT" extends="dashboard">
+		<put-attribute name="title" value="Change Effective Date of Subdistrict" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/subdistrict/changeEffectiveDateSubdistrict.jsp" />
+	</definition>
+	
+	<definition name="CHANGE_EFFECTIVE_DATE_OF_DISTRICT" extends="dashboard">
+		<put-attribute name="title" value="Change Effective Date of District" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/district/changeEffectiveDateDistrict.jsp" />
+	</definition>
+	
+	
+	<definition name="view_blockdetail_dialog" extends="dashboardDialogLayout">
+		<put-attribute name="title" value="View Block Detail" />
+		<put-attribute name="dashboardDialogBody" value="/WEB-INF/jsp/block/viewBlockDetailinDialog.jsp" />
+	</definition>
+	
+	<definition name="CHANGE_EFFECTIVE_DATE_OF_BLOCK" extends="dashboard">
+		<put-attribute name="title" value="Change Effective Date of BLOCK" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/block/ChangeEffectiveDateBlock.jsp" />
+	</definition>
+	
+	<definition name="reactivateInvalidatedBlock" extends="dashboard">
+		<put-attribute name="title" value="Reactive Invalidate Block" />
+		<put-attribute name="dbcontentBody"	value="/WEB-INF/jsp/block/reactivateInvalidatedBlock.jsp" />
+	</definition>
+	
+	<definition name="CHANGE_EFFECTIVE_DATE_OF_STATE" extends="dashboard">
+		<put-attribute name="title" value="Change Effective Date of State" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/state/changeEffectiveDateState.jsp" />
+	</definition>
+	
+	<definition name="dashboardCenter" template="/WEB-INF/jsp/dashboard/dashboardLayoutCenter.jsp">
+		<put-attribute name="dbtopHeader" value="/WEB-INF/jsp/dashboard/topHeader.jsp" />
+		<put-attribute name="dbmainHeader" value="/WEB-INF/jsp/dashboard/mainHeader.jsp" />
+		<put-attribute name="dbcontentBody" value="" />
+		<put-attribute name="dbfooter" value="/WEB-INF/jsp/dashboard/footer.jsp" />
+	</definition>
+	
+	<definition name="dashboardHomeCenter" extends="dashboardCenter">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="dbcontentBody" value="/WEB-INF/jsp/dashboard/mainContent.jsp" />
+	</definition>
+</tiles-definitions>
+
+

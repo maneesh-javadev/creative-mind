@@ -1,0 +1,106 @@
+#maincontainer .ms_selectable, #maincontainer .ms_selection {
+	width: 33.3333%;
+	float: left;
+}
+
+#maincontainer .ms_buttons .bttn {
+	background: #999;
+	color: #fff;
+	padding: 2px 8px;
+	font-size: 12px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+	display: block;
+	margin: 2px auto;
+}
+
+#maincontainer .ms_container {
+	font-family: 'Open Sans', arial;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#maincontainer .ms_container select[multiple] {
+	width: 100%;
+	padding: 8px;
+	border: 3px solid #ccc;
+	height: 120px;
+	background: #fafafa;
+	font-family: 'Open Sans', arial;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	font-size: 12px;
+	color: #666;
+	transition: all ease-in-out 0.3s;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	resize: none;
+	box-sizing: border-box;
+}
+
+#maincontainer .ms_buttons {
+	width: 20%;
+	padding: 0 20px;
+	float: left;
+	text-align: center;
+	margin-top: 15px;
+}
+
+#maincontainer .ms_buttons .bttn, input[type="submit"],  input[type="button"], button{
+	background: #999;
+	color: #fff;
+	padding: 3px 5px;
+	font-size: 12px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+	min-width: 74px;
+	width:auto;
+	display: block;
+	margin: 2px auto;
+	border:none;
+	cursor:pointer;
+	transition:all ease-in-out 0.3s;
+	line-height:14px;
+}
+input[type="submit"],  input[type="button"], button, input[type="reset"]{
+	display:inline-block;
+	*display:inline;
+	vertical-align:top;
+	*zoom:1;
+	min-width: inherit;
+	*width:auto;
+	padding:8px;
+	cursor:pointer;
+	
+}
+body input[disabled=""]{
+	background:#ddd;
+	color:#666;	
+}
+body input[disabled=""]:hover{
+	background:#ddd;
+	color:#666;
+	cursor:none;
+}
+#maincontainer .ms_buttons .bttn:hover, input[type="submit"]:hover,  input[type="button"]:hover, button:hover {
+	background: #333;
+	text-shadow: none;
+}
+
+
+/* .ms_selectableforSubdistShift {
+	 width: 200px; 
+} */

@@ -1,0 +1,1 @@
+select distinct mp2.* from public.menu_profile mp2 left outer join public.menu_profile mp1 on (mp2.menu_id=mp1.parent)left outer join public.menu_profile mp on (mp1.menu_id=mp.parent) where  (mp2.form_name in ('View Password')or  mp1.form_name in ('View Password') or mp.form_name in ('View Password') )order by menu_id;

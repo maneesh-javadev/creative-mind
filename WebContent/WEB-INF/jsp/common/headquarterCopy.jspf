@@ -1,0 +1,13 @@
+<div class="col-sm-4">
+    <label id="headquarterName"><spring:message code="Label.DISTRICTHEADQUARTERENGLISH" htmlEscape="true"></spring:message> </label>
+    <form:input type="text" maxLength="50" class="form-control" htmlEscape="true"
+								name="headquarterName" path="headquarterName" onkeypress="return validateAlphaWithSpace(event);" /> <form:errors
+								path="headquarterName" cssStyle="color:red" htmlEscape="true"/>
+</div>
+
+<div class="col-sm-4">
+	    <label id="headquarterNameLocal"><spring:message code="Label.SUBDISTRICTHEADQUARTERLOCAL" htmlEscape="true"></spring:message> </label>
+	    <form:input type="text"  maxLength="50" class="form-control" htmlEscape="true"
+								name="headquarterNameLocal" path="headquarterNameLocal" onkeypress="return validateSpecialCharactersUpdateStandardCodeLocal(event)" /> <form:errors htmlEscape="true"
+								path="headquarterNameLocal" cssStyle="color:red" />
+</div>

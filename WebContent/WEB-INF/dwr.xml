@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC
+"-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+"http://getahead.org/dwr/dwr20.dtd">
+<dwr>
+	<allow>
+		<!-- ####################### Create tag should be put between this section only ###################### -->
+		<create creator="spring" javascript="lgdDwrWSService">
+			<param name="beanName" value="wsServiceImpl" />
+		</create>
+		<create creator="spring" javascript="lgdDwrStateService">
+			<param name="beanName" value="stateService" />
+		</create>
+		<!-- District List starts -->
+		<create creator="spring" javascript="lgdDwrDistrictService">
+			<param name="beanName" value="districtService" />
+		</create>
+<!-- 		<create creator="spring" javascript="lgdDwrDistrictServiceInvalidate"> -->
+<!-- 			<param name="beanName" value="districtService" /> -->
+<!-- 		</create> -->
+		<!-- District List Ends -->
+		<create creator="spring" javascript="lgdDwrGovtOrderTemplate">
+			<param name="beanName" value="govtOrderTemplateService" />
+		</create>
+<!-- 		<create creator="spring" javascript="lgdDwrOperationVariables"> -->
+<!-- 			<param name="beanName" value="govtOrderTemplateService" /> -->
+<!-- 		</create> -->
+		
+		<create creator="spring" javascript="lgdDwrVillageService">
+			<param name="beanName" value="villageService" />
+		</create>
+		
+		<create creator="spring" javascript="lgdDwrStateDistrictFreezeService">
+			<param name="beanName" value="stateDistrictFService" />
+		</create>
+		
+	
+<!-- 		<create creator="spring" javascript="lgdDwrBlockVillageService"> -->
+<!-- 			<param name="beanName" value="villageService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrVillageServiceForDraft"> -->
+<!-- 			<param name="beanName" value="villageService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrVillageServiceForDraftVillageList"> -->
+<!-- 			<param name="beanName" value="villageService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrSurveyService"> -->
+<!-- 			<param name="beanName" value="villageService" /> -->
+<!-- 		</create> -->
+		
+		<!-- SubDistrict Start -->
+		<create creator="spring" javascript="lgdDwrSubDistrictService">
+			<param name="beanName" value="subdistrictService" />
+		</create>
+<!-- 		<create creator="spring" javascript="lgdDwrSubDistrictServiceForDraft"> -->
+<!-- 			<param name="beanName" value="subdistrictService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrSubDistrictServiceInvalidate"> -->
+<!-- 			<param name="beanName" value="subdistrictService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrBlockInvalidate"> -->
+<!-- 			<param name="beanName" value="blockService" /> -->
+<!-- 		</create> -->
+	
+		<!-- Department Start -->
+		<create creator="spring" javascript="lgdDwrOrganizationService">
+			<param name="beanName" value="organisationService" />
+		</create>
+		
+<!-- 		<create creator="spring" javascript="lgdDWRDesignationMaster"> -->
+<!-- 			<param name="beanName" value="organisationService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDWROrganisationService"> -->
+<!-- 			<param name="beanName" value="organisationService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDWROrganizationDesignation"> -->
+<!-- 			<param name="beanName" value="organisationService" /> -->
+<!-- 		</create> -->
+		
+<!-- 		<create creator="spring" javascript="lgdDwrOrganizationServiceforDept"> -->
+<!-- 			<param name="beanName" value="organisationService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrOrgDistrictLServiceforDept"> -->
+<!-- 			<param name="beanName" value="organisationService" /> -->
+<!-- 		</create> -->
+<!-- 			<create creator="spring" javascript="lgdDWROrgLocatedAt"> -->
+<!-- 			<param name="beanName" value="organisationService" /> -->
+<!-- 		</create> -->
+		<!-- SubDistrict End -->
+		<!-- Get Local Body Type Code -->
+<!-- 		<create creator="spring" javascript="lgdDwrLGBTypeService"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+		
+		<create creator="spring" javascript="lgdDwrlocalBodyService">
+			<param name="beanName" value="localGovtBodyService" />
+		</create>
+<!-- 		<create creator="spring" javascript="lgdDwrlocalBodyServiceforULB"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrLBLocalBodyTypeList"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrLBTypeListforTraditional"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+	
+<!-- 		<create creator="spring" javascript="lgdDwrSubdistrictServiceforLB"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrSubDistrictServiceforUrban"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrVillageServiceforLB"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+	
+<!-- 		<create creator="spring" javascript="lgdDwrCoveredUnmappedService"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrCoveredPartMappedService"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrCovUMapSWService"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrLocalGovtBodyService"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrLocalGovtBodySubDistrictService"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+	
+	
+<!-- 		<create creator="spring" javascript="lgdDwrLocalGovtBodyVillageService"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrLocalGovtBodyParentService"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrCoveredVillageService"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrCoveredDistrictService"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrCoveredWardService"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrCoveredSubDistService"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+		<!-- End here for SubDistrict Land Region -->
+		<!--ULB Covered list -->
+		<create creator="spring" javascript="lgdDwrCoveredLandRegionByULBService">
+			<param name="beanName" value="lbCoveredLandregionService" />
+		</create>
+		<!--ULB Covered list -->
+		
+		<create creator="spring" javascript="lgdDwrDesignationService">
+			<param name="beanName" value="localGovtSetupService" />
+		</create>
+		
+		
+		
+		<convert match="in.nic.pes.lgd.bean.Designation" converter="bean">
+			<param value="designationCode, designationName,istopdesignation,designationNameLocal" name="include" />
+		</convert>
+		
+		
+		<create creator="spring" javascript="lgdDwrBlockService">
+			<param name="beanName" value="blockService" />
+		</create>
+		
+		<create creator="spring" javascript="lgdDWRDisturbedEntities">
+			<param name="beanName" value="disturbedEntitiesService" />
+		</create>
+	
+		<create creator="spring" javascript="lgdDwrAssemblyService">
+			<param name="beanName" value="AssemblyService" />
+		</create>
+		<!-- Get Local Body Sub Type Code -->
+<!-- 		<create creator="spring" javascript="lgdDwrLGBSubTypeService"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDistLandRegionList" scope="script"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+		<create creator="spring" javascript="lgdDwrCaptchaService">
+			<param name="beanName" value="captchaService" />
+		</create>
+<!-- 		<create creator="spring" javascript="lgdDwrSubDistrictServiceforDCA"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+<!-- 		<create creator="spring" javascript="lgdDwrVillageServiceforDCA"> -->
+<!-- 			<param name="beanName" value="localGovtBodyService" /> -->
+<!-- 		</create> -->
+		<!-- For SwitchUnit -->
+		<!-- <create creator="spring" javascript="pesswitchunitService">
+			<param name="beanName" value="switchunitService" />
+		</create> -->
+
+		
+		<create creator="spring" javascript="lgdDwrParlimentService">
+			<param name="beanName" value="parliamentService" />
+		</create>
+		
+		
+		<create creator="spring" javascript="lgdDwrCommonService">
+			<param name="beanName" value="commonService" />
+		</create>
+		
+		<create creator="spring" javascript="lgdDesignationDwr">
+			<param name="beanName" value="lgdDesignationService" />
+		</create>
+		
+	 	<create creator="spring" javascript="lgdAdminDepatmentDwr">
+			<param name="beanName" value="adminDeprtmentService" />
+		</create>
+		
+			<!-- Added By Pranav On 26 Oct 2016 -->
+		<convert match="in.nic.pes.lgd.bean.LgdUpperHierarchyLevel" converter="bean"></convert>
+		<convert match="in.nic.pes.lgd.bean.OrganizationUnit" converter="bean"></convert>
+		
+		<!-- Lgd 0002373: Create Village with Draft facility   -->
+		<create creator="spring" javascript="govtOrderService">
+			<param name="beanName" value="govtOrderService" />
+		</create>
+		<!-- Lgd 0002373: Create Village with Draft facility  END -->
+		
+		<!-- ##################### Create tag should be put between this section only ############################## -->
+		
+		<!-- ##################### Covert tag should be put below this section ################################## -->
+		
+		<convert match="in.nic.pes.lgd.bean.LgdDesignation" converter="bean">
+			<!-- <param value="designationCode,designationName,designationNameLocal,designationType,isTopDesignation,isMultiple,tierSetupCode,olc,orgLocatedLevelCode,isActive,isContractPermanent" name="include" /> -->
+		</convert>
+		
+		
+		<convert match="in.nic.pes.lgd.bean.OrganizationDesignation" converter="bean">
+			<param value="designationCode, designationName,istopdesignation,designationNameLocal,iscontractpermanent" name="include" />
+		</convert>
+		<!-- <convert match="in.nic.pes.lgd.bean.Block" converter="bean">
+			<param value="blockCode,blockNameEnglish,operation_state,operation_extend_flag,blockVersion" name="include" />
+		</convert> -->
+		
+		<convert match="in.nic.pes.lgd.bean.AssemblyConstituency" converter="bean">
+			<param value="acCode,acNameEnglish" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.GetSubTypeList" converter="bean">
+			<param value="local_body_subtype_code,subtype_name_eng" name="include" />
+		</convert>
+		
+		<convert match="in.nic.pes.lgd.bean.CheckAuthorization" converter="bean">
+			<param value="key,value" name="include" />
+		</convert>
+	
+		<convert match="in.nic.pes.lgd.bean.ConfigurationMapLocalbody" converter="bean">
+			<param value="configurationMapLocalbodyCode,tierSetupCode,ismapupload" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.ParliamentConstituency" converter="bean">
+			<param value="pcCode,pcNameEnglish" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.AssemblyConstituency" converter="bean">
+			<param value="acCode,acNameEnglish" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.State" converter="bean">
+			<param value="stateCode,stateNameEnglish,operation_state,operation_extend_flag" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.LgdOrganisationListByLocation" converter="bean">
+			<param value="orgUnitCode,orgUnitName" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.forms.StateDataForm" converter="bean">
+			<param value="fileName,filelocation" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.GovernmentOrderTemplate" converter="bean">
+			<param value="templateList" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.OperationsVariables" converter="bean">
+			<param value="variable,variableValue" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.District" converter="bean">
+			<param value="districtCode,districtNameEnglish,operation_state,is_pesa,operation_extend_flag,stateNameEnglish" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.CheckAuthorization" converter="bean">
+			<param value="key,value" name="include" />
+		</convert>
+		<!-- <convert match="in.nic.pes.lgd.bean.Village" converter="bean">
+			<param value="villageCode,villageNameEnglish,subdistrict,vlc" name="include" />
+		</convert> -->
+		
+	     <convert match="in.nic.pes.lgd.bean.Subdistrict" converter="bean">
+			<param value="subdistrictCode,subdistrictNameEnglish,districtNameEnglish,tlc,operation_state,is_pesa,isPart" name="include" />
+		 </convert>
+
+		
+		<convert match="in.nic.pes.lgd.bean.StateLineDepartment" converter="bean">
+			<param value="deptCode, deptName" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.DistrictLineDepartment" converter="bean">
+			<param value="deptCode, deptName" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.GetLocalGovtBodyTypeList" converter="bean">
+			<param value="localBodyTypeCode,typeNameEng" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.Localbody" converter="bean">
+			<param value="localBodyCode,localBodyNameEnglish,operation_state" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.GetLocalGovtSetup" converter="bean">
+			<param value="nomenclatureEnglish,localBodyTypeName,level,parentTierSetupCode,localBodyTypeCode" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.LocalbodyListbyState" converter="bean">
+			<param value="localBodyCode,localBodyNameEnglish,operation_state,localBodyTypeName" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.GetLocalBodyTypeCode" converter="bean">
+			<param value="typeCode,localBodyTypeCode,localBodyTypeName" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.ParentWiseLocalBodies" converter="bean">
+			<param value="localBodyCode,localBodyNameEnglish,operation_state" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.GetLandRegionWise" converter="bean">
+			<param value="localBodyCode,localBodyNameEnglish" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.UlbBean" converter="bean">
+			<param value="localBodyCode,localBodyNameEnglish" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.ParentWiseLocalBodiesWithoutChildCount" converter="bean">
+			<param value="localBodyCode,localBodyNameEnglish" name="include" />
+		</convert>
+		
+		<convert match="in.nic.pes.lgd.bean.LocalBodyCoveredArea" converter="bean">
+			<param value="landRegionCodeStr,landRegionCode,landRegionNameEnglish,landRegionType,coverageType,operation_state" name="include" />
+		</convert>
+		
+		<convert match="in.nic.pes.lgd.bean.LocalbodyUnMappedBody" converter="bean">
+			<param value="landRegionCode,localBodyNameEnglish" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.LocalbodyUnMappedBodyLevelWise" converter="bean">
+			<param value="landRegionCode,localBodyNameEnglish,operation_state" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.PartillyMappedLRList" converter="bean">
+			<param value="landRegionCode,localBodyNameEnglish" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.PartillyMappedLRListLevelWise" converter="bean">
+			<param value="landRegionCode,localBodyNameEnglish,operation_state" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.UnLRSWiseList" converter="bean">
+			<param value="landRegionCode,localBodyNameEnglish,operation_state" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.UnLRDistrictWiseList" converter="bean">
+			<param value="landRegionCode,localBodyNameEnglish,operation_state" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.LocalGovtBody" converter="bean">
+			<param value="localBodyCode,localBodyNameEnglish" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.ParentWiseLocalVillageBodies" converter="bean">
+			<param value="localBodyCode,localBodyNameEnglish" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.LocalGovtBodyParentWise" converter="bean">
+			<param value="tierSetupCode,nomenclatureEnglish" name="include" />
+		</convert>
+		<!-- added by Ashish Dhupia on 20/1/2015 for Habitation use case -->
+		<convert match="in.nic.pes.lgd.bean.LocalbodyforStateWise" converter="bean">
+			<param value="localBodyTypeCode,nomenclatureEnglish,tierSetupCode,localBodyTypeName,nomenclatureLocal,category,level,parentLocalBodyTypeCode" name="include" />
+		</convert>
+		<!-- <convert match="in.nic.pes.lgd.bean.Designation" converter="bean">
+			<param value="designationCode, designationName, designationNameLocal" name="include" />
+		</convert> -->
+		<convert match="in.nic.pes.lgd.bean.DesignationPesDelete" converter="bean">
+			<param value="pesflag" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.GetLocalGovtSetup" converter="bean">
+			<param value="nomenclatureEnglish,localBodyTypeName,level,parentTierSetupCode,localBodyTypeCode" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.Block" converter="bean">
+			<param value="blockCode,blockVersion,blockNameEnglish,operation_state,operation_extend_flag" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.UlbunmapBlockBean" converter="bean">
+			<param value="localBodyCode,localBodyNameEnglish,operation_state" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.LBCoverageWard" converter="bean">
+			<param value="landRegionCode,landRegionNameEnglish" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.LocalbodyWard" converter="bean">
+			<param value="wardCode,wardNameEnglish" name="include" />
+		</convert>
+	
+		<convert match="in.nic.pes.lgd.bean.LbCoveredAreaForSubDistList" converter="bean">
+			<param value="landRegionCode,landRegionNameEnglish" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.LocalBodyCoveredAreaLB" converter="bean">
+			<param value="landRegionCode,landRegionNameEnglish,coverageType,localbodyCoverage,operation_state" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.VillagePartsBySurveyno" converter="bean">
+			<param value="surveyCode,surveyNumber" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.DesignationMaster" converter="bean">
+			<param value="designationName" name="include" />
+		</convert>
+		
+		<convert match="in.nic.pes.lgd.bean.GetOrganizationListFn" converter="bean">
+			<param value="orgCode, orgName" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.GetOrganizationAtLevels" converter="bean">
+			<param value="org_located_level_code, located_at_level" name="include" />
+		</convert>
+		
+		<convert match="in.nic.pes.lgd.bean.GetLocalbodyDisturbRegion" converter="bean">
+			<param value="getLocalbodyDisturbRegionfn" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.LocalGovtBodyWard" converter="bean">
+			<param value="wardCode,wardNameInEnglish" name="include" />
+		</convert>
+		
+		<!-- Entry for the Entity Bean kirandeep -->
+		<convert match="in.nic.pes.lgd.bean.DeptAdminUnit" converter="bean"/>
+		
+		<convert match="in.nic.pes.lgd.bean.AdministrativeEntityCoverage" converter="bean"/>
+		
+		<convert match="in.nic.pes.lgd.bean.DeptAdminUnitEntity" converter="bean">
+			<param value="adminUnitEntityCode,adminEntityNameEnglish" name="include" />
+		</convert>
+	
+		
+		<!-- Entity bean for GTA -->
+		<convert match="in.nic.pes.lgd.bean.LocalBodyType" converter="bean">
+			<param value="localBodyTypeCode,localBodyTypeName" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.LocalBodyParent" converter="bean">
+			<param value="localBodyTypeCode,localBodyName" name="include" />
+		</convert>
+		<!-- Add Entry on 12-01-2015 by Ripunj -->
+		<!-- [lgd 0002111]: Functionality to set parent org_unit for each org_unit change -->
+		<convert match="in.nic.pes.lgd.bean.Organization" converter="bean">
+			<param value="orgCode, orgName, olc" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.Organization" converter="bean">
+			<param value="extendDep,orgCode, orgName, olc" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.OrgLocatedAtLevels" converter="bean">
+			<param value="orgLocatedLevelCode, orgLevelSpecificName,locatedAtLevel,unitLevelNameEnglish,locatedLevel" name="include" />
+			<!-- unitLevelNameEnglish is added by Pranav on  29 Nov -->
+		</convert>
+		<!-- END of [lgd 0002111]: Functionality to set parent org_unit for each org_unit change -->
+		
+		<!-- Lgd 0002373: Create Village with Draft facility   -->
+		
+	   <convert match="in.nic.pes.lgd.bean.Village" converter="bean">
+			<param value="villageCode,villageNameEnglish,subdistrict,vlc,opeartion_state,partFullFlag,renameNameVillageList,operation_state,villageVersion" name="include" />
+		</convert>
+		
+		<convert match="in.nic.pes.lgd.bean.GovernmentOrderDetails" converter="bean"/>
+		<!--Lgd 0002373: Create Village with Draft facility   END -->
+		
+		<!-- Restructured Govt Order Entities END -->
+		<!-- ############################ Convert tag should be put between this section only ######################### -->
+
+		<!-- Start For Extend Department Functionality -->
+		    <convert match="in.nic.pes.lgd.bean.ExtendDepartment" converter="bean">
+			   <param value="orglocatedlevelcode,adminunitlevelcode,unitlevelnameenglish" name="include" />
+		   </convert>
+	   <!-- End For Extend Department Functionality -->
+	   
+	    <!-- Add and Manage Ward Coverage  by manish(NIC)-->
+		 <convert match="in.nic.pes.lgd.bean.WardCoverageDetail" converter="bean" >
+		<param value="entityCode,entityName,coverageType" name="include" />
+		</convert>
+            <!-- END of and Manage Ward Coverage -->
+		<!-- Entry For Switch Unit version 3.1 (New Switch Unit) @AUTHOR vinay @since 19/12/2014 -->
+				<create creator="spring" javascript="pesUtility">
+		<param name="beanName" value="pesUtility" />
+		</create>
+		<convert match="in.nic.pes.common.functionpojo.EntityTypePojo" converter="bean"> </convert>
+
+		<convert match="in.nic.pes.common.switchunit.functionpojo.LocalBodyTierSetUpPojo" converter="bean"></convert>
+		<convert match="in.nic.pes.common.switchunit.functionpojo.EntityLevelWithLgdRefPojo" converter="bean"></convert>
+		
+		<convert match="in.nic.pes.common.switchunit.functionpojo.OrganizationPojo" converter="bean"></convert>
+		<convert match="in.nic.pes.common.switchunit.functionpojo.AssignedUnitHierarchyDto" converter="bean"></convert>
+		<convert match="in.nic.pes.common.switchunit.functionpojo.LbDetailsPojo" converter="bean"></convert>
+		<!-- Entry For Switch Unit version 3.1 (New Switch Unit) ends here -->
+		
+		
+		<!-- Entry For Freez/Unfreez state @AUTHOR Anju -->
+		<create creator="spring" javascript="lgdDwrStateFreezeService">
+			<param name="beanName" value="stateDistrictFService" />
+		</create>
+		<create creator="spring" javascript="lgdDwrdistrictFreezeService">
+			<param name="beanName" value="districtFreezeService" />
+		</create>
+		<!-- Entry For Freez/Unfreez state ends here -->
+		
+		
+		
+		  <!--  @author Ashish Dhupia on 15-02-2015 Save Local Body Freeze/Un-freeze -->
+		  <convert match="in.nic.pes.lgd.bean.ParentWiseLocalBodiesold" converter="bean">
+			<param value="localBodyCode,localBodyNameEnglish" name="include" />
+		</convert>
+
+
+
+		<!-- added by kirandeep on 15/02/2015  Start-->
+	 	<convert match="in.nic.pes.lgd.bean.CheckLocalBodyDraftState" converter="bean">
+	  		<param value="lblc,lbName,status" name="include"></param>
+		</convert>
+	  
+	 	<convert match="in.nic.pes.lgd.bean.CheckLocalBodyFreezeStatus" converter="bean">
+	  		<param value="lblc,lbName,status" name="include"></param>
+	 	</convert>
+		<!-- added by kirandeep on 15/02/2015  End-->
+		<!-- Start For  Department/LocalBody Mapping Functionality -->
+
+		  	<convert match="in.nic.pes.lgd.bean.LocalGovtBodyForSelectedBody" converter="bean">
+			   <param value="localBodyTypeCode,localBodyTypeName,localBodyCode,localBodyNameInEnglish,localBodyNameInLocal,totalChilds" name="include" />
+		   </convert>
+		   <convert match="in.nic.pes.lgd.bean.LocalBodyViewChild" converter="bean">
+			   <param value="localBodyCode,localBodyNameInEnglish,localBodyNameInLocal,totalChilds" name="include" />
+		   </convert>
+		   <convert match="in.nic.pes.lgd.bean.LgdOrganizationAtLevels" converter="bean">
+			  <param value="key,value,levelWiseOfficeName" name="include" />
+		  </convert>
+		  
+		  
+		   <convert match="in.nic.pes.lgd.bean.LgdSubordinateOrgUnits" converter="bean">
+			  <param value="orgUnitCode,orgUnitName" name="include" />
+		  </convert>
+		  <!-- End For  Department/LocalBody Mapping Functionality -->
+		  
+		  <!-- Lgd 0003817:  added by Anju Gupta this property subdistrictNameEnglish, start -->
+	  <!--  <convert match="in.nic.pes.lgd.bean.Village" converter="bean">
+			<param value="villageCode,villageNameEnglish,subdistrict,vlc,opeartion_state,partFullFlag,renameNameVillageList,operation_state,is_pesa,subdistrictNameEnglish" name="include" />
+		</convert> -->
+		<!-- Lgd 0003817: end by Anju Gupta  -->
+		
+		  <!-- Restructured Localbody Entities Entry -->
+		<create creator="spring" javascript="dwrRestructuredLocalBodyService">
+			<param name="beanName" value="localBodyService" />
+		</create>
+		<convert match="com.cmc.lgd.localbody.entities.LBTypeHierarchy" converter="bean" />
+		<convert match="com.cmc.lgd.localbody.entities.LBTypeDetails" converter="bean" />
+		<convert match="com.cmc.lgd.localbody.entities.LocalBodyEntityDetails" converter="bean" />
+		<convert match="com.cmc.lgd.localbody.entities.UnmappedLandregions" converter="bean" />
+		<convert match="com.cmc.lgd.localbody.entities.CoverageDetailsLocalBody" converter="bean" />
+		<convert match="com.cmc.lgd.localbody.entities.GovernmentOrderDetails" converter="bean" />
+		<convert match="com.cmc.lgd.localbody.entities.LBAttributes" converter="bean">
+			<param value="templateSource" name="include" />
+		</convert>
+		<convert match="com.cmc.lgd.localbody.entities.LBTypeDetailsWithCategory" converter="bean" />
+		<!-- Restructured Localbody Entities Ends -->
+		<!-- added by kirandeep for landregion is pesa ON 01/05/2015  -->
+		<convert match="in.nic.pes.lgd.bean.ParentHeirarchyBean" converter="bean" >
+			<param value="specificCode,type,ispesa,subDistrictName,parentName" name="include"></param>
+		</convert>
+		<!-- Added by Pooja on 15-05-2015 for department designation Levels-->
+		<convert match="in.nic.pes.lgd.bean.DesignationLevelSortorder" converter="bean" />
+		<convert match="in.nic.pes.lgd.bean.OrganizationUnit" converter="bean" />
+		
+		<!-- Added by Pooja on 02-09-2015 -->
+		<convert match="in.nic.pes.lgd.bean.GetLBDetailsBySubDistricts" converter="bean" />
+		<convert match="in.nic.pes.lgd.bean.LocalGovtBodyNameList" converter="bean" />
+		
+		<create creator="spring" javascript="lgdDwrWardService">
+			<param name="beanName" value="wardService" />
+		</create>
+		<convert match="in.nic.pes.lgd.bean.BlockPanchayatSyncBlock" converter="bean" />
+		
+		<create creator="spring" javascript="lgdDwrInitialService">
+			<param name="beanName" value="initialService" />
+		</create>
+		<convert match="in.nic.pes.lgd.forms.FaqData" converter="bean">
+			<param value="faqQuestionText,faqAnswerText" name="include" />
+		</convert>
+		<convert match="in.nic.pes.lgd.bean.LocalbodyforStateWiseFinal" converter="bean" />
+		
+		
+		<create creator="spring" javascript="lgdDwrSectionService">
+			<param name="beanName" value="sectionService" />
+		</create>
+		
+		<!-- Draft Module  Entry #started @author Maneesh Kumar -->
+		<create creator="spring" javascript="dwrDraftSubdistrictService">
+			<param name="beanName" value="draftSubdistrictService" />
+		</create>
+		
+		<convert match="in.nic.pes.lgd.draft.entities.SubdistrictDraft" converter="bean" />
+		
+		<create creator="spring" javascript="dwrDraftVillageService">
+			<param name="beanName" value="draftVillageService" />
+		</create>
+		<!-- Draft Module  Entry #end @author Maneesh Kumar -->
+		
+		<!-- Parliament Constituency Map  Entry #started @author Maneesh Kumar -->
+		<convert match="in.nic.pes.lgd.bean.ConstituencyLocalbody" converter="bean">
+		<param value="localBodyCode,localBodyNameEnglish,operation_state,isPart" name="include" />
+		</convert>
+		
+		<convert match="in.nic.pes.lgd.bean.ConstituencyVillage" converter="bean">
+		<param value="villageCode,villageNameEnglish,gpCode,gpName,ipName,dpName,operation_state" name="include" />
+		</convert>
+		
+		<convert match="in.nic.pes.lgd.bean.ConstituencyMapDetailsbyacCode" converter="bean" />
+		
+		<convert match="in.nic.pes.lgd.bean.ConstituencyWard" converter="bean" />
+		
+		<!-- Parliament Constituency Map  #end @author Maneesh Kumar -->
+		
+		<convert match="in.nic.pes.lgd.bean.LgdDesignationPK" converter="bean" />
+		<convert match="in.nic.pes.lgd.bean.Habitation" converter="bean" />
+		<convert match="in.nic.pes.lgd.bean.Habitation" converter="bean" />
+		
+		<convert match="in.nic.pes.lgd.bean.GetFreezeDataForLocalbody" converter="bean" />
+		
+		<convert match="in.nic.pes.lgd.bean.ChildExtendDept" converter="bean" />
+		<convert match="in.nic.pes.lgd.bean.ExistDeptHierarchy" converter="bean" />
+		<convert match="in.nic.pes.lgd.bean.StatewiseEntitiesCount" converter="bean" />
+		
+		<create creator="spring" javascript="dwrReportService">
+			<param name="beanName" value="reportService" />
+		</create>
+		<convert match="in.nic.pes.lgd.bean.ParentwiseChildDetials" converter="bean" />
+		<convert match="in.nic.pes.lgd.bean.BlockwiseVillageMappedUnmapped" converter="bean" />
+		<convert match="in.nic.pes.lgd.bean.EntityFreezeStatus" converter="bean" />
+		<convert match="in.nic.pes.lgd.bean.LgdPfmsMapping" converter="bean" />
+		<convert match="in.nic.pes.lgd.bean.FetchOrgLocatedLevel" converter="bean" />
+		<convert match="in.nic.pes.lgd.bean.LocalBodyDto" converter="bean" />
+		<convert match="in.nic.pes.lgd.bean.ExistingDeptMapping" converter="bean" />
+		
+	</allow>
+</dwr>

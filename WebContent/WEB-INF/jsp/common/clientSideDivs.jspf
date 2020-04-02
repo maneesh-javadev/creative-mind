@@ -1,0 +1,81 @@
+
+
+
+<div class="overlay" id="overlay1" style="display: none;"></div>
+	<div class="box" id="box1">
+		<a class="boxclose" id="boxclose1"></a>
+		<div>
+			<c:if test="${!empty param.family_msg}">
+				<table>
+					<tr>
+						<td rowspan="2"><center>
+								<Div class="success"></div>
+							</center>
+						</td>
+
+						<td><div class="helpMsgHeader" style="width: 275px;">
+								<h4>Success Message</h4>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td><div id="successMsg" class="successfont">
+								<center><c:out value="${param.family_msg}" escapeXml="true"></c:out></center>
+							</div></td>
+					</tr>
+				</table>
+
+			</c:if>
+
+			<c:if test="${!empty family_error}">
+
+				<table>
+					<tr>
+						<td rowspan="2"><Div class="failur"></div>
+						</td>
+
+						<td><center>
+								<div class="helpMsgHeader" style="width: 275px;">
+									<b>Failure Message</b>
+								</div>
+							</center>
+						</td>
+					</tr>
+					<tr>
+						<td><div id="failurMsg" class="errorfont"><c:out value="${family_error}" escapeXml="true"></c:out></div>
+						</td>
+					</tr>
+				</table>
+
+			</c:if>
+
+		</div>
+	</div>
+
+	<div class="box" id="box">
+		<a class="boxclose" id="boxclose"></a>
+		<div id="validate_error">
+			<table>
+				<tr>
+					<td rowspan="2"><div class="errorImg"></div>
+					</td>
+					<td><div class="helpMsgHeader" style="width: 275px;">
+							<h4>Error Message</h4>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><div class="errorfont"><spring:message htmlEscape="true" code="Error.entermandatoryfield" "></spring:message></div>
+					</td>
+				</tr>
+			</table>
+
+		</div>
+	</div>
+
+	<div id="helpDiv" class="helpMessage">
+		<div class="helpheader">
+			<h4>Help Message</h4>
+		</div>
+		<div id="helpMsgText" class="helptext"></div>
+	</div>

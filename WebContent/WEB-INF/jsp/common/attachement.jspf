@@ -1,0 +1,59 @@
+<%@ page import="in.nic.pes.lgd.bean.Attachment"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Iterator"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<script src="js/attachFiles.js" type="text/javascript" language="javascript"></script>
+<link href="css/error.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+	<%String requiredTitle="requiredTitle1";%>
+	<%String requiredTitleValue="no";%>
+	<%String fileTable="elementTable1"; %>
+	<%String fileTitle="fileTitle1"; %>
+	<%String fileName="attachFile1"; %>
+	<%String maxFileLimit="maxFileLimit1"; %>
+	<%Integer maxFileLimitValue = 1; %>
+	<% List<Attachment> listOFMetaData = null; %>
+	<% String validationError = (String) request.getAttribute("validationErrorOne"); %>
+	<%String deleteID="deleteID1"; %>
+	<%String deletePath="deletePath1"; %>
+	<%String deleteFileSize="deleteFileSize1"; %>
+	<%String deletedFileID="deletedFileID1"; %>
+	<%String deletedFileName="deletedFileName1"; %>
+	<%String deletedFileSizeList="deletedFileSizeList1"; %>
+ 
+ 
+
+<input type="hidden" id="<%=maxFileLimit%>" name="<%=maxFileLimit%>" value="<%=maxFileLimitValue%>" />
+<input type="hidden" id="<%=requiredTitle%>" name="<%=requiredTitle%>" value="<%=requiredTitleValue%>" />
+<table width="100%" class="tbl_no_brdr" id="validationErrorTable">
+	<tr>
+		
+		<td>
+		<div class="errormsg">
+			<% if(validationError != null) {%>
+				<spring:message code="<%=validationError%>" htmlEscape="true"/>
+			<%}%>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		
+		<td>&nbsp;&nbsp;Allowed File Extensions[gif,jpg,pdf,png,jpeg] Max File Size[5 MB]</td>
+		</tr>
+		<td width="100%">
+		
+		&nbsp;&nbsp;&nbsp;	<label><spring:message code="Label.UPLOADGOVTORDER" htmlEscape="true"/></label> <span class="errormsg">*</span>
+			<%@ include file="attachement_metainfo.jspf"%>
+		</td>
+	</tr>
+</table>
+
+
+</body></html>
+
+

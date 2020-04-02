@@ -1,0 +1,84 @@
+<div class="frmpnlbg">
+	<div class="frmtxt">
+		<div class="frmhdtitle">
+			<spring:message code="Label.GISNODES" htmlEscape="true"></spring:message>
+		</div>
+		<table width="100%" class="tbl_no_brdr">
+			<tr>
+			
+				<td rowspan="4">&nbsp;</td>
+                 <td>
+					<table id="maptabid" class="tbl_no_brdr">
+						<tr>
+							<td>
+								<div>
+									<table id="lat_long_tbody">
+										<tr>
+											<td class="tblclear">
+											<table id="maptabidF" width="100%" class="tbl_no_brdr">
+												<tr> 
+													<td width="125"><label id="lbllatitude"><spring:message
+														code="Label.LATITUDE" htmlEscape="true"></spring:message> </label></td>
+													<td width="125"><label id="lbllongitude"><spring:message
+														code="Label.LONGITUDE" htmlEscape="true"></spring:message> </label></td>
+													<td width="150"></td>
+												</tr>
+												<tr>
+													
+													<td valign="top"><form:input path="latitude" htmlEscape="true"
+													id="latitude" maxLength="8" type="text" class="frmfield"
+													onkeypress="return validateNumericKeysAndDotLBody(event);"  
+													onfocus="validateOnFocus('latitude');helpMessage(this,'latitude_msg');"											
+													onblur="vlidateOnblur('latitude','1','15','o');hideHelp();" onkeyup="hideMessageOnKeyPress('latitude');" onchange="return rangelat();"/></td>
+													 
+													<td valign="top"><form:input path="longitude" htmlEscape="true"
+													id="longitude" maxLength="8" type="text" class="frmfield"
+													onkeypress="return validateNumericKeysAndDotLBody(event);" onfocus="validateOnFocus('longitude');helpMessage(this,'longitude_msg');"											
+													onblur="vlidateOnblur('latitude','1','15','o');hideHelp();" onkeyup="hideMessageOnKeyPress('longitude');" onchange="return rangelon();"/><span><form:errors
+													path="longitude" class="errormsg" htmlEscape="true"></form:errors></td>
+													<td valign="top"><input type="button" name="Submit3" 
+														value="<spring:message code="Button.ADDNODES" htmlEscape="true"></spring:message>"
+														onclick="addGISnodes()" /></td>
+												</tr>
+												<tr>
+													<td colspan="2"><div id="addgisnodes"></div></td>
+												</tr>
+												<tr>
+													<td valign="top"><span><form:errors
+													path="latitude" class="errormsg" htmlEscape="true"></form:errors> </span>
+													<span style="display: none;" id="latitude_msg"><spring:message htmlEscape="true" code="error.blank.latitude" ></spring:message></span></td>
+													<td valign="top"><span> <form:errors
+													path="longitude" class="errormsg" htmlEscape="true"></form:errors> </span>
+													<span style="display: none;" id="longitude_msg"><spring:message htmlEscape="true" code="error.blank.longitude" ></spring:message></span></td>
+													<td valign="top">&nbsp;</td>
+												</tr>
+											 </table>
+											</td> 
+										</tr>
+									</table>
+								</div>
+							</TD>
+						</TR>
+						<tr>
+							<!-- <td><div id="addgisnodes"></div></td> -->
+						</tr>
+					</table>
+				</td>
+			</tr>
+			
+			<tr>
+				<td><div id="map-1" style="visibility: hidden; display: none;">
+						<table>
+							<tr>
+								<td width="50%">
+										<%@ include file="mapUploadforgisnodes.jspf"%>
+								 </td>
+							</tr>
+						</table>
+					</div></td> 
+			</tr>
+			
+	
+		</table>
+	</div>
+</div>

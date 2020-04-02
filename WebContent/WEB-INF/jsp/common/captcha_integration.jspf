@@ -1,0 +1,39 @@
+<%-- <% String conPath = request.getContextPath();%> --%>
+
+
+<%@include file="../homebody/commanInclude.jsp"%>
+
+<%-- <div class="captcha_fields">
+	<label for="captchaAnswer"><spring:message htmlEscape="true" code="Label.ENTERTEXTASSHOWNINTHISIMAGE" ></spring:message></label><br><br>
+	<img src="captchaImage" alt="Captcha Image" border="0"/><br>
+	
+		<label><form:input path="captchaAnswer" name="captchaAnswer"  class="form-control"  autocomplete="off" onkeypress="return noenter(event)"/></label>	<br>
+		<img src="<%=contextPath%>/images/refresh.png"	onclick="captchaResetImage('theimage', 'jcaptcha_response');" />	
+	
+		<form:errors path="captchaAnswer" cssStyle="color:red"/>
+		<div id="errEmptyCaptcha" class="errormsg" style="display:none"></div>
+	
+	<div id="errorCaptcha" style="display:none" class="errormsg"></div>	
+</div> --%>
+
+ 	<div class="form-group">
+		  <label for="captchaAnswer" class="col-sm-4 control-label"></label>
+		     <div class="col-sm-6">
+		         <img src="captchaImage" alt="Captcha Image"  id ="captchaImageId" border="0"/>
+		      </div>
+		</div>
+		                    
+	<div class="form-group">
+		<label for="captchaAnswer" class="col-sm-4 control-label"><spring:message code="captcha.message"	htmlEscape="true" /><span class="mandatory">*</span></label>
+		      <div class="col-sm-6">
+		           <form:input path="captchaAnswer" name="captchaAnswer"    autocomplete="off" onkeypress="return enter(event)" maxlength="5"/>
+             		 <a href="#" onclick="captchaReferesh();" ><i class="fa fa-retweet fa-2x" aria-hidden="true"></i></a>
+             		<form:errors path="captchaAnswer" cssStyle="color:red"/>
+				<div id="errEmptyCaptcha" class="errormsg" ></div>
+				<div id="errorCaptcha" class="errormsg"></div>	
+				<div id="errormsg" style="color: red;"> <b>${errormsg}</b> </div>
+		     </div>
+	 </div> 
+	 
+	 
+	 

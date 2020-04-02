@@ -1,0 +1,32 @@
+<div class="frmpnlbg">
+	<div class="frmtxt">
+		<div class="frmhdtitle">
+			<spring:message htmlEscape="true" code="Label.HEADQUARTER" ></spring:message>
+		</div>
+		<table width="100%" class="tbl_no_brdr">
+			<tr>
+				
+				<td width="100%" class="tblclear" />
+				<table class="tbl_no_brdr" width="491">
+					<tr>
+						<td><label id="headquarterName"><spring:message htmlEscape="true"
+									code="Label.DISTRICTHEADQUARTERENGLISH"></spring:message> </label></td>
+						<td><label id="headquarterNameLocal"><spring:message htmlEscape="true"
+									code="Label.SUBDISTRICTHEADQUARTERLOCAL"></spring:message> </label></td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td><form:input type="text" maxLength="50" class="frmfield" htmlEscape="true"
+								name="headquarterName" path="headquarterName" onkeypress="return validateAlphaWithSpace(event);" /> <form:errors
+								path="headquarterName" cssStyle="color:red" htmlEscape="true"/>
+						</td>
+						<td><form:input type="text"  maxLength="50" class="frmfield" htmlEscape="true"
+								name="headquarterNameLocal" path="headquarterNameLocal" onkeypress="return validateSpecialCharactersUpdateStandardCodeLocal(event)" /> <form:errors htmlEscape="true"
+								path="headquarterNameLocal" cssStyle="color:red" />
+						</td>
+					</tr>
+				</table>
+			</tr>
+		</table>
+	</div>
+</div>     

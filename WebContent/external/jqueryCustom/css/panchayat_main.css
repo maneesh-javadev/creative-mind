@@ -1,0 +1,755 @@
+/* CSS Document */
+/*<-------START GENERAL------ */
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	width:100%;	
+	margin: 0px;
+	padding: 0px 0px 0px 0px;
+	background: #FFFFFF;
+	font: .75em Arial, Helvetica, sans-serif;
+	color: #3A3A3A;
+}
+
+h1 {
+	font: bold 1.5em "Trebuchet MS";
+	color: #4E3700;
+	margin: 0px;
+	padding: 0px
+}
+
+h2 {
+	font: bold 1.3em "Trebuchet MS";
+	color: #4E3700;
+}
+
+h3 {
+	font: bold 1.2em Arial, Helvetica, sans-serif;
+	color: #4E3700;
+}
+
+i {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+img {
+	border: 0px;
+}
+
+p {
+	font: normal Arial, Helvetica, sans-serif;
+	color: #3A3A3A;
+	text-align: justify
+}
+/*<-------END GENERAL------ */
+
+/*Start table property*/
+table {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+table.tblbgclr {
+	background: inherit
+}
+
+th {
+	margin: 0px;
+	padding: 1px 3px 1px 3px;
+	border: 0px;
+}
+
+td {
+	margin: 0px;
+	padding: 0px 0px 0px 0px;
+	border: 0px;
+}
+
+
+tr.tblRowTitle {
+	background: #E4E4E4;
+	height: 17px;
+	font-weight: bold
+}
+
+tr.tbl_nml_title {
+	height: 15px;
+	font-weight: bold
+}
+
+tr.tblRowA {
+	background: #f7f7f7;
+}
+
+tr.tblRowB {
+	background: #fff;
+}
+
+td.tblclear {
+	padding: 0px
+}
+
+td.tblrtbrdr {
+	border-right: solid 1px #2E75A9;
+	background: #BDD0E1
+}
+
+td.lblCol {
+	bgcolor: red;
+	text-align: left;
+	font: large;
+}
+/*End table property*/
+
+/*<-------START DIV ID------ */
+#maincontainer {
+	width: 97%;
+	height: 100%;
+	margin: 0px auto;
+} /* main div - First div in any html */
+#headerwrap {
+	width: 100%;
+	height: 189px;
+} /* div for  head section  */
+#topnav {
+	height: 25px;
+	font: 11px Arial, Helvetica, sans-serif;
+	color: #3A3A3A;
+} /* top navigation */
+#header {
+	background: url(../images/header_bg.jpg) top repeat-x;
+	height: 114px;
+	border: solid 1px #2E75A9;
+	position: relative
+} /* to show header background img */
+#logoleft {
+	background: url(../images/gvt_logo.png) no-repeat top left;
+	float: left;
+	width: 600px;
+	height: 60px;
+	font: bold 2em "Trebuchet MS";
+	color: #FFFFFF;
+	padding-top: 30px;
+	padding-left: 85px;
+	position: absolute
+} /* Left logo */
+#logoright {
+	background: url(../images/rt_logo.png) no-repeat top right;
+	float: right;
+	width: 500px;
+	height: 90px;
+	position: relative
+} /* right logo  */
+#mainnav {
+	height: 15px;
+	font: bold 1em Arial,;
+	color: #5A2120;
+	padding-top: 0px;
+	padding-left: 0px;
+	margin-top: 0px
+} /* horizondal menu on top - below logo */
+
+#mainnav a {
+	color: #FFFFFF;
+	/*font-family: cursive;  commented on 28-11-2011*/
+	text-decoration: none;
+	border: 1px solid #2E75A9;
+	padding: 1px 12px 1px 12px;
+	/*background: url(../images/btnbg.jpg) repeat-x*/
+}
+
+#loginnav {
+	background: #6A9BC3;
+	height: 23px;
+	font: normal 12px Arial,;
+	color: #FFFFFF;
+	padding-top: 1px;
+	border-left: solid 1px #2E75A9;
+	border-right: solid 1px #CE7674;
+	padding-top: .15em
+} /* login pannel */
+#loginnav a {
+	color: #FFFFFF;
+	text-decoration: none;
+	/*font-family: cursive*/;
+}
+
+#mainnav_home {
+   border: 1px solid #d7ae2a;
+    color: #4b3a0f;
+    margin: -11px 0px;
+    padding: 1px 7px;
+    text-decoration: none;
+    width: 13%;
+}
+
+#mainnav_logout{
+   border: 1px solid #d7ae2a;
+    color: #4b3a0f;
+    margin: -8px 0;
+    padding: 1px 7px;
+    text-decoration: none;
+    width: 4%;
+}
+
+
+#content {
+	background: #FFFFFF;
+	height: 100%;
+	border-left: solid 1px #2E75A9;
+	border-right: solid 1px #2E75A9
+} /* For Body Part*/
+
+#breadcrumbnav {
+	width: auto;
+	height: 21px;
+	font: normal 1em Arial, Helvetica, sans-serif;
+	color: #2E75A9;
+	padding-top: 4px;
+	padding-left: 2px;
+	background: url(../images/brdcrbnav_bg.jpg) repeat-x #FAF0F0;
+	border: solid 1px #2E75A9
+} /* For Bread Crumb*/
+
+#breadcrumbnav a {
+	color: #2E75A9;
+	text-decoration: none
+}
+
+#breadcrumbnav a:hover {
+	color: #2E2101;
+	text-decoration: underline
+}
+
+#breadcrumbnav span {
+	font: bold;
+	color: #2E75A9
+}
+
+#leftpnl {
+	height: 100%;
+}
+
+#newsupdate {
+	width: 225px;
+	float: left;
+	background: url(../images/news_pnl.jpg) top no-repeat #BDD0E1;
+	margin: 25px 3px 10px 3px;
+	border: solid 1px #2E75A9;
+	font: 1em Arial;
+	color: #FFFFFF;
+	position: relative
+} /*For Left News Panel Updates*/
+#rightpnl {
+	height: auto;
+	padding: 0px;
+}
+
+#homepagebg {
+	background: url(../images/head_bg.jpg) top repeat-x #DEDEDE;
+	border: solid 1px #D1D1D1;
+	height: 145px;
+	position: relative
+}
+
+#contentin {
+	background: #FAf0F0;
+	margin-top: 5px;
+	margin-bottom: 10px
+} /* div for content in Home page */
+#footer {
+	background: url(../images/footer_bg.jpg) top repeat-x #FFFFFF;
+	height: 48px;
+	font: normal 1em Arial;
+	color: #231C07;
+	border-left: solid 1px #2E75A9;
+	border-right: solid 1px #2E75A9;
+	padding-top: 5px;
+}
+
+#frmcontent {
+	background: #FFFFFF;
+	padding: 0px 0px 0px 0px;
+}
+/*<-------END DIV ID------ */
+
+/*<-------Start Common Class------ */
+.clear {
+	clear: both
+}
+
+.txticon {
+	width: 20px;
+	padding-top: 2px
+}
+
+.scroltxt {
+	margin-top: 21px;
+	padding: 1px 3px 3px 3px;
+	border-bottom: 2px solid #2E75A9
+}/* for marquee*/
+
+.tbl_no_brdr {
+	border-collapse: collapse;
+}
+	/*Used for removing "border="0" cellspacing="0" cellpadding="0"" from table*/
+.tbl_with_brdr {
+	border-collapse: separate;
+	border-spacing: 1px;
+	background: #dfdfdf
+} /*Used for Giving Border in Table */
+.collapse_menu {
+	background: url(../images/collapse_menu.jpg) no-repeat;
+	width: 15px;
+	height: 62px;
+	float: left
+}
+
+.pnlhd {
+	font: bold 1em Arial, Helvetica, sans-serif;
+	color: #2E75A9;
+	background: #BDD0E1;
+	border-top: 1px solid #2E75A9;
+	border-left: 1px solid #2E75A9;
+	border-right: 1px solid #2E75A9;
+	height: 19px;
+	position: absolute;
+	z-index: 2;
+	text-align: center;
+	top: 0px;
+	left: 5px;
+	padding: 0px 3px
+}
+
+.more {
+	font: bold 1em Arial, Helvetica, sans-serif;
+	text-align: right;
+	padding-right: 5px
+}
+
+.more a {
+	color: #2E75A9;
+	text-decoration: none
+}
+
+.help {
+	font: normal 12px Arial, Helvetica, sans-serif;
+	color: #5A2120
+}
+
+.help a {
+	color: #5A2120;
+	text-decoration: none
+}
+
+.frmhd {
+	font: bold 1.1em "Trebuchet MS";
+	color: #1A2022;
+	background: #6A9BC3;
+	padding: 3px;
+}
+
+.tblfrmhd {
+	//font: .9em "Trebuchet MS";
+	color: #1A2022;
+	background: #F0F0F0;
+	padding: 2px;
+}
+
+.frmpnlbrdr {
+	padding: 5px 10px 0px 10px;
+	border: 1px solid #E4E4E4
+}
+
+.frmpnlbg {
+	background: #F7F7F7;
+	padding: 10px;
+	margin: 10px 20px 10px 20px
+}
+
+.frmhelp {
+	font: bold 12px "Trebuchet MS";
+	color: #FFFFFF;
+	background: url(../images/helpfrm.png) no-repeat left;
+	height: 15px;
+	text-decoration: none;
+	padding-left: 20px
+}
+
+.frmhelp a {
+	color: #CE7674;
+	text-decoration: none;
+}
+
+.frmtxt {
+	font: normal 1em Arial, Helvetica, sans-serif;
+	color: #1A2022;
+	border: 1px solid #DCDCDC;
+	position: relative;
+	background: inherit;
+	padding: 20px 10px 15px 10px;
+}
+
+.frmhdtitle {
+	font: bold 1.1em "Trebuchet MS";
+	color: #372600;
+	background: #FFFFFF;
+	position: absolute;
+	z-index: 1;
+	text-align: center;
+	top: -9px;
+	left: 12px;
+	padding: 0px 3px
+}
+
+.blktxt {
+	font: normal 1em Arial, Helvetica, sans-serif;
+	color: #000
+}
+
+.errormsg {
+	font: normal 1em Arial, Helvetica, sans-serif;
+	color: #FF0000;
+	height: 15px;
+	padding-top: 3px
+} /*Used for error message*/
+
+.errorblock {
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: 16px;
+}
+.mndt {
+	font: normal 1em Arial, Helvetica, sans-serif;
+	color: #FF0000;
+	padding-left: 1px
+} /*Used for mandetory field (Star)*/
+.txtlink {
+	font: normal 1em Arial, Helvetica, sans-serif;
+	color: #5F3C00;
+}
+
+.txtlink a {
+	color: #5F3C00;
+	text-decoration: none
+}
+
+.npnlbg {
+	background: #CE7674;
+	height: 5px
+}
+
+.txtbold {
+	font-weight: bold;
+}
+
+.btmlogospace {
+	padding: 2px
+}
+
+.greybrdr {
+	border: 1px solid #757575
+}
+/*<-------End Common Class------ */
+
+/*Start Pagination*/
+.pageno {
+	font: bold 12px "Trebuchet MS";
+	color: #1A2022;
+}
+
+.pre a {
+	font: bold 12px "Trebuchet MS";
+	color: #1A2022;
+	background: url(../images/prvious.png) no-repeat;
+	padding-left: 17px;
+	padding-top: 0px;
+	text-decoration: none
+}
+
+.nxt a {
+	font: bold 12px "Trebuchet MS";
+	color: #1A2022;
+	background: url(../images/next.png) no-repeat right top;
+	padding-right: 18px;
+	padding-top: 0px;
+	text-decoration: none
+}
+/*End Pagination*/
+
+/*----------Statrt Form Field Style----------*/
+.themefield {
+	border: 1px solid #A8A8A8;
+	height: 18px;
+	font: normal 1em Arial;
+	color: #000;
+	width: 100px
+}
+
+.combofield {
+	border: 1px solid #A8A8A8;
+	height: 18px;
+	background:#FFFFFF;
+	font: normal 1em Arial;
+	color: #000;
+} /*Used for Combo Box*/
+.frmfield {
+	border: 1px solid #A8A8A8;
+	background: #FFFFFF;
+	height: 18px;
+	font: normal 1em Arial;
+	color: #000;
+} /*Used Normal Text field*/
+
+.filefield {
+	border: 1px solid #A8A8A8;
+	background: #FFFFFF;
+	height: 25px;
+	font: normal 1em Arial;
+	color: #000;
+} /*Used Normal Text field*/
+
+.frmtxtarea {
+	border: 1px solid #A8A8A8;
+	font: normal 1em Arial;
+	color: #000;
+} /*Used for Text Area and Multiselection Field*/
+.fldset {
+	border: 1px solid #A8A8A8;
+	font: normal 1em Arial;
+	color: #000;
+	padding: 15px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.btn {
+	
+}
+
+.btnpnl {
+	margin: 10px 20px 20px 20px;
+	text-align: center
+}
+/*----------End Form Field Style----------*/
+
+/*----------Start Collapse Pnl----------*/
+.pnlsize {
+	width: 230px;
+	margin-left: 0px;
+	display: block
+}
+
+.coltab {
+	width: 15px;
+	height: 65px;
+	padding-top: 0px;
+	display: none
+}
+
+.extab {
+	width: 10px;
+	padding-top: 0px;
+	padding-left: 0px
+}
+/*----------End Collapse Pnl----------*/
+
+/* ---------------Accordian Menues----------------------- */
+.arrowlistmenu {
+	width: 225px;
+	margin-top: 0px;
+	margin-left: 3px;
+	border-left: 1px solid #2E75A9;
+	border-right: 1px solid #2E75A9;
+	border-top: 1px solid #2E75A9;
+	background: #BDD0E1 /*width of accordion menu*/
+}
+
+.arrowlistmenu .menuheader {
+	/*CSS class for menu headers in general (expanding or not!)*/
+	background: url(../images/titlebar.jpg) no-repeat center left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	font-weight: lighter;
+	cursor: hand;
+	cursor: pointer;
+	width: 225px;
+	color: #FFFFFF;
+	padding: 0px 3px 0px 12px;
+	margin: 1px 0px;
+}
+
+.arrowlistmenu .openheader {
+	/*CSS class to apply to expandable header when it's expanded*/
+	background-image: url(../images/titlebar-active.jpg);
+}
+
+.arrowlistmenu ul { /*CSS for UL of each sub menu*/
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 0px;
+	/*bottom spacing between each UL and rest of content*/
+}
+
+.arrowlistmenu ul li {
+	/*font-family: cursive;
+	font-size: small;
+	font-weight: lighter;*/
+	padding-bottom: 0px; /*bottom spacing between menu items*/
+}
+
+.arrowlistmenu ul li .opensubheader {
+	/*Open state CSS for sub menu header*/
+	background: lightblue !important;
+}
+
+.arrowlistmenu ul li .closedsubheader {
+	/*Closed state CSS for sub menu header*/
+	background: lightgreen !important;
+}
+
+.arrowlistmenu ul li a {
+	color: #333333;
+	background: url(../images/arrowbullet.gif) no-repeat 3% 50%;
+	/*custom bullet list image*/
+	display: block;
+	padding: 3px 0px;
+	padding-left: 12px; /*link text is indented 19px*/
+	text-decoration: none;
+	border-bottom: 1px solid #2E75A9;
+	font-size: 1em;
+}
+
+.arrowlistmenu ul li a:visited {
+	color: #141414;
+}
+
+.arrowlistmenu ul li a:hover { /*hover state CSS*/
+	/*background-color: #333333;*/
+	color: #ffffff;
+	background: url(../images/arrowbulletH.gif) no-repeat 3% 50%;
+}
+
+.arrowlistmenu ul li a.subexpandable:hover {
+	/*hover state CSS for sub menu header*/
+	background: lightblue;
+}
+/* ---------------Accordian Menues ends here----------------------- */
+/*<-------Start Dashboard Tab----*/
+#tab_panel {
+	padding: 0;
+	border-bottom: 1px #fff solid;
+}
+
+#tab_panel ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+#tab_panel li {
+	padding: 0;
+	margin: 0 1px -1px 0;
+	list-style: none;
+	float: left;
+}
+
+#tab_panel a {
+	display: block;
+	background: #FCF7F9;
+	-moz-border-radius: 5px 5px 0 0; /* Firefox */
+	-webkit-border-radius: 5px 5px 0 0; /* Safari, Chrome */
+	-khtml-border-radius: 5px 5px 0 0; /* KHTML */
+	border-radius: 5px 5px 0 0; /* CSS3 */
+	border: 1px #695423 solid;
+	border-bottom: 0px;
+	padding: 4px 10px;
+	text-decoration: none;
+	font: bold 12px Arial, Helvetica, sans-serif;
+	color: #1F1702;
+	text-transform: none;
+	margin-top: 3px;
+}
+
+#tab_panel a:hover,#tab_panel a.current {
+	color: #550400;
+	background: #F5F0E2;
+	margin-top: 0px;
+	padding-top: 7px;
+	border: 1px #695423 solid;
+	border-bottom: 0px;
+}
+/*<-------End Dashboard Tab----*/
+/*<-------Font Resizer Start---*/
+.resize {
+	color: #3A3A3A;
+}
+
+.smallview .resize { /*CSS for "small font" setting*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+.normalview .resize {
+	/*CSS to return page to default setting (with no additional CSS rules added)*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px
+}
+
+.largeview .resize { /*CSS for "large font" setting*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+a.texttoggler { /*CSS for Text Size Toggler control*/
+	margin-right: 10px;
+}
+
+a.texttoggler img { /*CSS for Text Size Toggler control*/
+	border: 1px solid gray;
+}
+
+a.texttoggler img:hover { /*CSS for Text Size Toggler control*/
+	border: 1px solid red;
+}
+
+a.selectedtoggler img { /*CSS for Selected Text Size Toggler control*/
+	border: 1px solid red;
+}
+/*<-------Font Resizer End---*/
+
+
+.frmhdTab {
+	font: bold 11px "Trebuchet MS";
+	color: #1A2022;
+	background: #6A9BC3;
+	padding: 3px;
+}
+
+.contentTable{
+	
+	margin: 1em; border-bottom-color:  border-collapse: collapse;
+}
+
+.contentTd{
+	padding: .99em; border: 1px #ccc solid;
+	
+}
+.contentTh{
+	
+	padding: .99em; border: 1px #ccc solid;
+}
+.contentThead{
+	 background: #6A9BC3; 
+}
+.contentTbody{
+	 background: #BDD0E1;
+}

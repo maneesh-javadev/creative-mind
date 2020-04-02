@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body >
+
+<section class="content">
+    	<div class="row">
+        	<section class="col-lg-12">
+            	<form class="form-horizontal" name="form">
+             		<div class="box">
+             			<div class="box-header with-border">
+                        	<h3 class="box-title">Create New Entity</h3>
+                        </div>
+                        <div class="box-header subheading">
+                        	<h4 class="box-title">Select Entity Type</h4>
+                        </div>
+             			<div class="box-body">
+                        	<div class="form-group">
+                        		<label for="entity" class="col-sm-3 control-label">Select Entity Type<span class="mandatory">*</span></label>
+								<div class="col-sm-6" >
+									<select class="form-control" ng-model="selectedEntity" ng-change = "createform(selectedEntity)" >
+										<option ng-repeat="st in adminUnitList" value="{{st}}">{{st.adminLevelNameEng}}</option>
+									</select>
+								</div>
+                            </div>
+                            
+                            <div class="form-group" ng-if="categoryList.length>1">
+                        		<label for="entity" class="col-sm-3 control-label">Select Category<span class="mandatory">*</span></label>
+								<div class="col-sm-6" >
+									<select class="form-control" ng-model="category">
+										<option ng-repeat="cat in categoryList" value="{{cat}}">{{cat.adminUnitLevelCategoryNameEng}}</option>
+									</select>
+								</div>
+                            </div>
+                            
+                            <div id = "dropdown">
+                        		
+                            </div>
+                    	</div>
+             		
+             				<div class="box-header subheading">
+                               <h4 class="box-title">Entity Details:</h4>
+                       		</div>
+                       		
+                       		
+                       		<div class="box-body">
+	             		
+		             		<div class="form-group">
+                        		<label for="entity" class="col-sm-3 control-label">Name of Entity (In English)<span class="mandatory">*</span></label>
+								<div class="col-sm-6" >
+									<input type="text" class="form-control" ng-model="entity.adminEntityNameEnglish" name="adminEntityNameEnglish" required />
+								</div>
+                            </div>
+                            
+                            <div class="form-group">
+                        		<label for="entity" class="col-sm-3 control-label">Name of Entity (In Local language)<span class="mandatory">*</span></label>
+								<div class="col-sm-6" >
+									<input type="text" class="form-control" ng-model="entity.adminEntityNameLocal" name="adminEntityNameLocal" required />
+								</div>
+                            </div>
+                            
+                            <div class="form-group">
+                        		<label for="entity" class="col-sm-3 control-label">Alias of the Entity (In English)<span class="mandatory">*</span></label>
+								<div class="col-sm-6" >
+									<input type="text" class="form-control" ng-model="entity.entityaliasenglish" name="entityaliasenglish" required />
+								</div>
+                            </div>
+                            
+                            <div class="form-group">
+                        		<label for="entity" class="col-sm-3 control-label">Short Name<span class="mandatory">*</span></label>
+								<div class="col-sm-6" >
+									<input type="text" class="form-control" ng-model="entity.entityaliasenglish" name="entityaliasenglish" required />
+								</div>
+                            </div>
+                            
+                            <div class="form-group">
+                        		<label for="entity" class="col-sm-3 control-label">Entity Specific Code<span class="mandatory">*</span></label>
+								<div class="col-sm-6" >
+									<input type="text" class="form-control" ng-model="entity.sscode" name="sscode" required />
+								</div>
+                            </div>
+	             		
+	             		</div>
+             		
+             			<div class="box-header subheading">
+                               <h4 class="box-title">Contributing Land Region:</h4>
+                        </div>
+	             		<div class="box-body">
+	             		
+			             	<div id = "entityForm">
+			             	
+			                </div>
+	             		
+	             		</div>
+             		<div class="box-footer">
+           				<div class="col-sm-offset-2 col-sm-10">
+                 			<div class="pull-right">
+		                 		<a href="#govermentOrder">Next</a>
+                 				<button type="button" class="btn btn-warning " name="Submit6" onclick="javascript:location.href='shiftblock.htm?<csrf:token uri='shiftblock.htm'/>';"> Clear</button>
+				                 <button type="button" class="btn btn-danger " name="Cancel"  id="btnCancel" onclick="javascript:location.href='home.htm?<csrf:token uri='home.htm'/>';"><i class="fa fa-times-circle"></i> Close</button>
+				                 
+		                 	</div>
+	           			</div>   
+       				</div>
+            		</div>
+  			</form>
+    	</section>
+    	
+    	
+    	<section class="col-lg-12">
+  				<div class="modal-header">
+            		<h3>Government Order</h3>
+        		</div>
+        		<form class="form-horizontal" name="form">
+          			<div class="modal-body">
+          				<div class="box-header subheading">
+                        	<h4 class="box-title" style="font-size: inherit;">Government Order Details</h4>
+                        </div>
+		             	<div class="form-group">
+                        	<label for="entity" class="col-sm-3 control-label">Order No <span class="mandatory">*</span></label>
+							<div class="col-sm-6" >
+								<input type="text" class="form-control" ng-model="governmentOrder.orderNo">
+							</div>
+                        </div>
+                        <div class="form-group">
+                        	<label for="entity" class="col-sm-3 control-label">Order Date* <span class="mandatory">*</span></label>
+							<div class="col-sm-6" >
+								<ng-datepicker ng-model="governmentOrder.orderDate" format="DD.MM.YYYY" view-format="Do MMMM YYYY"> </ng-datepicker>
+							</div>
+                        </div>
+                        
+                        <div class="form-group">
+                        	<label for="entity" class="col-sm-3 control-label">Effective Date <span class="mandatory">*</span></label>
+							<div class="col-sm-6" >
+								<ng-datepicker ng-model="governmentOrder.effectiveDate" format="DD.MM.YYYY" view-format="Do MMMM YYYY"> </ng-datepicker>
+							</div>
+                        </div>
+                        
+                        <div class="form-group">
+                        	<label for="entity" class="col-sm-3 control-label">Gazette Publication Date <span class="mandatory">*</span></label>
+							<div class="col-sm-6" >
+								<ng-datepicker ng-model="governmentOrder.gazPubDate" format="DD.MM.YYYY" view-format="Do MMMM YYYY"> </ng-datepicker>
+							</div>
+                        </div>
+                        
+                        <div class="form-group">
+                        	<label for="entity" class="col-sm-3 control-label">Upload Govt. Order <span class="mandatory">*</span></label>
+							<div class="col-sm-6" >
+								<input type="file" class="form-control" ng-model="governmentOrder.attachFile1[0]">
+							</div>
+                        </div>
+                        
+          			</div>
+          			<div class="modal-footer">
+          				<button type="submit" class="btn btn-success " name="Submit"  ng-click="saveEntity()"  value=<spring:message code="Button.SAVE" htmlEscape="true"></spring:message><i class="fa fa-floppy-o"></i> Submit</button>
+          				<button type="button" class="btn btn-danger " name="Cancel"  id="btnCancel" ng-click="cancel()"><i class="fa fa-times-circle"></i> Close</button>
+          			</div>
+          		</form>
+          </section>
+    	
+    	
+    	
+    	</div>
+    </section> 
+</body>
+</html>

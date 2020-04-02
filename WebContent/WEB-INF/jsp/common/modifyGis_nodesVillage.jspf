@@ -1,0 +1,19 @@
+					<script type="text/javascript" src="<%=contextpthval%>/resources-localbody/scripts/jquery.numeric.js"></script>
+					<c:choose>
+					<c:when test="${mapConfig eq 'false'}">
+					<table style="width: 75%;"  id="gisNodesTable">
+						<tr>
+						<td ><label id="lbllatitude"><spring:message code='Label.latituderange' htmlEscape='true'/></label></td>
+						<td> <label id="lbllongitude"><spring:message code='Label.longituderange' htmlEscape='true'/></label></td>
+						<td><input type="button" name="Submit3" value="<spring:message code="Button.ADDNODES" htmlEscape="true"></spring:message>" onclick="addgisnodes1();" /></td>
+						</tr>
+						
+					</table>
+					</c:when>
+					<c:otherwise>
+						<div id="map-1">
+									<%@ include file="mapUpload.jspf"%>
+								</div>
+					</c:otherwise>
+					</c:choose>
+	

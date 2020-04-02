@@ -1,0 +1,19 @@
+
+<Context docBase="LGD" path="/LGD" reloadable="true"
+	source="org.eclipse.jst.jee.server:LGD">
+	<Resource name="jdbc/exHl" auth="Container" type="javax.sql.DataSource"
+		maxActive="5" maxIdle="2" maxWait="-1" username="postgres" password="nic@123"
+		driverClassName="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/lgd"
+		testOnBorrow="true" />
+
+	<Resource name="jdbc/switchunit" auth="Container" type="javax.sql.DataSource"
+		maxActive="5" maxIdle="2" maxWait="-1" username="postgres" password="nic@123"
+		driverClassName="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/pes"
+		testOnBorrow="true" />
+
+
+	<!-- <Resource name="jdbc/email" auth="Container" type="javax.sql.DataSource" 
+		maxActive="5" maxIdle="2" maxWait="-1" username="postgres" password="sql@190" 
+		driverClassName="org.postgresql.Driver" url="jdbc:postgresql://10.25.85.190:5432/pes" 
+		testOnBorrow="true"/> -->
+</Context>

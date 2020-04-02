@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Helpinfo>
+  <Helproot type="Invalidate">
+         
+          <!-- Invalidate  -->     
+         	<Helpchild name="Invalidate District">
+	          <Url>invalidatedistrict.htm</Url>
+	          <Foldermapping>Invalidate/77.InvalidateDistrict</Foldermapping>
+	          <Filename>43InvalidateDistrict_controller.swf</Filename>
+        	</Helpchild> 
+        
+      		<Helpchild name="Invalidate Subdistrict">
+	          <Url>invalidatesubdistrict.htm</Url>
+	          <Foldermapping>Invalidate/66.InvalidateSubDistrict</Foldermapping>
+	          <Filename>42InvalidateSubDistrict_controller.swf</Filename>
+       		 </Helpchild> 
+         
+	        <Helpchild name="Invalidate Block">
+	          <Url>invalidateblock.htm</Url>
+	          <Foldermapping>Invalidate/71.InvalidateBlock</Foldermapping>
+	          <Filename>44InvalidateBlock_controller.swf</Filename>
+	        </Helpchild>  
+	        
+	        
+	       
+	         <!--State  -->   
+      		
+      		<!--  <Helpchild name="Manage State">
+	          <Url>viewstate.htm</Url>
+	          <Foldermapping>District/74.ManageDistrict</Foldermapping>
+	          <Filename>Manage_District_controller.swf</Filename>
+	        </Helpchild>   -->
+	       
+        
+         <!-- District  -->   
+      		
+      		 <Helpchild name="Manage District">
+	          <Url>viewdistrict.htm</Url>
+	          <Foldermapping>District/74.ManageDistrict</Foldermapping>
+	          <Filename>Manage_District_controller.swf</Filename>
+	        </Helpchild>  
+      
+      
+       	<Helpchild name="Create District">
+	          <Url>add_district.htm</Url>
+	          <Foldermapping>District/73.CreateDistrict</Foldermapping>
+	          <Filename>Create_District_controller.swf</Filename>
+	        </Helpchild>  
+	        
+	        
+   <!-- Sub District  -->   
+      		
+      		 <Helpchild name="Manage SubDistrict">
+	          <Url>viewsubdistrict.htm</Url>
+	          <Foldermapping>SubDistrict/63.ManageSubDistrict</Foldermapping>
+	          <Filename>26ManageSubDistrict_controller.swf</Filename>
+	        </Helpchild>  
+      
+      
+       	<Helpchild name="Create SubDistrict">
+	          <Url>new_subdistrict.htm</Url>
+	          <Foldermapping>SubDistrict/62.CreateSubDistrict</Foldermapping>
+	          <Filename>29CreateSubDistrict_controller.swf</Filename>
+	        </Helpchild>  
+	        
+ <!-- Village  -->   
+      		
+      		 <Helpchild name="Manage Village">
+	          <Url>viewvillage.htm</Url>
+	          <Foldermapping>Village/56.ManageVillage</Foldermapping>
+	          <Filename>35ManageVillage_controller.swf</Filename>
+	        </Helpchild>  
+      
+      
+       	<Helpchild name="Create Village">
+	          <Url>createVillage.htm</Url>
+	          <Foldermapping>Village/55.CreateNewVillage</Foldermapping>
+	          <Filename>34CreateNewVillage_controller.swf</Filename>
+	        </Helpchild>  
+	        
+	 <!-- Shift  -->   
+      		
+      		 <Helpchild name="Shift Village Between Subdistrict">
+	          <Url>shiftvillageSubDistrict.htm</Url>
+	          <Foldermapping>Shift/60.ShiftVillageSubDistrict</Foldermapping>
+	          <Filename>40ShiftVillageSubDistrict_controller.swf</Filename>
+	        </Helpchild>  
+      
+      
+       	<Helpchild name="Shift Village Between Block">
+	          <Url>shiftvillageblock.htm</Url>
+	          <Foldermapping>Shift/61.ShiftVillageBlock</Foldermapping>
+	          <Filename>39ShiftVillageBlock_controller.swf</Filename>
+	        </Helpchild>  
+	        
+	       	<Helpchild name="Shift Block">
+	          <Url>shiftblock.htm</Url>
+	          <Foldermapping>Shift/70.ShiftBlock</Foldermapping>
+	          <Filename>38ShiftBlock_controller.swf</Filename>
+	        </Helpchild>  
+	        
+	  <!-- LocalBody -->
+	        	<Helpchild name="Create Traditional LocalBody">
+	          <Url>createLocalBodyforTraditional.htm</Url>
+	          <Foldermapping>LocalBody/43.CreateTraditionalLocalBody</Foldermapping>
+	          <Filename>71CreateTraditionalLocalBody_controller.swf</Filename>
+	        </Helpchild>  
+	        
+	      <Helpchild name="Create Urban LocalBody">
+	          <Url>createLocalBodyforUrban.htm</Url>
+	          <Foldermapping>LocalBody/36.CreateUrbanLocalBody</Foldermapping>
+	          <Filename>72CreateUrbanLocalBody_controller.swf</Filename>
+	        </Helpchild>
+	        
+	      <Helpchild name="Manage PRI LocalBody">
+	          <Url>viewLocalBodyforPRI.htm</Url>
+	          <Foldermapping>LocalBody/30.ManagePRILocalBody</Foldermapping>
+	          <Filename>70ManagePRILocalBody_controller.swf</Filename>
+	        </Helpchild>
+	        
+	        <Helpchild name="Manage Tradiotional LocalBody">
+	          <Url>viewLocalBodyforTraditional.htm</Url>
+	          <Foldermapping>LocalBody/44.ManageTraditionalLocalGovtBody</Foldermapping>
+	          <Filename>ManageTraditionalLocalGovtBody_controller.swf</Filename>
+	        </Helpchild>
+	     
+	        <Helpchild name="Create ER Designation for Panchayat">
+	          <Url>designation_hierarchy_elected_panchayat.htm</Url>
+	          <Foldermapping>LocalBody/20.CreateERDesignationsPanchayat</Foldermapping>
+	          <Filename>74CreateERDesignationsPanchayat_controller.swf</Filename>
+	        </Helpchild>
+	     
+	       <Helpchild name="Create Official Designation for Panchayat">
+	          <Url>designation_hierarchy_official_panchayat.htm</Url>
+	          <Foldermapping>LocalBody/21.CreateOfficialDesignationPanchayat</Foldermapping>
+	          <Filename>77CreateOfficialDesignationPanchayat_controller.swf</Filename>
+	        </Helpchild>
+	        
+	        <Helpchild name="Create Official Reporting for Panchayat">
+	          <Url>create_designation_reporting_panchayat.htm</Url>
+	          <Foldermapping>LocalBody/22.CreateOfficialReportingPanchayat</Foldermapping>
+	          <Filename>CreateOfficialReportingPanchayat_controller.swf</Filename>
+	        </Helpchild>
+	        
+	       
+       	 	<!-- Convert Localbody -->
+       	 	<Helpchild name="Convert RLB to ULB">
+	          <Url>convertRLBtoULB.htm</Url>
+	          <Foldermapping>ConvertLocalBody/50.ConvertRLBtoULB</Foldermapping>
+	          <Filename>45ConvertRLBtoULB_controller.swf</Filename>
+	        </Helpchild>
+	        
+	        	<!--Ward -->
+       	 	<Helpchild name="Create Ward for PRI">
+	          <Url>createWardforPRI.htm</Url>
+	          <Foldermapping>Ward/51.CreatePRIWard</Foldermapping>
+	          <Filename>54CreatePRIWard_controller.swf</Filename>
+	        </Helpchild>
+	        
+	        <Helpchild name="Create Ward for Urban">
+	          <Url>createWardforUrban.htm</Url>
+	          <Foldermapping>Ward/53.CreateUrbanWard</Foldermapping>
+	          <Filename>56CreateUrbanWard_controller.swf</Filename>
+	        </Helpchild>
+	        
+	         <!--  <Helpchild name="Create Ward for Traditional">
+	          <Url> createWardforTraditional.htm</Url>
+	          <Foldermapping>Ward/53.CreateUrbanWard</Foldermapping>
+	          <Filename>56CreateUrbanWard_controller.swf</Filename>
+	        </Helpchild> -->
+	       
+	       
+	         <Helpchild name="Manage Ward for PRI">
+	          <Url>viewwardforPRI.htm</Url>
+	          <Foldermapping>Ward/52.ManagePRIWard</Foldermapping>
+	          <Filename>55ManagePRIWard_controller.swf</Filename>
+	        </Helpchild>
+	     
+	        
+	         <Helpchild name="Manage Ward for Urban">
+	          <Url>viewwardforPRI.htm</Url>
+	          <Foldermapping>Ward/52.ManagePRIWard</Foldermapping>
+	          <Filename>55ManagePRIWard_controller.swf</Filename>
+	        </Helpchild>
+	        
+	        	<!--Block -->
+	        	  <Helpchild name="Create Block">
+		          <Url>new_block.htm</Url>
+		          <Foldermapping>Block/67.CreateBlock</Foldermapping>
+		          <Filename>30CreateBlock_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <Helpchild name="Manage Block">
+		          <Url>viewblock.htm</Url>
+		          <Foldermapping>Block/68.ManageViewBlock</Foldermapping>
+		          <Filename>31ManageViewBlock_controller.swf</Filename>
+		        </Helpchild>
+		        
+		        <!--Ministry -->
+	        	  <Helpchild name="Manage Ministry">
+		          <Url>viewministry.htm</Url>
+		          <Foldermapping>Ministry/96.ManageMinistry</Foldermapping>
+		          <Filename>53ManageMinistry_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <!--Department -->
+	        	  <Helpchild name="Create Department">
+		          <Url>createDepartmentState.htm</Url>
+		          <Foldermapping>Department/86.CreateDepartmentCenter</Foldermapping>
+		          <Filename>63CreateDepartmentCenter_controller.swf</Filename>
+		        </Helpchild>
+		        
+		      <!-- Govt Order Template -->
+		       <Helpchild name="Create Template">
+		          <Url>createGovtTemplate.htm</Url>
+		          <Foldermapping>GovOrderTemplate/89.CreateGovtOrderTemplate</Foldermapping>
+		          <Filename>17CreateGovtOrderTemplate_controller.swf</Filename>
+		        </Helpchild>
+		       
+		       <Helpchild name="Manage Template">
+		          <Url>viewListOfTemplates.htm</Url>
+		          <Foldermapping>GovOrderTemplate/91.ManageTemplatee</Foldermapping>
+		          <Filename>18ManageTemplate_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <!-- Organization -->
+		       
+		         <Helpchild name="Manage Organization">
+		          <Url>createOrganizationState.htm</Url>
+		          <Foldermapping>Organization/90.CreateOrganizationCenter</Foldermapping>
+		          <Filename>66CreateOrganizationCenter_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <!-- Configure System -->
+		       
+		         <Helpchild name="Configure Map Landregion">
+		          <Url>config_landregion.htm</Url>
+		          <Foldermapping>Configure/13.ConfigureMapsLandRegion</Foldermapping>
+		          <Filename>7ConfigureMapsLandRegion_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <Helpchild name="Configure Map Block">
+		          <Url>config_block.htm</Url>
+		          <Foldermapping>Configure/15.ConfigureMapBlock</Foldermapping>
+		          <Filename>8ConfigureMapBlock_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <Helpchild name="Configure Map Constituency">
+		          <Url>config_constituency.htm</Url>
+		          <Foldermapping>Configure/18.ConfigureMapConstituency</Foldermapping>
+		          <Filename>9ConfigureMapConstituency_controller.swf</Filename>
+		        </Helpchild>
+		        
+		        <Helpchild name="Configure Map PRI">
+		          <Url>configMapPRI.htm</Url>
+		          <Foldermapping>Configure/5.ConfigureMapsPanchayat</Foldermapping>
+		          <Filename>14ConfigureMapsPanchayat_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <Helpchild name="Configure Map Urban">
+		          <Url>configMapLGDM.htm</Url>
+		          <Foldermapping>Configure/8.ConfigureMapsUrban</Foldermapping>
+		          <Filename>13ConfigureMapsUrban_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <Helpchild name="Configure Map Traditional">
+		          <Url>configMapTrd.htm</Url>
+		          <Foldermapping>Configure/11.ConfigureMapsTraditional</Foldermapping>
+		          <Filename>15ConfigureMapsTraditional_controller.swf</Filename>
+		        </Helpchild>
+		        
+		        
+		        <Helpchild name="Configure Goverment Order Landregion">
+		          <Url>lrmForm.htm</Url>
+		          <Foldermapping>Configure/14.ConfigureGovtOrderLandRegion</Foldermapping>
+		          <Filename>14ConfigureMapsPanchayat_controller.swf</Filename>
+		        </Helpchild>
+		        
+		          <Helpchild name="Configure Goverment Order Block">
+		          <Url>administrativeUnitMgr.htm</Url>
+		          <Foldermapping>Configure/16.ConfigureGovtOrderGenerationBlock</Foldermapping>
+		          <Filename>4ConfigureGovtOrderGenerationBlock_controller.swf</Filename>
+		        </Helpchild>
+		        
+		           <Helpchild name="Configure Goverment Order PRI">
+		          <Url>administrativeUnitMgr.htm</Url>
+		          <Foldermapping>Configure/16.ConfigureGovtOrderGenerationBlock</Foldermapping>
+		          <Filename>4ConfigureGovtOrderGenerationBlock_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <Helpchild name="Define Panchayat Local Goverment">
+		          <Url>local_gov_setupPanchayat.htm</Url>
+		          <Foldermapping>Configure/4.DefineLocalGovtSetupPanchayat</Foldermapping>
+		          <Filename>11DefineLocalGovtSetupPanchayat_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <Helpchild name="Define Panchayat Local Goverment">
+		          <Url>local_gov_setupPanchayat.htm</Url>
+		          <Foldermapping>Configure/4.DefineLocalGovtSetupPanchayat</Foldermapping>
+		          <Filename>11DefineLocalGovtSetupPanchayat_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <Helpchild name="Define Urban Local Goverment">
+		          <Url>local_gov_setupUrban.htm</Url>
+		          <Foldermapping>Configure/7.DefineLocalGovtSetup(Urban)</Foldermapping>
+		          <Filename>10DefineLocalGovtSetup(Urban)_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <Helpchild name="Define Traditional Local Goverment">
+		          <Url>local_gov_setupTraditional.htm</Url>
+		          <Foldermapping>Configure/10.DefineLocalGovtSetupTraditional</Foldermapping>
+		          <Filename>12DefineLocalGovtSetupTraditional_controller.swf</Filename>
+		        </Helpchild>
+		        
+		           <!-- Reporting  Hierarchy -->
+		          <Helpchild name="Desination Master State">
+		          <Url>add_reporting_structure_state.htm</Url>
+		          <Foldermapping>ReportingHierarchy/4.DefineLocalGovtSetupPanchayat</Foldermapping>
+		          <Filename>11DefineLocalGovtSetupPanchayat_controller.swf</Filename>
+		        </Helpchild>
+		        
+		        <!-- Constituency -->
+		         
+		         <Helpchild name="Parliment Constituency">
+		          <Url>parliament_Constituency.htm</Url>
+		          <Foldermapping>Constituency/78.ParliamentConstituency</Foldermapping>
+		          <Filename>58ParliamentConstituency_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <Helpchild name="Create Assembly Constituency">
+		          <Url>assembly_Constituency.htm</Url>
+		          <Foldermapping>Constituency/80.AssemblyConstituency</Foldermapping>
+		          <Filename>60AssemblyConstituency_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <Helpchild name="Modify Parliment Constituency">
+		          <Url>Modifyparliament_Constituency.htm</Url>
+		          <Foldermapping>Constituency/79.ModifyParliamentConstituency</Foldermapping>
+		          <Filename>59ModifyParliamentConstituency_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <Helpchild name="Modify Assembly Constituency">
+		          <Url>ModifyAssembly_Constituency.htm</Url>
+		          <Foldermapping>Constituency/81.ModifyAssemblyConstituency</Foldermapping>
+		          <Filename>61ModifyAssemblyConstituency_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <Helpchild name="Map Parliment Constituency">
+		          <Url>map_constitutionBody.htm</Url>
+		          <Foldermapping>Constituency/82.MapParliamentConstituency</Foldermapping>
+		          <Filename>62MapParliamentConstituency_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <!--   UnResolvedEntity -->
+		      
+		       <Helpchild name="Assign Block to Village in Disturb state">
+		          <Url>assignBlockVillageDisturbedState.htm</Url>
+		          <Foldermapping>UnResolvedEntity/72.AssignBlocktoVillagesinDisturbedState</Foldermapping>
+		          <Filename>33AssignBlocktoVillagesinDisturbedState_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <Helpchild name="Assign Block to Village in Disturb state">
+		          <Url>assignBlockVillageDisturbedState.htm</Url>
+		          <Foldermapping>UnResolvedEntity/85.AddGazettePublicationDate</Foldermapping>
+		          <Filename>67AddGazettePublicationDate_controller.swf</Filename>
+		        </Helpchild>
+		        
+		        <!-- Miscelenous Entity -->
+		         <Helpchild name="Update Other standered code">
+		          <Url>standard_Code.htm</Url>
+		          <Foldermapping>MiscelenousEntity/84.UpdateOtherStandardCodes</Foldermapping>
+		          <Filename>68UpdateOthe StandardCodes_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <!-- Subscribes -->
+		         <Helpchild name="Subscribe Email ">
+		          <Url>subscribeemail.htm</Url>
+		          <Foldermapping>MiscelenousEntity/84.UpdateOtherStandardCodes</Foldermapping>
+		          <Filename>68UpdateOthe StandardCodes_controller.swf</Filename>
+		        </Helpchild>
+		        
+		        <!-- Citizen Sections -->
+		        <Helpchild name="View State">
+		          <Url>globalviewstateforcitizen.do</Url>
+		          <Foldermapping>CitizenSections/ViewStates(CitizenSection)</Foldermapping>
+		          <Filename>ViewStates(CitizenSection)_controller.swf</Filename>
+		        </Helpchild>
+		        
+		        <Helpchild name="View District">
+		          <Url>globalviewdistrictforcitizen.do</Url>
+		          <Foldermapping>CitizenSections/ViewDistricts(CitizenSection)</Foldermapping>
+		          <Filename>ViewDistricts(CitizenSection)_controller.swf</Filename>
+		        </Helpchild>
+		        
+		          <Helpchild name="View SubDistrict">
+		          <Url>globalviewsubdistrictforcitizen.do</Url>
+		          <Foldermapping>CitizenSections/ViewSubDistricts(CitizenSection)</Foldermapping>
+		          <Filename>ViewSubDistricts(CitizenSection)_controller.swf</Filename>
+		        </Helpchild>
+		        
+		        <Helpchild name="View Village">
+		          <Url>globalviewvillageforcitizen.do</Url>
+		          <Foldermapping>CitizenSections/ViewVillages(CitizenSection)</Foldermapping>
+		          <Filename>ViewVillages(CitizenSection)_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <!--  <Helpchild name="View Local Bodies">
+		          <Url>globalViewLocalBodyForCitizen.do</Url>
+		          <Foldermapping>CitizenSections/ViewVillages(CitizenSection)</Foldermapping>
+		          <Filename>ViewVillages(CitizenSection)_controller.swf</Filename>
+		        </Helpchild> -->
+		   
+		   	<Helpchild name="Consolidate Report for Local Bodies">
+		          <Url>rptConsolidateforPanchayat.do</Url>
+		          <Foldermapping>CitizenSections/ConsolidatedReportonLocalBodies(CitizenSection)</Foldermapping>
+		          <Filename>ConsolidatedReportonLocalBodies(CitizenSection)_controller.swf</Filename>
+		        </Helpchild>
+		        
+		        	<Helpchild name="Consolidate Report for Panchayat">
+		          <Url>rptConsolidateforRuralLB.do</Url>
+		          <Foldermapping>CitizenSections/ConsolidatedReportonPanchayats(CitizenSection)</Foldermapping>
+		          <Filename>ConsolidatedReportonPanchayats(CitizenSection)_controller.swf</Filename>
+		        </Helpchild>
+		        
+		        <Helpchild name="State Wise Populatin">
+		          <Url>stateWisePopulation.do</Url>
+		          <Foldermapping>CitizenSections/StateWisePopulation(CitizenSection)</Foldermapping>
+		          <Filename>StateWisePopulation(CitizenSection)_controller.swf</Filename>
+		        </Helpchild>
+		        
+		        <Helpchild name="Consolidate Report for Land Region Entities">
+		          <Url>rptConsolidateforLandregions.do</Url>
+		          <Foldermapping>CitizenSections/ConsolidatedReportonLandRegionEntities(CitizenSection)</Foldermapping>
+		          <Filename>ConsolidatedReportonLandRegionEntities(CitizenSection)_controller.swf</Filename>
+		        </Helpchild>
+		        
+		        <Helpchild name="Report on district wise village and map gram panchayat">
+		          <Url>rptConsolidateVillageGramPanchayat.do</Url>
+		          <Foldermapping>CitizenSections/DistrictwiseVillagesandtheirmappedGPs(CitizenSection)</Foldermapping>
+		          <Filename>DistrictwiseVillagesandtheirmappedGPs(CitizenSection)_controller.swf</Filename>
+		        </Helpchild>
+		        
+		         <Helpchild name="Register for email notification">
+		          <Url>rptConsolidateVillageGramPanchayat.do</Url>
+		          <Foldermapping>CitizenSections/RegisterforEmailNotifications(CitizenSection)</Foldermapping>
+		          <Filename>RegisterforEmailNotifications(CitizenSection)_controller.swf</Filename>
+		        </Helpchild>
+		     
+		        <Helpchild name="Download Directory">
+		          <Url>downloadDirectory.do</Url>
+		          <Foldermapping>CitizenSections/DownloadDirectory(CitizenSection)</Foldermapping>
+		          <Filename>DownloadDirectory(CitizenSection)_controller.swf</Filename>
+		        </Helpchild>
+		        
+		        <Helpchild name="Search">
+		          <Url>globalsearchentity.do</Url>
+		          <Foldermapping>CitizenSections/Search(CitizenSection)</Foldermapping>
+		          <Filename>Search(CitizenSection)_controller.swf</Filename>
+		        </Helpchild>
+		  
+  </Helproot>
+</Helpinfo>

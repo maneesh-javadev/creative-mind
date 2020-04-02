@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.4.1.v201408290142 Build &lt;4.4.1.v20140916-1320></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="entity_code" id="9">
+            <property name="valueType">static</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaJndiName">java:comp/env/jdbc/exHl</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="8">
+            <list-property name="columnHints"/>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">stateCode</property>
+                    <property name="paramName">entity_code</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">org_code</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">org_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">type_code</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">type_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">state_code</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">state_name_english</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">parent_org_code</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">parent_org_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">org_code</property>
+                    <property name="nativeName">org_code</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">org_name</property>
+                    <property name="nativeName">org_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">type_code</property>
+                    <property name="nativeName">type_code</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">type_name</property>
+                    <property name="nativeName">type_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">state_code</property>
+                    <property name="nativeName">state_code</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">state_name_english</property>
+                    <property name="nativeName">state_name_english</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">parent_org_code</property>
+                    <property name="nativeName">parent_org_code</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">parent_org_name</property>
+                    <property name="nativeName">parent_org_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select * 
+from download_organisation_list(?)]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="state_name" id="189">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">state_name_english</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">state_name_english</text-property>
+                    <text-property name="heading">state_name_english</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">state_name_local</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">state_name_local</text-property>
+                    <text-property name="heading">state_name_local</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">state_code</property>
+                    <property name="paramName">entity_code</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">state_name_english</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">state_name_local</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">state_name_english</property>
+                    <property name="nativeName">state_name_english</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">state_name_local</property>
+                    <property name="nativeName">state_name_local</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from get_state_name_fn(?)]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>state_name_english</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>state_name_english</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>state_name_english</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>state_name_local</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>state_name_local</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>state_name_local</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <text id="110">
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<H1>
+<CENTER>Local Government Directory</CENTER>
+</H1>
+
+]]></text-property>
+        </text>
+        <text-data id="190">
+            <property name="backgroundColor">white</property>
+            <property name="fontWeight">bold</property>
+            <property name="marginTop">10pt</property>
+            <property name="marginLeft">0pt</property>
+            <property name="marginBottom">10pt</property>
+            <property name="marginRight">10pt</property>
+            <property name="paddingTop">10pt</property>
+            <property name="paddingBottom">10pt</property>
+            <property name="textAlign">center</property>
+            <property name="overflow">auto</property>
+            <property name="dataSet">state_name</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">state_name_english</property>
+                    <text-property name="displayName">state_name_english</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["state_name_english"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">state_name_local</property>
+                    <text-property name="displayName">state_name_local</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["state_name_local"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <expression name="valueExpr">"List Of Departments/Organization of "+"(" +row["state_name_english"]+")"&#13;
+&#13;
+if(row["state_name_english"] ==null)&#13;
+{&#13;
+row["state_name_english"]="List Of Departments/Organization of (Center) ";&#13;
+&#13;
+}</expression>
+            <property name="contentType">html</property>
+        </text-data>
+        <table id="191">
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">org_code</property>
+                    <text-property name="displayName">org_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["org_code"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">org_name</property>
+                    <text-property name="displayName">org_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["org_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">type_code</property>
+                    <text-property name="displayName">type_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["type_code"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">type_name</property>
+                    <text-property name="displayName">type_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["type_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">state_code</property>
+                    <text-property name="displayName">state_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["state_code"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">state_name_english</property>
+                    <text-property name="displayName">state_name_english</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["state_name_english"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">parent_org_code</property>
+                    <text-property name="displayName">parent_org_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["parent_org_code"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">parent_org_name</property>
+                    <text-property name="displayName">parent_org_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["parent_org_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">S.No.</property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">RUNNINGCOUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="179">
+                <property name="repeat">1</property>
+                <property name="width">0.5729166666666666in</property>
+            </column>
+            <column id="235"/>
+            <column id="236"/>
+            <column id="237"/>
+            <column id="238"/>
+            <column id="239"/>
+            <column id="240"/>
+            <column id="241"/>
+            <column id="242"/>
+            <header>
+                <row id="192">
+                    <cell id="130">
+                        <label id="180">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">S.No.</text-property>
+                        </label>
+                    </cell>
+                    <cell id="193">
+                        <label id="194">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Org Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="195">
+                        <label id="196">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Org Name</text-property>
+                        </label>
+                    </cell>
+                    <cell id="197">
+                        <label id="198">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Type Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="199">
+                        <label id="200">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Type Name</text-property>
+                        </label>
+                    </cell>
+                    <cell id="201">
+                        <label id="202">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">State Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="203">
+                        <label id="204">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">State Name </text-property>
+                        </label>
+                    </cell>
+                    <cell id="205">
+                        <label id="206">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Parent Org Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="207">
+                        <label id="208">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Parent Org Name</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="209">
+                    <cell id="181">
+                        <data id="182">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">S.No.</property>
+                        </data>
+                    </cell>
+                    <cell id="210">
+                        <data id="211">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">org_code</property>
+                        </data>
+                    </cell>
+                    <cell id="212">
+                        <data id="213">
+                            <property name="resultSetColumn">org_name</property>
+                        </data>
+                    </cell>
+                    <cell id="214">
+                        <data id="215">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">type_code</property>
+                        </data>
+                    </cell>
+                    <cell id="216">
+                        <data id="217">
+                            <property name="resultSetColumn">type_name</property>
+                        </data>
+                    </cell>
+                    <cell id="218">
+                        <data id="219">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">state_code</property>
+                        </data>
+                    </cell>
+                    <cell id="220">
+                        <data id="221">
+                            <property name="resultSetColumn">state_name_english</property>
+                        </data>
+                    </cell>
+                    <cell id="222">
+                        <data id="223">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">parent_org_code</property>
+                        </data>
+                    </cell>
+                    <cell id="224">
+                        <data id="225">
+                            <property name="resultSetColumn">parent_org_name</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="226">
+                    <cell id="183"/>
+                    <cell id="227"/>
+                    <cell id="228"/>
+                    <cell id="229"/>
+                    <cell id="230"/>
+                    <cell id="231"/>
+                    <cell id="232"/>
+                    <cell id="233"/>
+                    <cell id="234"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

@@ -1,0 +1,197 @@
+<%@page import="in.nic.pes.lgd.bean.MapAttachment"%>
+<%@ page import="in.nic.pes.lgd.bean.Attachment"%>
+<%@page import="org.owasp.esapi.ESAPI"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Iterator"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<script src="js/attachFiles.js" type="text/javascript"
+	language="javascript"></script>
+</head>
+<body>
+
+
+	<%
+		String requiredTitle = "requiredTitle1";
+	%>
+	<%
+		String requiredTitleValue = "no";
+	%>
+	<%
+		String fileTable = "elementTable1";
+	%>
+	<%
+		String fileTitle = "fileTitle1";
+	%>
+	<%
+		String fileName = "attachFile1";
+	%>
+	<%
+		String maxFileLimit = "maxFileLimit1";
+	%>
+	<%
+		Integer maxFileLimitValue = 1;
+	%>
+	<%
+		List<MapAttachment> listOFMetaData = (List<MapAttachment>) request.getAttribute("attachmentList");
+	%>
+	<%
+		String validationError = (String) request.getAttribute("validationErrorOne");
+	%>
+	<%
+		String deleteID = "deleteID1";
+	%>
+	<%
+		String deletePath = "deletePath1";
+	%>
+	<%
+		String deleteFileSize = "deleteFileSize1";
+	%>
+	<%
+		String deletedFileID = "deletedFileID1";
+	%>
+	<%
+		String deletedFileName = "deletedFileName1";
+	%>
+	<%
+		String deletedFileSizeList = "deletedFileSizeList1";
+	%>
+
+
+
+	<input type="hidden" id="<%=maxFileLimit%>" name="<%=maxFileLimit%>"
+		value="<%=maxFileLimitValue%>" />
+	<input type="hidden" id="<%=requiredTitle%>" name="<%=requiredTitle%>"
+		value="<%=requiredTitleValue%>" />
+	<table width="100%" class="tbl_no_brdr" id="validationErrorTable">
+		<tr>
+
+			<td>
+				<div class="errormsg">
+					<%
+						if (validationError != null) {
+					%>				
+					<spring:message code="<%=validationError%>" htmlEscape="true" />
+					<%
+						}
+					%>
+				</div></td>
+		</tr>
+		<tr>
+			
+			<td width="100%">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label><spring:message code="Label.UPLOADMAP" htmlEscape="true"/></label>
+				<table width="880" class="tbl_no_brdr" id="<%=fileTable%>">
+					<tr>
+						<%
+							if ("yes".equalsIgnoreCase(requiredTitleValue)) {
+						%>
+						<td valign="top" width="0">Title:
+							</div>
+						</td>
+						<td valign="top" width="0"><input type="text"
+							name="<%=fileTitle%>" id="<%=fileTitle%>" class="frmfield" />
+						</td>
+						<%
+							} else {
+						%>
+						<td valign="top" width="0"></td>
+						<td valign="top" width="0"><input type="hidden"
+							name="<%=fileTitle%>" id="<%=fileTitle%>" class="frmfield" />
+						</td>
+						<%
+							}
+						%>
+
+						<td valign="top" width="50">
+						
+						<input type="file" 
+							name="<%=fileName%>" id="<%=fileName%>" class="btn"
+							onclick="{return validateEmptyTitle('<%=fileTitle%>','<%=fileName%>','<%=fileTable%>','<%=requiredTitle%>')}" />
+							
+								<div id="errorFiletype" style="color: red;">
+								<br />		
+							<form:errors htmlEscape="true" path="attachFile1"></form:errors>
+							</div>
+						</td>
+						<%-- <td valign="top"><input type="button" id="addMore"
+							name="addMore" value="Add More"
+							onclick="{return validateAddMore('<%=fileTitle%>', '<%=fileName%>', '<%=fileTable%>', '<%=maxFileLimit%>', '<%=requiredTitle%>')}" />
+						</td> --%>
+<!-- 						<td valign="top"> -->
+<%-- 						<input type="button" id="removeAll" name="removeAll" value="<spring:message code="Button.REMOVE" text="Remove"/>" onclick="{deleteAllRows('<%=fileTitle%>', '<%=fileName%>', '<%=fileTable%>')}" /> --%>
+<!-- 						</td> -->
+						
+				<td width="550"><div class="errormsg" id="attachFile1_error1"></div>  
+				<div class="errormsg" id="attachFile1_error2" style="display: none" ></div>
+					
+				</td>
+					</tr>
+				</table>
+				<br /> <%
+ 	if (listOFMetaData != null && listOFMetaData.size() != 0) {
+ %>
+				<table width="100%" class="tbl_with_brdr" align="left" id="tid">
+					<tr class="frmhd"><spring:message code="Label.ALREADYATTACHINFO" htmlEscape="true"/>
+					</tr>
+					<tr class="tblRowTitle tblclear">
+						<%
+							if ("yes".equalsIgnoreCase(requiredTitleValue)) {
+						%>
+						<td><spring:message code="Label.FILETITLE" htmlEscape="true"/></td>
+						<%
+							}
+						%>
+						<td><spring:message code="Label.FILENAME" htmlEscape="true"/></td>
+						<td><spring:message code="Label.FILESIZE" htmlEscape="true"/></td>
+						<td><spring:message code="Label.CONTENTTYPE" htmlEscape="true"/></td>
+						<td><spring:message code="Label.MARKDELETEFILE" htmlEscape="true"/></td>
+					</tr>
+
+					<%
+						try {
+								Iterator<MapAttachment> it = listOFMetaData.iterator();
+								while (it.hasNext()) {
+									MapAttachment abc = (MapAttachment) it.next();
+					%>
+
+					<tr id="row<%=abc.getAttachmentId()%>" class="tblRowB">
+						<%
+							if ("yes".equalsIgnoreCase(requiredTitleValue)) {
+						%>
+<%-- 						<td><%=ESAPI.encoder().encodeForHTML(abc.getFileTitle()) %></td> --%>
+						<%
+							}
+						%>
+						<td><%=ESAPI.encoder().encodeForHTML(abc.getFileName())%></td>
+						<td><%=abc.getFileSize()%></td>
+						<td><%=abc.getFileContentType()%></td>
+						<td width="10%"><a href="#"><img src="images/delete.png"
+								name="deleteAttachment" width="18" height="19" border="0"
+								onclick="{hideThisRow('<%=abc.getAttachmentId()%>'),holdAttachmentID('<%=abc.getAttachmentId()%>','<%=deleteID%>','<%=deletedFileID%>'),holdFilePath('<%=abc.getFileTimestamp()%>','<%=deletePath%>','<%=deletedFileName%>'),holdFileSize('<%=abc.getFileSize()%>','<%=deleteFileSize%>','<%=deletedFileSizeList%>')}" />
+						</a>
+							<div id="<%=deleteID%>"></div>
+							<div id="<%=deletePath%>"></div>
+							<div id="<%=deleteFileSize%>"></div></td>
+					</tr>
+					<%
+						}
+					%>
+				</table>
+				<br />
+				<%
+					} catch (Exception e) {
+						}
+				%> <%
+ 	}
+ %>
+			</td>
+		</tr>
+	</table>
+
+
+</body>
+</html>
+
+

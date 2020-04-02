@@ -1,0 +1,114 @@
+@CHARSET "ISO-8859-1";
+/*<-------New CSS For PES Applicationpage------->*/
+#apps{width:98%; margin:0px auto; padding:10px 0px; height:auto; text-align:center;}
+.active_box_pes{width:175px;height:206px; background:#FFFFFF; font:bold 2em "Times New Roman", Times, serif; color:#3C0800;
+			-moz-border-radius: 5px; /* Firefox */
+			-webkit-border-radius: 5px; /* Safari, Chrome */
+			-khtml-border-radius: 5px; /* KHTML */
+			border-radius: 5px; 
+			float: left/* CSS3 */	
+}
+.inactive_box_pes{width:175px;height:206px; background:#FFFFFF; font:bold 2em "Times New Roman", Times, serif; color:#C1C1C1;
+			-moz-border-radius: 5px; /* Firefox */
+			-webkit-border-radius: 5px; /* Safari, Chrome */
+			-khtml-border-radius: 5px; /* KHTML */
+			border-radius: 5px; 
+			float: left/* CSS3 */	
+}
+.curent_box_pes{width:175px;height:206px; background:#FFFFFF; font:bold 2em "Times New Roman", Times, serif; color:#CA0202;
+			-moz-border-radius: 5px; /* Firefox */
+			-webkit-border-radius: 5px; /* Safari, Chrome */
+			-khtml-border-radius: 5px; /* KHTML */
+			border-radius: 5px;
+			float: left /* CSS3 */	
+}
+
+.frmtxt ul.listing_pes li {
+	margin: 0 15px 15px 0;
+}
+ul.listing_pes li {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: top;
+	margin-right: 2px;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+ul.listing_pes li a.texttoggler {
+	margin: 0;
+}
+
+.leftDivMsg_pes {
+	float: left;
+	width: 20%;
+	text-align: left;
+	padding: 5px 0;
+}
+.centerDivMsg_pes {
+	float: center;
+	width: 20%;
+	text-align: left;
+	padding: 5px 0;
+}
+.pesAppFloat{
+float: left;
+}
+.hiddenDiv_pes {
+	display: none;
+}
+.displayDiv_pes {
+	display: '';
+}
+.border_spacing_pes{
+margin: 10px 10px 10px 50px; 
+}
+.width_275_pes{
+width: 275px;
+}
+.centerAlign_pes {
+	text-align:center;
+}
+.leftAlign_pes {
+	text-align:left;
+}
+.rightAlign_pes {
+	text-align:right;
+}
+.tableToAppendDiv_pes {
+	float: center;
+	width: 10%;
+	text-align: left;
+	padding: 5px 0;
+}
+.color_red_pes{
+color: red;
+}
+.width_250_pes{
+width: 250px;
+}
+.errorFloatLeft_pes{
+float: left;
+}
+.memBlkOuter_pes{
+position: relative;
+width:auto;
+height:auto;
+background-color: red;
+display:none;
+}
+.memBlkInner_pes{
+width:auto;
+float: left;
+position: relative;
+}
+.memBlkSpan_pes{
+style="width:auto;
+float: left;
+position: relative;
+margin-left:20px;
+display:none;
+}
+
+

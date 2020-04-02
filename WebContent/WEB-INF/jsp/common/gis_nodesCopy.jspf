@@ -1,0 +1,83 @@
+
+<div class="col-sm-4">
+
+    <label id="lbllatitude"><spring:message code="Label.LATITUDE" htmlEscape="true"></spring:message> </label>
+    <form:input path="latitude" htmlEscape="true" id="latitude" maxLength="7" type="text" class="form-control" onkeypress="return validateCordination(event,'latitude');"
+	onfocus="validateOnFocus('latitude');helpMessage(this,'latitude_msg');" onblur="vlidateOnblur('latitude','1','15','o');hideHelp();" onkeyup="hideMessageOnKeyPress('latitude');" /><span><form:errors path="latitude" class="errormsg"
+	htmlEscape="true"></form:errors> </span>
+	<div style="display: none;" id="latitude_msg"><spring:message htmlEscape="true" code="error.blank.latitude" ></spring:message></div>
+
+</div>
+
+	<div class="col-sm-4">
+	
+		    <label id="lbllongitude"><spring:message code="Label.LONGITUDE" htmlEscape="true"></spring:message> </label>
+		    <form:input path="longitude" htmlEscape="true" id="longitude" maxLength="7" type="text" class="form-control" onkeypress="return validateCordination(event,'longitude');"
+			onfocus="validateOnFocus('longitude');helpMessage(this,'longitude_msg');" onblur="vlidateOnblur('latitude','1','15','o');hideHelp();" onkeyup="hideMessageOnKeyPress('longitude');" /><span><form:errors path="longitude"
+			class="errormsg" htmlEscape="true"></form:errors> </span>
+			<div style="display: none;" id="longitude_msg"><spring:message htmlEscape="true" code="error.blank.longitude" ></spring:message></div>
+	 
+	 </div>
+	<div class="col-sm-4">
+	<br/>
+	    <button type="button" onclick="addGISnodes()"  name="Submit3" class="btn btn-success btn-sm "><i class="fa fa-floppy-o"></i> <spring:message code="Button.ADDNODES" htmlEscape="true"></spring:message></button>
+	 
+	</div>
+
+
+<%-- <div class="frmpnlbg">
+	<div class="frmtxt">
+		<div class="frmhdtitle">
+			<spring:message code="Label.GISNODES" htmlEscape="true"></spring:message> 
+		</div>
+		<table width="100%" class="tbl_no_brdr">
+			<tr>
+			
+				<td>
+					<table id="maptabidF" class="tbl_no_brdr">
+						<TR>
+							<TD colspan="4">
+								<DIV>
+									<tABLE id="lat_long_tbody">
+										<tr>
+											<td><label id="lbllatitude"><spring:message code="Label.LATITUDE" htmlEscape="true"></spring:message> </label></td>
+											<td><label id="lbllongitude"><spring:message code="Label.LONGITUDE" htmlEscape="true"></spring:message> </label></td>
+									</tr>		
+										<tr>
+											<td><form:input path="latitude" htmlEscape="true" id="latitude" maxLength="7" type="text" class="frmfield" onkeypress="return validateCordination(event,'latitude');"
+													onfocus="validateOnFocus('latitude');helpMessage(this,'latitude_msg');" onblur="vlidateOnblur('latitude','1','15','o');hideHelp();" onkeyup="hideMessageOnKeyPress('latitude');" /><span><form:errors path="latitude" class="errormsg"
+														htmlEscape="true"></form:errors> </span>
+												<div style="display: none;" id="latitude_msg"><spring:message htmlEscape="true" code="error.blank.latitude" ></spring:message></div></td>
+											
+											<td><form:input path="longitude" htmlEscape="true" id="longitude" maxLength="7" type="text" class="frmfield" onkeypress="return validateCordination(event,'longitude');"
+													onfocus="validateOnFocus('longitude');helpMessage(this,'longitude_msg');" onblur="vlidateOnblur('latitude','1','15','o');hideHelp();" onkeyup="hideMessageOnKeyPress('longitude');" /><span><form:errors path="longitude"
+														class="errormsg" htmlEscape="true"></form:errors> </span>
+												<div style="display: none;" id="longitude_msg"><spring:message htmlEscape="true" code="error.blank.longitude" ></spring:message></div></td>
+											
+											<td align="right"><label><label> <input type="button" name="Submit3" value="<spring:message code="Button.ADDNODES" htmlEscape="true"></spring:message>" onclick="addGISnodes()" /> </label> </label>
+											</td>
+										</tr>
+									</table>
+								</DIV></TD>
+						</TR>
+						<tr>
+							<td><div id="addgisnodes"></div>
+							</td>
+						</tr>
+					</table></td>
+			</tr>
+			<c:if test="${hideMap != 'true'}">
+				<tr>
+					<td><div id="map-1">
+							<table>
+								<tr>
+									<td width="50%"><%@ include file="mapUpload.jspf"%></td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</c:if>
+		</table>
+	</div>
+</div> --%>

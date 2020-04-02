@@ -1,0 +1,30 @@
+<%-- <% String conPath = request.getContextPath();%> --%>
+<table width="100%">
+	<tr>
+		<td rowspan="3"><b> <spring:message htmlEscape="true" code="Label.ENTERTEXTASSHOWNINTHISIMAGE" "></spring:message> </b></td>
+	</tr>
+	<tr>
+		<td><b> <img src="jcaptcha" name="theimage1" id="theimage1"
+				width="220" border="0" /> </b></td>
+	</tr>
+	<tr valign="bottom">
+		<td>
+			<table style="margin-left: -5px;">
+				<tr>
+					<td align="left" width="150px"><input type="text"
+						id="jcaptcha_response1" name="jcaptcha_response1" class="frmfield"
+						style="width: 220px" /></td>
+					<td align="left"><img
+						src="<%=contextPath%>/images/refresh.png"
+						onclick="captchaResetImage('theimage1', 'jcaptcha_response1');" /></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div id="errorCaptcha1" class="errormsg"></div></td>
+				</tr>
+			</table></td>
+	</tr>
+</table>
+
+
+Label.ENTERTEXTASSHOWNINTHISIMAGE

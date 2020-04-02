@@ -1,0 +1,58 @@
+<%@page import="in.nic.pes.lgd.bean.MapAttachment"%>
+<%@ page import="in.nic.pes.lgd.bean.Attachment"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Iterator"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <script src="js/attachFiles.js" type="text/javascript" language="javascript"></script> 
+<link href="css/error.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+	<%String requiredTitle2="requiredTitle2";%>
+	<%String requiredTitleValue2="No";%>
+	<%String fileTable2="elementTable2"; %>
+	<%String fileTitle2="fileTitle2"; %>
+	<%String fileName2="attachFile2"; %>
+	<%String maxFileLimit2="maxFileLimit2"; %>
+	<%Integer maxFileLimitValue2 =1; %>
+	<% List<MapAttachment> listOFMetaData2 =  (List<MapAttachment>) request
+			.getAttribute("mapAttachmentList"); %>
+	<% String validationError1 = (String) request.getAttribute("validationErrorOne1"); %>
+	<%String deleteID2="deleteID2"; %>
+	<%String deletePath2="deletePath2"; %>
+	<%String deleteFileSize2="deleteFileSize2"; %>
+	<%String deletedFileID2="deletedFileID2"; %>
+	<%String deletedFileName2="deletedFileName2"; %>
+	<%String deletedFileSizeList2="deletedFileSizeList2"; %>
+ 
+ 
+
+<input type="hidden" id="<%=maxFileLimit2%>" name="<%=maxFileLimit2%>" value="<%=maxFileLimitValue2%>" />
+<input type="hidden" id="<%=requiredTitle2%>" name="<%=requiredTitle2%>" value="<%=requiredTitleValue2%>" />
+<table width="100%" class="tbl_no_brdr" id="validationErrorTable1">
+	<tr>
+		
+		<td>
+		<%-- <div class="errormsg">
+			<% if(validationError1 != null) {%>
+				<spring:message code="<%=validationError1%>" htmlEscape="true"/>
+			<%}%>
+		</div> --%>
+		</td>
+		</tr>
+		<tr>
+		
+		<td width="100%">
+		
+			<%@ include file="uploadmap.jspf"%>
+		</td>
+	</tr>
+</table>
+
+
+</body></html>
+
+

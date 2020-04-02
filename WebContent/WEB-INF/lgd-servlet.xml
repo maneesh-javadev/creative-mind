@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+	<context:component-scan base-package="in.nic.pes.lgd.controllers" />
+	<context:component-scan base-package="in.nic.pes.common.controllers" />
+	<context:component-scan base-package="com.editor.fileupload.controller" />
+	<!--  Redesigned Reporting @author Vinay #started-->
+	<context:component-scan base-package="in.nic.pes.lgd.restructure.reporting.controller"/>
+	<!--  Redesigned Reporting #end-->
+	<!--  Section module @author Maneesh #started-->
+	<context:component-scan base-package="in.nic.pes.lgd.section.controller"/>
+	<!--  Section module #end-->
+	<!--  Draft Module  @author Maneesh #started-->
+	<context:component-scan base-package="in.nic.pes.lgd.draft.controller"/>
+	<!--  Draft Module #end-->
+	<mvc:annotation-driven />
+	<import resource="/lb-config/aop-config.xml" />
+	<import resource="/lb-config/localbody-config.xml" />
+	<!-- Declare a view resolver -->
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.Exception">error</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles2.TilesView" />
+	</bean>
+	
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="1024000000" />
+	</bean>
+	
+	 <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource"> 
+	 <property name="basename" value="/WEB-INF/messages/messages" /> 
+	 <property name="cacheSeconds" value="5" /> 
+	 <property name="defaultEncoding" value="UTF-8" /> 
+	 <property name="UseCodeAsDefaultMessage" value="true" /> 
+	 </bean> 
+
+
+	<!-- Application Message Bundle -->
+
+
+	<!-- Locale Change Intercepter and Resolver definition -->
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="en" />
+	</bean>
+
+
+	<bean id="themeSource"
+		class="org.springframework.ui.context.support.ResourceBundleThemeSource">
+		<property name="basenamePrefix" value="theme-" />
+	</bean>
+
+	<!-- Theme Change Intercepter and Resolver definition -->
+	<bean id="themeResolver"
+		class="org.springframework.web.servlet.theme.CookieThemeResolver">
+		<property name="defaultThemeName" value="default" />
+	</bean>
+
+	<mvc:interceptors>
+		<bean id="themeChangeInterceptor"
+			class="org.springframework.web.servlet.theme.ThemeChangeInterceptor">
+			<property name="paramName" value="theme" />
+		</bean>
+
+		<bean id="localeChangeInterceptor"
+			class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="language" />
+		</bean>
+
+		<bean id="themeAndLanguageInterceptor"
+			class="in.nic.pes.common.interceptor.ThemeAndLanguageInterceptor">
+			<property name="paramName" value="LUSSI" />
+		</bean>
+		<bean id="handlerInterceptorclass" class="in.nic.pes.common.interceptor.HandlerInterceptor">
+			<property name="themParamName" value="theme" />
+			<property name="languagParamName" value="language" />
+		</bean>
+		
+		<!-- This Interceptor used to redirect request to new department flow.  -->
+		<bean id="urlInterceptor" class="in.nic.pes.lgd.interceptor.DepratmentURLInterceptor"/>
+	</mvc:interceptors>
+
+	<!-- Declare a Internal view resolver -->
+	<bean id="viewResolverInternal"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:prefix="/WEB-INF/jsp/" p:suffix=".jsp">
+	</bean>
+	
+	
+
+</beans>

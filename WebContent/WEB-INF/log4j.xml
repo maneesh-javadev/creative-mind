@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<!-- 
+ File Name  :log4j.xml
+ Created on :January 18, 2013
+ @author    :Sushil Shakya
+ -->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="applicationFileAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="ERROR" />
+		<param name="File" value="D:\\Backup\\Project\\Project Data\\lgdlogs\\lgd-application.log" />
+		<param name="Append" value="false" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="controllerFileAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="DEBUG" />
+		<param name="File" value="D:\\Backup\\Project\\Project Data\\lgdlogs\\lgd-controller.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %5p %F: %L > - %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="exceptionFileAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="DEBUG" />
+		<param name="File" value="D:\\Backup\\Project\\Project Data\\lgdlogs\\lgd-exception.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %5p %F: %L > - %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="serviceFileAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="DEBUG" />
+		<param name="File" value="D:\\Backup\\Project\\Project Data\\lgdlogs\\lgd-service.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %5p %F: %L > - %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="daoFileAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="DEBUG" />
+		<param name="File" value="D:\\Backup\\Project\\Project Data\\lgdlogs\\lgd-dao.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %5p %F: %L > - %m%n" />
+		</layout>
+	</appender>
+
+       <appender name="commonFileAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="DEBUG" />
+		<param name="File" value="D:\\Backup\\Project\\Project Data\\lgdlogs\\lgd-common.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %5p %F: %L > - %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="listenerFileAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="DEBUG" />
+		<param name="File" value="D:\\Backup\\Project\\Project Data\\lgdlogs\\lgd-listener.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %5p %F: %L > - %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="EP-lgd-Mail" class="org.apache.log4j.net.SMTPAppender">
+		<param name="Threshold" value="DEBUG" />
+		<param name="Subject" value="e-Panchayat[lgd] Online has problems" />
+		<param name="From" value="admin@epanchayat.com" />
+		<!-- use commas in value to separate multiple recipients -->
+		<param name="To" value="sushilkumar.shakya@cmcltd.com" />
+		<param name="SMTPHost" value="172.16.11.11" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m" />
+		</layout>
+	</appender>
+
+	<appender name="SchedulerFileAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="DEBUG" />
+		<param name="File" value="D:\\Backup\\Project\\Project Data\\lgdlogs\\lgd-scheduler.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %5p %F: %L > - %m%n" />
+		</layout>
+	</appender>
+	
+	<root>
+		<priority value="error" />
+		<appender-ref ref="exceptionFileAppender" />
+	</root>
+
+	<category name="org.springframework" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="applicationFileAppender" />
+	</category>
+	
+	<category name="in.nic.pes.lgd.controllers" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="controllerFileAppender" />
+	</category>
+	
+	<category name="in.nic.pes.lgd.service.impl" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="serviceFileAppender" />
+	</category>
+	
+	<category name="in.nic.pes.lgd.interceptor" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="listenerFileAppender" />
+	</category>
+	
+       <category name="in.nic.pes.lgd.common" additivity="false">
+		<priority value="INFO" />
+		<appender-ref ref="commonFileAppender" />
+	</category>
+
+	<category name="in.nic.pes.lgd" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="exceptionFileAppender" />
+	</category>
+	
+	<category name="in.nic.pes.lgd.dao.impl" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="daoFileAppender" />
+	</category>
+
+	<category name="in.nic.pes.lgd.schedular" additivity="false">
+		<priority value="INFO" />
+		<appender-ref ref="SchedulerFileAppender" />
+	</category>
+
+</log4j:configuration>

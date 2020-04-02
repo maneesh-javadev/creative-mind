@@ -1,0 +1,25 @@
+/* CSS Document */
+
+#languagebar
+	{
+		font-weight:bolder;
+		font-size:12px;
+		float:left;
+		height: 20px;
+		width: 100%;
+	}
+	#loginBtn
+	{
+	font-weight:bolder;
+	color:#006;
+	text-decoration:none;
+	
+	}
+
+#loginBtn:HOVER
+	{
+	
+	color:#006;
+	text-decoration:underline;;
+	
+	}

@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.4.1.v201408290142 Build &lt;4.4.1.v20140916-1320></property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[i=0;]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+                       <property name="odaJndiName">java:comp/env/jdbc/exHl</property>
+
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="BlockIndiawithCovDS" id="123">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">state_code</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">state_code</text-property>
+                    <text-property name="heading">state_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">state_name_english</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">state_name_english</text-property>
+                    <text-property name="heading">state_name_english</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">census_2011_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">census_2011_code</text-property>
+                    <text-property name="heading">census_2011_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">district_code</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">district_code</text-property>
+                    <text-property name="heading">district_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">district_name_english</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">district_name_english</text-property>
+                    <text-property name="heading">district_name_english</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">district_census_2011_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">district_census_2011_code</text-property>
+                    <text-property name="heading">district_census_2011_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">block_code</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">block_code</text-property>
+                    <text-property name="heading">block_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">block_name_english</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">block_name_english</text-property>
+                    <text-property name="heading">block_name_english</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">village_code</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">village_code</text-property>
+                    <text-property name="heading">village_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">village_name_english</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">village_name_english</text-property>
+                    <text-property name="heading">village_name_english</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">village_census_2011_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">village_census_2011_code</text-property>
+                    <text-property name="heading">village_census_2011_code</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">state_code</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">state_name_english</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">census_2011_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">district_code</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">district_name_english</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">district_census_2011_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">block_code</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">block_name_english</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">village_code</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">village_name_english</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">village_census_2011_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">state_code</property>
+                    <property name="nativeName">state_code</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">state_name_english</property>
+                    <property name="nativeName">state_name_english</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">census_2011_code</property>
+                    <property name="nativeName">census_2011_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">district_code</property>
+                    <property name="nativeName">district_code</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">district_name_english</property>
+                    <property name="nativeName">district_name_english</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">district_census_2011_code</property>
+                    <property name="nativeName">district_census_2011_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">block_code</property>
+                    <property name="nativeName">block_code</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">block_name_english</property>
+                    <property name="nativeName">block_name_english</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">village_code</property>
+                    <property name="nativeName">village_code</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">village_name_english</property>
+                    <property name="nativeName">village_name_english</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">village_census_2011_code</property>
+                    <property name="nativeName">village_census_2011_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select distinct 
+s.state_code,
+s.state_name_english,
+s.census_2011_code,
+d.district_code,
+d.district_name_english,d.census_2011_code as district_census_2011_code,
+b.block_code,b.block_name_english,
+v.village_code,v.village_name_english, v.census_2011_code as village_census_2011_code
+
+from
+  state s left outer join district d  on d.slc=s.slc and s.isactive and  d.isactive 
+  left outer join  block b  on  b.dlc=d.dlc and b.isactive 
+   left outer join block_village bv on bv.blc=b.blc and bv.isactive 
+    left outer join village v  on bv.vlc=v.vlc and v.isactive
+    
+union
+
+select distinct
+s.state_code,
+s.state_name_english,
+s.census_2011_code,
+d.district_code,
+d.district_name_english,d.census_2011_code,
+b.block_code,b.block_name_english,
+v.village_code,v.village_name_english, v.census_2011_code as village_census_2011_code
+
+from state s left outer join district d  on s.slc=d.slc and s.isactive and  d.isactive
+ left outer join block_districts bd  on  bd.dlc=d.dlc
+  left outer join  block b on bd.block_district_code = b.block_district_code and b.isactive 
+  left outer join block_village bv on b.blc=bv.blc and bv.isactive 
+  left outer join village v on bv.vlc=v.vlc and v.isactive
+ order by 2,5,8,10  ]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rid</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>rid</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rid</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>block_code</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>block_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>block_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>block_name_english</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>block_name_english</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>block_name_english</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>block_name_local</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>block_name_local</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>block_name_local</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>district_name_english</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>district_name_english</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>district_name_english</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>state_name_english</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>state_name_english</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>state_name_english</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>?column?</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>?column?</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>?column?</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="tablegrid" id="170">
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">thin</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">thin</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">thin</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <text id="67">
+            <property name="fontFamily">serif</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<H1>
+<CENTER>
+Local Government Directory
+</CENTER>
+</H1>]]></text-property>
+        </text>
+        <text id="68">
+            <property name="fontFamily">serif</property>
+            <property name="color">gray</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<H2>
+<CENTER>
+ All Blocks of India with covered villages
+</CENTER>
+</H2>]]></text-property>
+        </text>
+        <table id="347">
+            <property name="width">9.739583333333334in</property>
+            <property name="dataSet">BlockIndiawithCovDS</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">state_name_english</property>
+                    <text-property name="displayName">state_name_english</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["state_name_english"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">district_code</property>
+                    <text-property name="displayName">district_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["district_code"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">district_name_english</property>
+                    <text-property name="displayName">district_name_english</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["district_name_english"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">block_code</property>
+                    <text-property name="displayName">block_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["block_code"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">block_name_english</property>
+                    <text-property name="displayName">block_name_english</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["block_name_english"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">village_code</property>
+                    <text-property name="displayName">village_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["village_code"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">village_name_english</property>
+                    <text-property name="displayName">village_name_english</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["village_name_english"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">state_code</property>
+                    <text-property name="displayName">state_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["state_code"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">village_census_2011_code</property>
+                    <text-property name="displayName">village_census_2011_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["village_census_2011_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">district_census_2011_code</property>
+                    <text-property name="displayName">district_census_2011_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["district_census_2011_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">census_2011_code</property>
+                    <text-property name="displayName">census_2011_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["census_2011_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="396">
+                <property name="width">0.46875in</property>
+            </column>
+            <column id="417">
+                <property name="width">1.0104166666666667in</property>
+            </column>
+            <column id="386">
+                <property name="width">1.0104166666666667in</property>
+            </column>
+            <column id="387">
+                <property name="width">0.7395833333333334in</property>
+            </column>
+            <column id="388">
+                <property name="width">1.6979166666666667in</property>
+            </column>
+            <column id="434">
+                <property name="width">1.6979166666666667in</property>
+            </column>
+            <column id="389">
+                <property name="width">1.0104166666666667in</property>
+            </column>
+            <column id="390">
+                <property name="width">1.5729166666666667in</property>
+            </column>
+            <column id="391">
+                <property name="width">1in</property>
+            </column>
+            <column id="392">
+                <property name="width">1.2291666666666667in</property>
+            </column>
+            <column id="423">
+                <property name="width">1.2291666666666667in</property>
+            </column>
+            <column id="427">
+                <property name="width">1.2291666666666667in</property>
+            </column>
+            <header>
+                <row id="348">
+                    <cell id="393">
+                        <property name="style">tablegrid</property>
+                        <label id="397">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">S.No</text-property>
+                        </label>
+                    </cell>
+                    <cell id="414">
+                        <property name="style">tablegrid</property>
+                        <label id="418">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">State Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="349">
+                        <property name="style">tablegrid</property>
+                        <label id="399">
+                            <property name="fontWeight">bold</property>
+                            <property name="marginLeft">2pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">State Name</text-property>
+                        </label>
+                        <label id="400">
+                            <property name="fontWeight">bold</property>
+                            <property name="marginLeft">2pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">(In English) </text-property>
+                        </label>
+                    </cell>
+                    <cell id="351">
+                        <property name="style">tablegrid</property>
+                        <label id="401">
+                            <property name="fontWeight">bold</property>
+                            <property name="marginRight">2pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">District Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="353">
+                        <property name="style">tablegrid</property>
+                        <label id="402">
+                            <property name="fontWeight">bold</property>
+                            <property name="marginLeft">2pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">District Name</text-property>
+                        </label>
+                        <label id="403">
+                            <property name="fontWeight">bold</property>
+                            <property name="marginLeft">2pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">(In English) </text-property>
+                        </label>
+                    </cell>
+                    <cell id="431">
+                        <property name="style">tablegrid</property>
+                        <label id="435">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">District census 2011 code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="355">
+                        <property name="style">tablegrid</property>
+                        <label id="404">
+                            <property name="fontWeight">bold</property>
+                            <property name="marginRight">2pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Block Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="357">
+                        <property name="style">tablegrid</property>
+                        <label id="405">
+                            <property name="fontWeight">bold</property>
+                            <property name="marginLeft">2pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Block Name     </text-property>
+                        </label>
+                        <label id="406">
+                            <property name="fontWeight">bold</property>
+                            <property name="marginLeft">2pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">(In English) </text-property>
+                        </label>
+                    </cell>
+                    <cell id="359">
+                        <property name="style">tablegrid</property>
+                        <label id="407">
+                            <property name="fontWeight">bold</property>
+                            <property name="marginRight">2pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Village Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="361">
+                        <property name="style">tablegrid</property>
+                        <label id="408">
+                            <property name="fontWeight">bold</property>
+                            <property name="marginLeft">2pt</property>
+                            <property name="marginRight">2pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Village Name</text-property>
+                        </label>
+                        <label id="409">
+                            <property name="fontWeight">bold</property>
+                            <property name="marginLeft">2pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">(In English) </text-property>
+                        </label>
+                    </cell>
+                    <cell id="420">
+                        <property name="style">tablegrid</property>
+                        <label id="428">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Village census 2011 Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="424">
+                        <property name="style">tablegrid</property>
+                        <label id="430">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Census 2011 Code</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="363">
+                    <method name="onRender"><![CDATA[if (i==0) {
+        this.getStyle().backgroundColor = "#dfeaec";
+        i = 1;
+    } 
+    else
+    {
+        this.getStyle().backgroundColor = "white";
+        i = 0;
+    }
+]]></method>
+                    <cell id="394">
+                        <property name="style">tablegrid</property>
+                        <text-data id="398">
+                            <property name="textAlign">center</property>
+                            <expression name="valueExpr">row.__rownum+1</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="415">
+                        <property name="style">tablegrid</property>
+                        <data id="419">
+                            <property name="marginLeft">2pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">state_code</property>
+                        </data>
+                    </cell>
+                    <cell id="364">
+                        <property name="style">tablegrid</property>
+                        <data id="365">
+                            <property name="marginLeft">2pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">state_name_english</property>
+                        </data>
+                    </cell>
+                    <cell id="366">
+                        <property name="style">tablegrid</property>
+                        <data id="367">
+                            <property name="marginRight">2pt</property>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">district_code</property>
+                        </data>
+                    </cell>
+                    <cell id="368">
+                        <property name="style">tablegrid</property>
+                        <data id="369">
+                            <property name="marginLeft">2pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">district_name_english</property>
+                        </data>
+                    </cell>
+                    <cell id="432">
+                        <property name="style">tablegrid</property>
+                        <data id="436">
+                            <property name="resultSetColumn">district_census_2011_code</property>
+                        </data>
+                    </cell>
+                    <cell id="370">
+                        <property name="style">tablegrid</property>
+                        <data id="371">
+                            <property name="marginRight">2pt</property>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">block_code</property>
+                        </data>
+                    </cell>
+                    <cell id="372">
+                        <property name="style">tablegrid</property>
+                        <data id="373">
+                            <property name="marginLeft">2pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">block_name_english</property>
+                        </data>
+                    </cell>
+                    <cell id="374">
+                        <property name="style">tablegrid</property>
+                        <data id="375">
+                            <property name="marginRight">2pt</property>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">village_code</property>
+                        </data>
+                    </cell>
+                    <cell id="376">
+                        <property name="style">tablegrid</property>
+                        <data id="377">
+                            <property name="marginLeft">2pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">village_name_english</property>
+                        </data>
+                    </cell>
+                    <cell id="421">
+                        <property name="style">tablegrid</property>
+                        <data id="429">
+                            <property name="resultSetColumn">village_census_2011_code</property>
+                        </data>
+                    </cell>
+                    <cell id="425">
+                        <property name="style">tablegrid</property>
+                        <data id="437">
+                            <property name="resultSetColumn">census_2011_code</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="378">
+                    <cell id="395">
+                        <property name="style">tablegrid</property>
+                    </cell>
+                    <cell id="416">
+                        <property name="style">tablegrid</property>
+                    </cell>
+                    <cell id="379">
+                        <property name="style">tablegrid</property>
+                    </cell>
+                    <cell id="380">
+                        <property name="style">tablegrid</property>
+                    </cell>
+                    <cell id="381">
+                        <property name="style">tablegrid</property>
+                    </cell>
+                    <cell id="433">
+                        <property name="style">tablegrid</property>
+                    </cell>
+                    <cell id="382">
+                        <property name="style">tablegrid</property>
+                    </cell>
+                    <cell id="383">
+                        <property name="style">tablegrid</property>
+                    </cell>
+                    <cell id="384">
+                        <property name="style">tablegrid</property>
+                    </cell>
+                    <cell id="385">
+                        <property name="style">tablegrid</property>
+                    </cell>
+                    <cell id="422">
+                        <property name="style">tablegrid</property>
+                    </cell>
+                    <cell id="426">
+                        <property name="style">tablegrid</property>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

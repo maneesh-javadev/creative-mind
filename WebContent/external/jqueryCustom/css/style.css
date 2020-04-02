@@ -1,0 +1,347 @@
+body
+{
+margin:0;
+padding:0;
+background-color:wheat;
+}
+#panchayti_raj_main1
+{
+width:100%;
+height:100%;
+}
+#panchayti_raj_main2
+{
+width:1024px;
+height:768px;
+}
+
+/***********panchyati_raj_top**********/
+#panchyati_raj_top
+{
+float:left;
+width:1024px;
+height:137px;
+}
+#panchyati_raj_topbanner
+{
+float:left;
+width:1024px;
+height:97px;
+}
+#panchyati_raj_logo
+{
+float:left;
+width:296px;
+height:97px;
+background-image:url(homeapge/logo.jpg);
+background-repeat:no-repeat;
+}
+#panchyati_raj_logobg
+{
+float:left;
+width:415px;
+height:97px;
+background-image:url(homeapge/hedder_bg.jpg);
+background-repeat:no-repeat;
+}
+#panchyati_raj_logorgt
+{
+float:left;
+width:313px;
+height:97px;
+background-image:url(homeapge/hedder_img.jpg);
+background-repeat:no-repeat;
+}
+#panchyati_raj_toplinks
+{
+float:left;
+width:1024px;
+height:39px;
+background-image:url(homeapge/toplink_bgstrip.jpg);
+background-repeat:repeat-x;
+}
+#panchyati_raj_lftaddress
+{
+float:left;
+width:400px;
+height:auto;
+font-size:12px;
+font-weight:bold;
+font-family:Arial, Helvetica, sans-serif;
+margin-top:12px;
+color:#0052a5;
+}
+#panchyati_raj_rgtlinks
+{
+float:right;
+width:333px;
+height:auto;
+margin-top:12px;
+font-size:12px;
+font-weight:bold;
+font-family:Arial, Helvetica, sans-serif;
+color:#ce3e06;
+
+}
+#panchyati_raj_rgtlinks ul
+{
+margin:0;
+padding:0;
+}
+#panchyati_raj_rgtlinks ul li
+{
+display:inline;
+}
+#panchyati_raj_rgtlinks ul li a
+{
+color:#ce3e06;
+text-decoration:none;
+}
+#panchyati_raj_rgtlinks ul li a:hover
+{
+color:#008ecd;
+}
+/**************panchyati_raj_contArea********/
+#panchayti_raj_contArea
+{
+float:left;
+width:1024px;
+height:auto;
+background-color:#FFFFFF;
+}
+#panchayti_raj_leftbar
+{
+float:left;
+width:228px;
+height:675px;
+}
+#panchayti_raj_lftbar
+{
+float:left;
+width:220px;
+height:auto;
+margin:6px 0 0 6px;
+background-color:#e5e6a0;
+
+}
+#panchayti_raj_lfttophead
+{
+float:left;
+width:220px;
+height:29px;
+background-color:#0099FF;
+background-image:url(homeapge/leftmenu_final_bg.jpg);
+-moz-border-radius-topleft:5px;
+-moz-border-radius-topright:5px;
+}
+h3
+{
+float:left;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+font-weight:bold;
+color:#FFFFFF;
+margin:7px 0 0 18px;
+padding:0;
+}
+#panchayti_raj_lftmenubar
+{
+float:left;
+width:222px;
+height:auto;
+}
+#panchayti_raj_lftmenubar h3
+{
+float:left;
+width:209px;
+height:20px;
+margin:0;
+text-align:left;
+padding-left:11px;
+padding-top:4px;
+background-color:#abb401;
+}
+#panchayti_raj_lftmenubar ul
+{
+margin:0;
+padding:0;
+}
+#panchayti_raj_lftmenubar ul li
+{
+float:left;
+width:206px;
+height:auto;
+padding:3px 3px 3px 11px;
+text-align:left;
+list-style-image:url(homeapge/aroow_but.png);
+list-style-position:inside;
+border-bottom:dotted #0052a5 thin;
+}
+#panchayti_raj_lftmenubar ul li a
+{
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+font-weight:bold;
+color:#000000;
+text-decoration:none;
+}
+#panchayti_raj_lftmenubar ul li a:hover
+{
+color:#ce3e06;
+
+}
+.panchanyati_lfthead
+{
+background-color:red;
+}
+
+/*************panchayti_raj_rightbar***********/
+#panchayti_raj_rightbar
+{
+float:left;
+width:796px;
+height:auto;
+margin-bottom:20px;
+}
+#panchayti_raj_privacyform
+{
+float:left;
+width:774px;
+height:auto	;
+margin:6px 0 0 6px;
+}
+#panchayti_raj_tabmenu
+{
+float:left;
+width:193px;
+height:29px;
+-moz-border-radius-topleft:5px;
+-moz-border-radius-topright:5px;
+background-color:#0080C0;
+background-image:url(homeapge/private_agency_fin.jpg);
+
+}
+#panchayti_raj_table
+{
+float:left;
+width:774px;
+height:auto;
+}
+.tdrow1
+{
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+font-weight:bold;
+color:#006699;
+height:25px;
+width:auto;
+background-color:#bae55e;
+}
+.tdrow2
+{
+font-size:11px;
+font-family:Arial, Helvetica, sans-serif;
+font-weight:normal;
+background-color:#f6fadf;
+height:30px;
+}
+.tdrow3
+{
+height:25px;
+font-size:11px;
+font-family:Arial, Helvetica, sans-serif;
+font-weight:normal;
+background-color:#d0edfb;
+}
+.pan_table_form
+{
+font-size:11px;
+font-family:Arial, Helvetica, sans-serif;
+color:#000000;
+}
+#pan_row1
+{
+background-color:#d7e8a1;
+}
+#pan_row2
+{
+background-color:#e4efc5;
+}
+#pan_row3
+{
+background-color:#f9fbed;
+}
+.pan_txtbox
+{
+width:105px;
+height:15px;
+}
+.pan_gobtn
+{
+border:solid 1px #006633;
+background-color:#00FF66;
+}
+.pan_dropdown
+{
+width:70px;
+height:15px;
+font-size:11px;
+font-family:Arial, Helvetica, sans-serif;
+}
+.tdpad
+{
+padding-left:5px;
+padding-right:5px;
+border-left:solid 1px #009900;
+border-bottom:solid 1px #fff;
+}
+.tdpad1
+{
+padding-left:5px;
+padding-right:5px;
+border-left:solid 1px #009900;
+border-bottom:solid 1px #009900;
+}
+.tdpad2
+{
+padding-left:5px;
+padding-right:5px;
+border-left:solid 1px #009900;
+border-right:solid 1px #009900;
+border-bottom:solid 1px #FFFFFF;
+}
+.pan_backbtn
+{
+border:solid 1px #006633;
+background-color:#00FF66;
+margin-top:15px;
+margin-bottom:15px;
+}
+/***********panchayti_raj_footer*********/
+#panchayti_raj_footer
+{
+float:left;
+width:1024px;
+height:56px;
+background-color:#a8a8a8;
+}
+#panchayti_raj_footertxt
+{
+float:right;
+width:auto;
+height:auto;
+font-size:11px;
+font-family:Arial, Helvetica, sans-serif;
+font-weight:normal;
+margin:27px 12em 0 0;
+color:#FFFFFF;
+}
+.footer_link a
+{
+color:#333333;
+text-decoration:none;
+}
+.footer_link a:hover
+{
+color:#0052a5;
+}
