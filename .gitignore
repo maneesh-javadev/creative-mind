@@ -1,0 +1,6 @@
+/build/
+WebContent/META-INF/context.xml
+*.class
+.classpath
+.settings
+.project
